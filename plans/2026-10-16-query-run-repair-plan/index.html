@@ -1,0 +1,8394 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2026-10-17-harness-and-tech-debt/">
+      
+      
+        <link rel="next" href="../agentic-system/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Query Run Repair (2026-10-16) - Phronesis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#query-run-repair-plan-2026-10-16" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Phronesis" class="md-header__button md-logo" aria-label="Phronesis" data-md-component="logo">
+      
+  <img src="../../assets/VPE.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Phronesis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Query Run Repair (2026-10-16)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AtlasRoX/phronesis-CS" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ChronoStrider/Phronesis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../phronesis/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Phronesis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../vivarix/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Vivarix
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lumicell/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lumicell
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../synapta/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Synapta
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lithoscribe/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lithoscribe
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../2026-10-17-harness-and-tech-debt/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Plans
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../developer/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Phronesis" class="md-nav__button md-logo" aria-label="Phronesis" data-md-component="logo">
+      
+  <img src="../../assets/VPE.png" alt="logo">
+
+    </a>
+    Phronesis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AtlasRoX/phronesis-CS" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ChronoStrider/Phronesis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Phronesis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Phronesis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phronesis/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SCIENTIFIC_VALIDATION_AND_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scientific Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../agentic/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Agentic System
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Agentic System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/auto-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Auto Routing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/platform-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Platform API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/sandbox-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sandbox Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/references-agent-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References: Agent Loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/references-verification-tools-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References: Verification, Tools and Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phronesis/agents/main_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2AA4P agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phronesis/states/state_phronesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2AA4P state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vivarix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vivarix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Case Studies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Case Studies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/cases/Case_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Precision medicine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/cases/Case_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Epidemiology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/cases/Case_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Emergent system properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/vivarix/basico_tutorials/example_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Benchmark
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Benchmark
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/vivarix/benchmark/benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/agents/t2b_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2B agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/states/state_talk2biomodels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2B state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/models/sys_bio_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Bio Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/models/basico_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basico Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/search_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/get_modelinfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/get_annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model annotation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/simulate_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulate model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/ask_question/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ask questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/custom_plotter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom plots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/load_biomodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Load biomodel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/save_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Save model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/parameter_scan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parameter scan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/steady_state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Steady state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lumicell
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lumicell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_c2s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell annotations with cell2sentence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_cell_annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell Annotation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_cell_discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_UMAP_visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UMAP Visualization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_cell_type_proportion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell Type Proportion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/agents/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/agents/scp_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SCP Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/states/state_talk2cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lumicell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/tools/search_studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search studies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/tools/display_studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Display studies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Synapta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Synapta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/primekg_full_graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full PrimeKG Analytics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Deployment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/deployment/custom_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/deployment/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StarkQA-PrimeKG Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_primekg_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_subgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG Subgraph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_ibd_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG (IBD) Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_textual_embeddings_all_minilm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Textual Embeddings for StarkQA-PrimeKG using all-MiniLM-L6-v1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_textual_embeddings_nomic_embed_text/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Textual Embeddings for StarkQA-PrimeKG using nomic-embed-text
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_textual_enrichments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_smiles_enrich_embed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Drug Enrichments/Embeddings (SMILES/molmim)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_enrichment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG Enrichment and Embedding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_primekg_protein_embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Protein Embeddings for BioBridge-PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_multimodal_embeddings_alignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Embeddings Alignment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_evaluation_vss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StarkQA-PrimeKG Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_synapta_agentic_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Synaptas Agentic Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_pyg2dataframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PyG2DataFrame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_uniprot_mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UniProt ID Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Milvus Vector DB Setup
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Milvus Vector DB Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_ibd_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG (IBD) Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_milvus_ibd_primekg_dump/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG (IBD) Multimodal Data Dump
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_milvus_data_dump/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG Multimodal Data Dump
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Datasets
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/dataset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/primekg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/starkqa_primekg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StarkQA-PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/biobridge_primekg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_1" id="__nav_5_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/database/milvus_connection_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MilvusConnectionManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_2" id="__nav_5_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Embeddings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Embeddings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/sentence_transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithSentenceTransformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/huggingface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithHuggingFace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithOllama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/nim_molmim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithMOLMIM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_3" id="__nav_5_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Enrichments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Enrichments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/enrichments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enrichments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithOllama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/pubchem_strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithPubChem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/uniprot_proteins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithUniProt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/reactome_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithReactome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/ols_terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithOLS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_4" id="__nav_5_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Extractions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Extractions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/extractions/pcst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/extractions/multimodal_pcst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCST (Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/extractions/milvus_multimodal_pcst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCST (Milvus Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/agents/t2kg_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Synapta Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_10">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/states/state_talk2knowledgegraphs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Synapta State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/subgraph_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Extraction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/multimodal_subgraph_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Extraction (Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/milvus_multimodal_subgraph_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Extraction (Milvus Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/subgraph_summarization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Summarization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/graphrag_reasoning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG Reasoning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/load_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Load Arguments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lithoscribe
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Lithoscribe
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/main_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/s2_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S2 Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/paper_download_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paper Download Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/zotero_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/pdf_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PDF Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/states/state_talk2scholars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lithoscribe state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search Papers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/single_paper_rec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single Paper Recommendation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/multi_paper_rec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi Paper Recommendation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/display_dataframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Display Dataframe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/query_dataframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Dataframe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/retrieve_semantic_scholar_paper_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieve Semantic Scholar ID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/paper_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paper Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/question_and_answer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Question and answer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/zotero_read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Read
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/zotero_write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/zotero_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_1" id="__nav_6_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    S2 Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            S2 Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/search_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/single_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single Paper Recommendation Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/multi_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi Paper Recommendation Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PDF Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            PDF Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/vector_store/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/singleton_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Singleton Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/gpu_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPU Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/collection_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collection Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/get_vectorstore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Vector Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/document_processor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Processor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/paper_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paper Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/batch_processor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Processor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/rag_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/vector_normalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector Normalization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/retrieve_chunks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieve Chunks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/nvidia_nim_reranker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nvidia NIM Reranker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/generate_answer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Answer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/answer_formatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Answer Formatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/tool_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tool Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_3" id="__nav_6_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Paper Download Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Paper Download Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/base_paper_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base Paper Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/arxiv_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arxiv Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/biorxiv_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Biorxiv Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/medrxiv_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Medrxiv Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/pubmed_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pubmed Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Zotero Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Zotero Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/write_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Write Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/read_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Read Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/review_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Review Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/zotero_path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Path
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/zotero_pdf_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero PDF Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Plans
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Plans
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-10-17-harness-and-tech-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Harness and Tech Debt (2026-10-17)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Query Run Repair (2026-10-16)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Run Repair (2026-10-16)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ws-0-llm-timeouts-p0-the-root-cause-of-most-failed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-0 LLM timeouts (P0, the root cause of most "failed" steps)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-1-reading-the-question-p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-1 Reading the question (P0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-2-evidence-retrieval-p0p1" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-2 Evidence retrieval (P0/P1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-3-claim-checking-p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-3 Claim checking (P0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-4-orchestration-modes-p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-4 Orchestration modes (P0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-5-rendering-p2" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-5 Rendering (P2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-fixable-in-code-alone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not fixable in code alone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-2026-10-16-end-of-first-implementation-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status (2026-10-16, end of first implementation pass)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-6-new-issues-from-the-repurposing-question-2026-10-16-1404-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-6 New issues from the repurposing question (2026-10-16, 14:04 run)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WS-6 New issues from the repurposing question (2026-10-16, 14:04 run)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ws-6-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-6 status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-7-first-run-on-the-new-code-q6-again-after-the-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-7 First run on the new code (Q6 again, after the restart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-8-no-time-limit-user-request-2026-10-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-8 No time limit (user request, 2026-10-16)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-9-q6-run-after-the-no-limit-restart-run_5b9437dcd8974fb1" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-9 Q6 run after the no-limit restart (run_5b9437dcd8974fb1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-10-research-new-data-sources-output-format-live-audit-and-end-to-end-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-10 Research, new data sources, output format, live audit and end-to-end runs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-11-round-2-and-live-verification-fixes-2026-10-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-11 Round-2 and live-verification fixes (2026-10-17)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WS-11 Round-2 and live-verification fixes (2026-10-17)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-verification-2026-10-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final verification (2026-10-17)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-12-second-verification-question-and-streaming-2026-10-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-12 Second verification question and streaming (2026-10-17)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WS-12 Second verification question and streaming (2026-10-17)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-verification-2026-10-17_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final verification (2026-10-17)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit-repair-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Audit Repair
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clinical-rd-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clinical R&D Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foundation-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Foundation Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../developer/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Developer Guides
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Developer Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/TESTING_LINTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Linting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/WORKFLOWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Workflows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/STREAMLIT_SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streamlit Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/SONARCLOUD_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SonarCloud Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/AZURE_DEPLOYMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/CLOUD_DEPLOYMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloud Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Operations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/Documentation_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operations Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/CodeOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/DevOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dev Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ws-0-llm-timeouts-p0-the-root-cause-of-most-failed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-0 LLM timeouts (P0, the root cause of most "failed" steps)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-1-reading-the-question-p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-1 Reading the question (P0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-2-evidence-retrieval-p0p1" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-2 Evidence retrieval (P0/P1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-3-claim-checking-p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-3 Claim checking (P0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-4-orchestration-modes-p0" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-4 Orchestration modes (P0)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-5-rendering-p2" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-5 Rendering (P2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-of-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-fixable-in-code-alone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not fixable in code alone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-2026-10-16-end-of-first-implementation-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status (2026-10-16, end of first implementation pass)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-6-new-issues-from-the-repurposing-question-2026-10-16-1404-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-6 New issues from the repurposing question (2026-10-16, 14:04 run)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WS-6 New issues from the repurposing question (2026-10-16, 14:04 run)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ws-6-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-6 status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-7-first-run-on-the-new-code-q6-again-after-the-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-7 First run on the new code (Q6 again, after the restart)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-8-no-time-limit-user-request-2026-10-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-8 No time limit (user request, 2026-10-16)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-9-q6-run-after-the-no-limit-restart-run_5b9437dcd8974fb1" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-9 Q6 run after the no-limit restart (run_5b9437dcd8974fb1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-10-research-new-data-sources-output-format-live-audit-and-end-to-end-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-10 Research, new data sources, output format, live audit and end-to-end runs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-11-round-2-and-live-verification-fixes-2026-10-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-11 Round-2 and live-verification fixes (2026-10-17)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WS-11 Round-2 and live-verification fixes (2026-10-17)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-verification-2026-10-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final verification (2026-10-17)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws-12-second-verification-question-and-streaming-2026-10-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS-12 Second verification question and streaming (2026-10-17)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WS-12 Second verification question and streaming (2026-10-17)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-verification-2026-10-17_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final verification (2026-10-17)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="query-run-repair-plan-2026-10-16">Query-run repair plan (2026-10-16)</h1>
+<p>Source: four full transcripts run on 2026-10-16:</p>
+<ul>
+<li><strong>Q1</strong> KRAS G12D / MRTX1133 resistance in PDAC (Plan &amp; execute)</li>
+<li><strong>Q2</strong> EGFR T790M / C797S in NSCLC (Supervisor)</li>
+<li><strong>Q3</strong> MYC target-to-lead in GBM (Swarm)</li>
+<li><strong>Q4</strong> Adjuvant PD-1 in stage IIB/IIC melanoma (Debate)</li>
+<li><strong>Q5</strong> PARP inhibitors in HRD ovarian and prostate cancer (Classic)</li>
+</ul>
+<p>Baseline before any change: <code>pytest</code> gives 834 passed, 6 skipped.</p>
+<p>Severity:</p>
+<ul>
+<li><strong>P0</strong>: wrong science reaches the answer, or the requested mode silently does not run.</li>
+<li><strong>P1</strong>: important evidence is missing or misattributed.</li>
+<li><strong>P2</strong>: UX or noise.</li>
+</ul>
+<hr />
+<h2 id="ws-0-llm-timeouts-p0-the-root-cause-of-most-failed-steps">WS-0 LLM timeouts (P0, the root cause of most "failed" steps)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Root cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>Every non-streaming agent phase dies at about 21 s with <code>APITimeoutError</code>: plan_execute, hypothesis, supervisor, swarm, debate, gaps, nli_precompute, confidence. Debate, supervisor and swarm effectively never ran.</td>
+<td><code>utils/llm/llm_factory.py:164,183</code> default <code>LLM_TIMEOUT</code> = 10 s with <code>max_retries=1</code>. <code>AgentLLM</code> never passed its own 90 s timeout to the client.</td>
+<td>Default 60 s (<code>DEFAULT_LLM_TIMEOUT_S</code>). <code>AgentLLM</code> passes <code>timeout=self.timeout_seconds</code> to the factory. <strong>Done.</strong></td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>A timeout skips every phase's fallback and kills the whole phase.</td>
+<td><code>AgentLLM.complete</code> converted only <code>asyncio.TimeoutError</code>. <code>openai.APITimeoutError</code> escaped <code>except AgentLLMUnavailable</code> in <code>specialists.ask_json</code>, <code>nli.llm_label</code>, <code>confidence.stated_confidence</code>, <code>hypothesis</code>, <code>plan_execute</code>.</td>
+<td><code>complete()</code> maps any client exception to <code>AgentLLMUnavailable</code>. <strong>Done.</strong></td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>Steps such as "Planning follow-up tool calls" and "Checking the draft for evidence gaps" spin forever. A separate "X failed" row appears next to them.</td>
+<td>The phase opens step <code>agent_plan</code>, but the runtime reports the failure as <code>agent_plan_execute</code>. Nothing closes leftover running steps.</td>
+<td><code>AgentState</code> tracks running steps. <code>run_stage</code> resolves steps a phase left open, in place, with the failure text. <strong>Done.</strong> Still to do: an end-of-run sweep in the orchestrator <code>emit</code> and in <code>web/src/app/page.tsx</code> on <code>done</code>.</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>Run exceeds its budget (432/420 s). Phases run strictly one after another.</td>
+<td>The budget is cooperative and <code>phase.run</code> is not bounded. <code>llm.complete</code> allows at least 5 s past the budget. <code>nli_precompute</code> scores a draft that is about to be replaced. Gap and counter-evidence queries run sequentially.</td>
+<td>Bound each phase with <code>wait_for(remaining)</code>. Skip <code>nli_precompute</code> when a rewrite is pending. <code>asyncio.gather</code> the per-query searches in gaps and counter-evidence.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ws-1-reading-the-question-p0">WS-1 Reading the question (P0)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Root cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td>"receptor <strong>tyrosine</strong> kinase" becomes the drug TYROSINE (CHEMBL925). It then goes to PrimeKG, to trials (<code>MRTX1133 OR TYROSINE</code>), to bioRxiv, and onto a card titled "CHEMBL5081048 · TYROSINE".</td>
+<td><code>query_planner._ngrams</code> sends every 1-gram to the resolver. <code>entity_resolver._accept_drug</code> accepts any exact name of 3+ letters. There is no stoplist for generic biochemicals. A longer phrase does not suppress the word inside it across entity types.</td>
+<td>Add a stoplist for generic biochemical words (amino acids, nucleotides, ions, metabolites, vitamins, "glucose", "oxygen", ...) as drugs, unless they appear as a standalone therapeutic mention. Reject a drug whose mention sits inside a recognised multi-word biological phrase ("tyrosine kinase", "receptor tyrosine", "serine/threonine").</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>"(HRD)" resolves to the gene TBCE.</td>
+<td><code>HRD</code> is missing from <code>NON_GENE_ACRONYMS</code>. The <code>_hgnc_token</code> alias fallback accepts a single alias hit. <code>_fold_defined_acronyms</code> only folds acronyms whose expansion was resolved.</td>
+<td>Add biomarker-concept acronyms: HRD, HRR, MSI, MSI-H, MSS, TMB, dMMR, pMMR, LOH, CIN, CNV, TNBC, ER, PR (context-aware). Treat any acronym defined in the question as <code>long form (ACR)</code> as non-gene when the long form is not a gene name. Require stronger evidence for an alias-only gene hit, such as gene context words.</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>"overall survival" is tagged as a DISEASE.</td>
+<td><code>_accept_disease</code> exact multi-word matches skip the <code>_NON_DISEASE_WORDS</code> filter. EFO measurement terms are accepted.</td>
+<td>Apply the non-disease filter to multi-word exact hits. Reject endpoint and measurement phrases (overall survival, progression-free survival, response rate, hazard ratio, ...).</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td>"ovarian <strong>and</strong> prostate cancers" keeps only prostate. Ovarian trials and hypotheses are absent.</td>
+<td><code>trial_query.py:222</code> uses <code>ctx_diseases[0]</code>. <code>extract_condition</code> stops at "and". There is no handling of coordinated nouns. The <code>disease_targets</code>, PrimeKG and planner code take <code>diseases[:1]</code>.</td>
+<td>Expand coordinated disease phrases ("X and Y cancers" gives X cancer and Y cancer). Trials run one search per disease (up to 3) and merge. PrimeKG profiles up to 2 diseases.</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>Only T790M is looked up in the variant databases; C797S gets nothing ("no variant-level data for C797S").</td>
+<td><code>variants/source.py:25-43</code> returns the first usable variant. The input model holds a single variant.</td>
+<td>Look up up to 3 variants concurrently and render one variant card per variant.</td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>Cards show "PrimeKG profile of MONDO_0005184".</td>
+<td><code>extensions/primekg.py:49-51</code> passes the MONDO id as the label. <code>kgintel/planner.py:156</code> uses it verbatim.</td>
+<td>Carry <code>(id, name)</code>. The reason text uses the name.</td>
+</tr>
+<tr>
+<td>1.7</td>
+<td>The drug card header shows the ChEMBL id instead of the name ("CHEMBL5081048").</td>
+<td><code>drugintel/names.py:94-97</code> queries by ChEMBL id, so <code>query_name</code> becomes the id. The mention is lost. <code>DrugSafetyArtifact.tsx:321</code> falls back to <code>query_name</code>.</td>
+<td>Carry <code>mention</code> through. The UI title is <code>pref_name || mention || query_name</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ws-2-evidence-retrieval-p0p1">WS-2 Evidence retrieval (P0/P1)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Root cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td>Melanoma adjuvant trials: shows 10 of 705, mostly phase 1. Misses KEYNOTE-716 (NCT03553836) and CheckMate 76K (NCT04099251).</td>
+<td><code>trial_query.py</code> ignores setting words (adjuvant, resected, stage, randomized). There is no <code>sort</code>, <code>pageSize=10</code>, and half the slots go to "any trial with results". There is no re-ranking.</td>
+<td>Extract setting terms into <code>query.term</code>. Fetch about 50 and re-rank locally: phase 3 before phase 2 before phase 1, setting-term match, enrollment, results posted. Then show the top 10. Results-only extras must also match the setting.</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>ChEMBL "contains no listed compounds" for MYC. The answer claims no MYC small molecules exist in ChEMBL.</td>
+<td><code>drugintel/engine.py:336-352</code>: with no drug named, it only queries approved mechanisms (<code>max_phase=4</code>). <code>/activity</code> is never queried by target.</td>
+<td>Add a target-only activity query (top compounds by pChEMBL) when no drug is named or no approved drug exists. The evidence text separates "no approved drugs" from "no bioactive compounds".</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>Niraparib mechanisms are duplicated (salt forms).</td>
+<td>No dedupe in <code>engine.py:404-415</code>.</td>
+<td>Dedupe by <code>(action_type, target_chembl_id, moa)</code>, preferring the parent.</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>FAERS top reactions are DEATH, MALIGNANT NEOPLASM PROGRESSION, OFF LABEL USE, ...</td>
+<td>No filter on the <code>count</code> query.</td>
+<td>Exclude non-reaction and indication MedDRA PTs (death, disease progression, off-label use, product use issues, drug ineffective, ...). Request top 25 and keep 10.</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>PrimeKG profile lists always start with the same hub diseases and promiscuous drugs (HBOC, breast neoplasm, Lidocaine, Zinc).</td>
+<td><code>kgintel/analytics._ranked</code> sorts by global degree. The question's disease is never passed.</td>
+<td><code>gene_profile</code> accepts context diseases and puts matches (the disease and its MONDO descendants or name overlap) first. Drugs sort by approval/indication overlap before degree.</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td>CIViC "top 6 by rating" mixes lung and colorectal evidence into a pancreatic question.</td>
+<td><code>_civic_chain</code> ignores <code>cancer_keyword</code>. The UI sorts by rating only.</td>
+<td>Pass the disease keyword. Rank matching-disease items first and label them "for <disease>".</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td>Literature is off-topic (NSCLC cost-effectiveness, H&amp;N review, an MSI-H CRC paper used for melanoma). It includes the "BNOS 2016 Abstracts" bundle and misses pivotal trial papers.</td>
+<td><code>search_plan.europepmc_queries</code> ANDs groups but the disease is not required. There is no relevance threshold. Conference bundles without a PMID pass. There are no trial-acronym or pivotal-trial queries. Only about 5 results are kept per query.</td>
+<td>(a) Require the disease (or a synonym) in title or abstract when the question names one, by demoting off-disease papers below on-disease ones. (b) Drop records with pubType "Abstract" or "Meeting" and no PMID. (c) Add a "pivotal trial" query (<code>drug AND disease AND (phase 3 OR randomized)</code>, <code>PUB_TYPE:"Clinical Trial"</code>). (d) Trial acronyms found in registry results (KEYNOTE-716) become literature queries.</td>
+</tr>
+<tr>
+<td>2.8</td>
+<td>Study type: Hallin 2022 is labelled "In vitro". Trial protocols are labelled "Unclassified".</td>
+<td>A MeSH in-vitro label overrides text cues showing in-vivo work (xenograft). There is no protocol type.</td>
+<td>An in-vivo text cue overrides a MeSH in-vitro label. Add a <code>TRIAL_PROTOCOL</code> study type.</td>
+</tr>
+<tr>
+<td>2.9</td>
+<td>Synthetic-lethality question: no DepMap or SL source.</td>
+<td><code>depmap.INTENT_RE</code> misses "synthetic-lethal". DepMap needs a local <code>PHRONESIS_DEPMAP_DIR</code> that is not configured.</td>
+<td>Accept the hyphen form in the regex. When SL is asked and DepMap is unavailable, emit an explicit limitation (no invented partners). Configuration (download CRISPRGeneEffect.csv) is a deployment step.</td>
+</tr>
+<tr>
+<td>2.10</td>
+<td>"KRAS<sup>G12D</sup>" renders as "KRASG12D".</td>
+<td><code>EvidenceSources.tsx:80-83 plainText</code> strips tags without adding a space.</td>
+<td>Replace <code>&lt;sup&gt;</code>/<code>&lt;sub&gt;</code> tags with a thin space or space before stripping.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ws-3-claim-checking-p0">WS-3 Claim checking (P0)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Root cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1</td>
+<td>Headings ("### Phase III…") and table rows, including the header row, are scored as claims, with 79-93% confidence or SUPPORTED.</td>
+<td><code>verifier._split_sentences</code> splits on newlines with no markdown awareness. <code>confidence.gather_claims</code> uses the verifier claims unfiltered.</td>
+<td>Skip headings, table separator and header rows, and bare table rows. A table data row is turned into a sentence ("<first cell>: <metric header> <value>") only when it has a number, and keeps its row's NCT/PMID. Strip list markers. Protect "et al." and "e.g." from splitting.</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>A claim with no salient terms and no metrics is "supported" by the first document (an OS row credited to <code>tool:synapta</code>).</td>
+<td><code>_clinical_verdict</code> uses <code>needed = min(2, len(terms))</code>, which is 0.</td>
+<td>With no terms and no metrics, the verdict is <code>not_checked</code>. Numbers in a claim must appear in the supporting doc (bare-number metric extraction for table rows).</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Data from another disease or population is accepted as support (MSI-H CRC irAE rates in a melanoma answer).</td>
+<td>No population check exists anywhere.</td>
+<td>Add a <code>population_mismatch</code> check. When the claim's evidence doc names a disease that differs from the question's disease and the claim does not state the other population, flag a <code>POPULATION_MISMATCH</code> defect (major). The correction prompt must then either name the source population or drop the claim.</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>Absence-claim "contradicted" by keyword co-occurrence ("the retrieved passage mentions biological rationale chosen duration").</td>
+<td><code>_absence_verdict</code> uses bag-of-words.</td>
+<td>Require that the content words appear within one sentence window, and drop to <code>not_checked</code> (not contradicted) when the passage itself is hedged or negated.</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>A contradicted claim survives "Revised the answer".</td>
+<td>Acceptance is <code>passed or score &gt;= old</code>, with no check that flagged claims are gone.</td>
+<td>Accept a revision only if each critical claim is removed or re-verified. Otherwise deterministically remove the contradicted sentence and add a one-line limitation.</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>"Verified (score 1.00) — identifiers, numbers, and citations match" in 0.2 s.</td>
+<td>Hard-coded text whenever <code>passed</code>.</td>
+<td>The text reports what was actually checked: "N claims checked: S supported, U not checked…". It says "fully verified" only if <code>fully_verified</code>.</td>
+</tr>
+<tr>
+<td>3.7</td>
+<td>Truncated claims ("…survival f", "[0") and internal tags (<code>[CLAIM_CONTRADICTED]</code>, <code>[CLINICAL_CLAIM]</code>) in step text. <code>&amp;lt;0</code> in claims.</td>
+<td><code>[:240]</code> and <code>[:160]</code> slices. <code>defect_lines</code> prefixes the category. HTML entities in abstracts, plus <code>escape(draft)</code> in the correction prompt, leak into the answer.</td>
+<td>Truncate on a word boundary with an ellipsis. Map categories to human labels ("Contradicted by a source:"). <code>html.unescape</code> passage text at ingest and unescape the final answer before verification and display.</td>
+</tr>
+<tr>
+<td>3.8</td>
+<td>Confidence: T=1 and every claim lands at 79-93% "high".</td>
+<td>Hand-set weights. A verifier "supported" (term overlap) alone pushes above 0.75.</td>
+<td>Lower the <code>verifier_supported</code> weight. "High" requires NLI entailment or an exact identifier and number match. Pure term-overlap support is capped at medium.</td>
+</tr>
+<tr>
+<td>3.9</td>
+<td>Counter-evidence always checks "3 claims against 10 passages", taken from passages rather than the answer.</td>
+<td><code>extract_claims</code> runs before the draft exists.</td>
+<td>Keep the augment pass and add an after-draft pass over the top answer claims (the numeric and clinical ones).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ws-4-orchestration-modes-p0">WS-4 Orchestration modes (P0)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Root cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.1</td>
+<td>Supervisor: "1 turn · 1 agent", and no specialist ran.</td>
+<td>No fallback when the ledger call fails. Delegation only happens through the LLM reply.</td>
+<td>Deterministic fallback: dispatch the <code>task_ledger()</code> ranked plan (top 2-3 specialists) when the supervisor reply is unusable. Drop the Simulation specialist when simulation was not requested.</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>Swarm: started with Chemistry instead of Target, stopped after one bad reply, and openFDA was never called.</td>
+<td><code>_start</code> uses the tool-retrieval top hit. <code>if not isinstance(turn, SwarmTurn): break</code>.</td>
+<td>Start from the first step the question names (order of mention: target, then chemistry, then clinical). Retry one unusable reply, then follow the deterministic handoff chain. Ensure the clinical/safety leg runs <code>openfda_drug_safety</code> and trials when asked.</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>"Requested operation completed" shows even when the requested debate failed. The Debate badge looks normal.</td>
+<td><code>_task_outcome</code> ignores <code>phases_ran</code>.</td>
+<td>When the framework's core phase (debate, supervisor, swarm, plan_execute) has status != ok, the outcome is <code>partial</code> with the reason "Debate did not run: model call failed". Show a warning chip on the Agent run badge.</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>"Execution plan: 0 nodes… planner produced no runnable steps" when the planner timed out.</td>
+<td><code>PlanGraphArtifact.tsx:79-81</code> is hard-coded. <code>plan_execute</code> never writes <code>error</code>.</td>
+<td>Write <code>error</code> into the artifact. The UI shows "The planner did not run (model call failed); the pipeline's own evidence was used."</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>"Model calibration not run" is counted as an issue and its card is rendered. The question said "calibrated therapeutic strategy".</td>
+<td><code>CALIBRATION_INTENT_RE</code> matches any <code>calibrat</code>.</td>
+<td>Require modelling context (calibrate + model/parameters/ODE, model calibration, ...).</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td>Gap filling searches for "kinetic simulation". Every answer lists Vivarix and Lumicell limitations.</td>
+<td><code>gaps.hedged_sentences</code> treats the limitations section as gaps. Prompts require limitations for non-run components. <code>discovery.py:255-262</code> boilerplate.</td>
+<td>Gaps ignore the "Evidence limitations" section and modules skipped as not requested. Prompts say to list limitations only for components that were requested or relevant and failed. Drop "not requested" scope notes from <code>&lt;tool_status&gt;</code>.</td>
+</tr>
+<tr>
+<td>4.7</td>
+<td>Answers narrate internal tool names ("Lithoscribe retrieved PMID…", "Synapta KEGG analysis…").</td>
+<td><code>prompts.py:99-101</code> instructs it.</td>
+<td>Cite the underlying source (EuropePMC, OpenTargets, KEGG, ClinicalTrials.gov), not internal component names, in the answer prose.</td>
+</tr>
+<tr>
+<td>4.8</td>
+<td>Hypotheses are templated ("Inhibiting EGFR will decrease NSCLC-associated disease activity"). The footnote appears twice.</td>
+<td>The template fallback in <code>_evidence_hypotheses</code>. <code>HypothesesArtifact.tsx</code> hard-codes a note and also renders <code>data.note</code>.</td>
+<td>Template hypotheses become mechanism-aware where possible (variant, resistance, combination). Render only one note.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ws-5-rendering-p2">WS-5 Rendering (P2)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.1</td>
+<td>Wide tables overflow and the last column is cut off. There is an empty band above the header row.</td>
+<td><code>th { vertical-align: middle }</code>. Allow wrapping (<code>word-break: normal; overflow-wrap: anywhere</code> on long cells), <code>table-layout: auto</code> with max width, and a visible scroll shadow.</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>Steps still spinning after <code>done</code>.</td>
+<td><code>page.tsx</code> on <code>done</code> resolves any <code>running</code> thought to <code>done</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="order-of-work">Order of work</h2>
+<ol>
+<li>WS-0 (done: 0.1-0.3). WS-4.5. <strong>Done in the first pass.</strong></li>
+<li>In parallel, by file ownership:</li>
+<li>WS-1 entity (query_planner, entity_resolver, entity_lexicon)</li>
+<li>WS-1.4/2.1 trials + WS-1.5/2.6 variants</li>
+<li>WS-2.2-2.5 drugintel + PrimeKG</li>
+<li>WS-2.7-2.10 literature</li>
+<li>WS-3 verifier/confidence</li>
+<li>WS-4 + WS-5 orchestration/prompts/frontend</li>
+<li>Full <code>pytest</code> plus <code>web</code> typecheck and tests. Re-run the five questions live and compare.</li>
+</ol>
+<h2 id="not-fixable-in-code-alone">Not fixable in code alone</h2>
+<ul>
+<li>DepMap needs <code>PHRONESIS_DEPMAP_DIR</code> pointing at a downloaded <code>CRISPRGeneEffect.csv</code>.</li>
+<li>NLI uses the LLM judge unless the cross-encoder is in the local HF cache. Pre-download it for a non-LLM fallback.</li>
+<li>Confidence temperature stays uncalibrated until <code>PHRONESIS_CONFIDENCE_CALIBRATION</code> is fitted on labelled runs.</li>
+</ul>
+<hr />
+<h2 id="status-2026-10-16-end-of-first-implementation-pass">Status (2026-10-16, end of first implementation pass)</h2>
+<p>Every item in WS-0 to WS-5 is implemented, with offline regression tests in:</p>
+<ul>
+<li><code>tests/test_query_run_entities.py</code></li>
+<li><code>tests/test_query_run_trials_variants.py</code></li>
+<li><code>tests/test_query_run_drug_kg.py</code></li>
+<li><code>tests/test_query_run_literature.py</code></li>
+<li><code>tests/test_query_run_verification.py</code></li>
+<li><code>tests/test_query_run_orchestration.py</code></li>
+<li><code>web/tests/queryRun.test.mts</code></li>
+</ul>
+<p>Existing tests changed because they asserted the old, buggy behaviour:</p>
+<ul>
+<li><code>test_drug_intel.py</code>: three FAERS assertions. DEATH is now <code>deaths_reported</code>, not the top reaction.</li>
+<li><code>test_evidence_grading.py</code>: a protocol is now <code>TRIAL_PROTOCOL</code>.</li>
+<li><code>test_agentic_verification.py</code>: a contradicted claim is now removed from the answer.</li>
+<li><code>test_prompts.py</code>: the scope note no longer names Vivarix.</li>
+</ul>
+<p>Notes and remaining limits:</p>
+<ul>
+<li><strong>Trials client.</strong> <code>ClinicalTrialsGovClient()</code> keeps the old unranked behaviour when built without <code>fetch_size</code>. Production (<code>search_trials</code>) uses <code>fetch_size=50</code> with re-ranking.</li>
+<li><strong>Named trials.</strong> Trial names written in the question (<code>question_trial_names</code>) feed the literature plan's <code>trial_names</code> query. Trial acronyms found only in registry results are not yet fed back into literature, because the stages run concurrently.</li>
+<li><strong>Per-site disease expansion.</strong> Only single-word sites are expanded ("ovarian and prostate cancers"). Multi-word sites ("non-small cell lung and pancreatic cancers") are not.</li>
+<li><strong>Prompt size.</strong> The composed system prompt is close to the 13,000-byte limit in <code>test_prompts</code>.</li>
+<li><strong>Component names.</strong> <code>_sanitize_agent_names</code> is unchanged. The extension component lines still map evidence blocks to component names ("Synapta (ChEMBL)"). A prompt rule now forbids narrating those names in the answer.</li>
+<li><strong>Not yet done.</strong> The five questions have not been re-run against live sources and the live model.</li>
+</ul>
+<hr />
+<h2 id="ws-6-new-issues-from-the-repurposing-question-2026-10-16-1404-run">WS-6 New issues from the repurposing question (2026-10-16, 14:04 run)</h2>
+<p>Question Q6: "Design a step-by-step pipeline to identify FDA-approved drugs that could be repurposed for treating KRAS-mutant pancreatic cancer, incorporating clinical-trial status, in-silico binding predictions, and real-world EHR safety data."</p>
+<p>The run used the backend started at 11:07, before any fix. Its timeouts, "score 1.00" and heading-claims are therefore WS-0 to WS-5 issues that are already fixed. The six issues below are new.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Fix</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6.1</td>
+<td>"pancreatic cancer" resolved to <em>exocrine pancreatic carcinoma</em> (MONDO_0005192), a PrimeKG node with no indications ("0/0 known indications").</td>
+<td>Fall back to the related node that has indications (the parent, or the node matching the user's mention). Say so in the reason text.</td>
+<td>kgintel agent</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>Repurposing candidates: a PET tracer (Ga-68 edotreotide), SSTR agents for neuroendocrine tumours, and cannabinoid antiemetics. The answer called them "FDA-approved candidates".</td>
+<td>Exclude diagnostic, imaging and radiotracer agents and nutrients. Tag supportive-care classes. Modestly up-rank candidates whose targets lie in the mutated gene's pathway.</td>
+<td>kgintel agent</td>
+</tr>
+<tr>
+<td>6.3</td>
+<td>"Found 0 approved drugs acting on KRAS": the ChEMBL call timed out (ReadTimeout), and sotorasib and adagrasib exist.</td>
+<td>Report a failed lookup as failed, never as 0. Retry with backoff.</td>
+<td>drugintel agent</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>openFDA was skipped ("no drug named") although the question asks for real-world safety data.</td>
+<td>When safety is asked and no drug is named, run FAERS and the label for up to 3 candidates from ChEMBL or PrimeKG. State that FAERS is not EHR data.</td>
+<td>drugintel agent</td>
+</tr>
+<tr>
+<td>6.5</td>
+<td>Trials were searched with condition "exocrine pancreatic carcinoma": 1 result.</td>
+<td>Use the user's own disease mention ("pancreatic cancer") for the condition.</td>
+<td>kgintel agent</td>
+</tr>
+<tr>
+<td>6.6</td>
+<td>"In-silico binding predictions" was skipped as "no structure question".</td>
+<td><code>STRUCTURE_INTENT_RE</code> and <code>DOCKING_RE</code> accept in-silico binding, binding predictions and virtual screening. Docking without a SMILES string reports that it needs a ligand. <strong>Done.</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ws-6-status">WS-6 status</h3>
+<p>All six items are done: <code>pytest</code> gives 1041 passed, 6 skipped, and the web typecheck and tests pass.</p>
+<ul>
+<li><strong>6.1 (wrong disease node)</strong></li>
+<li>The real store has no "pancreatic cancer" node.</li>
+<li>Repurposing keeps the genes of <em>exocrine pancreatic carcinoma</em> and borrows the indications of its child, <em>pancreatic adenocarcinoma</em>. This is labelled in the reason text.</li>
+<li>Calibration goes from "unknown 0/0" to AUROC 0.774.</li>
+<li><strong>6.2 (bad candidates)</strong></li>
+<li>Diagnostics, radiotracers and nutrients are excluded and listed with a reason.</li>
+<li>Supportive-care drugs are tagged.</li>
+<li>Neuroendocrine-tumour agents score half outside neuroendocrine diseases.</li>
+<li>KRAS-pathway drugs are listed separately: dabrafenib, vemurafenib, sotorasib, binimetinib, adagrasib, encorafenib, sirolimus.</li>
+<li>The PrimeKG repurposing benchmark is unchanged (mean AUROC 0.811).</li>
+<li><strong>6.3 (ChEMBL timeout reported as 0)</strong></li>
+<li>A failed lookup shows as "unknown" everywhere: step, evidence, card and scope notes.</li>
+<li>One retry, with a 12 s read timeout.</li>
+<li>Live, the KRAS mechanism query returned sotorasib and adagrasib; the ChEMBL API itself was degraded during testing.</li>
+<li><strong>6.4 (no safety data)</strong></li>
+<li>openFDA runs on up to 3 candidates. It uses ChEMBL's approved drugs for the target, falling back to PrimeKG approved candidates, waiting on those sources through the new <code>SourceRunState.source_result</code>.</li>
+<li>The answer states that FAERS is not EHR data.</li>
+<li><strong>6.5 (only 1 trial)</strong></li>
+<li>The trials condition uses the user's wording. Live: "pancreatic cancer" + KRAS gives 191 trials; "exocrine pancreatic carcinoma" gave 1.</li>
+<li><strong>6.6 (binding predictions skipped)</strong></li>
+<li>Binding-prediction wording now routes to the structure lookup.</li>
+<li><strong>Also: OpenTargets "top: Noonan syndrome"</strong></li>
+<li>Associations are fetched at size 25 when the question names a disease, and that disease is put first (<code>prioritise_question_diseases</code>).</li>
+</ul>
+<hr />
+<h2 id="ws-7-first-run-on-the-new-code-q6-again-after-the-restart">WS-7 First run on the new code (Q6 again, after the restart)</h2>
+<p><strong>Working now:</strong></p>
+<ul>
+<li>Trials: 191 found, with RASolute 303/305 present.</li>
+<li>openFDA ran on the candidates.</li>
+<li>Steps resolve; none keep spinning.</li>
+<li>The banner honestly reads "partly completed — Plan &amp; execute did not run".</li>
+<li>The revision fixed the flagged claim.</li>
+<li>The verify step reports a real claim tally.</li>
+</ul>
+<p><strong>Fixed in this round:</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.1</td>
+<td>Plan &amp; execute took 90.1 s and hit the agent call limit ("did not run").</td>
+<td>Nemotron 3 reasons by default. Agent calls (plans, critiques, gap checks, JSON verdicts) now send <code>chat_template_kwargs.enable_thinking=false</code>, measured 17.1→7.5 s and 11.0→8.1 s. The final answer keeps its reasoning. <code>PHRONESIS_AGENT_THINKING=on</code> restores reasoning for agent calls. The option is dropped on the OpenAI fallback.</td>
+</tr>
+<tr>
+<td>7.2</td>
+<td>"Number does not match the simulation output: - Balsalazide: 1 454 total FAERS reports": a false defect with the wrong label.</td>
+<td>Space-grouped counts ("1 454") are accepted when the joined value equals a retrieved count. More Unicode space separators are recognised. The NUMERICAL label now reads "Number does not match the evidence". List markers are stripped from defect lines.</td>
+</tr>
+<tr>
+<td>7.3</td>
+<td>Every sub-question was marked "answered", including in-silico binding scores, which the draft said were not retrieved.</td>
+<td>A draft sentence sharing 3 content stems with a sub-question counts as hedging it, so the status becomes partial or missing.</td>
+</tr>
+<tr>
+<td>7.4</td>
+<td>Generic pancreatic phase 3 trials outranked KRAS-targeted ones.</td>
+<td>Trials with the searched term in their title, conditions, keywords or interventions get +25.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Still open:</strong></p>
+<ul>
+<li><strong>ChEMBL outage.</strong> ChEMBL returned HTTP 500 during the run. That is EBI's side; it is now reported as "unknown".</li>
+<li><strong>Budget overrun (491/420 s).</strong> The synthesis rewrite and correction rounds after the budget runs out are not bounded. Faster agent calls (7.1) should keep the run within budget.</li>
+<li><strong>Weak sub-question.</strong> The decomposer still produced "What is the list of all FDA-approved drugs?". That is the model's decomposition quality.</li>
+</ul>
+<h2 id="ws-8-no-time-limit-user-request-2026-10-16">WS-8 No time limit (user request, 2026-10-16)</h2>
+<ul>
+<li><strong>No run time limit by default.</strong></li>
+<li><code>RunBudget.max_seconds</code> defaults to 0, which means unlimited. <code>remaining_seconds()</code> then reports <code>UNLIMITED_SECONDS</code> (24 h).</li>
+<li>A limit chosen in the UI settings, or set with <code>PHRONESIS_AGENT_MAX_SECONDS</code>, still applies.</li>
+<li>The run panel shows "· no limit" and no red bar.</li>
+<li><strong>Model-call cap</strong> raised from 24 to 40.</li>
+<li><strong>Agent call timeout</strong> raised from 90 s to 180 s (<code>PHRONESIS_AGENT_CALL_TIMEOUT</code>).</li>
+<li><strong>Answer streaming</strong> keeps its own 120 s idle and 600 s total limits per answer.</li>
+<li><strong>OpenTargets associations:</strong> inherited forms ("familial pancreatic carcinoma") are ordered after the plain disease unless the question asks for them.</li>
+</ul>
+<h2 id="ws-9-q6-run-after-the-no-limit-restart-run_5b9437dcd8974fb1">WS-9 Q6 run after the no-limit restart (run_5b9437dcd8974fb1)</h2>
+<p><strong>Working now:</strong></p>
+<ul>
+<li>Plan &amp; execute ran: 3 nodes, 1 replan.</li>
+<li>No failed steps and no time cutoff.</li>
+<li>KRAS-specific phase 3 trials come first: RASolute 303/305/302/304/309, DAWN-303, MAPKeeper 301.</li>
+<li>UniProt P01116 was resolved, with 556 PDB entries.</li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9.1</td>
+<td>ChEMBL drug and target names missing (approved KRAS drugs shown only as CHEMBL IDs).</td>
+<td>Batch request with a per-ID fallback (6 s hedge, 25 s cap) and name caching. The resolve step's target name is passed on. An unnamed drug is never labelled by its mechanism text. Live: SOTORASIB, ADAGRASIB, GTPase KRas.</td>
+</tr>
+<tr>
+<td>9.2</td>
+<td>openFDA picked balsalazide, mesalazine and dronabinol instead of the ChEMBL drugs; mesalazine gave 0 FAERS reports.</td>
+<td>ChEMBL drugs are used first, with names looked up by ID. PrimeKG fallback order is pathway approved drugs, then pathway-tagged, then the rest; supportive-care, neuroendocrine and non-therapeutic candidates are skipped. 55 international→US name synonyms, with retries on the active-substance and generic-name fields. Live: mesalazine → mesalamine (63,326 reports).</td>
+</tr>
+<tr>
+<td>9.3</td>
+<td>The answer showed <code>total_reports = 1454</code>, <code>(structure_intel)</code>, <code>(clinical_trials)</code>, <code>(tool_status note)</code>.</td>
+<td>A prompt rule (the composed prompt is 12,935 bytes) plus a deterministic <code>clean_internal_keys</code>. It is applied to the first draft, rewrites and revisions, and a <code>content_reset</code> keeps the screen, the verifier and the stored answer identical.</td>
+</tr>
+<tr>
+<td>9.4</td>
+<td>Duplicate SRC/dasatinib hypotheses; hypotheses claiming EHR or trial data that did not exist; step text cut mid-word.</td>
+<td><code>dedupe_ranked</code> (same target, intervention and direction, or ≥80 % word overlap). <code>GROUNDED_STATEMENT_RULE</code> in the generation and evolution prompts. <code>truncate_words</code> in the hypothesis and PrimeKG step text.</td>
+</tr>
+<tr>
+<td>9.5</td>
+<td>Off-topic literature (EUS-FNA, ddPCR, KRAS diagnostic assays).</td>
+<td>"Design a pipeline" made it a methods question whose <code>guide*</code> matched "EUS-guided". New intent detection (therapy / repurposing / in-silico / safety), per-aspect queries, and demotion of diagnostic or technical titles for therapeutic questions. Unicode hyphens are normalised. Live: Strickler NEJM 2023 (sotorasib, PDAC), a KRAS-therapy review, repurposing and docking papers. PARP now finds PROfound. Melanoma and EGFR results are unchanged.</td>
+</tr>
+<tr>
+<td>9.6</td>
+<td>"Found 0 web results".</td>
+<td>DuckDuckGo answers this machine with HTTP 202 anti-bot pages. This is now reported as "Web search failed: … blocked". The query is short and clean. Optional providers: <code>TAVILY_API_KEY</code> (or <code>PHRONESIS_SEARXNG_URL</code>).</td>
+</tr>
+<tr>
+<td>9.7</td>
+<td>"BRCA" resolved as the disease invasive breast carcinoma (TCGA cohort code).</td>
+<td><code>_GENE_FAMILY_ACRONYMS</code> is never accepted as a disease.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Not fixable in code:</strong> DuckDuckGo is blocking this IP. A web-search provider key or a SearXNG instance is needed for web results.</p>
+<h2 id="ws-10-research-new-data-sources-output-format-live-audit-and-end-to-end-runs">WS-10 Research, new data sources, output format, live audit and end-to-end runs</h2>
+<p><strong>Research (2026-10-16).</strong> These papers informed this round: PaperQA2 (RCS summaries, ContraCrow), ALCE (citation precision and recall), OpenScholar (self-critique, then targeted retrieval), TxAgent/ToolUniverse (ToolRAG), co-scientist (Elo tournaments), STORM, Biomni, Robin, LAB-Bench and BixBench. Adopted so far:</p>
+<ul>
+<li>a targeted retrieval round for gaps (this already existed)</li>
+<li>per-passage evidence levels</li>
+<li>grounded-statement rules for hypotheses</li>
+</ul>
+<p><strong>New sources, all free with no key, verified live:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>What it adds</th>
+<th>Live result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openFDA Drugs@FDA</td>
+<td>Approval status, first approval date and efficacy supplements per drug. New verifier check <code>drug_fda_approval</code>.</td>
+<td>Olaparib NDA208558 (2014-12-19, 15 supplements). Pembrolizumab BLA125514 (108 supplements).</td>
+</tr>
+<tr>
+<td>DGIdb 5</td>
+<td>Drug–gene interactions</td>
+<td>KRAS → 126 drugs, adagrasib and sotorasib first</td>
+</tr>
+<tr>
+<td>Pharos/TCRD</td>
+<td>Target development level</td>
+<td>MYC Tchem, KRAS and EGFR Tclin</td>
+</tr>
+<tr>
+<td>BindingDB</td>
+<td>Affinities matched to named drugs by structure, with a mutant caveat</td>
+<td>EGFR/erlotinib IC50 0.029 nM (PMID 37197473). The service later had an empty-body outage, which is now reported as a failure.</td>
+</tr>
+<tr>
+<td>PubTator3 + LitVar2</td>
+<td>Entity-precise literature and variant literature</td>
+<td>KRAS + PDAC gives 10 PMIDs. T790M → rs121434569 (12,196 papers).</td>
+</tr>
+<tr>
+<td>SynLethDB 3.0</td>
+<td>Synthetic-lethality pairs from a local bulk file</td>
+<td>Zenodo file downloaded to the C: cache. <code>PHRONESIS_SYNLETHDB_DIR</code> added to .env.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Answer format.</strong></p>
+<ul>
+<li>Bottom line first, with "Confidence: high/moderate/low (reason)".</li>
+<li>Evidence levels after citations, with <code>evidence_level</code> carried on every graded passage.</li>
+<li>Effect sizes given with endpoint, population, comparator, CI/p and follow-up.</li>
+<li>FDA approval kept separate from trial phase.</li>
+<li>Conflicting evidence gets its own paragraph.</li>
+<li>"What would change this conclusion".</li>
+<li>A summary table is required for comparison and repurposing questions.</li>
+<li><code>&lt;retrieval_date&gt;</code> is in the request, and time-sensitive facts say "as of".</li>
+<li>The prompt cap is raised to 14,500 bytes.</li>
+</ul>
+<p><strong>Live audit fixes.</strong></p>
+<ul>
+<li><strong>Lumicell:</strong> annotation went from 57 s to 0.05 s (whole run 8–30 s); timeout raised to 180 s.</li>
+<li><strong>Entity resolver:</strong> it is now a failure when every upstream fails, with a 12 s budget.</li>
+<li><strong>ClinVar:</strong> records are ranked, so KRAS G12C → rs121913530.</li>
+<li><strong>EFO→MONDO:</strong> handled through OLS4.</li>
+<li><strong>GWAS:</strong> a gene + disease query with no hits falls back to a labelled disease-only query.</li>
+</ul>
+<p><strong>End-to-end round 1</strong> (test backend on port 8001; scripts in the scratchpad <code>e2e/</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q3 MYC swarm</td>
+<td>Clean, score 1.00</td>
+</tr>
+<tr>
+<td>Q6 repurposing</td>
+<td>Passed 1.00; a lung-cancer figure was correctly removed by POPULATION_MISMATCH</td>
+</tr>
+<tr>
+<td>Q4 melanoma</td>
+<td>Now finds KEYNOTE-716 and CheckMate 76K with their RFS HRs</td>
+</tr>
+</tbody>
+</table>
+<p>Fixes from round 1:</p>
+<ul>
+<li><strong>Trials tool input was too strict.</strong> It now accepts "Phase 3", "Active, not recruiting" and lists of interventions; an unknown status only errors when nothing valid remains.</li>
+<li><strong>Contradicted claims were not removed.</strong> The model's typography (U+202F, U+2011) defeated sentence lookup. <code>normalize_typography</code> is now applied to the answer.</li>
+<li><strong>Internal keys leaked.</strong> Bare <code>snake_case</code> keys in parentheses are removed.</li>
+<li><strong>Literature filtered out everything.</strong> A literal code given only as an example (MRTX1133) is relaxed when no record names it, and a <code>&lt;search_note&gt;</code> tells the model.</li>
+<li><strong>Plan steps showed false errors.</strong> A step whose input is empty is now marked skipped, with a neutral icon, instead of an error.</li>
+</ul>
+<p><strong>Configuration still needed:</strong></p>
+<ul>
+<li>A web-search provider (<code>TAVILY_API_KEY</code>, or <code>PHRONESIS_SEARXNG_URL</code>), since DuckDuckGo blocks this host.</li>
+<li><code>PHRONESIS_DEPMAP_DIR</code> for DepMap.</li>
+<li>The NLI cross-encoder in the HF cache.</li>
+<li>Disk space: A: has about 400 MB free.</li>
+</ul>
+<h2 id="ws-11-round-2-and-live-verification-fixes-2026-10-17">WS-11 Round-2 and live-verification fixes (2026-10-17)</h2>
+<p><strong>End-to-end round 2:</strong> Q5 PARP and Q4 melanoma passed at 1.00. In round 1 they scored 0.45 and 0.00.</p>
+<p><strong>Fixes since:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Problem</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web search</td>
+<td>DuckDuckGo blocks this host</td>
+<td><strong>Tavily</strong> provider (<code>TAVILY_API_KEY</code>, set in .env), tried first, with DuckDuckGo as fallback. Brave was removed. Verified live.</td>
+</tr>
+<tr>
+<td>Claim audit</td>
+<td>The "Confidence:" line, "<em>Evidence level:</em>", the FAERS caveat, "H1: … will …", "would/could…" proposals, pipeline descriptions and the "What would change" / "Next experiments" sections were audited as claims</td>
+<td>Treated as non-findings (<code>_CONFIDENCE_LINE_RE</code>, <code>_PROPOSAL_PATTERN</code>, <code>_NON_FINDING_SECTION_RE</code>)</td>
+</tr>
+<tr>
+<td>Claim audit</td>
+<td>Claims judged against the wrong source (PrimeKG claim vs OpenTargets doc)</td>
+<td><code>prefer_named_sources</code>: a claim naming PrimeKG/FAERS/DGIdb/ChEMBL/… is checked against that tool first</td>
+</tr>
+<tr>
+<td>Claim audit</td>
+<td>Correct "Sotorasib FDA-approved (NDA 214665, 2021-05-28)" removed as contradicted (checked against adagrasib's record)</td>
+<td><code>claim_id_tokens</code>: NDA/BLA numbers and ISO dates must appear in the supporting record. Nested record sections (<code>approval</code>) get their own document.</td>
+</tr>
+<tr>
+<td>Claim audit</td>
+<td>Exact posted-result figures overridden by the judge, which only saw the first 1,500 characters</td>
+<td><code>judge_window</code> centres on the claim's figures. When figures and IDs already match, an inconclusive judge cannot downgrade the claim, and a contradiction only lowers it to unsupported.</td>
+</tr>
+<tr>
+<td>Plan execution</td>
+<td>Empty references (<code>ingredient=[]</code>), blank drug args, planner pointing at the wrong field</td>
+<td>An empty value is treated as no input. Drug arguments fall back to <code>run_known_drugs</code> (ChEMBL approved drugs for the target, then resolved drugs, then DGIdb approved, then question drugs). Blank drug args are filled at run time instead of the step being rejected.</td>
+</tr>
+<tr>
+<td>Agents</td>
+<td>Trivially wrong tool args (over-long lists, limit &gt; 50, objects where names were expected)</td>
+<td><code>tools/arg_repair.py</code>, opt-in for agent-written calls only. Only size fields are clamped, never scientific values. ChEMBL takes up to 8 names.</td>
+</tr>
+<tr>
+<td>Agents</td>
+<td>Repeated identical call shown as an error</td>
+<td>Reuses the earlier result with status "skipped"</td>
+</tr>
+<tr>
+<td>openFDA</td>
+<td>Failed when ChEMBL was down</td>
+<td>Falls back to querying by the user's drug name, and says so</td>
+</tr>
+<tr>
+<td>Synthesis</td>
+<td>Rewrite/revision hit the 600 s stream cap; ReadError mid-revision</td>
+<td>Edit rounds run with Nemotron reasoning off (<code>extra_body</code> is now forwarded in streaming). Stream cap 1800 s. A buffered edit stream is retried once after a dropped connection.</td>
+</tr>
+<tr>
+<td>Prose</td>
+<td>"BioDiscovery" in the answer text</td>
+<td>Rewritten to "the evidence-weighted ranking" (whole word only)</td>
+</tr>
+<tr>
+<td>Hypotheses</td>
+<td>Off-disease fallback hypothesis (Noonan syndrome for NSCLC)</td>
+<td>Kept to the question's disease when it names one</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Live verification question (KRAS G12C NSCLC, sotorasib vs adagrasib).</strong> The run on 2026-10-17 01:59 had every fact right:</p>
+<ul>
+<li>NDA 214665 / 2021-05-28</li>
+<li>NDA 216340 / 2022-12-12</li>
+<li>CodeBreaK 200 HR 0.663 (0.509–0.864)</li>
+<li>KRYSTAL-12 HR 0.58 (0.45–0.76)</li>
+<li>rs121913530</li>
+<li>Pharos Tclin</li>
+</ul>
+<p>The claim-audit issues it exposed are fixed above.</p>
+<p><strong>Still open:</strong></p>
+<ul>
+<li><strong>DGIdb includes questionable interactions.</strong> For example, HCV protease inhibitors are listed as KRAS "inhibitors". This is upstream data; the answer did not use them.</li>
+<li><strong>Optional configuration:</strong> DepMap file; NLI cross-encoder (blocked by disk space: A: has about 400 MB free).</li>
+</ul>
+<h3 id="final-verification-2026-10-17">Final verification (2026-10-17)</h3>
+<p>Fixes after WS-11:</p>
+<ul>
+<li><strong>Approval claims.</strong> NDA/BLA numbers and dates count toward a match only together with the drug name, so another drug's record never supports a claim. A table row covering several records is checked part by part. "[Synapta]"-style bracket tags are rewritten. Instruction sentences ("Optionally, mine …", "Extract …") are not audited.</li>
+</ul>
+<p>Verification question (KRAS G12C NSCLC, sotorasib vs adagrasib, Plan &amp; execute), run end to end through <code>/api/chat</code> on the final code:</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verification score</td>
+<td><strong>1.00</strong>, passed</td>
+</tr>
+<tr>
+<td>Claims</td>
+<td>6 checked, 6 supported</td>
+</tr>
+<tr>
+<td>Failed steps</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Internal names in the answer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Run time</td>
+<td>238 s</td>
+</tr>
+<tr>
+<td>Facts present</td>
+<td>NDA 214665 / 2021-05-28, NDA 216340 / 2022-12-12, HR 0.663 and 0.58, Tclin</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Comparison table and confidence line present</td>
+</tr>
+</tbody>
+</table>
+<p><code>pytest</code>: 1240 passed, 6 skipped. Web: typecheck clean, 29/29.</p>
+<p><strong>Still needs the owner:</strong></p>
+<ul>
+<li>Free disk space on A: (about 400 MB free; <code>phronesis_codebase.zip</code>, 368 MB, is a candidate).</li>
+<li>Optionally, DepMap <code>CRISPRGeneEffect.csv</code> (<code>PHRONESIS_DEPMAP_DIR</code>).</li>
+<li>Optionally, the NLI cross-encoder model in the HF cache.</li>
+</ul>
+<h2 id="ws-12-second-verification-question-and-streaming-2026-10-17">WS-12 Second verification question and streaming (2026-10-17)</h2>
+<p><strong>Question:</strong> BRCA2 synthetic lethality, olaparib and niraparib approvals, SOLO-1. Run in Plan &amp; execute and in Supervisor.</p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correct approval lines removed as a "population mismatch with a leukemia study" (the olaparib label warns about MDS/AML)</td>
+<td>The population check applies only to literature passages, never to tool records or approval IDs or dates</td>
+</tr>
+<tr>
+<td>Approval dates of two drugs in one sentence were unsupported</td>
+<td>Each NDA number or date is matched to the drug named just before it, in that drug's record</td>
+</tr>
+<tr>
+<td>A PMID carried inside the SynLethDB record was "not checked"</td>
+<td>A tool record that contains the cited ID is used as the evidence (<code>_tool_docs_naming</code>)</td>
+</tr>
+<tr>
+<td>Honest caveats ("established background … not present in the retrieved evidence") counted as failures</td>
+<td><code>_DISCLOSED_GAP_RE</code>: disclosed gaps and labelled background are not audited</td>
+</tr>
+<tr>
+<td>"What evidence would change…" heading not recognised</td>
+<td>Wider <code>_NON_FINDING_SECTION_RE</code></td>
+</tr>
+<tr>
+<td>Mixed-source comparison-table rows (approval + HR + FAERS) could never be supported</td>
+<td>Whole row first; otherwise each cell is checked against its own source, and every figure must match (a wrong CI is still caught)</td>
+</tr>
+<tr>
+<td>FAERS table check read "2014" (approval year column) as a report count</td>
+<td>Columns whose header is a year, approval, NDA, phase, potency or ratio are skipped</td>
+</tr>
+<tr>
+<td>"SOLO-1" read as an ambiguous gene "SOLO"</td>
+<td>Trial names followed by trial or phase wording are not gene tokens</td>
+</tr>
+<tr>
+<td>Hypotheses said "inhibiting BRCA2" (a tumour suppressor)</td>
+<td><code>is_loss_of_function_target</code>: tumour suppressors and genes the question calls "lost" or "deficient" get synthetic-lethal partner hypotheses from SynLethDB experimental pairs ("Inhibiting PARP1 is predicted to be selectively lethal in BRCA2-deficient …"). The LLM hypothesis rule also forbids inhibiting such genes.</td>
+</tr>
+<tr>
+<td>DGIdb listed HCV protease inhibitors as KRAS inhibitors</td>
+<td>Single-source, no-publication interactions are marked <code>evidence="single source, no publication"</code>, ranked last, and the model is told not to present them as acting on the gene</td>
+</tr>
+<tr>
+<td>Plan steps skipped when a gene or target reference came back empty</td>
+<td><code>run_known_genes</code> (SynLethDB experimental partners when the reference pointed at SynLethDB, else the question's genes). A ChEMBL target ID is resolved through <code>chembl_resolve_drugs</code> before the call.</td>
+</tr>
+<tr>
+<td>Streaming looked bursty</td>
+<td>Smooth reveal (<code>web/src/lib/smoothText.ts</code>, <code>useSmoothText.ts</code>, <code>SmoothMarkdown.tsx</code>): about 220 chars/s, adaptive, at most 1.5 s of lag, word-boundary steps, prefix-preserving revisions, cross-fade on full rewrites, stable partial markdown, caret, reduced-motion support</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supervisor-mode run</strong> of the BRCA2 question on the final code:</p>
+<ul>
+<li>26+ dialogue turns, 0 failed steps.</li>
+<li>6 of 6 claims supported.</li>
+<li>All facts correct: PARP1; NDA 206162 / 2014-12-19; NDA 208447 / 2017-03-27; SOLO-1 HR 0.30 (0.23–0.41).</li>
+<li>No "inhibit BRCA2".</li>
+<li>The one remaining defect (the approval-year column) is fixed above.</li>
+</ul>
+<p><code>pytest</code> 1247 passed, 6 skipped. Web 46/46.</p>
+<h3 id="final-verification-2026-10-17_1">Final verification (2026-10-17)</h3>
+<p>Fixes after WS-11:</p>
+<ul>
+<li><strong>Approval claims.</strong> NDA/BLA numbers and dates count toward a match only together with the drug name, so another drug's record never supports a claim. A table row covering several records is checked part by part. "[Synapta]"-style bracket tags are rewritten. Instruction sentences ("Optionally, mine …", "Extract …") are not audited.</li>
+</ul>
+<p>Verification question (KRAS G12C NSCLC, sotorasib vs adagrasib, Plan &amp; execute), run end to end through <code>/api/chat</code> on the final code:</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verification score</td>
+<td><strong>1.00</strong>, passed</td>
+</tr>
+<tr>
+<td>Claims</td>
+<td>6 checked, 6 supported</td>
+</tr>
+<tr>
+<td>Failed steps</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Internal names in the answer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Run time</td>
+<td>238 s</td>
+</tr>
+<tr>
+<td>Facts present</td>
+<td>NDA 214665 / 2021-05-28, NDA 216340 / 2022-12-12, HR 0.663 and 0.58, Tclin</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Comparison table and confidence line present</td>
+</tr>
+</tbody>
+</table>
+<p><code>pytest</code>: 1240 passed, 6 skipped. Web: typecheck clean, 29/29.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "navigation.scrollable"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,8097 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2026-10-16-query-run-repair-plan/">
+      
+      
+        <link rel="next" href="../audit-repair-plan/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Agentic System - Phronesis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phronesis-agentic-system-design-contracts-and-work-packages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Phronesis" class="md-header__button md-logo" aria-label="Phronesis" data-md-component="logo">
+      
+  <img src="../../assets/VPE.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Phronesis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agentic System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="black"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AtlasRoX/phronesis-CS" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ChronoStrider/Phronesis
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../phronesis/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Phronesis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../vivarix/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Vivarix
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lumicell/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lumicell
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../synapta/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Synapta
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lithoscribe/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lithoscribe
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../2026-10-17-harness-and-tech-debt/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Plans
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../developer/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Phronesis" class="md-nav__button md-logo" aria-label="Phronesis" data-md-component="logo">
+      
+  <img src="../../assets/VPE.png" alt="logo">
+
+    </a>
+    Phronesis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AtlasRoX/phronesis-CS" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ChronoStrider/Phronesis
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Phronesis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Phronesis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phronesis/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SCIENTIFIC_VALIDATION_AND_ARCHITECTURE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scientific Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../agentic/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Agentic System
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Agentic System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/auto-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Auto Routing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/platform-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Platform API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/sandbox-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sandbox Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/references-agent-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References: Agent Loop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agentic/references-verification-tools-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References: Verification, Tools and Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phronesis/agents/main_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2AA4P agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phronesis/states/state_phronesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2AA4P state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vivarix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vivarix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Case Studies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Case Studies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/cases/Case_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Precision medicine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/cases/Case_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Epidemiology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/cases/Case_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Emergent system properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/vivarix/basico_tutorials/example_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Benchmark
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Benchmark
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/vivarix/benchmark/benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/agents/t2b_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2B agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/states/state_talk2biomodels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T2B state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/models/sys_bio_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Bio Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/models/basico_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basico Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/search_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/get_modelinfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/get_annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model annotation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/simulate_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simulate model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/ask_question/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ask questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/custom_plotter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom plots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/load_biomodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Load biomodel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/save_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Save model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/parameter_scan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parameter scan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vivarix/tools/steady_state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Steady state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lumicell
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lumicell
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_c2s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell annotations with cell2sentence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_cell_annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell Annotation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_cell_discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_UMAP_visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UMAP Visualization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/lumicell/tutorial_cell_type_proportion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cell Type Proportion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/agents/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/agents/scp_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SCP Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/states/state_talk2cells/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lumicell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/tools/search_studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search studies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lumicell/tools/display_studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Display studies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Synapta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Synapta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/primekg_full_graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full PrimeKG Analytics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Deployment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/deployment/custom_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/deployment/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StarkQA-PrimeKG Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_primekg_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_subgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG Subgraph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_ibd_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG (IBD) Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_textual_embeddings_all_minilm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Textual Embeddings for StarkQA-PrimeKG using all-MiniLM-L6-v1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_textual_embeddings_nomic_embed_text/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Textual Embeddings for StarkQA-PrimeKG using nomic-embed-text
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_textual_enrichments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_smiles_enrich_embed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Drug Enrichments/Embeddings (SMILES/molmim)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_enrichment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG Enrichment and Embedding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_primekg_protein_embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Protein Embeddings for BioBridge-PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_multimodal_embeddings_alignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Embeddings Alignment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_starkqa_primekg_evaluation_vss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StarkQA-PrimeKG Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_synapta_agentic_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Synaptas Agentic Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_pyg2dataframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PyG2DataFrame
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_uniprot_mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UniProt ID Mapping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Milvus Vector DB Setup
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Milvus Vector DB Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_ibd_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG (IBD) Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_milvus_ibd_primekg_dump/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG (IBD) Multimodal Data Dump
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_biobridge_multimodal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal BioBridge-PrimeKG Graph Construction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/synapta/tutorial_primekg_milvus_data_dump/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG Multimodal Data Dump
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Datasets
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/dataset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dataset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/primekg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/starkqa_primekg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    StarkQA-PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/datasets/biobridge_primekg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BioBridge-PrimeKG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_1" id="__nav_5_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/database/milvus_connection_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MilvusConnectionManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_2" id="__nav_5_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Embeddings
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Embeddings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/sentence_transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithSentenceTransformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/huggingface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithHuggingFace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithOllama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/embeddings/nim_molmim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EmbeddingWithMOLMIM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_3" id="__nav_5_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Enrichments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Enrichments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/enrichments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enrichments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithOllama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/pubchem_strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithPubChem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/uniprot_proteins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithUniProt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/reactome_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithReactome
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/enrichments/ols_terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EnrichmentWithOLS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8_4" id="__nav_5_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Extractions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Extractions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/extractions/pcst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/extractions/multimodal_pcst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCST (Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/utils/extractions/milvus_multimodal_pcst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCST (Milvus Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/agents/t2kg_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Synapta Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_10">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/states/state_talk2knowledgegraphs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Synapta State
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/subgraph_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Extraction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/multimodal_subgraph_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Extraction (Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/milvus_multimodal_subgraph_extraction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Extraction (Milvus Multimodal)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/subgraph_summarization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subgraph Summarization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/graphrag_reasoning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG Reasoning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../synapta/tools/load_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Load Arguments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lithoscribe
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Lithoscribe
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/main_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/s2_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S2 Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/paper_download_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paper Download Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/zotero_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/agents/pdf_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PDF Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    States
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            States
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/states/state_talk2scholars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lithoscribe state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search Papers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/single_paper_rec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single Paper Recommendation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/multi_paper_rec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi Paper Recommendation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/display_dataframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Display Dataframe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/query_dataframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Dataframe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/retrieve_semantic_scholar_paper_id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieve Semantic Scholar ID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/paper_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paper Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/question_and_answer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Question and answer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/zotero_read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Read
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/zotero_write/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/tools/zotero_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_1" id="__nav_6_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    S2 Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            S2 Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/search_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/single_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single Paper Recommendation Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/multi_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi Paper Recommendation Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_2" id="__nav_6_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    PDF Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            PDF Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/vector_store/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/singleton_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Singleton Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/gpu_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPU Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/collection_manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collection Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/get_vectorstore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Vector Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/document_processor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Processor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/paper_loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paper Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/batch_processor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Processor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/rag_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/vector_normalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector Normalization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/retrieve_chunks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieve Chunks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/nvidia_nim_reranker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nvidia NIM Reranker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/generate_answer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Answer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/answer_formatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Answer Formatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/tool_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tool Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_3" id="__nav_6_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Paper Download Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Paper Download Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/base_paper_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base Paper Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/arxiv_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arxiv Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/biorxiv_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Biorxiv Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/medrxiv_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Medrxiv Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/pubmed_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pubmed Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_4" id="__nav_6_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Zotero Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Zotero Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/write_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Write Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/read_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Read Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/review_helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Review Helper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/zotero_path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero Path
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lithoscribe/utils/zotero_pdf_downloader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zotero PDF Downloader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Plans
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Plans
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-10-17-harness-and-tech-debt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Harness and Tech Debt (2026-10-17)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-10-16-query-run-repair-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Run Repair (2026-10-16)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Agentic System
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic System
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-ground-rules-verified-in-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. Ground rules (verified in code)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-runtime-built-by-the-foundation-read-these-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Runtime (built by the foundation; read these files)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-features-techniques-and-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Features, techniques and citations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Features, techniques and citations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1-plan-and-execute-with-a-tool-dag-agenticplan_graphpy-plannerpy-executorpy-plan_executepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1 Plan-and-execute with a tool DAG (agentic/plan_graph.py, planner.py, executor.py, plan_execute.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f3-question-decomposition-agenticdecomposepy-stage-before_evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      F3 Question decomposition (agentic/decompose.py, stage before_evidence)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f2-gap-driven-re-retrieval-agenticgapspy-stage-after_draft" class="md-nav__link">
+    <span class="md-ellipsis">
+      F2 Gap-driven re-retrieval (agentic/gaps.py, stage after_draft)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f4-multi-agent-topologies-agentictopologiespy-plus-agenticspecialistspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F4 Multi-agent topologies (agentic/topologies.py, plus agentic/specialists.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f7-counter-evidence-search-agenticcounter_evidencepy-stage-augment" class="md-nav__link">
+    <span class="md-ellipsis">
+      F7 Counter-evidence search (agentic/counter_evidence.py, stage augment)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f6-hypothesis-to-in-silico-experiment-loop-agentichypothesispy-stage-augment" class="md-nav__link">
+    <span class="md-ellipsis">
+      F6 Hypothesis to in-silico experiment loop (agentic/hypothesis.py, stage augment)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f8-semantic-claim-verification-agenticnlipy-stage-augment-sets-statebagentailment_judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      F8 Semantic claim verification (agentic/nli.py, stage augment, sets state.bag["entailment_judge"])
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f9-calibrated-per-claim-confidence-agenticconfidencepy-stage-finalize" class="md-nav__link">
+    <span class="md-ellipsis">
+      F9 Calibrated per-claim confidence (agentic/confidence.py, stage finalize)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f10-sandboxed-code-analysis-agenticsandboxpolicyrunnerpy-agenticanalystpy-extensionssandboxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F10 Sandboxed code analysis (agentic/sandbox/{policy,runner}.py, agentic/analyst.py, extensions/sandbox.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f11-sbml-model-calibration-vivarixcalibrationpy-agenticcalibratepy-extensionscalibrationpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F11 SBML model calibration (vivarix/calibration.py, agentic/calibrate.py, extensions/calibration.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f12-structure-and-chemistry-structintel-extensionsstructurepy-an-evidencesource" class="md-nav__link">
+    <span class="md-ellipsis">
+      F12 Structure and chemistry (structintel/*, extensions/structure.py, an EvidenceSource)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f20-new-data-sources-sources_extra-extensionsomics_sourcespy-evidencesources" class="md-nav__link">
+    <span class="md-ellipsis">
+      F20 New data sources (sources_extra/*, extensions/omics_sources.py, EvidenceSources)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f19-reliability-toolsreliabilitypy-hooked-into-registryexecute" class="md-nav__link">
+    <span class="md-ellipsis">
+      F19 Reliability (tools/reliability.py, hooked into registry.execute)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f18-tool-retrieval-agentictool_retrievalpy-foundation-owned-by-wp1-for-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      F18 Tool retrieval (agentic/tool_retrieval.py, foundation, owned by WP1 for improvements)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f13-background-jobs-agenticjobspy-appbackendroutersjobspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F13 Background jobs (agentic/jobs.py, app/backend/routers/jobs.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f15-human-in-the-loop-agenticclarifypy-agenticapprovalpy-appbackendroutersagent_runspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F15 Human in the loop (agentic/clarify.py, agentic/approval.py, app/backend/routers/agent_runs.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f16-project-memory-utilsmemoryproject_storepy-agenticproject_memorypy-appbackendroutersprojectspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F16 Project memory (utils/memory/project_store.py, agentic/project_memory.py, app/backend/routers/projects.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f17-mcp-server-and-a2a-appbackendroutersmcppy-appbackendroutersa2apy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F17 MCP server and A2A (app/backend/routers/mcp.py, app/backend/routers/a2a.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrails-budget-control-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardrails, budget, control (foundation)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-artifact-contracts-execution_artifacts-keys-the-frontend-renders-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Artifact contracts (execution_artifacts keys; the frontend renders each)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-work-packages-parallel-disjoint-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Work packages (parallel, disjoint ownership)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-done-criteria-per-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Done criteria per package
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit-repair-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Audit Repair
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clinical-rd-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clinical R&D Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foundation-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Foundation Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../developer/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Developer Guides
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Developer Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/TESTING_LINTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Linting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/WORKFLOWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Workflows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/STREAMLIT_SECURITY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Streamlit Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/SONARCLOUD_SETUP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SonarCloud Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/AZURE_DEPLOYMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/CLOUD_DEPLOYMENT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cloud Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Operations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Operations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/Documentation_intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operations Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/CodeOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ops/DevOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dev Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-ground-rules-verified-in-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. Ground rules (verified in code)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-runtime-built-by-the-foundation-read-these-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Runtime (built by the foundation; read these files)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-features-techniques-and-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Features, techniques and citations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Features, techniques and citations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1-plan-and-execute-with-a-tool-dag-agenticplan_graphpy-plannerpy-executorpy-plan_executepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1 Plan-and-execute with a tool DAG (agentic/plan_graph.py, planner.py, executor.py, plan_execute.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f3-question-decomposition-agenticdecomposepy-stage-before_evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      F3 Question decomposition (agentic/decompose.py, stage before_evidence)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f2-gap-driven-re-retrieval-agenticgapspy-stage-after_draft" class="md-nav__link">
+    <span class="md-ellipsis">
+      F2 Gap-driven re-retrieval (agentic/gaps.py, stage after_draft)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f4-multi-agent-topologies-agentictopologiespy-plus-agenticspecialistspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F4 Multi-agent topologies (agentic/topologies.py, plus agentic/specialists.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f7-counter-evidence-search-agenticcounter_evidencepy-stage-augment" class="md-nav__link">
+    <span class="md-ellipsis">
+      F7 Counter-evidence search (agentic/counter_evidence.py, stage augment)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f6-hypothesis-to-in-silico-experiment-loop-agentichypothesispy-stage-augment" class="md-nav__link">
+    <span class="md-ellipsis">
+      F6 Hypothesis to in-silico experiment loop (agentic/hypothesis.py, stage augment)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f8-semantic-claim-verification-agenticnlipy-stage-augment-sets-statebagentailment_judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      F8 Semantic claim verification (agentic/nli.py, stage augment, sets state.bag["entailment_judge"])
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f9-calibrated-per-claim-confidence-agenticconfidencepy-stage-finalize" class="md-nav__link">
+    <span class="md-ellipsis">
+      F9 Calibrated per-claim confidence (agentic/confidence.py, stage finalize)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f10-sandboxed-code-analysis-agenticsandboxpolicyrunnerpy-agenticanalystpy-extensionssandboxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F10 Sandboxed code analysis (agentic/sandbox/{policy,runner}.py, agentic/analyst.py, extensions/sandbox.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f11-sbml-model-calibration-vivarixcalibrationpy-agenticcalibratepy-extensionscalibrationpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F11 SBML model calibration (vivarix/calibration.py, agentic/calibrate.py, extensions/calibration.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f12-structure-and-chemistry-structintel-extensionsstructurepy-an-evidencesource" class="md-nav__link">
+    <span class="md-ellipsis">
+      F12 Structure and chemistry (structintel/*, extensions/structure.py, an EvidenceSource)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f20-new-data-sources-sources_extra-extensionsomics_sourcespy-evidencesources" class="md-nav__link">
+    <span class="md-ellipsis">
+      F20 New data sources (sources_extra/*, extensions/omics_sources.py, EvidenceSources)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f19-reliability-toolsreliabilitypy-hooked-into-registryexecute" class="md-nav__link">
+    <span class="md-ellipsis">
+      F19 Reliability (tools/reliability.py, hooked into registry.execute)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f18-tool-retrieval-agentictool_retrievalpy-foundation-owned-by-wp1-for-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      F18 Tool retrieval (agentic/tool_retrieval.py, foundation, owned by WP1 for improvements)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f13-background-jobs-agenticjobspy-appbackendroutersjobspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F13 Background jobs (agentic/jobs.py, app/backend/routers/jobs.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f15-human-in-the-loop-agenticclarifypy-agenticapprovalpy-appbackendroutersagent_runspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F15 Human in the loop (agentic/clarify.py, agentic/approval.py, app/backend/routers/agent_runs.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f16-project-memory-utilsmemoryproject_storepy-agenticproject_memorypy-appbackendroutersprojectspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F16 Project memory (utils/memory/project_store.py, agentic/project_memory.py, app/backend/routers/projects.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f17-mcp-server-and-a2a-appbackendroutersmcppy-appbackendroutersa2apy" class="md-nav__link">
+    <span class="md-ellipsis">
+      F17 MCP server and A2A (app/backend/routers/mcp.py, app/backend/routers/a2a.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guardrails-budget-control-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardrails, budget, control (foundation)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-artifact-contracts-execution_artifacts-keys-the-frontend-renders-each" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Artifact contracts (execution_artifacts keys; the frontend renders each)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-work-packages-parallel-disjoint-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Work packages (parallel, disjoint ownership)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-done-criteria-per-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Done criteria per package
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="phronesis-agentic-system-design-contracts-and-work-packages">Phronesis agentic system: design, contracts and work packages</h1>
+<p>Features 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19 and 20 from the agentic feature list, plus
+three things they need: a run budget, run control, and prompt-injection guardrails. The verified references
+are in <code>docs/agentic/references-agent-loop.md</code> and <code>docs/agentic/references-verification-tools-data.md</code>.
+Each feature below cites the papers it implements.</p>
+<h2 id="0-ground-rules-verified-in-code">0. Ground rules (verified in code)</h2>
+<ul>
+<li>The classic pipeline (<code>framework="authoritative-react-compiler"</code>, the default of <code>execute_inquiry</code>) runs <strong>no</strong>
+  agentic phase. The 619 existing tests must keep passing unchanged.</li>
+<li>The API default is <code>PHRONESIS_DEFAULT_FRAMEWORK</code>, or <code>agentic-plan-execute</code> if that is unset (<code>app/backend/main.py:_request_framework</code>).</li>
+<li>Each file has exactly one owner (section 4). Shared files are frozen: <code>authoritative_orchestrator.py</code>,
+  <code>prompts.py</code>, <code>verifier.py</code>, <code>registry.py</code> (except the reliability hook), <code>main.py</code>, <code>agentic/{config,budget,llm,control,
+  state,runtime,evidence,guardrails}.py</code>, <code>tests/agentic_fakes.py</code>, <code>tests/fakes.py</code>. If you need a change there,
+  describe it in your final report rather than making it.</li>
+<li>Disk: about 400 MB free on A:, so <strong>install no new packages</strong>. Optional heavy models (NLI cross-encoders, sentence
+  embedders) load only from the local HF cache (<code>local_files_only=True</code>), are never downloaded at request time, and
+  every feature degrades to a deterministic path without them.</li>
+<li>Offline tests: no network and no real model. Use <code>tests/agentic_fakes.py</code> (<code>make_agentic_orchestrator</code>,
+  <code>ScriptedLLM</code>) and <code>tests/fakes.py</code> (<code>build_recording_registry</code>, <code>extra_tools</code>). HTTP clients get fake
+  transports or monkeypatched functions. Fakes return trimmed real responses, never invented biology.</li>
+<li><strong>Prompt marker contract:</strong> every agentic phase's system prompt starts with <code>[phase:&lt;key&gt;]</code>, so
+  <code>ScriptedLLM</code> can route by phase. Synthesis calls carry no marker.</li>
+<li>Run tests with <code>.venv/Scripts/python.exe -m pytest &lt;files&gt; -q -p no:cacheprovider</code>.</li>
+</ul>
+<h2 id="1-runtime-built-by-the-foundation-read-these-files">1. Runtime (built by the foundation; read these files)</h2>
+<p><code>phronesis/agentic/</code>
+- <code>config.py</code>: framework ids <code>CLASSIC</code>, <code>AGENTIC</code>, <code>SUPERVISOR</code>, <code>SWARM</code>, <code>DEBATE</code>; <code>is_agentic</code>; <code>env_flag</code>;
+  <code>agent_model</code>.
+- <code>budget.py</code>: <code>RunBudget</code> covering tool calls, model calls, estimated tokens, seconds, draft rounds, plan nodes and
+  replans (FrugalGPT-style cost control, Chen et al. 2023, arXiv:2305.05176; budget-awareness after BATS,
+  arXiv:2511.17006). <code>charge_tool</code> and <code>charge_llm</code> raise <code>BudgetExhausted</code>.
+- <code>llm.py</code>: <code>AgentLLM.complete(system, user, phase=)</code> and <code>.json(system, user, schema=, phase=)</code>, with budget
+  charging, <code>&lt;think&gt;</code> stripping and JSON extraction with one repair retry. <code>.available</code> is False offline.
+- <code>control.py</code>: <code>RunControl</code> (<code>request_approval</code>, <code>resolve</code>, <code>steer</code>, <code>drain_steering</code>, <code>cancel</code>, <code>checkpoint</code>) and the
+  per-user registry <code>create_control</code>/<code>get_control</code>. Non-interactive runs auto-approve.
+- <code>state.py</code>: <code>AgentState</code> (one per run) and <code>SubQuestion</code>.
+  - <code>await state.call_tool(name, phase=, purpose=, **kwargs)</code> charges the budget, executes, stores the result under
+    <code>agent.&lt;phase&gt;.&lt;n&gt;.&lt;tool&gt;</code> and labels it.
+  - <code>state.add_result(key, result, phase=, purpose=, render=)</code> stores a result the phase built itself.
+  - Also: <code>state.step(id, title, text, status, agent)</code>, <code>state.evidence_sections</code> (raw XML the phase adds to the
+    evidence block), <code>state.brief_notes</code>, <code>state.scope_notes</code>, <code>state.artifacts</code> (merged into
+    <code>execution_artifacts</code>), <code>state.bag</code> (shared scratch), <code>state.sub_questions</code>, <code>state.draft</code>, <code>state.verification</code>.
+- <code>runtime.py</code>: <code>AgentPhase</code> has <code>key</code>, <code>stage</code>, <code>order</code>, <code>frameworks</code>, <code>needs_llm</code>, <code>applies(state)</code> and
+  <code>async run(state) -&gt; PhaseOutcome | None</code>. Register phases with <code>register_phase()</code> when your module is imported.
+  Stages:
+  1. <code>before_evidence</code>: after parsing and memory recall, before the scope gate. Can stop the turn with
+     <code>stop_response</code>.
+  2. <code>approve</code>: after source routing, before Stage 1. May switch sources off through <code>ctx.decisions[...]</code>.
+  3. <code>augment</code>: after the pipeline's Stage 1 and 2 results exist.
+  4. <code>after_draft</code>: after each draft. Return <code>PhaseOutcome(resynthesize=True, feedback=[...])</code> to have the
+     orchestrator rewrite the answer. The loop is bounded by <code>budget.max_draft_rounds</code>.
+  5. <code>finalize</code>: after verification and the citation map. <code>state.verification</code> and <code>state.bag["citation_map"]</code> are set.
+- <code>evidence.py</code>: renders agentic results in <code>&lt;agent_evidence&gt;</code>. Passages render as citable <code>&lt;document&gt;</code> elements and web text is spotlighted.
+- <code>guardrails.py</code>: <code>screen</code>, <code>neutralise</code>, <code>spotlight</code> and <code>SPOTLIGHT_RULE</code>, following indirect prompt injection
+  (Greshake et al. 2023, arXiv:2302.12173) and Spotlighting (Hines et al. 2024, arXiv:2403.14720). Use these on
+  every piece of untrusted text you put in a planner, critic or sandbox prompt.
+- <code>tool_retrieval.py</code>: <code>retrieve_tools(registry, query, k, domains, exclude, always)</code> and <code>tool_card(entry)</code>
+  (feature 18, below).</p>
+<p>Orchestrator integration (already done): <code>execute_inquiry(..., framework, project_id, agent_options,
+run_control, interactive)</code>.
+- The first SSE event of an agentic run is <code>{"type":"run_control","run_id","framework","interactive"}</code>.
+- <code>state.bag["entailment_judge"]</code> (set by the NLI phase) is passed to <code>verifier.verify_response(entailment_judge=...)</code>.
+- <code>execution_artifacts["agent_run"] = state.summary()</code>.
+- A cancelled run returns <code>task_status.task_status == "cancelled"</code>.</p>
+<p><code>agent_options</code> (from <code>ChatRequest.agent_options</code>): <code>require_plan_approval</code>, <code>allow_clarification</code>,
+<code>enable_counter_evidence</code>, <code>enable_hypotheses</code>, <code>enable_code_analysis</code>, <code>budget{max_*}</code>.</p>
+<h2 id="2-features-techniques-and-citations">2. Features, techniques and citations</h2>
+<h3 id="f1-plan-and-execute-with-a-tool-dag-agenticplan_graphpy-plannerpy-executorpy-plan_executepy">F1 Plan-and-execute with a tool DAG (<code>agentic/plan_graph.py</code>, <code>planner.py</code>, <code>executor.py</code>, <code>plan_execute.py</code>)</h3>
+<ul>
+<li><strong>LLMCompiler</strong> (Kim et al., ICML 2024, arXiv:2312.04511) is the core.</li>
+<li>The planner returns numbered tasks <code>{id, tool, args, depends_on, purpose}</code>. Args may reference earlier
+    outputs as <code>"$n1.path.to.field"</code>.</li>
+<li>A task-fetching unit dispatches each node as soon as its dependencies resolve; nodes run in parallel through
+    <code>state.call_tool</code>.</li>
+<li>A joiner decides <code>finish</code> or <code>replan</code>, with at most <code>budget.max_replans</code> replans.</li>
+<li><strong>ReWOO</strong> (arXiv:2305.18323): plan once up front, which is the default when no replan is needed.</li>
+<li><strong>Plan-and-Solve</strong> (ACL 2023, arXiv:2305.04091): the planning trigger in the system prompt.</li>
+<li><strong>ReAct</strong> (ICLR 2023, arXiv:2210.03629): the fallback single-step mode.</li>
+<li>Validation before anything runs:</li>
+<li>The tool must be registered.</li>
+<li>Args are checked against the tool's input schema.</li>
+<li>Hard policy:<ul>
+<li>Never a simulation tool when <code>ctx.suppress_simulation</code> is set or a simulation is forbidden.</li>
+<li>Respect <code>ctx.source_allowlist</code> (papers-only, trials-only).</li>
+<li>Never re-run an identical call the pipeline already made.</li>
+<li>Cap the plan at <code>max_plan_nodes</code>.</li>
+</ul>
+</li>
+<li>Cycles are rejected.</li>
+<li>The planner sees only <code>retrieve_tools</code> cards, plus a summary of which pipeline results exist and what they found.</li>
+<li>Artifact <code>agent_plan</code> (section 3). Steps: one <code>agent_plan</code> step plus one step per node (<code>agent_node_&lt;id&gt;</code>).</li>
+<li>Frameworks: AGENTIC, DEBATE.</li>
+</ul>
+<h3 id="f3-question-decomposition-agenticdecomposepy-stage-before_evidence">F3 Question decomposition (<code>agentic/decompose.py</code>, stage before_evidence)</h3>
+<ul>
+<li><strong>Least-to-Most</strong> (Zhou et al., ICLR 2023, arXiv:2205.10625): ordered sub-questions, earlier answers feed later ones.</li>
+<li><strong>Self-Ask</strong> (Findings EMNLP 2023, arXiv:2210.03350): explicit follow-up questions that can each be routed to search.</li>
+<li><strong>Decomposed Prompting</strong> (ICLR 2023, arXiv:2210.02406): each sub-question gets a <code>focus</code> that routes it to a specialist handler.</li>
+<li><strong>Adaptive-RAG</strong> (NAACL 2024, arXiv:2403.14403): a complexity check. Simple questions are not decomposed.</li>
+<li>Deterministic fallback when no model is available: split on question marks and on enumerations or conjunctions
+  of distinct topics.</li>
+<li>At most 5 sub-questions. Writes <code>state.sub_questions</code>. The planner (F1), gaps (F2) and confidence (F9) use them.</li>
+</ul>
+<h3 id="f2-gap-driven-re-retrieval-agenticgapspy-stage-after_draft">F2 Gap-driven re-retrieval (<code>agentic/gaps.py</code>, stage after_draft)</h3>
+<ul>
+<li><strong>Self-RAG</strong> (ICLR 2024, arXiv:2310.11511): IsSup labels {fully, partially, no support}. "No support" is a gap.</li>
+<li><strong>FLARE</strong> (EMNLP 2023, arXiv:2305.06983): the draft's unsupported or hedged sentences become retrieval queries.</li>
+<li><strong>CRAG</strong> (arXiv:2401.15884): grade retrieval as correct, ambiguous or incorrect. Incorrect or ambiguous means
+  re-query with rewritten terms.</li>
+<li><strong>IRCoT</strong> (ACL 2023, arXiv:2212.10509): interleave retrieval with the reasoning steps.</li>
+<li>How it works:</li>
+<li>Per sub-question, check coverage deterministically: does an evidence document mention its key terms?</li>
+<li>Optionally ask the model to label each sub-question answered, partial or missing, and to propose up to 3
+     follow-up queries.</li>
+<li>Run <code>lithoscribe_literature_synthesis</code>, and <code>websurfer_search</code> if web search is on, for each gap.</li>
+<li><code>resynthesize=True</code> only when new successful evidence arrived.</li>
+<li>Stops when there are no gaps, the budget is used up, or after one gap round per draft round. Each sub-question's
+  <code>status</code> is updated.</li>
+</ul>
+<h3 id="f4-multi-agent-topologies-agentictopologiespy-plus-agenticspecialistspy">F4 Multi-agent topologies (<code>agentic/topologies.py</code>, plus <code>agentic/specialists.py</code>)</h3>
+<p>Specialists are tool groups built from registry domains:
+- Literature: lithoscribe, trials, web
+- Target: synapta, disease_targets, primekg
+- Simulation: vivarix
+- Omics: lumicell, omics sources
+- Chemistry: drugs, structure</p>
+<p>Topologies:
+- <strong>SUPERVISOR</strong> (augment): a supervisor loop modelled on <strong>Magentic-One</strong> (arXiv:2411.04468).
+  - A task ledger (facts given, to look up, to derive; the plan).
+  - A progress ledger asking: done? looping? progressing? next specialist? instruction?
+  - Stall counter above 2: reflect and replan.
+  - Each specialist runs a short ReAct loop (at most 3 tool calls) over its own tools only.
+- <strong>SWARM</strong> (augment): handoffs. The active specialist either calls one of its tools or hands off to a named
+  specialist with a note. A handoff budget applies and the same pair may not hand back and forth.
+  <strong>AutoGen</strong> conversable agents (COLM 2024, arXiv:2308.08155).
+- <strong>DEBATE</strong> (after_draft): <strong>multi-agent debate</strong>, Du et al. (ICML 2024, arXiv:2305.14325).
+  - Two or three critic personas (methodologist, clinical skeptic, mechanistic biologist) critique the draft
+    against the evidence.
+  - Round two gets the other critics' points: "Using the opinion of other agents as additional advice...".
+  - Consensus feedback goes back through <code>resynthesize=True, feedback=[...]</code>.
+  - <strong>MetaGPT</strong> SOP-style role prompts (ICLR 2024, arXiv:2308.00352).
+  - <strong>CRITIC</strong> (ICLR 2024, arXiv:2305.11738) and <strong>Chain-of-Verification</strong> (Findings ACL 2024, arXiv:2309.11495):
+    critiques must name a claim and the evidence key behind it.
+- The frontend shows all four frameworks as selectable.</p>
+<h3 id="f7-counter-evidence-search-agenticcounter_evidencepy-stage-augment">F7 Counter-evidence search (<code>agentic/counter_evidence.py</code>, stage augment)</h3>
+<ul>
+<li><strong>PaperQA2 / ContraCrow</strong> (Skarlinski et al. 2024, arXiv:2409.13740):</li>
+<li>Extract claims from the gathered evidence.</li>
+<li>Search for contradicting evidence.</li>
+<li>Rate on an 11-point Likert scale (0 = strongly supports, 5 = lack of evidence, 10 = strongly contradicts).</li>
+<li>Flag a contradiction at 8 or higher.</li>
+<li><strong>SciFact / SciFact-Open</strong> (EMNLP 2020, arXiv:2004.14974; Findings EMNLP 2022, arXiv:2210.13777): the SUPPORTS,
+  REFUTES or NOINFO labels.</li>
+<li>Queries are built deterministically: "<entity> resistance", "<entity> no effect", "<entity> failed trial",
+  "<entity> contradicting", and "<drug> adverse".</li>
+<li>Run lithoscribe and keep passages not already present. Classification uses the NLI judge (F8) when available,
+  otherwise the model with the Likert rubric, otherwise a cue-word heuristic labelled <code>heuristic</code>.</li>
+<li>Adds an <code>&lt;evidence_conflicts&gt;</code> section to the evidence and a brief note: "Discuss these conflicts explicitly".</li>
+<li>Artifact <code>evidence_conflicts</code>. Off when <code>agent_options.enable_counter_evidence</code> is false, and off under
+  papers-only restrictions that exclude lithoscribe.</li>
+</ul>
+<h3 id="f6-hypothesis-to-in-silico-experiment-loop-agentichypothesispy-stage-augment">F6 Hypothesis to in-silico experiment loop (<code>agentic/hypothesis.py</code>, stage augment)</h3>
+<ul>
+<li><strong>AI co-scientist</strong> (Gottweis et al. 2025, arXiv:2502.18864):</li>
+<li>Generate, then reflect, then rank with an Elo tournament (start at 1200, K=32, pairwise model judge or
+    deterministic comparison on effect size and evidence).</li>
+<li>Evolution: refine the top hypothesis once.</li>
+<li><strong>BioDiscoveryAgent</strong> (ICLR 2025, arXiv:2405.17631): reflection, then research plan, then a solution batch, with
+  an exclusion list of what has already been tested.</li>
+<li><strong>Robin</strong> (arXiv:2505.13400): rank with a pairwise judge (Bradley-Terry). Elo is acceptable here.</li>
+<li>When a simulation model is in play (<code>ctx.biomodel_id</code>, an uploaded SBML model, or the Vivarix result's
+  <code>model_id</code>):</li>
+<li>Propose 2 to 4 perturbation hypotheses: knockdown is ×0.1 of a parameter, overexpression ×10, inhibition of a
+    rate constant.</li>
+<li>Run <code>vivarix_parameter_scan</code> (2 points: baseline and perturbed) or <code>vivarix_simulate_time_course</code> with
+    <code>parameter_overrides</code>.</li>
+<li>Compute log2 fold-change of the readout species endpoint.</li>
+<li>Support means the effect has the predicted direction with |log2FC| ≥ 0.58.</li>
+<li>Without a model, rank the literature- and target-evidence hypotheses only (no fake experiments) and say so.</li>
+<li>Never change <code>ctx.suppress_simulation</code>: no simulations when it is set.</li>
+<li>Artifact <code>hypotheses</code>.</li>
+</ul>
+<h3 id="f8-semantic-claim-verification-agenticnlipy-stage-augment-sets-statebagentailment_judge">F8 Semantic claim verification (<code>agentic/nli.py</code>, stage augment, sets <code>state.bag["entailment_judge"]</code>)</h3>
+<ul>
+<li><strong>SciFact</strong> label scheme. <strong>SummaC-ZS</strong> (TACL 2022, arXiv:2111.09525): for each claim, take the maximum
+  entailment over evidence chunks.</li>
+<li><strong>FActScore</strong> (EMNLP 2023, arXiv:2305.14251): atomic claims and a supported fraction.</li>
+<li><strong>MiniCheck</strong> (EMNLP 2024, arXiv:2404.10774): chunk the document and take the maximum score.</li>
+<li><strong>AlignScore</strong> (ACL 2023, arXiv:2305.16739): the same alignment idea.</li>
+<li>Backends, in order (<code>PHRONESIS_NLI=off|auto|model|llm</code>):</li>
+<li>A local cross-encoder from the HF cache, <code>cross-encoder/nli-deberta-v3-base</code> (labels 0=contradiction,
+     1=entailment, 2=neutral; hard-coded), loaded with <code>local_files_only=True</code>.</li>
+<li>A model judge with <code>[phase:nli]</code> and SciFact labels.</li>
+<li>None. The judge is then not installed and the verifier keeps its deterministic audit.</li>
+<li>The judge signature is fixed by the verifier: <code>judge(claim_text, [{"source_key","passage"}]) -&gt;
+  {"status": "supported"|"contradicted"|"unsupported", "reason"}</code> or None. It may only downgrade a verdict.</li>
+<li>The phase also keeps <code>state.bag["nli_scores"][claim_text] = {"entailment","contradiction","neutral","backend"}</code>
+  for F9.</li>
+<li>Model-judge calls are cached per (claim, passage hash) and capped at 12 per run.</li>
+</ul>
+<h3 id="f9-calibrated-per-claim-confidence-agenticconfidencepy-stage-finalize">F9 Calibrated per-claim confidence (<code>agentic/confidence.py</code>, stage finalize)</h3>
+<ul>
+<li>Per-claim features:</li>
+<li>NLI entailment probability (F8)</li>
+<li>Number of independent supporting sources</li>
+<li>Best evidence grade (<code>grade_label</code> from evidence grading)</li>
+<li>Contradiction (F7, F8)</li>
+<li>Verifier defects on that claim</li>
+<li>A hedge in the sentence</li>
+<li>Confidence = logistic(w·x + b) with documented default weights, then <strong>temperature scaling</strong>
+  (Guo et al., ICML 2017, arXiv:1706.04599). T is fitted by <code>fit_temperature(scores, labels)</code> (minimise NLL) and
+  stored in <code>PHRONESIS_CONFIDENCE_T</code> or a JSON file.</li>
+<li><code>ece(scores, labels, bins=10)</code> measures calibration.</li>
+<li>Optional split-conformal back-off threshold (<strong>Mohri &amp; Hashimoto</strong>, ICML 2024, arXiv:2402.10978):
+  <code>conformal_threshold(cal_scores, cal_labels, alpha)</code>. Claims below the threshold are marked <code>low</code>.</li>
+<li>Stated-confidence elicitation is optional: <strong>Kadavath et al. 2022</strong> (arXiv:2207.05221) and <strong>Xiong et al.</strong>
+  (ICLR 2024, arXiv:2306.13063). Used only if the model is available, and blended at a 0.2 weight.</li>
+<li>Semantic entropy (<strong>Farquhar et al.</strong>, Nature 2024, doi:10.1038/s41586-024-07421-0) is documented as future work
+  because it needs N samples.</li>
+<li>Claims come from the verifier report's <code>claims</code>, else from the answer's sentences.</li>
+<li>Artifact <code>claim_confidence</code>.</li>
+</ul>
+<h3 id="f10-sandboxed-code-analysis-agenticsandboxpolicyrunnerpy-agenticanalystpy-extensionssandboxpy">F10 Sandboxed code analysis (<code>agentic/sandbox/{policy,runner}.py</code>, <code>agentic/analyst.py</code>, <code>extensions/sandbox.py</code>)</h3>
+<ul>
+<li><strong>CodeAct</strong> (ICML 2024, arXiv:2402.01030): Python code is the action. Write, run, observe, fix, up to 4 iterations.</li>
+<li><strong>Biomni</strong> (bioRxiv 2025, doi:10.1101/2025.05.30.656746): plan first, then code.</li>
+<li><strong>BixBench</strong> (arXiv:2503.00096): notebook-style analysis of real datasets, with an "insufficient information"
+  answer allowed.</li>
+<li><strong>Data Interpreter</strong> (arXiv:2402.18679): verify each step.</li>
+<li>Isolation, layered:</li>
+<li>An AST policy: an import allowlist (numpy, pandas, scipy, statsmodels if installed, sklearn, matplotlib,
+     anndata, scanpy, math, statistics, json, re, collections, itertools). Banned names and attributes: <code>os</code>,
+     <code>sys</code>, <code>subprocess</code>, <code>socket</code>, <code>open</code> outside the work dir, <code>eval</code>, <code>exec</code>, <code>__import__</code>, <code>importlib</code>,
+     <code>ctypes</code>, <code>shutil</code>, <code>pathlib</code> writes outside the work dir, dunder attribute access.</li>
+<li>A separate <code>python -I</code> subprocess in a fresh temp work dir, holding only copies of the attached files.</li>
+<li>Wall-clock timeout (default 60 s), output size caps, and a memory limit where the OS supports it (resource on
+     POSIX; a Windows Job Object via ctypes in the parent is optional).</li>
+<li>Environment scrubbed of every secret (API keys, tokens).</li>
+<li>Network blocked inside the child by monkeypatching <code>socket</code> before user code runs.</li>
+<li>This is documented honestly as defence in depth. Production should use a container (see the docs).</li>
+<li>Enabled only when <code>PHRONESIS_SANDBOX=on</code> (default off) and <code>agent_options.enable_code_analysis</code>.</li>
+<li>The registry tool <code>analysis_run_python</code> (domain <code>analysis</code>) and the analyst phase run when a CSV/TSV/h5ad
+  dataset is attached and the question asks for analysis.</li>
+<li>Figures are saved as PNG and returned base64 (max 3).</li>
+<li>Artifact <code>sandbox_analysis</code>.</li>
+</ul>
+<h3 id="f11-sbml-model-calibration-vivarixcalibrationpy-agenticcalibratepy-extensionscalibrationpy">F11 SBML model calibration (<code>vivarix/calibration.py</code>, <code>agentic/calibrate.py</code>, <code>extensions/calibration.py</code>)</h3>
+<ul>
+<li><strong>COPASI</strong> (Bioinformatics 2006, doi:10.1093/bioinformatics/btl485) and <strong>basico</strong> (JOSS 2023,
+  doi:10.21105/joss.05553):</li>
+<li><code>load_model</code>/<code>load_biomodel</code> and <code>run_time_course</code> for simulation.</li>
+<li><code>basico.task_parameterestimation</code> (<code>add_experiment</code>, <code>set_fit_parameters</code>, <code>run_parameter_estimation</code>) is an
+    optional backend.</li>
+<li>The default backend is <code>scipy.optimize.least_squares</code> over log-parameters, with basico time-course simulations
+  and bounded iterations.</li>
+<li>Identifiability by <strong>profile likelihood</strong> (Raue et al., Bioinformatics 2009, doi:10.1093/bioinformatics/btp358):</li>
+<li>Δχ² threshold 3.84 (95%, df=1).</li>
+<li>A flat profile means structurally non-identifiable; one open side means practically non-identifiable.</li>
+<li>At most 3 parameters, 7 profile points each.</li>
+<li><strong>pyPESTO</strong> (doi:10.1093/bioinformatics/btad711) and <strong>Hass et al. 2019</strong> benchmarks
+  (doi:10.1093/bioinformatics/btz020) are the references for multistart and test problems.</li>
+<li>Input: an attached CSV with a <code>time</code> column plus species columns, a model (BIOMD id or uploaded SBML), and
+  parameter names (from the question, else the model's top sensitivity parameters, else the first k parameters
+  that match species named in the question).</li>
+<li>Registry tool <code>vivarix_calibrate_parameters</code> (LOCAL_COMPUTE, timeout 300 s). Phase runs on calibration intent
+  (calibrate, fit, estimate parameters) with data and a model.</li>
+<li>Artifact <code>model_calibration</code>.</li>
+</ul>
+<h3 id="f12-structure-and-chemistry-structintel-extensionsstructurepy-an-evidencesource">F12 Structure and chemistry (<code>structintel/*</code>, <code>extensions/structure.py</code>, an EvidenceSource)</h3>
+<ul>
+<li><strong>AlphaFold DB</strong> (Varadi et al., NAR 2022/2024, doi:10.1093/nar/gkab1061, doi:10.1093/nar/gkad1011):
+  <code>GET https://alphafold.ebi.ac.uk/api/prediction/{UniProt}</code>. Report the model id and mean pLDDT with the bands
+  from <strong>AlphaFold</strong> (Jumper et al., Nature 2021, doi:10.1038/s41586-021-03819-2).</li>
+<li><strong>RCSB PDB</strong> (Burley et al., NAR 2023, doi:10.1093/nar/gkac1077): search
+  <code>https://search.rcsb.org/rcsbsearch/v2/query</code> by UniProt accession, and entries via
+  <code>https://data.rcsb.org/rest/v1/core/entry/{id}</code> (method, resolution, ligands).</li>
+<li>Optional NVIDIA NIM, only with <code>NVIDIA_API_KEY</code>:</li>
+<li><strong>DiffDock</strong> (ICLR 2023, arXiv:2210.01776) at <code>POST https://health.api.nvidia.com/v1/biology/mit/diffdock</code>
+    with fields <code>protein</code>, <code>ligand</code>, <code>ligand_file_type</code>, <code>num_poses</code>.</li>
+<li><strong>MolMIM</strong> (arXiv:2208.09016) at <code>POST .../v1/biology/nvidia/molmim/generate</code> with fields <code>smi</code>, <code>algorithm</code>,
+    <code>num_molecules</code>, <code>property_name</code>, <code>min_similarity</code>.</li>
+<li><strong>ESMFold</strong> (Science 2023, doi:10.1126/science.ade2574): the body field is unverified, so it is not wired by
+    default.</li>
+<li>Docking and generation run only on explicit request ("dock", "generate analogs") and never by default.</li>
+<li>The UniProt accession comes from the resolved entities (<code>ctx</code> primary gene) or the UniProt BioContext tool if
+  registered.</li>
+<li>Artifact <code>structure_intel</code>. Identifiers: AF model ids and PDB ids go into <code>allowed_identifiers</code> under a new id
+  family if needed (via <code>extensions/id_families.py</code> registration API, if one exists; otherwise
+  <code>allowed_identifiers</code> returns <code>{"pdb": ...}</code> and the source's <code>citations</code>).</li>
+</ul>
+<h3 id="f20-new-data-sources-sources_extra-extensionsomics_sourcespy-evidencesources">F20 New data sources (<code>sources_extra/*</code>, <code>extensions/omics_sources.py</code>, EvidenceSources)</h3>
+<p>Each source is one module with a client (httpx, <code>phronesis/utils/http_limits.py</code> if useful), an EvidenceSource
+with <code>should_run</code>, <code>run</code>, <code>evidence_xml</code>, <code>citations</code>, <code>artifact</code>, <code>allowed_identifiers</code> and <code>scope_notes</code>, and
+fixtures.
+- <strong>GWAS Catalog</strong> (Sollis et al., NAR 2023, doi:10.1093/nar/gkac1010; Cerezo et al., NAR 2025):
+  <strong>v2 only</strong>, <code>https://www.ebi.ac.uk/gwas/rest/api/v2</code>. v1 returns 410. Runs on genetics or trait intent with a
+  gene or disease.
+- <strong>GTEx</strong> (Science 2020, doi:10.1126/science.aaz1776): <code>https://gtexportal.org/api/v2/</code>, median gene expression
+  per tissue. Runs on expression or tissue intent with a gene.
+- <strong>STRING</strong> (Szklarczyk et al., NAR 2023/2025, doi:10.1093/nar/gkac1000, doi:10.1093/nar/gkae1113): pinned
+  <code>https://version-12-5.string-db.org/api/json/network</code> and <code>/interaction_partners</code>, species 9606. Runs on
+  interaction or network intent with a gene.
+- <strong>Reactome</strong> (Milacic et al., NAR 2024, doi:10.1093/nar/gkad1025): <code>https://reactome.org/ContentService/</code>,
+  pathways for a UniProt or gene. Runs on pathway or mechanism intent.
+- <strong>PubChem</strong> (Kim et al., NAR 2025, doi:10.1093/nar/gkae1059): PUG-REST compound properties for drugs. Accept
+  both <code>ConnectivitySMILES</code> and <code>CanonicalSMILES</code>.
+- <strong>bioRxiv/medRxiv</strong>: <code>https://api.biorxiv.org/details/...</code>, recent preprints for a topic (filter by
+  title/abstract term match). Label them "not peer reviewed".
+- <strong>DepMap</strong> (Tsherniak et al., Cell 2017, doi:10.1016/j.cell.2017.06.010): the portal API blocks scripted access.
+  Implement a local-file connector over a user-provided <code>CRISPRGeneEffect.csv</code> (env <code>PHRONESIS_DEPMAP_DIR</code>). It is
+  skipped with a scope note when no file is configured.
+- <strong>DrugBank</strong> is licence-restricted and is not implemented (documented).
+- Artifact key: <code>omics_intel</code>, shaped as <code>{&lt;source&gt;: {...}}</code>, one sub-object per source.</p>
+<h3 id="f19-reliability-toolsreliabilitypy-hooked-into-registryexecute">F19 Reliability (<code>tools/reliability.py</code>, hooked into <code>registry.execute</code>)</h3>
+<ul>
+<li><strong>Circuit breaker</strong> (Fowler 2014, after Nygard, <em>Release It!</em>): closed, then open after N consecutive upstream
+  failures (default 5), then half-open after a cool-down (default 60 s), allowing one trial call.</li>
+<li>Retries with exponential backoff and full jitter, only for TIMEOUT and UPSTREAM_API_ERROR, only for idempotent
+  REST and GraphQL adapters, never LOCAL_COMPUTE. Default 2 retries.</li>
+<li>Result cache:</li>
+<li>In memory, plus an optional SQLite store at <code>PHRONESIS_TOOL_CACHE_DIR</code> (default under the runs dir), with TTL
+    per adapter (REST 6 h).</li>
+<li>Key = tool name plus the sha256 of canonical JSON of the validated kwargs.</li>
+<li>Only successful results, never LOCAL_COMPUTE or uploads, and never when <code>PHRONESIS_TOOL_CACHE=off</code>.</li>
+<li>Cache hits set <code>metadata["cache"]="hit"</code>.</li>
+<li>Fallback map: when a tool's breaker is open, try its registered fallback (e.g. <code>websurfer_search</code> for
+  literature). This is optional and listed in <code>metadata["fallback_from"]</code>.</li>
+<li>The failure taxonomy from <strong>API-Bank</strong> (EMNLP 2023, arXiv:2304.08244) labels telemetry. Fault-injection tests are
+  in the spirit of <strong>ToolEmu</strong> (ICLR 2024, arXiv:2309.15817) and <strong>ToolSword</strong> (ACL 2024, arXiv:2402.10753).</li>
+<li><code>GET</code> stats are exposed through <code>reliability_snapshot()</code>, which the platform's health or agent route can serve.</li>
+<li>Must keep <code>record_tool_call</code> behaviour: one recorded call per <code>execute</code>.</li>
+</ul>
+<h3 id="f18-tool-retrieval-agentictool_retrievalpy-foundation-owned-by-wp1-for-improvements">F18 Tool retrieval (<code>agentic/tool_retrieval.py</code>, foundation, owned by WP1 for improvements)</h3>
+<ul>
+<li><strong>ToolLLM</strong> (ICLR 2024, arXiv:2307.16789) API retriever.</li>
+<li><strong>Gorilla</strong> (NeurIPS 2024, arXiv:2305.15334): retrieval-grounded docs (<code>tool_card</code>).</li>
+<li><strong>ToolUniverse</strong> (arXiv:2509.23426) tool finder.</li>
+<li><strong>Re-Invoke</strong> (Findings EMNLP 2024, arXiv:2408.01875): synthetic intent expansion.</li>
+<li><strong>Toolshed</strong> (arXiv:2410.14594).</li>
+<li><strong>ToolRet</strong> (ACL 2025, arXiv:2503.01763): measure recall@k.</li>
+</ul>
+<h3 id="f13-background-jobs-agenticjobspy-appbackendroutersjobspy">F13 Background jobs (<code>agentic/jobs.py</code>, <code>app/backend/routers/jobs.py</code>)</h3>
+<ul>
+<li>SQLite job store (<code>PHRONESIS_JOBS_DIR</code>): job id, user, status (queued, running, waiting_approval, succeeded,
+  failed, cancelled, interrupted), request, result, created/updated.</li>
+<li>Every event is logged in order (seq), so a client can reattach with <code>GET /api/jobs/{id}/events?after=N</code> (SSE,
+  replays then follows).</li>
+<li>An asyncio worker pool runs jobs (<code>PHRONESIS_JOB_WORKERS</code>, default 2), each with its own <code>RunControl</code>, which is
+  interactive when someone is watching.</li>
+<li>On startup, jobs left <code>running</code> are marked <code>interrupted</code> and can be resumed with <code>POST /api/jobs/{id}/resume</code>. A
+  resumed job re-executes; tool calls replay from the F19 cache, so completed upstream work is not repeated.</li>
+<li>Durable-execution reference: LangGraph persistence docs
+  (https://docs.langchain.com/oss/python/langgraph/persistence). No peer-reviewed paper was verified.</li>
+<li>Routes:</li>
+<li><code>POST /api/jobs</code> (body = ChatRequest fields) returns <code>{job_id, run_id}</code>.</li>
+<li><code>GET /api/jobs</code>, <code>GET /api/jobs/{id}</code>, <code>GET /api/jobs/{id}/events?after=</code>.</li>
+<li><code>POST /api/jobs/{id}/cancel</code>, <code>POST /api/jobs/{id}/resume</code>, <code>DELETE /api/jobs/{id}</code>.</li>
+<li>All are user-scoped.</li>
+</ul>
+<h3 id="f15-human-in-the-loop-agenticclarifypy-agenticapprovalpy-appbackendroutersagent_runspy">F15 Human in the loop (<code>agentic/clarify.py</code>, <code>agentic/approval.py</code>, <code>app/backend/routers/agent_runs.py</code>)</h3>
+<ul>
+<li><strong>Clarify</strong> (before_evidence):</li>
+<li><strong>CLAM</strong> (arXiv:2212.07769): detect ambiguity, then ask.</li>
+<li><strong>Clarify When Necessary</strong> (Findings NAACL 2025, arXiv:2311.09469): ask only when the expected ambiguity is
+    high.</li>
+<li><strong>Aliannejadi et al.</strong> (SIGIR 2019, arXiv:1907.06554).</li>
+<li>Deterministic ambiguity signals:<ul>
+<li>The scope is <code>unclear</code>.</li>
+<li>An ambiguous gene family (<code>ctx.genes</code> with <code>ambiguous_with</code>).</li>
+<li>Simulation intent with no model and no searchable term.</li>
+<li>Several attached datasets with no way to tell which one to use.</li>
+</ul>
+</li>
+<li>An optional model check, <code>[phase:clarify]</code>, returns <code>{ambiguous, question, options[]}</code>.</li>
+<li>Asks at most once per thread turn. Does not ask if the previous turn already asked
+    (<code>state.bag</code>/memory thread history), or when <code>allow_clarification</code> is false.</li>
+<li>The stop response is the question plus options. Artifact <code>clarification</code>.</li>
+<li><strong>Plan approval</strong> (approve):</li>
+<li><strong>Magentic-UI</strong> (arXiv:2507.22358) co-planning and action guards.</li>
+<li>Runs when <code>require_plan_approval</code> is set, or when the planned work includes a simulation, parameter scan,
+    calibration, docking or sandbox run (expensive) and the run is interactive.</li>
+<li>Sends <code>{"type":"approval_request","run_id","approval_id","kind":"plan","payload":{"sources":[{key,label,run,
+    reason}]}}</code> through <code>state.send</code>, then waits on <code>control.request_approval</code>.</li>
+<li>An edited payload switches sources off through <code>ctx.decisions[key] = SourceDecision(run=False,
+    reason="switched off by the researcher")</code>. A rejected plan switches every optional source off except
+    literature.</li>
+<li>Artifact <code>plan_approval</code>.</li>
+<li>The F1 plan DAG also asks for approval (kind <code>"dag"</code>) before running nodes that call expensive tools, using the
+    same mechanism.</li>
+<li><strong>Router</strong> <code>/api/agent/runs/{run_id}</code>:</li>
+<li><code>GET</code> returns <code>control.to_dict()</code>.</li>
+<li><code>POST /approve {approval_id, approved, payload?, message?}</code>.</li>
+<li><code>POST /steer {message}</code>. Steering is read before synthesis and after each draft; a steer during the draft loop
+    triggers one rewrite.</li>
+<li><code>POST /cancel</code>.</li>
+<li>All user-scoped.</li>
+</ul>
+<h3 id="f16-project-memory-utilsmemoryproject_storepy-agenticproject_memorypy-appbackendroutersprojectspy">F16 Project memory (<code>utils/memory/project_store.py</code>, <code>agentic/project_memory.py</code>, <code>app/backend/routers/projects.py</code>)</h3>
+<ul>
+<li><strong>Zep/Graphiti</strong> (arXiv:2501.13956): a bi-temporal fact graph. <code>fact(subject, relation, object, valid_from,
+  invalid_at, recorded_at, source, confidence)</code>. A contradicting new fact invalidates the old one instead of
+  deleting it.</li>
+<li><strong>Mem0</strong> (arXiv:2504.19413): extract, then ADD, UPDATE, INVALIDATE or NOOP.</li>
+<li><strong>HippoRAG</strong> (NeurIPS 2024, arXiv:2405.14831): Personalized PageRank over the fact graph, seeded with the query
+  entities, for retrieval.</li>
+<li><strong>Generative Agents</strong> (UIST 2023, arXiv:2304.03442): recency × importance × relevance scoring.</li>
+<li><strong>MemGPT</strong> (arXiv:2310.08560): the working-memory and archival split.</li>
+<li><strong>A-MEM</strong> (NeurIPS 2025, arXiv:2502.12110): linked notes.</li>
+<li>Facts are extracted deterministically from verified tool results:</li>
+<li>gene–disease association scores</li>
+<li>drug–target and mechanism (drug_intel)</li>
+<li>trial (NCT) to condition</li>
+<li>BioModel to topic</li>
+<li>variant to classification</li>
+<li>hypothesis outcomes</li>
+<li>user preferences from <code>classify_instructions</code></li>
+<li>Facts come only from turns where verification passed, or are tagged <code>unverified</code>.</li>
+<li>The recall phase (before_evidence, only with <code>project_id</code>) writes <code>state.project_memory</code> (a text block) and the
+  artifact <code>project_memory</code>.</li>
+<li>The consolidate phase runs at finalize.</li>
+<li>Routes (user-scoped):</li>
+<li><code>POST /api/projects {name, description}</code> and <code>GET /api/projects</code>.</li>
+<li><code>GET/PATCH/DELETE /api/projects/{id}</code>.</li>
+<li><code>GET /api/projects/{id}/memory?query=</code>.</li>
+<li><code>PATCH /api/projects/{id}/memory/{fact_id}</code> (invalidate or edit) and <code>DELETE</code> the same path.</li>
+<li>Project ids match <code>prj_[A-Za-z0-9]{6,40}</code>.</li>
+</ul>
+<h3 id="f17-mcp-server-and-a2a-appbackendroutersmcppy-appbackendroutersa2apy">F17 MCP server and A2A (<code>app/backend/routers/mcp.py</code>, <code>app/backend/routers/a2a.py</code>)</h3>
+<ul>
+<li><strong>MCP</strong> (spec 2025-11-25 with the initialize handshake, plus 2026-07-28 <code>server/discover</code> and
+  <code>MCP-Protocol-Version</code> header negotiation): Streamable HTTP, JSON-RPC 2.0 over <code>POST /mcp</code>.</li>
+<li>Methods: <code>initialize</code>, <code>notifications/initialized</code>, <code>ping</code>, <code>server/discover</code>, <code>tools/list</code>, <code>tools/call</code>.</li>
+<li>Tools:<ul>
+<li><code>phronesis_research</code> (full orchestrator, framework argument)</li>
+<li>an allowlist of read-only registry tools (<code>PHRONESIS_MCP_TOOLS</code>, default: OpenTargets search/associations,
+  KEGG, literature, trials, ChEMBL resolve, structure, omics), with <code>inputSchema</code> from the pydantic schemas</li>
+</ul>
+</li>
+<li>Results are <code>{content:[{type:"text",text}], structuredContent, isError}</code>.</li>
+<li>Same bearer authentication. Errors use JSON-RPC codes -32600, -32601, -32602 and -32603.</li>
+<li>Security checklist from <strong>Hou et al. 2025</strong> (arXiv:2503.23278): no tool-description injection, a fixed
+    allowlist, no write tools, and per-user concurrency limits.</li>
+<li><strong>A2A v1.0.0</strong> (https://a2a-protocol.org/latest/specification/):</li>
+<li><code>GET /.well-known/agent-card.json</code> (name, description, url, version, capabilities{streaming:false},
+    skills[{id,name,description,tags,examples}], security schemes bearer).</li>
+<li><code>POST /a2a</code> JSON-RPC with <code>SendMessage</code>, <code>GetTask</code>, <code>ListTasks</code> and <code>CancelTask</code>, backed by F13 jobs. The
+    older aliases <code>message/send</code>, <code>tasks/get</code> and <code>tasks/cancel</code> are accepted too.</li>
+</ul>
+<h3 id="guardrails-budget-control-foundation">Guardrails, budget, control (foundation)</h3>
+<ul>
+<li>Covered in section 1.</li>
+</ul>
+<h2 id="3-artifact-contracts-execution_artifacts-keys-the-frontend-renders-each">3. Artifact contracts (<code>execution_artifacts</code> keys; the frontend renders each)</h2>
+<p>All values must be JSON-safe. Keep lists capped (≤ 50 rows) and never embed more than 3 images.</p>
+<div class="highlight"><pre><span></span><code>&quot;agent_run&quot;: {&quot;framework&quot;,&quot;run_id&quot;,&quot;sub_questions&quot;:[{&quot;id&quot;,&quot;text&quot;,&quot;focus&quot;,&quot;depends_on&quot;,&quot;status&quot;,&quot;evidence_keys&quot;,&quot;note&quot;}],
+  &quot;budget&quot;:{&quot;limits&quot;:{...},&quot;used&quot;:{&quot;tool_calls&quot;,&quot;llm_calls&quot;,&quot;tokens_estimated&quot;,&quot;seconds&quot;},&quot;exhausted&quot;,&quot;exhausted_reason&quot;,&quot;by_phase&quot;},
+  &quot;trace&quot;:[{&quot;phase&quot;,&quot;tool&quot;,&quot;purpose&quot;,&quot;success&quot;,&quot;error_type&quot;,&quot;seconds&quot;}],&quot;decisions&quot;:[...],&quot;steering&quot;:[...],
+  &quot;phases&quot;:[{&quot;phase&quot;,&quot;stage&quot;,&quot;status&quot;,&quot;seconds&quot;}],&quot;draft_rounds&quot;}
+&quot;agent_plan&quot;: {&quot;planner&quot;:&quot;llm&quot;|&quot;none&quot;,&quot;rationale&quot;,&quot;replans&quot;:0,
+  &quot;nodes&quot;:[{&quot;id&quot;:&quot;n1&quot;,&quot;tool&quot;,&quot;args&quot;:{},&quot;depends_on&quot;:[],&quot;purpose&quot;,&quot;status&quot;:&quot;done|error|skipped|pending&quot;,&quot;result_key&quot;,&quot;error&quot;,&quot;seconds&quot;}],
+  &quot;rejected&quot;:[{&quot;node&quot;,&quot;reason&quot;}]}
+&quot;clarification&quot;: {&quot;question&quot;,&quot;options&quot;:[&quot;...&quot;],&quot;reason&quot;,&quot;signals&quot;:[&quot;...&quot;]}
+&quot;plan_approval&quot;: {&quot;approval_id&quot;,&quot;status&quot;:&quot;approved|edited|rejected|auto|timeout&quot;,&quot;sources&quot;:[{&quot;key&quot;,&quot;label&quot;,&quot;run&quot;,&quot;reason&quot;}]}
+&quot;hypotheses&quot;: {&quot;target&quot;,&quot;model_id&quot;,&quot;method&quot;:&quot;elo-tournament&quot;,&quot;experiments_run&quot;:0,
+  &quot;hypotheses&quot;:[{&quot;id&quot;,&quot;statement&quot;,&quot;mechanism&quot;,&quot;intervention&quot;:{&quot;kind&quot;,&quot;parameter&quot;,&quot;factor&quot;},&quot;readout&quot;,&quot;prediction&quot;:&quot;increase|decrease&quot;,
+     &quot;result&quot;:{&quot;baseline&quot;,&quot;perturbed&quot;,&quot;log2_fold_change&quot;,&quot;supports&quot;:true|false|null},&quot;elo&quot;,&quot;rank&quot;,&quot;evidence_keys&quot;:[]}],&quot;note&quot;}
+&quot;evidence_conflicts&quot;: {&quot;queries&quot;:[...],&quot;claims_checked&quot;:0,&quot;classifier&quot;:&quot;nli|llm|heuristic&quot;,
+  &quot;conflicts&quot;:[{&quot;claim&quot;,&quot;passage&quot;,&quot;source_key&quot;,&quot;pmid&quot;,&quot;doi&quot;,&quot;label&quot;:&quot;contradicts|supports|neutral&quot;,&quot;likert&quot;:0-10,&quot;score&quot;}]}
+&quot;claim_confidence&quot;: {&quot;answer_confidence&quot;:0-1,&quot;method&quot;,&quot;calibration&quot;:{&quot;temperature&quot;,&quot;conformal_threshold&quot;},
+  &quot;claims&quot;:[{&quot;claim_id&quot;,&quot;text&quot;,&quot;confidence&quot;:0-1,&quot;band&quot;:&quot;high|medium|low&quot;,&quot;features&quot;:{...},&quot;nli_label&quot;}]}
+&quot;sandbox_analysis&quot;: {&quot;status&quot;:&quot;ok|error|disabled&quot;,&quot;iterations&quot;,&quot;code&quot;,&quot;stdout&quot;,&quot;result&quot;,&quot;error&quot;,&quot;dataset&quot;,
+  &quot;figures&quot;:[{&quot;name&quot;,&quot;png_base64&quot;}],&quot;tables&quot;:[{&quot;name&quot;,&quot;columns&quot;,&quot;rows&quot;}],&quot;policy&quot;:{&quot;timeout_s&quot;,&quot;network&quot;:&quot;blocked&quot;,&quot;isolation&quot;}}
+&quot;model_calibration&quot;: {&quot;model_id&quot;,&quot;dataset&quot;,&quot;backend&quot;,&quot;status&quot;,&quot;objective&quot;:{&quot;chi2&quot;,&quot;rmse&quot;,&quot;n_points&quot;},
+  &quot;parameters&quot;:[{&quot;name&quot;,&quot;initial&quot;,&quot;estimate&quot;,&quot;ci_low&quot;,&quot;ci_high&quot;,&quot;identifiability&quot;:&quot;identifiable|practically_non_identifiable|structurally_non_identifiable&quot;}],
+  &quot;profiles&quot;:{&quot;&lt;param&gt;&quot;:[{&quot;value&quot;,&quot;chi2&quot;}]},&quot;fit&quot;:{&quot;&lt;species&gt;&quot;:{&quot;time&quot;:[],&quot;observed&quot;:[],&quot;simulated&quot;:[]}}}
+&quot;structure_intel&quot;: {&quot;uniprot&quot;,&quot;gene&quot;,&quot;alphafold&quot;:{&quot;model_id&quot;,&quot;mean_plddt&quot;,&quot;plddt_band&quot;,&quot;url&quot;,&quot;pdb_url&quot;,&quot;version&quot;},
+  &quot;pdb_entries&quot;:[{&quot;pdb_id&quot;,&quot;title&quot;,&quot;method&quot;,&quot;resolution&quot;,&quot;ligands&quot;:[],&quot;url&quot;}],&quot;docking&quot;:{...}|null,&quot;generated&quot;:[...]|null}
+&quot;omics_intel&quot;: {&quot;gwas&quot;:{&quot;status&quot;,&quot;items&quot;:[...]},&quot;gtex&quot;:{...},&quot;string&quot;:{...},&quot;reactome&quot;:{...},&quot;pubchem&quot;:{...},&quot;preprints&quot;:{...},&quot;depmap&quot;:{...}}
+&quot;project_memory&quot;: {&quot;project_id&quot;,&quot;recalled&quot;:[{&quot;id&quot;,&quot;subject&quot;,&quot;relation&quot;,&quot;object&quot;,&quot;valid_from&quot;,&quot;source&quot;,&quot;confidence&quot;}],&quot;written&quot;:0,&quot;invalidated&quot;:0}
+</code></pre></div>
+<p>New SSE events: <code>run_control</code> (first event), <code>approval_request</code> (from approval phases), and <code>job</code> events, which
+reuse the chat event types.</p>
+<h2 id="4-work-packages-parallel-disjoint-ownership">4. Work packages (parallel, disjoint ownership)</h2>
+<table>
+<thead>
+<tr>
+<th>WP</th>
+<th>Features</th>
+<th>Owns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 planning</td>
+<td>F1, F3, F18</td>
+<td>agentic/{plan_graph,planner,executor,plan_execute,decompose,tool_retrieval}.py; tests/test_agentic_planning.py, tests/test_tool_retrieval.py</td>
+</tr>
+<tr>
+<td>2 loops</td>
+<td>F2, F4, F7</td>
+<td>agentic/{gaps,counter_evidence,topologies,specialists}.py; tests/test_agentic_loops.py</td>
+</tr>
+<tr>
+<td>3 verification</td>
+<td>F8, F9</td>
+<td>agentic/{nli,confidence,calibration_stats}.py; tests/test_agentic_verification.py</td>
+</tr>
+<tr>
+<td>4 science</td>
+<td>F6, F11</td>
+<td>agentic/{hypothesis,calibrate}.py, vivarix/calibration.py, extensions/calibration.py; tests/test_hypothesis_calibration.py</td>
+</tr>
+<tr>
+<td>5 analyst+structure</td>
+<td>F10, F12</td>
+<td>agentic/sandbox/<em>, agentic/analyst.py, extensions/sandbox.py, structintel/</em>, extensions/structure.py; tests/test_sandbox.py, tests/test_structure_intel.py</td>
+</tr>
+<tr>
+<td>6 data+reliability</td>
+<td>F19, F20</td>
+<td>tools/reliability.py, sources_extra/*, extensions/omics_sources.py; tests/test_reliability.py, tests/test_omics_sources.py</td>
+</tr>
+<tr>
+<td>7 platform</td>
+<td>F13, F15, F16, F17</td>
+<td>agentic/{clarify,approval,jobs,project_memory}.py, utils/memory/project_store.py, app/backend/routers/{agent_runs,jobs,projects,mcp,a2a}.py; tests/test_agent_platform.py</td>
+</tr>
+<tr>
+<td>8 frontend</td>
+<td>UI for all</td>
+<td>web/**</td>
+</tr>
+</tbody>
+</table>
+<p>Cross-package calls go only through the contracts above:
+- F7 and F9 read <code>state.bag["nli_judge_fn"]</code> and <code>state.bag["nli_scores"]</code> (WP3 sets them; consumers must work when
+  they are absent).
+- F2 reads <code>state.sub_questions</code> (WP1).
+- F6 uses the registry tools.
+- The jobs router imports the orchestrator.
+- MCP and A2A import <code>phronesis.agentic.jobs</code>. WP7 owns both, so they can agree internally.</p>
+<p>Phase order: clarify 10, project_memory recall 20, decompose 30 | approval 10 | plan_execute 10, supervisor 10,
+swarm 10, hypothesis 40, analyst 50, calibrate 55, counter_evidence 60, nli 90 | gaps 10, debate 20 | confidence 10,
+project_memory consolidate 50.</p>
+<h2 id="5-done-criteria-per-package">5. Done criteria per package</h2>
+<ul>
+<li>Its tests pass, <code>tests/test_agentic_foundation.py</code> passes, and the <strong>whole</strong> suite still passes
+  (<code>.venv/Scripts/python.exe -m pytest tests -q -p no:cacheprovider</code>). Other packages may be mid-edit, so a failure
+  only counts against you if it is in your own files.</li>
+<li>No new dependencies. Every model and network path has an offline fallback.</li>
+<li>Docstrings cite the papers this document lists for the feature.</li>
+<li>The final report lists the files changed, the tests added, the env flags, and any change requested to a frozen file.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tabs", "navigation.instant", "navigation.expand", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "navigation.scrollable"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
