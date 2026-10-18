@@ -1,0 +1,15 @@
+{
+ "header": {
+  "type": "esearch",
+  "version": "0.3"
+ },
+ "esearchresult": {
+  "count": "1",
+  "retmax": "1",
+  "retstart": "0",
+  "idlist": [
+   "12582"
+  ],
+  "querytranslation": "KRAS[gene] AND \"Gly12Asp\"[variant name]"
+ }
+}

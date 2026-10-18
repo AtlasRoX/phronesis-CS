@@ -1,0 +1,27 @@
+{
+ "page_meta": {
+  "limit": 20,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total_count": 4
+ },
+ "targets": [
+  {
+   "pref_name": "Tyrosine-protein kinase ABL1",
+   "target_chembl_id": "CHEMBL1862"
+  },
+  {
+   "pref_name": "Platelet-derived growth factor receptor beta",
+   "target_chembl_id": "CHEMBL1913"
+  },
+  {
+   "pref_name": "Mast/stem cell growth factor receptor Kit",
+   "target_chembl_id": "CHEMBL1936"
+  },
+  {
+   "pref_name": "Bcr/Abl fusion protein",
+   "target_chembl_id": "CHEMBL2096618"
+  }
+ ]
+}

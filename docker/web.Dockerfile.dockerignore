@@ -1,0 +1,10 @@
+# BuildKit reads <Dockerfile>.dockerignore next to the Dockerfile; context is web/.
+node_modules
+.next
+out
+coverage
+tsconfig.tsbuildinfo
+*.log
+.env
+.env.*
+!.env.example

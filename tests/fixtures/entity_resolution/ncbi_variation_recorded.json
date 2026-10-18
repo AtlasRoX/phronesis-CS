@@ -1,0 +1,28 @@
+{
+ "NM_004985.5:c.35G>A": {
+  "status": 200,
+  "body": {
+   "data": {
+    "spdis": [
+     {
+      "seq_id": "NM_004985.5",
+      "position": 224,
+      "deleted_sequence": "G",
+      "inserted_sequence": "A"
+     }
+    ],
+    "input_hgvs_validity": "valid"
+   }
+  }
+ },
+ "NM_004985.5:c.35C>A": {
+  "status": 400,
+  "body": {
+   "error": {
+    "code": 400,
+    "message": "Error while processing 'NM_004985.5:c.35C>A': The submitted reference allele (C) does not agree with the actual reference sequence (G).",
+    "input_hgvs_validity": "invalid"
+   }
+  }
+ }
+}

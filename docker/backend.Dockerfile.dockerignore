@@ -1,0 +1,16 @@
+# BuildKit reads <Dockerfile>.dockerignore next to the Dockerfile; context is the repo root.
+# Allow-list: only what docker/backend.Dockerfile copies.
+*
+!pyproject.toml
+!uv.lock
+!README.md
+!phronesis/
+!app/
+**/__pycache__
+**/*.py[cod]
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/tests/files
+**/.env
+**/.env.*

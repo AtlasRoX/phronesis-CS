@@ -1,0 +1,54 @@
+{
+ "meta": {
+  "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+  "terms": "https://open.fda.gov/terms/",
+  "license": "https://open.fda.gov/license/",
+  "last_updated": "2026-10-13"
+ },
+ "results": [
+  {
+   "term": "SITAGLIPTIN AND METFORMIN HYDROCHLORIDE",
+   "count": 13
+  },
+  {
+   "term": "ALOGLIPTIN AND METFORMIN HYDROCHLORIDE",
+   "count": 3
+  },
+  {
+   "term": "DAPAGLIFLOZIN AND METFORMIN HYDROCHLORIDE",
+   "count": 2
+  },
+  {
+   "term": "LINAGLIPTIN AND METFORMIN HYDROCHLORIDE",
+   "count": 2
+  },
+  {
+   "term": "METFORMIN HYDROCHLORIDE",
+   "count": 2
+  },
+  {
+   "term": "CANAGLIFLOZIN AND METFORMIN HYDROCHLORIDE",
+   "count": 1
+  },
+  {
+   "term": "EMPAGLIFLOZIN AND METFORMIN HYDROCHLORIDE",
+   "count": 1
+  },
+  {
+   "term": "EMPAGLIFLOZIN, LINAGLIPTIN, METFORMIN HYDROCHLORIDE",
+   "count": 1
+  },
+  {
+   "term": "EMPAGLIFLOZIN, METFORMIN HYDROCHLORIDE",
+   "count": 1
+  },
+  {
+   "term": "ERTUGLIFLOZIN AND METFORMIN HYDROCHLORIDE",
+   "count": 1
+  },
+  {
+   "term": "PIOGLITAZONE AND METFORMIN HYDROCHLORIDE",
+   "count": 1
+  }
+ ]
+}

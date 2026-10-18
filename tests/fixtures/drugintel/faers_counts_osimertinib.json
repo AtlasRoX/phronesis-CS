@@ -1,0 +1,50 @@
+{
+ "meta": {
+  "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+  "terms": "https://open.fda.gov/terms/",
+  "license": "https://open.fda.gov/license/",
+  "last_updated": "2026-07-30"
+ },
+ "results": [
+  {
+   "term": "DEATH",
+   "count": 11465
+  },
+  {
+   "term": "MALIGNANT NEOPLASM PROGRESSION",
+   "count": 3400
+  },
+  {
+   "term": "DIARRHOEA",
+   "count": 1696
+  },
+  {
+   "term": "DRUG RESISTANCE",
+   "count": 1133
+  },
+  {
+   "term": "FATIGUE",
+   "count": 1045
+  },
+  {
+   "term": "RASH",
+   "count": 954
+  },
+  {
+   "term": "DECREASED APPETITE",
+   "count": 816
+  },
+  {
+   "term": "OFF LABEL USE",
+   "count": 808
+  },
+  {
+   "term": "DISEASE PROGRESSION",
+   "count": 766
+  },
+  {
+   "term": "DYSPNOEA",
+   "count": 760
+  }
+ ]
+}

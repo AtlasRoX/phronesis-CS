@@ -1,0 +1,164 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; filter.ids=NCT02296125,NCT03521154, SEARCH_FIELDS (response order as returned)",
+ "totalCount": 2,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT03521154",
+     "briefTitle": "A Global Study to Assess the Effects of Osimertinib Following Chemoradiation in Patients With Stage III Unresectable Non-small Cell Lung Cancer (LAURA)",
+     "acronym": "LAURA"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "startDateStruct": {
+      "date": "2018-07-19"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2024-01-05"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2025-04-03"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-08-04"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "AstraZeneca",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non Small Cell Lung Cancer (Stage III)"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 216,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Osimertinib 80mg/40mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo Osimertinib 80mg/40mg"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Progression-free Survival (PFS) by Blinded Independent Central Review (BICR)",
+       "timeFrame": "Every 8 weeks for first 48 weeks, then every 12 weeks until BICR-confirmed radiological disease progression. Assessed up to date of DCO (05Jan24) to a maximum of approximately 63 months"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02296125",
+     "briefTitle": "AZD9291 Versus Gefitinib or Erlotinib in Patients With Locally Advanced or Metastatic Non-small Cell Lung Cancer",
+     "acronym": "FLAURA"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2014-12-03"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2017-06-19"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2018-11-06"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-04-21"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "AstraZeneca",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Locally Advanced or Metastatic EGFR Sensitising Mutation Positive Non Small Cell Lung Cancer"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 674,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "AZD9291 80 mg/40 mg + placebo"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo Erlotinib 150/100mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo Gefitinib 250 mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Erlotinib 150/100 mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Gefitinib 250 mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo AZD9291 80 mg/ 40 mg"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Median Progression Free Survival (PFS) (Months)",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks relative to randomisation until progression"
+      },
+      {
+       "measure": "Percentage of Participants in Progression Free Survival at 6, 12, and 18 Months",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks relative to randomisation until progression"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ]
+}

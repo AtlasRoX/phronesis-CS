@@ -1,0 +1,274 @@
+{
+ "data": {
+  "variant": {
+   "variant_id": "12-25245350-C-T",
+   "rsids": [
+    "rs121913529"
+   ],
+   "caid": "CA122538",
+   "flags": [],
+   "exome": {
+    "ac": 4,
+    "an": 1460562,
+    "af": 2.7386718263243876e-06,
+    "homozygote_count": 0,
+    "faf95": {
+     "popmax": 7.200000000000001e-07,
+     "popmax_population": "nfe"
+    },
+    "filters": [],
+    "populations": [
+     {
+      "id": "remaining",
+      "ac": 1,
+      "an": 60330
+     },
+     {
+      "id": "remaining_XX",
+      "ac": 0,
+      "an": 31764
+     },
+     {
+      "id": "remaining_XY",
+      "ac": 1,
+      "an": 28566
+     },
+     {
+      "id": "amr",
+      "ac": 0,
+      "an": 44652
+     },
+     {
+      "id": "amr_XX",
+      "ac": 0,
+      "an": 25634
+     },
+     {
+      "id": "amr_XY",
+      "ac": 0,
+      "an": 19018
+     },
+     {
+      "id": "fin",
+      "ac": 0,
+      "an": 53374
+     },
+     {
+      "id": "fin_XX",
+      "ac": 0,
+      "an": 27622
+     },
+     {
+      "id": "fin_XY",
+      "ac": 0,
+      "an": 25752
+     },
+     {
+      "id": "mid",
+      "ac": 0,
+      "an": 5768
+     },
+     {
+      "id": "mid_XX",
+      "ac": 0,
+      "an": 2506
+     },
+     {
+      "id": "mid_XY",
+      "ac": 0,
+      "an": 3262
+     },
+     {
+      "id": "nfe",
+      "ac": 3,
+      "an": 1111282
+     },
+     {
+      "id": "nfe_XX",
+      "ac": 2,
+      "an": 571934
+     },
+     {
+      "id": "nfe_XY",
+      "ac": 1,
+      "an": 539348
+     },
+     {
+      "id": "sas",
+      "ac": 0,
+      "an": 85970
+     },
+     {
+      "id": "sas_XX",
+      "ac": 0,
+      "an": 22000
+     },
+     {
+      "id": "sas_XY",
+      "ac": 0,
+      "an": 63970
+     },
+     {
+      "id": "asj",
+      "ac": 0,
+      "an": 26054
+     },
+     {
+      "id": "asj_XX",
+      "ac": 0,
+      "an": 12592
+     },
+     {
+      "id": "asj_XY",
+      "ac": 0,
+      "an": 13462
+     },
+     {
+      "id": "eas",
+      "ac": 0,
+      "an": 39666
+     },
+     {
+      "id": "eas_XX",
+      "ac": 0,
+      "an": 20694
+     },
+     {
+      "id": "eas_XY",
+      "ac": 0,
+      "an": 18972
+     },
+     {
+      "id": "afr",
+      "ac": 0,
+      "an": 33466
+     },
+     {
+      "id": "afr_XX",
+      "ac": 0,
+      "an": 19316
+     },
+     {
+      "id": "afr_XY",
+      "ac": 0,
+      "an": 14150
+     },
+     {
+      "id": "XX",
+      "ac": 2,
+      "an": 734062
+     },
+     {
+      "id": "XY",
+      "ac": 2,
+      "an": 726500
+     }
+    ]
+   },
+   "genome": {
+    "ac": 2,
+    "an": 152182,
+    "af": 1.3142158730993153e-05,
+    "filters": []
+   },
+   "transcript_consequences": [
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000311936",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": true
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000256078",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000556131",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000557334",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000685328",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000686969",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000688940",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000693229",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000692768",
+     "hgvsp": null,
+     "hgvsc": "c.-88+5401G>A",
+     "major_consequence": "intron_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000686877",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000687356",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    },
+    {
+     "gene_symbol": "KRAS",
+     "transcript_id": "ENST00000690804",
+     "hgvsp": "p.Gly12Asp",
+     "hgvsc": "c.35G>A",
+     "major_consequence": "missense_variant",
+     "is_canonical": null
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,166 @@
+# Phronesis evaluation harness (python -m phronesis.evals; guide: docs/evals.md)
+name: EVALS Phronesis
+
+on:
+  # Every commit to the main branches and every pull request that touches the system or the harness: harness tests,
+  # the offline plan gate and the replay of committed answer cassettes (all offline, no keys).
+  push:
+    branches: [main, master]
+    paths:
+      - "phronesis/agents/**"
+      - "phronesis/agentic/**"
+      - "phronesis/tools/**"
+      - "phronesis/sources/**"
+      - "phronesis/sources_extra/**"
+      - "phronesis/drugintel/**"
+      - "phronesis/lithoscribe/**"
+      - "phronesis/evals/**"
+      - "phronesis/utils/**"
+      - "phronesis/extensions/**"
+      - "app/**"
+      - "tests/test_evals.py"
+      - "tests/test_evals_harness.py"
+      - "tests/test_evals_cassette.py"
+      - "tests/test_search_plan.py"
+      - ".github/workflows/evals.yml"
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "phronesis/agents/**"
+      - "phronesis/agentic/**"
+      - "phronesis/tools/**"
+      - "phronesis/sources/**"
+      - "phronesis/sources_extra/**"
+      - "phronesis/drugintel/**"
+      - "phronesis/lithoscribe/**"
+      - "phronesis/evals/**"
+      - "phronesis/utils/**"
+      - "phronesis/extensions/**"
+      - "app/**"
+      - "tests/test_evals.py"
+      - "tests/test_evals_harness.py"
+      - "tests/test_evals_cassette.py"
+      - "tests/test_search_plan.py"
+      - ".github/workflows/evals.yml"
+  schedule:
+    - cron: "0 5 * * 1" # Mondays 05:00 UTC: live retrieval + answers
+  workflow_dispatch:
+    inputs:
+      levels:
+        description: "Levels to run live (comma list of retrieval, answer)"
+        default: "retrieval,answer"
+      golden:
+        description: "Also run the golden suite and check it against the committed baseline"
+        type: boolean
+        default: true
+      suites:
+        description: "Suites (clinical, behavior, pubmedqa, litqa2, or a .jsonl path)"
+        default: "clinical,behavior"
+      limit:
+        description: "At most this many cases (empty for all)"
+        default: ""
+      fail_under:
+        description: "Gate thresholds"
+        default: "retrieval.hit_rate=0.7,answer.pass_rate=0.75"
+
+jobs:
+  offline:
+    name: Harness + offline plan gate + cassette replay
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+      - name: Set up Python
+        run: uv python install 3.12
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+      - name: Harness and search-plan tests
+        run: uv run pytest -q tests/test_evals.py tests/test_evals_harness.py tests/test_evals_cassette.py tests/test_search_plan.py
+      - name: Plan level, offline (every offline expectation must hold)
+        run: uv run python -m phronesis.evals run --suite clinical,behavior --level plan --fail-under "plan.pass_rate=1"
+      - name: Replay committed answer cassettes (offline, deterministic)
+        # Every tool and model call comes from phronesis/evals/cassettes/<suite>/<case>.json; the network is closed.
+        # A call the cassette does not hold (the code now asks something else) fails the step: re-record the case.
+        run: |
+          shopt -s nullglob
+          files=(phronesis/evals/cassettes/*/*.json phronesis/evals/cassettes/*/*.json.gz)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "::notice::No committed cassettes under phronesis/evals/cassettes; skipping the replay. Record one locally with: python -m phronesis.evals run --suite golden --level answer --ids <case> --record"
+            exit 0
+          fi
+          suites=$(for f in "${files[@]}"; do basename "$(dirname "$f")"; done | sort -u | paste -sd, -)
+          uv run python -m phronesis.evals run --suite "$suites" --level answer --replay --concurrency 1 --out eval_runs/replay
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: eval-plan-offline
+          path: eval_runs/
+
+  live:
+    name: Live retrieval and answers
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+      - name: Set up Python
+        run: uv python install 3.12
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+      - name: Run evaluation
+        run: >
+          uv run python -m phronesis.evals run
+          --suite "${{ inputs.suites || 'clinical,behavior' }}"
+          --level "${{ inputs.levels || 'retrieval,answer' }}"
+          ${{ inputs.limit && format('--limit {0} --seed 1', inputs.limit) || '' }}
+          --judge --concurrency 2
+          --fail-under "${{ inputs.fail_under || 'retrieval.hit_rate=0.7,answer.pass_rate=0.75' }}"
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: eval-live
+          path: eval_runs/
+
+  golden:
+    name: Golden suite + baseline check
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.golden)
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      BASELINE: phronesis/evals/baselines/golden.json
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+      - name: Set up Python
+        run: uv python install 3.12
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+      - name: Run the golden suite (answers, every framework)
+        # The pass rate is not gated here: the baseline check below decides regressions.
+        run: uv run python -m phronesis.evals run --suite golden --level answer --concurrency 2 --out eval_runs/golden
+      - name: Check against the committed baseline
+        run: |
+          RUN_DIR="$(ls -d eval_runs/golden/*/ | sort | tail -n 1)"
+          if [ ! -f "$BASELINE" ]; then
+            echo "::notice::No committed baseline at $BASELINE; skipping the regression check. Save one with: python -m phronesis.evals baseline save <run> --baseline $BASELINE"
+            exit 0
+          fi
+          uv run python -m phronesis.evals baseline check "$RUN_DIR" --baseline "$BASELINE" --delta 0.03
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: eval-golden
+          path: eval_runs/golden/

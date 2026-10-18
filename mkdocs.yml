@@ -1,0 +1,270 @@
+site_name: Phronesis
+
+nav:
+  - Home: index.md
+
+  - Phronesis:
+      - Introduction: phronesis/intro.md
+      - Configuration: configuration.md
+      - Evaluation: evals.md
+      - Scientific Validation: SCIENTIFIC_VALIDATION_AND_ARCHITECTURE.md
+      - Agentic System:
+          - Overview: agentic/README.md
+          - Auto Routing: agentic/auto-routing.md
+          - Platform API: agentic/platform-api.md
+          - Sandbox Security: agentic/sandbox-security.md
+          - "References: Agent Loop": agentic/references-agent-loop.md
+          - "References: Verification, Tools and Data": agentic/references-verification-tools-data.md
+      - Agents:
+          - T2AA4P agent: phronesis/agents/main_agent.md
+      - States:
+          - T2AA4P state: phronesis/states/state_phronesis.md
+
+  - Vivarix:
+      - Introduction: vivarix/intro.md
+      - FAQ: vivarix/faq.md
+      - Case Studies:
+          - Precision medicine: vivarix/cases/Case_1.md
+          - Epidemiology: vivarix/cases/Case_2.md
+          - Emergent system properties: vivarix/cases/Case_3.md
+      - Tutorials:
+          - Model Examples: ./notebooks/vivarix/basico_tutorials/example_models.md
+      - Benchmark:
+          - Description: ./notebooks/vivarix/benchmark/benchmark.md
+      - Agents:
+          - T2B agent: vivarix/agents/t2b_agent.md
+      - States:
+          - T2B state: vivarix/states/state_talk2biomodels.md
+      - Models:
+          - System Bio Model: vivarix/models/sys_bio_model.md
+          - Basico Model: vivarix/models/basico_model.md
+      - Tools:
+          - Search models: vivarix/tools/search_models.md
+          - Model information: vivarix/tools/get_modelinfo.md
+          - Model annotation: vivarix/tools/get_annotation.md
+          - Simulate model: vivarix/tools/simulate_model.md
+          - Ask questions: vivarix/tools/ask_question.md
+          - Custom plots: vivarix/tools/custom_plotter.md
+          - Load biomodel: vivarix/tools/load_biomodel.md
+          - Save model: vivarix/tools/save_model.md
+          - Parameter scan: vivarix/tools/parameter_scan.md
+          - Steady state: vivarix/tools/steady_state.md
+
+  - Lumicell:
+      - Introduction: lumicell/intro.md
+      - Tutorials:
+          - cell2sentence: ./notebooks/lumicell/tutorial_c2s.ipynb
+          - Cell Annotation: ./notebooks/lumicell/tutorial_cell_annotation.ipynb
+          - Cell Discovery: ./notebooks/lumicell/tutorial_cell_discovery.ipynb
+          - UMAP Visualization: ./notebooks/lumicell/tutorial_UMAP_visualization.ipynb
+          - Cell Type Proportion: ./notebooks/lumicell/tutorial_cell_type_proportion.ipynb
+      - Agents:
+          - Agent Introduction: lumicell/agents/intro.md
+          - SCP Agent: lumicell/agents/scp_agent.md
+      - States:
+          - Lumicell: lumicell/states/state_talk2cells.md
+      - Tools:
+          - Search studies: lumicell/tools/search_studies.md
+          - Display studies: lumicell/tools/display_studies.md
+
+  - Synapta:
+      - Introduction: synapta/intro.md
+      - Full PrimeKG Analytics: synapta/primekg_full_graph.md
+      - Deployment:
+          - Custom Data: synapta/deployment/custom_data.md
+          - Deployment: synapta/deployment/deployment.md
+      - FAQ: synapta/faq.md
+      - Tutorials:
+          - PrimeKG: ./notebooks/synapta/tutorial_primekg_loader.ipynb
+          - StarkQA-PrimeKG: ./notebooks/synapta/tutorial_starkqa_primekg_loader.ipynb
+          - BioBridge-PrimeKG: ./notebooks/synapta/tutorial_biobridge_primekg_loader.ipynb
+          - PrimeKG Subgraph Extraction: ./notebooks/synapta/tutorial_primekg_subgraph.ipynb
+          - BioBridge-PrimeKG Multimodal: ./notebooks/synapta/tutorial_biobridge_multimodal.ipynb
+          - BioBridge-PrimeKG (IBD) Multimodal: ./notebooks/synapta/tutorial_biobridge_ibd_multimodal.ipynb
+          - Textual Embeddings (all-minilm): ./notebooks/synapta/tutorial_starkqa_primekg_textual_embeddings_all_minilm.ipynb
+          - Textual Embeddings (nomic-embed-text): ./notebooks/synapta/tutorial_starkqa_primekg_textual_embeddings_nomic_embed_text.ipynb
+          - Textual Enrichments: ./notebooks/synapta/tutorial_starkqa_primekg_textual_enrichments.ipynb
+          - Drug Enrichments/Embeddings (SMILES/molmim): ./notebooks/synapta/tutorial_primekg_smiles_enrich_embed.ipynb
+          - PrimeKG enrichments/embeddings: ./notebooks/synapta/tutorial_primekg_enrichment.ipynb
+          - Protein Embeddings: ./notebooks/synapta/tutorial_biobridge_primekg_protein_embeddings.ipynb
+          - Embedding Alignment: ./notebooks/synapta/tutorial_multimodal_embeddings_alignment.ipynb
+          - Evaluation (VSS): ./notebooks/synapta/tutorial_starkqa_primekg_evaluation_vss.ipynb
+          - Synapta Agentic Tools: ./notebooks/synapta/tutorial_synapta_agentic_tools.ipynb
+          - PyG2DataFrame: ./notebooks/synapta/tutorial_pyg2dataframe.ipynb
+          - UniProt ID Mapping: ./notebooks/synapta/tutorial_uniprot_mapping.ipynb
+      - Milvus Vector DB Setup:
+          - BioBridge-PrimeKG (IBD) Multimodal Data Prep.: ./notebooks/synapta/tutorial_biobridge_ibd_multimodal.ipynb
+          - BioBridge-PrimeKG (IBD) Multimodal Data Dump: ./notebooks/synapta/tutorial_primekg_milvus_ibd_primekg_dump.ipynb
+          - BioBridge-PrimeKG Multimodal Data Prep.: ./notebooks/synapta/tutorial_biobridge_multimodal.ipynb
+          - BioBridge-PrimeKG Multimodal Data Dump: ./notebooks/synapta/tutorial_primekg_milvus_data_dump.ipynb
+      - Datasets:
+          - Dataset: synapta/datasets/dataset.md
+          - PrimeKG: synapta/datasets/primekg.md
+          - StarkQA-PrimeKG: synapta/datasets/starkqa_primekg.md
+          - BioBridge-PrimeKG: synapta/datasets/biobridge_primekg.md
+      - Utils:
+          - Database:
+              - MilvusConnectionManager: synapta/utils/database/milvus_connection_manager.md
+          - Embeddings:
+              - Embeddings: synapta/utils/embeddings/embeddings.md
+              - EmbeddingWithSentenceTransformer: synapta/utils/embeddings/sentence_transformer.md
+              - EmbeddingWithHuggingFace: synapta/utils/embeddings/huggingface.md
+              - EmbeddingWithOllama: synapta/utils/embeddings/ollama.md
+              - EmbeddingWithMOLMIM: synapta/utils/embeddings/nim_molmim.md
+          - Enrichments:
+              - Enrichments: synapta/utils/enrichments/enrichments.md
+              - EnrichmentWithOllama: synapta/utils/enrichments/ollama.md
+              - EnrichmentWithPubChem: synapta/utils/enrichments/pubchem_strings.md
+              - EnrichmentWithUniProt: synapta/utils/enrichments/uniprot_proteins.md
+              - EnrichmentWithReactome: synapta/utils/enrichments/reactome_pathways.md
+              - EnrichmentWithOLS: synapta/utils/enrichments/ols_terms.md
+          - Extractions:
+              - PCST: synapta/utils/extractions/pcst.md
+              - PCST (Multimodal): synapta/utils/extractions/multimodal_pcst.md
+              - PCST (Milvus Multimodal): synapta/utils/extractions/milvus_multimodal_pcst.md
+      - Agents:
+          - Synapta Agent: synapta/agents/t2kg_agent.md
+      - States:
+          - Synapta State: synapta/states/state_talk2knowledgegraphs.md
+      - Tools:
+          - Subgraph Extraction: synapta/tools/subgraph_extraction.md
+          - Subgraph Extraction (Multimodal): synapta/tools/multimodal_subgraph_extraction.md
+          - Subgraph Extraction (Milvus Multimodal): synapta/tools/milvus_multimodal_subgraph_extraction.md
+          - Subgraph Summarization: synapta/tools/subgraph_summarization.md
+          - GraphRAG Reasoning: synapta/tools/graphrag_reasoning.md
+          - Load Arguments: synapta/tools/load_arguments.md
+
+  - Lithoscribe:
+      - Introduction: lithoscribe/intro.md
+      - Agents:
+          - Main Agent: lithoscribe/agents/main_agent.md
+          - S2 Agent: lithoscribe/agents/s2_agent.md
+          - Paper Download Agent: lithoscribe/agents/paper_download_agent.md
+          - Zotero Agent: lithoscribe/agents/zotero_agent.md
+          - PDF Agent: lithoscribe/agents/pdf_agent.md
+      - States:
+          - Lithoscribe state: lithoscribe/states/state_talk2scholars.md
+      - Tools:
+          - Search Papers: lithoscribe/tools/search.md
+          - Single Paper Recommendation: lithoscribe/tools/single_paper_rec.md
+          - Multi Paper Recommendation: lithoscribe/tools/multi_paper_rec.md
+          - Display Dataframe: lithoscribe/tools/display_dataframe.md
+          - Query Dataframe: lithoscribe/tools/query_dataframe.md
+          - Retrieve Semantic Scholar ID: lithoscribe/tools/retrieve_semantic_scholar_paper_id.md
+          - Paper Downloader: lithoscribe/tools/paper_downloader.md
+          - Question and answer: lithoscribe/tools/question_and_answer.md
+          - Zotero Read: lithoscribe/tools/zotero_read.md
+          - Zotero Write: lithoscribe/tools/zotero_write.md
+          - Zotero Review: lithoscribe/tools/zotero_review.md
+      - Utils:
+          - S2 Agent:
+              - Search Helper: lithoscribe/utils/search_helper.md
+              - Single Paper Recommendation Helper: lithoscribe/utils/single_helper.md
+              - Multi Paper Recommendation Helper: lithoscribe/utils/multi_helper.md
+          - PDF Agent:
+              - Vector Store: lithoscribe/utils/vector_store.md
+              - Singleton Manager: lithoscribe/utils/singleton_manager.md
+              - GPU Detection: lithoscribe/utils/gpu_detection.md
+              - Collection Manager: lithoscribe/utils/collection_manager.md
+              - Get Vector Store: lithoscribe/utils/get_vectorstore.md
+              - Document Processor: lithoscribe/utils/document_processor.md
+              - Paper Loader: lithoscribe/utils/paper_loader.md
+              - Batch Processor: lithoscribe/utils/batch_processor.md
+              - RAG Pipeline: lithoscribe/utils/rag_pipeline.md
+              - Vector Normalization: lithoscribe/utils/vector_normalization.md
+              - Retrieve Chunks: lithoscribe/utils/retrieve_chunks.md
+              - Nvidia NIM Reranker: lithoscribe/utils/nvidia_nim_reranker.md
+              - Generate Answer: lithoscribe/utils/generate_answer.md
+              - Answer Formatter: lithoscribe/utils/answer_formatter.md
+              - Tool Helper: lithoscribe/utils/tool_helper.md
+          - Paper Download Agent:
+              - Base Paper Downloader: lithoscribe/utils/base_paper_downloader.md
+              - Arxiv Downloader: lithoscribe/utils/arxiv_downloader.md
+              - Biorxiv Downloader: lithoscribe/utils/biorxiv_downloader.md
+              - Medrxiv Downloader: lithoscribe/utils/medrxiv_downloader.md
+              - Pubmed Downloader: lithoscribe/utils/pubmed_downloader.md
+          - Zotero Agent:
+              - Zotero Write Helper: lithoscribe/utils/write_helper.md
+              - Zotero Read Helper: lithoscribe/utils/read_helper.md
+              - Zotero Review Helper: lithoscribe/utils/review_helper.md
+              - Zotero Path: lithoscribe/utils/zotero_path.md
+              - Zotero PDF Downloader: lithoscribe/utils/zotero_pdf_downloader.md
+
+  - Plans:
+      - Harness and Tech Debt (2026-10-17): plans/2026-10-17-harness-and-tech-debt.md
+      - Query Run Repair (2026-10-16): plans/2026-10-16-query-run-repair-plan.md
+      - Agentic System: plans/agentic-system.md
+      - Audit Repair: plans/audit-repair-plan.md
+      - Clinical R&D Features: plans/clinical-rd-features.md
+      - Foundation Hooks: plans/foundation-hooks.md
+
+  # Developer Documentation Section
+  - Documentation:
+      - Developer Guides:
+          - Setup Guide: developer/README.md
+          - Testing & Linting: developer/TESTING_LINTING.md
+          - GitHub Workflows: developer/WORKFLOWS.md
+          - Streamlit Security: developer/STREAMLIT_SECURITY.md
+          - SonarCloud Setup: developer/SONARCLOUD_SETUP.md
+          - Azure Deployment: developer/AZURE_DEPLOYMENT.md
+          - Cloud Deployment: cloud/CLOUD_DEPLOYMENT.md
+      - Operations:
+          - Operations Overview: ops/Documentation_intro.md
+          - Code Operations: ops/CodeOps.md
+          - Dev Operations: ops/DevOps.md
+      - Project Guidelines:
+          - Contributing Guide: CONTRIBUTING.md
+
+repo_url: https://github.com/AtlasRoX/phronesis-CS
+repo_name: ChronoStrider/Phronesis
+
+theme:
+  name: material
+  logo: assets/VPE.png
+  palette:
+    - accent: black
+      primary: white
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - accent: black
+      primary: white
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.instant
+    - navigation.expand
+    - navigation.sections
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - navigation.scrollable
+
+plugins:
+  - search:
+      lang:
+        - en
+        - de
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            filters: None
+  - mkdocs-jupyter:
+      include_source: True
+  - tags
+  - include-markdown
+
+markdown_extensions:
+  - pymdownx.highlight
+    # anchor_linenums: true
+    # line_spans: __span
+    # pygments_lang_class: true
+  - pymdownx.superfences
+

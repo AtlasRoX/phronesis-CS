@@ -1,0 +1,71 @@
+# Auto-labeling configuration for PRs based on files changed
+
+# Documentation changes
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: ['docs/**', '*.md', 'mkdocs.yml']
+
+# CI/CD changes
+ci:
+  - changed-files:
+    - any-glob-to-any-file: ['.github/**', 'pyproject.toml', 'uv.lock']
+
+# Dependencies
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file: ['pyproject.toml', 'uv.lock']
+
+# Vivarix module
+vivarix:
+  - changed-files:
+    - any-glob-to-any-file: ['phronesis/vivarix/**']
+
+# Lithoscribe module
+lithoscribe:
+  - changed-files:
+    - any-glob-to-any-file: ['phronesis/lithoscribe/**']
+
+# Lumicell module
+lumicell:
+  - changed-files:
+    - any-glob-to-any-file: ['phronesis/lumicell/**']
+
+# Synapta module
+synapta:
+  - changed-files:
+    - any-glob-to-any-file: ['phronesis/synapta/**']
+
+# Tests
+tests:
+  - changed-files:
+    - any-glob-to-any-file: ['**/tests/**', '**/test_*.py', '**/*_test.py']
+
+# Docker
+docker:
+  - changed-files:
+    - any-glob-to-any-file: ['**/Dockerfile*', '**/docker-compose*.yml']
+
+# Frontend/App (Streamlit apps and the Next.js web app)
+frontend:
+  - changed-files:
+    - any-glob-to-any-file: ['app/frontend/**', 'web/**']
+
+# FastAPI backend
+backend:
+  - changed-files:
+    - any-glob-to-any-file: ['app/backend/**']
+
+# Shared pipeline: orchestrator, planner, verifier, tools, memory
+core:
+  - changed-files:
+    - any-glob-to-any-file: ['phronesis/agents/**', 'phronesis/phronesis/**', 'phronesis/tools/**', 'phronesis/utils/**', 'phronesis/sources/**', 'phronesis/extensions/**']
+
+# Clinical R&D modules
+clinical:
+  - changed-files:
+    - any-glob-to-any-file: ['phronesis/trials/**', 'phronesis/drugintel/**', 'phronesis/diseaseintel/**', 'phronesis/variants/**']
+
+# Datasets, provenance, export and evaluation
+data-provenance:
+  - changed-files:
+    - any-glob-to-any-file: ['phronesis/datasets/**', 'phronesis/provenance/**', 'phronesis/export/**', 'phronesis/evals/**']

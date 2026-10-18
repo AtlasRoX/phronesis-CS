@@ -1,0 +1,60 @@
+# Next.js web app: dependency audit, lint, type check, unit tests and a production build.
+name: TESTS Web
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "web/**"
+      - ".github/workflows/tests_web.yml"
+  push:
+    branches: [main, master]
+    paths:
+      - "web/**"
+      - ".github/workflows/tests_web.yml"
+  workflow_dispatch:
+
+jobs:
+  web:
+    name: Web build and tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Blocks on high and critical advisories in the shipped (production) dependency tree.
+      - name: Dependency audit (production, blocking)
+        run: npm audit --omit=dev --audit-level=high
+
+      # The full tree, dev tooling included, is reported without blocking: on 2026-10-17 its only high findings
+      # were braces (GHSA-vfj7-8cjw-p6xm) via eslint-config-next's fast-glob, fixable only by a breaking
+      # downgrade. Drop continue-on-error once eslint-config-next ships a patched chain.
+      - name: Dependency audit (all, report only)
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      # `--if-present`: the ESLint `lint` script lands with the frontend track; until then this step is a no-op.
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Production build
+        run: npx next build

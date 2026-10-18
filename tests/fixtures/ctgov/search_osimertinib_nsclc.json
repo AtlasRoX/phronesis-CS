@@ -1,0 +1,295 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; query.intr=osimertinib, query.cond=non-small cell lung cancer, SEARCH_FIELDS, pageSize=10, countTotal=true; trimmed to 4 of 10 studies",
+ "totalCount": 335,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT04695925",
+     "briefTitle": "Osimertinib Monotherapy or Combination With Chemotherapy for Advanced NSCLC Concurrent EGFR and TP53 Mutations",
+     "acronym": "TOP"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "startDateStruct": {
+      "date": "2021-03-29"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2025-11-01"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2025-10-15"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Li Zhang, MD",
+      "class": "OTHER"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non-small Cell Carcinoma",
+      "EGFR Gene Mutation"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 294,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Osimertinib"
+      },
+      {
+       "type": "DRUG",
+       "name": "Pemetrexed"
+      },
+      {
+       "type": "DRUG",
+       "name": "Carboplatin"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "progression free survival",
+       "timeFrame": "assessed up to 36 months"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02954523",
+     "briefTitle": "Dasatinib and Osimertinib (AZD9291) in Advanced Non-Small Cell Lung Cancer With EGFR Mutations"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "whyStopped": "Lack of accrual",
+     "startDateStruct": {
+      "date": "2016-10"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2018-08"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2024-07-05"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2024-07-05"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Chul Kim",
+      "class": "OTHER"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "EGFR Gene Mutation",
+      "Nonsmall Cell Lung Cancer"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE1",
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "NON_RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 10,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Dasatinib"
+      },
+      {
+       "type": "DRUG",
+       "name": "Osimertinib"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Phase I : Number of Patients With Drug-related Adverse Events as Assessed by CTCAEv4.0",
+       "timeFrame": "Cycle 1 (28 day cycle)"
+      },
+      {
+       "measure": "Phase II : Number of Patients That do Not Progress According to RECIST v1.1",
+       "timeFrame": "9 months"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07036016",
+     "briefTitle": "Interstitial Pneumonitis Associated With EGFR-TKI and Combined With PD-1/PD-L1"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2015-01-01"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2024-12-31"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2025-06-25"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Union Hospital, Tongji Medical College, Huazhong University of Science and Technology",
+      "class": "OTHER"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non-Small Cell Lung Cancer (NSCLC)"
+     ]
+    },
+    "designModule": {
+     "studyType": "OBSERVATIONAL",
+     "designInfo": {},
+     "enrollmentInfo": {
+      "count": 67818,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "EGFR-TKI"
+      },
+      {
+       "type": "DRUG",
+       "name": "PD-1/PD-L1 inhibitor"
+      },
+      {
+       "type": "DRUG",
+       "name": "EGFR-TKI combined with PD-1/PD-L1"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Incidence of reported interstitial pneumonitis and adjusted odds ratios (aORs) derived from multivariable logistic regression analyses.",
+       "timeFrame": "From January 1, 2015, and December 31, 2024"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07642024",
+     "briefTitle": "A Study of BL-B01D1 in Combination With Osimertinib as Perioperative Therapy in Patients With EGFR-mutated Resectable Non-small Cell Lung Cancer(PANKU-Lung09)"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2026-07-24"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2032-12"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-08-03"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Sichuan Baili Pharmaceutical Co., Ltd.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non-small Cell Lung Cancer"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE2",
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 90,
+      "type": "ESTIMATED"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "BL-B01D1"
+      },
+      {
+       "type": "DRUG",
+       "name": "Osimertinib"
+      },
+      {
+       "type": "DRUG",
+       "name": "Carboplatin"
+      },
+      {
+       "type": "DRUG",
+       "name": "Pemetrexed"
+      },
+      {
+       "type": "DRUG",
+       "name": "Cisplatin"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Major Pathological Response (MPR)",
+       "timeFrame": "Up to approximately 24 months"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  }
+ ],
+ "nextPageToken": "ZVNj7o2Elu8o3lpzCt6q57L2mpOQJJxuY_Ck2fIW"
+}

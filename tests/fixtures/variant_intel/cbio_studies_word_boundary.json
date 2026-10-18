@@ -1,0 +1,137 @@
+[
+ {
+  "studyId": "acc_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "acc",
+  "name": "Adrenocortical Carcinoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 92,
+  "sequencedSampleCount": 91,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "acc",
+   "name": "Adrenocortical Carcinoma",
+   "dedicatedColor": "Purple",
+   "shortName": "ACC",
+   "parent": "adrenal_gland"
+  }
+ },
+ {
+  "studyId": "lgg_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "difg",
+  "name": "Brain Lower Grade Glioma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 514,
+  "sequencedSampleCount": 514,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "difg",
+   "name": "Diffuse Glioma",
+   "dedicatedColor": "Gray",
+   "shortName": "DIFG",
+   "parent": "brain"
+  }
+ },
+ {
+  "studyId": "gbm_tcga",
+  "cancerTypeId": "difg",
+  "name": "Glioblastoma Multiforme (TCGA, Firehose Legacy)",
+  "allSampleCount": 619,
+  "sequencedSampleCount": 290,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "difg",
+   "name": "Diffuse Glioma",
+   "dedicatedColor": "Gray",
+   "shortName": "DIFG",
+   "parent": "brain"
+  }
+ },
+ {
+  "studyId": "pcpg_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "soft_tissue",
+  "name": "Pheochromocytoma and Paraganglioma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 178,
+  "sequencedSampleCount": 178,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "soft_tissue",
+   "name": "Soft Tissue",
+   "dedicatedColor": "LightYellow",
+   "shortName": "SOFT_TISSUE",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "gbc_shanghai_2014",
+  "cancerTypeId": "gbc",
+  "name": "Gallbladder Carcinoma (Shanghai, Nat Genet 2014)",
+  "allSampleCount": 32,
+  "sequencedSampleCount": 32,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "gbc",
+   "name": "Gallbladder Cancer",
+   "dedicatedColor": "Green",
+   "shortName": "GBC",
+   "parent": "icpn"
+  }
+ },
+ {
+  "studyId": "blca_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "blca",
+  "name": "Bladder Urothelial Carcinoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 411,
+  "sequencedSampleCount": 410,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "blca",
+   "name": "Bladder Urothelial Carcinoma",
+   "dedicatedColor": "Yellow",
+   "shortName": "BLCA",
+   "parent": "bladder"
+  }
+ },
+ {
+  "studyId": "gbm_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "difg",
+  "name": "Glioblastoma Multiforme (TCGA, PanCancer Atlas)",
+  "allSampleCount": 592,
+  "sequencedSampleCount": 397,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "difg",
+   "name": "Diffuse Glioma",
+   "dedicatedColor": "Gray",
+   "shortName": "DIFG",
+   "parent": "brain"
+  }
+ },
+ {
+  "studyId": "kirc_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "ccrcc",
+  "name": "Kidney Renal Clear Cell Carcinoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 512,
+  "sequencedSampleCount": 402,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "ccrcc",
+   "name": "Renal Clear Cell Carcinoma",
+   "dedicatedColor": "Orange",
+   "shortName": "CCRCC",
+   "parent": "rcc"
+  }
+ },
+ {
+  "studyId": "sarc_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "soft_tissue",
+  "name": "Sarcoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 255,
+  "sequencedSampleCount": 255,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "soft_tissue",
+   "name": "Soft Tissue",
+   "dedicatedColor": "LightYellow",
+   "shortName": "SOFT_TISSUE",
+   "parent": "tissue"
+  }
+ }
+]

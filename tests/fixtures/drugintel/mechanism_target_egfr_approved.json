@@ -1,0 +1,195 @@
+{
+ "mechanisms": [
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL1201827",
+   "parent_molecule_chembl_id": "CHEMBL1201827",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL1201577",
+   "parent_molecule_chembl_id": "CHEMBL1201577",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL1079742",
+   "parent_molecule_chembl_id": "CHEMBL553",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL939",
+   "parent_molecule_chembl_id": "CHEMBL939",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL1201179",
+   "parent_molecule_chembl_id": "CHEMBL554",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL2105712",
+   "parent_molecule_chembl_id": "CHEMBL1173655",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL3545063",
+   "parent_molecule_chembl_id": "CHEMBL3353410",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL1743047",
+   "parent_molecule_chembl_id": "CHEMBL1743047",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL3786343",
+   "parent_molecule_chembl_id": "CHEMBL3786343",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL3545311",
+   "parent_molecule_chembl_id": "CHEMBL3545311",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL3353410",
+   "parent_molecule_chembl_id": "CHEMBL3353410",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL180022",
+   "parent_molecule_chembl_id": "CHEMBL180022",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL2105719",
+   "parent_molecule_chembl_id": "CHEMBL2110732",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL2110732",
+   "parent_molecule_chembl_id": "CHEMBL2110732",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL3989921",
+   "parent_molecule_chembl_id": "CHEMBL180022",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL4297774",
+   "parent_molecule_chembl_id": "CHEMBL4297774",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL4650319",
+   "parent_molecule_chembl_id": "CHEMBL4650319",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL4558324",
+   "parent_molecule_chembl_id": "CHEMBL4558324",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL4558324",
+   "parent_molecule_chembl_id": "CHEMBL4558324",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL4802239",
+   "parent_molecule_chembl_id": "CHEMBL4650319",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL4558324",
+   "parent_molecule_chembl_id": "CHEMBL4558324",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL6068478",
+   "parent_molecule_chembl_id": "CHEMBL4558324",
+   "target_chembl_id": "CHEMBL203"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Epidermal growth factor receptor erbB1 inhibitor",
+   "molecule_chembl_id": "CHEMBL6068478",
+   "parent_molecule_chembl_id": "CHEMBL4558324",
+   "target_chembl_id": "CHEMBL203"
+  }
+ ],
+ "page_meta": {
+  "limit": 50,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total_count": 23
+ }
+}

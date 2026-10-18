@@ -1,0 +1,261 @@
+{
+  "_meta": {
+    "name": "Phronesis Lumicell lineage anchor panel",
+    "version": "2026.10.1",
+    "species": "human (symbols are matched case-insensitively, so orthologous mouse symbols such as Cd3e also match)",
+    "purpose": "First (lineage) level of hierarchical marker-based cluster annotation. Each lineage has positive markers (lineage anchors) and negative markers whose expression counts against the lineage. The large atlas in cell_markers.json is only used afterwards to suggest a subtype within the called lineage.",
+    "curation": "Canonical, widely used lineage markers; every gene below is a textbook marker of its lineage in human single-cell RNA-seq. Hand-curated, not derived automatically; changes must bump the version.",
+    "sources": [
+      "Wolf FA, Angerer P, Theis FJ. SCANPY: large-scale single-cell gene expression data analysis. Genome Biol 2018;19:15 (PBMC3k tutorial marker table: IL7R, CD14, LYZ, MS4A1, CD8A, GNLY, NKG7, FCGR3A, MS4A7, FCER1A, CST3, PPBP)",
+      "Hao Y et al. Integrated analysis of multimodal single-cell data. Cell 2021;184:3573-3587 (Azimuth human PBMC reference, level-1/level-2 marker genes)",
+      "Tabula Sapiens Consortium. The Tabula Sapiens: a multiple-organ, single-cell transcriptomic atlas of humans. Science 2022;376:eabl4896 (compartment markers: epithelial, endothelial, stromal, immune)",
+      "Ianevski A, Giri AK, Aittokallio T. Fully-automated and ultra-fast cell-type identification using specific marker combinations from single-cell transcriptomic data. Nat Commun 2022;13:1246 (ScType: z-scored positive/negative marker scoring with marker-specificity weights; method basis)"
+    ],
+    "blood_tissue_pattern": "(?i)\\b(blood|pbmcs?|peripheral blood|bone marrow|cord blood|leukocytes?|buffy coat|apheresis)\\b"
+  },
+  "lineages": {
+    "cd4_t": {
+      "label": "CD4+ T cells",
+      "group": "T cells",
+      "compartment": "hematopoietic",
+      "positive": ["CD3D", "CD3E", "CD3G", "CD4", "IL7R", "CD40LG", "MAL"],
+      "negative": ["CD8A", "CD8B", "GNLY"],
+      "atlas_include": "(?i)(CD4\\+|\\bTregs?\\b|regulatory T|T regulatory|\\bTh ?\\d|Th17|T helper|helper T|\\bTfh\\b|follicular helper|\\bTph\\b)",
+      "atlas_exclude": "(?i)(CD8|double-positive|NKT|killer T|thymocyte)"
+    },
+    "cd8_t": {
+      "label": "CD8+ T cells",
+      "group": "T cells",
+      "compartment": "hematopoietic",
+      "positive": ["CD3D", "CD3E", "CD3G", "CD8A", "CD8B"],
+      "negative": ["CD40LG"],
+      "atlas_include": "(?i)(CD8\\+|cytotoxic T|T cytotoxic|\\bCTLs?\\b)",
+      "atlas_exclude": "(?i)(CD4\\+|double-positive|NKT|killer T|thymocyte)"
+    },
+    "nk": {
+      "label": "NK cells",
+      "group": "NK cells",
+      "compartment": "hematopoietic",
+      "positive": ["NKG7", "GNLY", "KLRD1", "KLRF1", "NCAM1", "PRF1", "GZMB"],
+      "negative": ["CD3D", "CD3E", "CD3G"],
+      "atlas_include": "(?i)(\\bNK\\b|natural killer)",
+      "atlas_exclude": "(?i)(NKT|killer T|\\bT cells?\\b)"
+    },
+    "b": {
+      "label": "B cells",
+      "group": "B cells",
+      "compartment": "hematopoietic",
+      "positive": ["CD79A", "CD79B", "MS4A1", "CD19", "CD22", "BANK1", "PAX5"],
+      "negative": ["CD3E"],
+      "atlas_include": "(?i)(\\bB[ -]?cells?\\b|\\bB lymphocytes?\\b|\\bABCs\\b)",
+      "atlas_exclude": "(?i)(plasma|pre-B|pro-B)"
+    },
+    "plasma": {
+      "label": "Plasma cells",
+      "group": "B cells",
+      "compartment": "hematopoietic",
+      "positive": ["JCHAIN", "MZB1", "SDC1", "XBP1", "PRDM1", "TNFRSF17"],
+      "negative": ["MS4A1"],
+      "atlas_include": "(?i)(plasma ?cells?|plasmablasts?)",
+      "atlas_exclude": "(?i)plasmacytoid"
+    },
+    "cd14_mono": {
+      "label": "CD14+ monocytes",
+      "group": "Monocytes",
+      "compartment": "hematopoietic",
+      "positive": ["CD14", "LYZ", "S100A8", "S100A9", "FCN1", "VCAN"],
+      "negative": ["FCGR3A", "CD3E"],
+      "atlas_include": "(?i)(\\bmonocytes?\\b)",
+      "atlas_exclude": "(?i)(non-classical|nonclassical|FCGR3A|CD16|intermediate|derived|progenitor|MDSC|suppressor)"
+    },
+    "fcgr3a_mono": {
+      "label": "FCGR3A+ (CD16+) monocytes",
+      "group": "Monocytes",
+      "compartment": "hematopoietic",
+      "positive": ["FCGR3A", "MS4A7", "CDKN1C", "LST1", "RHOC", "HES4"],
+      "negative": ["CD14", "CD3E"],
+      "atlas_include": "(?i)(non-classical monocyte|nonclassical monocyte|FCGR3A\\+ ?(non-classical )?monocyte|CD16\\+ monocyte|monocytes \\(FCGR3A)",
+      "atlas_exclude": "(?i)derived"
+    },
+    "cdc": {
+      "label": "Conventional dendritic cells",
+      "group": "Dendritic cells",
+      "compartment": "hematopoietic",
+      "positive": ["FCER1A", "CD1C", "CLEC10A", "CLEC9A", "XCR1"],
+      "negative": ["CD14", "CD3E"],
+      "atlas_include": "(?i)(dendritic|\\bcDCs?\\d?\\b|\\bmregDC\\b)",
+      "atlas_exclude": "(?i)(plasmacytoid|\\bpDC|follicular dendritic|\\bFDC\\b)"
+    },
+    "pdc": {
+      "label": "Plasmacytoid dendritic cells",
+      "group": "Dendritic cells",
+      "compartment": "hematopoietic",
+      "positive": ["LILRA4", "CLEC4C", "IL3RA", "TCF4", "PLD4"],
+      "negative": ["CD3E"],
+      "atlas_include": "(?i)(plasmacytoid|\\bpDCs?\\b)",
+      "atlas_exclude": "(?!)"
+    },
+    "megakaryocyte": {
+      "label": "Megakaryocytes / platelets",
+      "group": "Megakaryocytes / platelets",
+      "compartment": "hematopoietic",
+      "positive": ["PPBP", "PF4", "GP9", "ITGA2B", "TUBB1", "GNG11"],
+      "negative": [],
+      "atlas_include": "(?i)(megakaryocytes?\\b|platelets?)",
+      "atlas_exclude": "(?i)(erythroid progenitor|\\bMEP\\b)"
+    },
+    "erythroid": {
+      "label": "Erythroid cells",
+      "group": "Erythroid cells",
+      "compartment": "hematopoietic",
+      "positive": ["HBB", "HBA1", "HBA2", "ALAS2", "GYPA", "CA1"],
+      "negative": [],
+      "atlas_include": "(?i)(erythro|red blood|reticulocyte)",
+      "atlas_exclude": "(?i)(megakaryocyte|progenitor)"
+    },
+    "neutrophil": {
+      "label": "Neutrophils",
+      "group": "Granulocytes",
+      "compartment": "hematopoietic",
+      "positive": ["FCGR3B", "CSF3R", "CXCR2", "CEACAM8"],
+      "negative": ["CD3E"],
+      "atlas_include": "(?i)(neutrophil|granulocytes?\\b)",
+      "atlas_exclude": "(?i)(granulocyte-monocyte|progenitor)"
+    },
+    "mast": {
+      "label": "Mast cells / basophils",
+      "group": "Granulocytes",
+      "compartment": "hematopoietic",
+      "positive": ["TPSAB1", "TPSB2", "CPA3", "MS4A2", "HDC", "KIT"],
+      "negative": [],
+      "atlas_include": "(?i)(\\bmast\\b|basophil)",
+      "atlas_exclude": "(?!)"
+    },
+    "macrophage": {
+      "label": "Macrophages",
+      "group": "Macrophages",
+      "compartment": "hematopoietic",
+      "positive": ["CD68", "C1QA", "C1QB", "C1QC", "APOE", "CD163", "MRC1", "MARCO"],
+      "negative": [],
+      "atlas_include": "(?i)(macrophage|microglia|kupffer|histiocyte|osteoclast|hofbauer)",
+      "atlas_exclude": "(?!)"
+    },
+    "hspc": {
+      "label": "Hematopoietic stem/progenitor cells",
+      "group": "Hematopoietic stem/progenitor cells",
+      "compartment": "hematopoietic",
+      "positive": ["CD34", "SPINK2", "PROM1", "CRHBP"],
+      "negative": [],
+      "atlas_include": "(?i)(hematopoietic|haematopoietic|\\bHSPCs?\\b|\\bHSCs?\\b|\\bMPPs?\\b|\\bLMPPs?\\b|common (lymphoid|myeloid)|granulocyte-monocyte progenitor|megakaryocyte-erythroid progenitor|\\bGMPs?\\b|\\bCMPs?\\b|\\bMEPs?\\b)",
+      "atlas_exclude": "(?!)"
+    },
+    "epithelial": {
+      "label": "Epithelial cells",
+      "group": "Epithelial cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["EPCAM", "KRT8", "KRT18", "KRT19", "CDH1", "CLDN4"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)(epitheli|keratinocyte|ductal|duct cells|acinar|alveolar|pneumocyte|enterocyte|colonocyte|goblet|tuft|paneth|club cell|ciliated|cholangiocyte|luminal|basal cell|urothel|thymic epithelial|trophoblast|enteroendocrine|alpha cell|beta cell|delta cell|islet)",
+      "atlas_exclude": "(?!)"
+    },
+    "endothelial": {
+      "label": "Endothelial cells",
+      "group": "Endothelial cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["PECAM1", "VWF", "CDH5", "CLDN5", "KDR", "EMCN"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)(endotheli|\\bHEVs?\\b|lymphatic)",
+      "atlas_exclude": "(?!)"
+    },
+    "fibroblast": {
+      "label": "Fibroblasts",
+      "group": "Stromal cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["COL1A1", "COL1A2", "COL3A1", "DCN", "LUM", "PDGFRA"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)(fibroblast|\\bCAFs?\\b|myofibroblast|stromal|reticular cells|stellate|mesenchymal|synoviocytes \\(fibroblast)",
+      "atlas_exclude": "(?!)"
+    },
+    "mural": {
+      "label": "Smooth muscle cells / pericytes",
+      "group": "Stromal cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["ACTA2", "MYH11", "TAGLN", "DES", "RGS5", "PDGFRB"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)(smooth muscle|pericyte|\\bVSMCs?\\b|myoid|mural)",
+      "atlas_exclude": "(?!)"
+    },
+    "hepatocyte": {
+      "label": "Hepatocytes",
+      "group": "Hepatocytes",
+      "compartment": "non-hematopoietic",
+      "positive": ["ALB", "APOA1", "APOC3", "FGB", "TTR", "CYP3A4"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)hepatocyte",
+      "atlas_exclude": "(?!)"
+    },
+    "neuron": {
+      "label": "Neurons",
+      "group": "Neural cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["SNAP25", "SYT1", "RBFOX3", "STMN2"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)(neuron|interneuron|neuronal)",
+      "atlas_exclude": "(?i)(progenitor|precursor)"
+    },
+    "astrocyte": {
+      "label": "Astrocytes",
+      "group": "Neural cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["GFAP", "AQP4", "SLC1A3", "ALDH1L1"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)astrocyte",
+      "atlas_exclude": "(?!)"
+    },
+    "oligodendrocyte": {
+      "label": "Oligodendrocytes",
+      "group": "Neural cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["MBP", "PLP1", "MOG", "MOBP", "MAG"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)oligodendro",
+      "atlas_exclude": "(?!)"
+    },
+    "melanocyte": {
+      "label": "Melanocytes",
+      "group": "Melanocytes",
+      "compartment": "non-hematopoietic",
+      "positive": ["PMEL", "MLANA", "TYR", "DCT"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)melanocyte",
+      "atlas_exclude": "(?!)"
+    },
+    "adipocyte": {
+      "label": "Adipocytes",
+      "group": "Adipocytes",
+      "compartment": "non-hematopoietic",
+      "positive": ["ADIPOQ", "PLIN1", "LEP", "PLIN4"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)adipocyte",
+      "atlas_exclude": "(?i)(progenitor|preadipocyte)"
+    },
+    "cardiomyocyte": {
+      "label": "Cardiomyocytes",
+      "group": "Muscle cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["TNNT2", "MYH6", "MYH7", "NPPA", "ACTC1"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)cardiomyocyte",
+      "atlas_exclude": "(?!)"
+    },
+    "skeletal_muscle": {
+      "label": "Skeletal muscle cells",
+      "group": "Muscle cells",
+      "compartment": "non-hematopoietic",
+      "positive": ["ACTA1", "CKM", "MYH2", "MYL1", "TNNT1"],
+      "negative": ["PTPRC"],
+      "atlas_include": "(?i)(skeletal muscle|myocyte|myofiber|satellite cell|myoblast)",
+      "atlas_exclude": "(?i)(smooth|cardio)"
+    }
+  }
+}

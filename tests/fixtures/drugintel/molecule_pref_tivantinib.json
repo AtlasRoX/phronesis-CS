@@ -1,0 +1,62 @@
+{
+ "molecules": [
+  {
+   "black_box_warning": 0,
+   "first_approval": null,
+   "max_phase": "3.0",
+   "molecule_chembl_id": "CHEMBL2103882",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL2103882",
+    "molecule_chembl_id": "CHEMBL2103882",
+    "parent_chembl_id": "CHEMBL2103882"
+   },
+   "molecule_synonyms": [
+    {
+     "molecule_synonym": "ARQ 197",
+     "syn_type": "RESEARCH_CODE",
+     "synonyms": "ARQ 197"
+    },
+    {
+     "molecule_synonym": "Arq-197",
+     "syn_type": "OTHER",
+     "synonyms": "ARQ-197"
+    },
+    {
+     "molecule_synonym": "ARQ-197",
+     "syn_type": "RESEARCH_CODE",
+     "synonyms": "ARQ-197"
+    },
+    {
+     "molecule_synonym": "Tivantinib",
+     "syn_type": "USAN",
+     "synonyms": "Tivantinib"
+    },
+    {
+     "molecule_synonym": "Tivantinib",
+     "syn_type": "INN",
+     "synonyms": "TIVANTINIB"
+    },
+    {
+     "molecule_synonym": "Tivantinib",
+     "syn_type": "MERCK_INDEX",
+     "synonyms": "TIVANTINIB"
+    },
+    {
+     "molecule_synonym": "Tivantinib",
+     "syn_type": "OTHER",
+     "synonyms": "TIVANTINIB"
+    }
+   ],
+   "molecule_type": "Small molecule",
+   "pref_name": "TIVANTINIB",
+   "withdrawn_flag": false
+  }
+ ],
+ "page_meta": {
+  "limit": 20,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total_count": 1
+ }
+}

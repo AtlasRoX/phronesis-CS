@@ -1,0 +1,217 @@
+{
+ "data": {
+  "mapIds": {
+   "mappings": [
+    {
+     "term": "SHP2",
+     "hits": [
+      {
+       "id": "ENSG00000179295",
+       "name": "PTPN11",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "TNO155",
+     "hits": [
+      {
+       "id": "CHEMBL4650521",
+       "name": "BATOPROTAFIB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "sotorasib",
+     "hits": [
+      {
+       "id": "CHEMBL4535757",
+       "name": "SOTORASIB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "KRAS",
+     "hits": [
+      {
+       "id": "ENSG00000133703",
+       "name": "KRAS",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "NSCLC",
+     "hits": [
+      {
+       "id": "MONDO_0005233",
+       "name": "non-small cell lung carcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "in",
+     "hits": [
+      {
+       "id": "ENSG00000026508",
+       "name": "CD44",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "Is",
+     "hits": [
+      {
+       "id": "CHEMBL1200823",
+       "name": "IRON SUCROSE",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL1200574",
+       "name": "SODIUM CHLORIDE",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "AML",
+     "hits": [
+      {
+       "id": "MONDO_0018874",
+       "name": "acute myeloid leukemia",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL1200402",
+       "name": "AMLODIPINE BESYLATE",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL1491",
+       "name": "AMLODIPINE",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "pembrolizumab",
+     "hits": [
+      {
+       "id": "CHEMBL2108738",
+       "name": "NIVOLUMAB",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL4297843",
+       "name": "TORIPALIMAB",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL3137343",
+       "name": "PEMBROLIZUMAB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "MET",
+     "hits": [
+      {
+       "id": "CHEMBL651",
+       "name": "METHADONE",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL1431",
+       "name": "METFORMIN",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL137",
+       "name": "METRONIDAZOLE",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL13",
+       "name": "METOPROLOL",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "ENSG00000105976",
+       "name": "MET",
+       "entity": "target",
+       "score": 1
+      },
+      {
+       "id": "ENSG00000137776",
+       "name": "SLTM",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "Find",
+     "hits": [
+      {
+       "id": "ENSG00000164935",
+       "name": "DCSTAMP",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "lung",
+     "hits": [
+      {
+       "id": "MONDO_0021117",
+       "name": "lung neoplasm",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "lung adenocarcinoma",
+     "hits": [
+      {
+       "id": "EFO_0005288",
+       "name": "non-small cell lung adenocarcinoma",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "MONDO_0005061",
+       "name": "lung adenocarcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

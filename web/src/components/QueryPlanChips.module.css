@@ -1,0 +1,96 @@
+/* Entity chips and routing line under the plan step of the thinking timeline. */
+.plan {
+  margin-top: 6px;
+  min-width: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  --chip-hue: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 1px 7px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--chip-hue) 12%, transparent);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  color: var(--text-body);
+  cursor: default;
+}
+
+.chip[data-type="gene"] {
+  --chip-hue: var(--domain-t2kg);
+}
+
+.chip[data-type="drug"] {
+  --chip-hue: var(--biocontext-accent);
+}
+
+.chip[data-type="disease"] {
+  --chip-hue: var(--domain-s2);
+}
+
+.chip[data-type="variant"] {
+  --chip-hue: var(--domain-scp);
+}
+
+.chip[data-validated="false"] {
+  background: color-mix(in srgb, var(--text-faint) 10%, transparent);
+  color: var(--text-muted);
+}
+
+.marker {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--chip-hue);
+}
+
+.kind {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.routing {
+  margin-top: 6px;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  color: var(--text-faint);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 560px) {
+  .text {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (forced-colors: active) {
+  .marker {
+    forced-color-adjust: none;
+    background: CanvasText;
+  }
+}

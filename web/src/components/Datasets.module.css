@@ -1,0 +1,661 @@
+/* Dataset attachments, the provenance form, the dataset library and the single-cell card (UPLOADS, feature 8).
+   Uses the global theme variables only. */
+
+/* ---- Composer attach pill + menu ------------------------------------------------ */
+
+.attach {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.menu {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  z-index: 60;
+  min-width: 200px;
+  padding: 4px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-solid);
+  box-shadow: var(--card-shadow);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-main);
+  font: inherit;
+  font-size: var(--text-sm);
+  text-align: left;
+  cursor: pointer;
+}
+
+.menuItem:hover:not(:disabled),
+.menuItem:focus-visible {
+  background: var(--bg-surface-hover);
+  outline: none;
+}
+
+.menuItem:disabled {
+  color: var(--text-faint);
+  cursor: not-allowed;
+}
+
+.menuHint {
+  padding: 6px 10px 4px;
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+}
+
+.notice {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  z-index: 59;
+  width: max-content;
+  max-width: min(320px, 80vw);
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--danger) 45%, transparent);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-solid);
+  color: var(--text-main);
+  font-size: var(--text-xs);
+  box-shadow: var(--card-shadow);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+/* ---- Chips ---------------------------------------------------------------------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.messageChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 3px 4px 3px 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-hover);
+  color: var(--text-main);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+.messageChips .chip {
+  padding-right: 8px;
+}
+
+.chipIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.kind_h5ad,
+.kind_table {
+  color: var(--domain-scp);
+}
+
+.kind_sbml {
+  color: var(--domain-t2b);
+}
+
+.chipName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 220px;
+  font-weight: 500;
+}
+
+.chipDims {
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.badgeVerified,
+.badgeDeclared {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 6px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  white-space: nowrap;
+}
+
+.badgeVerified {
+  color: var(--nvidia-green);
+  background: color-mix(in srgb, var(--nvidia-green) 12%, transparent);
+}
+
+.badgeDeclared {
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--text-muted) 12%, transparent);
+}
+
+.chipRemove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+}
+
+.chipRemove:hover,
+.chipRemove:focus-visible {
+  color: var(--text-main);
+  background: var(--bg-surface-active);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .chipName {
+    max-width: 140px;
+  }
+  .chipDims {
+    display: none;
+  }
+}
+
+/* ---- Modal + drawer shells --------------------------------------------------------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(3, 4, 12, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.dialog {
+  width: 100%;
+  max-width: 580px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: 20px 20px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface-solid);
+  color: var(--text-main);
+  box-shadow: var(--card-shadow);
+}
+
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(3, 4, 12, 0.5);
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 901;
+  display: flex;
+  flex-direction: column;
+  width: min(920px, 100%);
+  border-left: 1px solid var(--border-strong);
+  background: var(--bg-surface-solid);
+  color: var(--text-main);
+  box-shadow: var(--card-shadow);
+}
+
+.dialogHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.drawer .dialogHead {
+  padding: 18px 20px 12px;
+  margin: 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dialogTitle {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.dialogSub {
+  margin: 2px 0 0;
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  word-break: break-word;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.iconButton:hover,
+.iconButton:focus-visible {
+  border-color: var(--border-subtle);
+  color: var(--text-main);
+  outline: none;
+}
+
+/* ---- Form ------------------------------------------------------------------------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0;
+}
+
+.hint {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 9px;
+  background: var(--bg-input-card);
+  color: var(--text-main);
+  font: inherit;
+  font-size: var(--text-sm);
+}
+
+.textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.input:focus-visible,
+.select:focus-visible,
+.textarea:focus-visible {
+  outline: none;
+  border-color: var(--border-highlight);
+  box-shadow: var(--focus-ring);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.segment {
+  padding: 5px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+
+.segment[aria-pressed="true"] {
+  border-color: var(--border-highlight);
+  background: var(--bg-surface-active);
+  color: var(--text-heading);
+}
+
+.segment:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.inline {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.inline .input {
+  flex: 1;
+}
+
+.radioRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: var(--text-sm);
+}
+
+.radioRow label,
+.checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--text-body);
+}
+
+.checkbox input,
+.radioRow input {
+  margin-top: 3px;
+  accent-color: var(--nvidia-green);
+}
+
+.fileSummary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-hover);
+  font-size: var(--text-sm);
+}
+
+.fileSummary strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-heading);
+}
+
+.geoResult {
+  padding: 8px 10px;
+  border-radius: 9px;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  background: var(--code-inline-bg);
+  color: var(--text-body);
+}
+
+.geoResult[data-status="verified"] {
+  border: 1px solid var(--border-glow);
+  background: var(--nvidia-glow);
+}
+
+.geoResult[data-status="not_found"],
+.geoResult[data-status="lookup_failed"] {
+  border: 1px solid color-mix(in srgb, var(--warning) 45%, transparent);
+}
+
+.error {
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--danger) 50%, transparent);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--danger) 10%, transparent);
+  color: var(--text-main);
+  font-size: var(--text-sm);
+}
+
+.warnings {
+  margin: 0;
+  padding-left: 18px;
+  font-size: var(--text-xs);
+  color: var(--warning);
+}
+
+.progress {
+  height: 6px;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-active);
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--nvidia-green);
+  transition: width 0.2s ease;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.spin {
+  animation: datasetsSpin 1s linear infinite;
+}
+
+@keyframes datasetsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.button,
+.buttonPrimary,
+.buttonDanger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 9px;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button {
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-main);
+}
+
+.buttonPrimary {
+  border: 1px solid transparent;
+  background: var(--accent-gradient);
+  color: var(--accent-ink);
+}
+
+.buttonDanger {
+  border: 1px solid color-mix(in srgb, var(--danger) 50%, transparent);
+  background: transparent;
+  color: var(--danger);
+}
+
+.button:disabled,
+.buttonPrimary:disabled,
+.buttonDanger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:focus-visible,
+.buttonPrimary:focus-visible,
+.buttonDanger:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.small {
+  padding: 4px 9px;
+  font-size: var(--text-xs);
+}
+
+/* ---- Library table ------------------------------------------------------------------ */
+
+.drawerBody {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 20px 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--bg-surface-solid);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-body);
+  vertical-align: middle;
+}
+
+.table td.nameCell {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.rowActions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.empty {
+  padding: 32px 8px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* On phones the table becomes one card per dataset. */
+@media (max-width: 720px) {
+  .table thead {
+    display: none;
+  }
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .table tr {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .table td {
+    padding: 3px 0;
+    border: none;
+  }
+  .table td.nameCell {
+    max-width: none;
+  }
+  .table td[data-label]::before {
+    content: attr(data-label) ": ";
+    color: var(--text-faint);
+  }
+  .rowActions {
+    justify-content: flex-start;
+    padding-top: 6px;
+  }
+}

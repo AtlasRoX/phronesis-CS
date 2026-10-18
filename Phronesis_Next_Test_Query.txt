@@ -1,0 +1,21 @@
+Retrieve PMID 39369609 by exact identifier. If your tool cannot
+do exact lookup, say so and try one primary-source alternative.
+Do not treat a failed keyword search as proof the paper is absent.
+
+Keep the answer under 400 words. Report:
+1. Exact title, disease population and study design.
+2. Whether a correction exists, whether it was retrieved, and
+   whether corrected content was actually applied.
+3. Separate second-line and second-line-or-later rows showing
+   each treatment-arm sample size, each median overall survival
+   with its CI, and the mortality HR with its CI.
+4. A source URL and supporting source location for every result.
+
+Mark unavailable fields explicitly. Never substitute another
+paper, subgroup, endpoint or treatment arm. Use at most one
+alternative lookup if the first fails, then return a partial answer.
+No FDA sweep, simulation, omics, hypothesis generation or debate
+is needed. Do not rewrite the answer without new evidence.
+
+End with unresolved fields. Include duration, calls and tokens
+only if real run telemetry supplies them.

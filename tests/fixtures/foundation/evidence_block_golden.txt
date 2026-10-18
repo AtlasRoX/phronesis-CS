@@ -1,0 +1,28 @@
+<evidence>
+<synapta source="OpenTargets GraphQL + KEGG REST">
+<target ensembl_id="ENSG00000133703">KRAS</target>
+<association disease="pancreatic carcinoma" overall_score="0.83"/>
+<kegg_pathway id="hsa04010">MAPK signaling pathway - Homo sapiens (human)</kegg_pathway>
+</synapta>
+<vivarix model_id="BIOMD0000000010" model_name="Fake MAPK" simulation_type="TIME_COURSE" solver="None" duration="60.0" time_unit="s" concentration_unit="nmol" endpoint_drift_status="CONVERGED">
+<initial_concentrations>{"Mos": 100.0, "Mos-P": 0.0}</initial_concentrations>
+<final_time_course_concentrations at_time="60.0">{"Mos": 34.13, "Mos-P": 65.87}</final_time_course_concentrations>
+<copasi_steady_state status="found">{"Mos": 30.0, "Mos-P": 70.0}</copasi_steady_state>
+<endpoint_vs_steady_state>The time course has not reached this steady state by the end of the simulation: 2 species differ from it by more than 5% (largest: Mos, 12%). Do not say the trajectory converges to it; the steady state may be unstable, belong to another branch, or need a longer simulation to reach.</endpoint_vs_steady_state>
+</vivarix>
+<lumicell dataset="test_atlas" cells_after_qc="100" clusters="2" method="Leiden clustering; Wilcoxon rank-sum markers with Benjamini-Hochberg adjusted p-values">
+<cluster id="0" cells="60">CD3E (log2FC=2.0, p_adj=0.001)</cluster>
+<target_expression>{"0": {"percent_expressing_cells": 12.5}}</target_expression>
+</lumicell>
+<literature source="EuropePMC / PubMed">
+<document index="1" pmid="123456" doi="10.1056/x" citation="Doe et al. (2021)" setting="in-vitro">KRAS signaling in pancreatic cancer &lt;b&gt;&amp;amp;&lt;/b&gt; &quot;quoted&quot; text.</document>
+<document index="2" pmid="" doi="" citation="" setting="unspecified">Second passage without identifiers.</document>
+</literature>
+<web_search note="unreviewed web sources; lower weight than peer-reviewed passages">
+<result url="https://example.org/a?x=1&amp;y=2" title="A &lt;title&gt;" authority="web">Snippet &amp; more</result>
+</web_search>
+<biodiscovery_ranking>
+### ranking
+| a | b |
+</biodiscovery_ranking>
+</evidence>

@@ -1,0 +1,597 @@
+{
+ "success": true,
+ "tool_name": "synapta_variant_intelligence",
+ "data": {
+  "gene": "KRAS",
+  "protein_change": "G12D",
+  "hgvs_p": "p.Gly12Asp",
+  "hgvs_c": "c.35G>A",
+  "rsid": "rs121913529",
+  "cancer_filter": "pancreatic",
+  "clinvar": [
+   {
+    "variation_id": "12582",
+    "accession": "VCV000012582",
+    "title": "NM_004985.5(KRAS):c.35G>A (p.Gly12Asp)",
+    "protein_change": [
+     "G12D"
+    ],
+    "rsids": [
+     "rs121913529"
+    ],
+    "genes": [
+     "KRAS"
+    ],
+    "molecular_consequences": [
+     "missense variant"
+    ],
+    "canonical_spdi": "NC_000012.12:25245349:C:T",
+    "grch38_chr": "12",
+    "grch38_start": 25245350,
+    "germline_classification": "Pathogenic/Likely pathogenic",
+    "germline_review_status": "criteria provided, multiple submitters, no conflicts",
+    "germline_last_evaluated": "2026/01/23",
+    "germline_traits": [
+     "KRAS-related disorder",
+     "Congenital Pulmonary Airway Malformations",
+     "Linear nevus sebaceous syndrome",
+     "Cardiovascular phenotype",
+     "Cerebral arteriovenous malformation",
+     "not provided"
+    ],
+    "oncogenicity_classification": "Oncogenic",
+    "oncogenicity_review_status": "criteria provided, single submitter",
+    "somatic_clinical_impact": "Tier I - Strong",
+    "somatic_clinical_impact_review_status": "criteria provided, single submitter",
+    "somatic_clinical_impact_traits": [
+     "Ovarian mucinous adenocarcinoma",
+     "Adenocarcinoma of the large intestine",
+     "Embryonal rhabdomyosarcoma",
+     "Glioma",
+     "Papillary thyroid carcinoma",
+     "Diffuse pediatric-type high-grade glioma, H3-wildtype and IDH-wildtype"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/12582/"
+   }
+  ],
+  "civic": {
+   "variant_id": 79,
+   "molecular_profile_id": 79,
+   "molecular_profile_name": "KRAS G12D",
+   "allele_registry_id": "CA122538",
+   "clinvar_ids": [
+    "12582"
+   ],
+   "accepted_evidence_total": 21,
+   "accepted_assertion_total": 0,
+   "evidence": [
+    {
+     "eid": "EID1300",
+     "evidence_level": "B",
+     "evidence_type": "PROGNOSTIC",
+     "evidence_direction": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "evidence_rating": 4,
+     "variant_origin": "SOMATIC",
+     "disease": "Pancreatic Cancer",
+     "doid": "1793",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "27010960",
+     "pmid": "27010960",
+     "citation": "Bournet et al., 2016",
+     "publication_year": 2016,
+     "description": "In 219 patients with metastatic pancreatic ductal adenocarcinoma, a multivariate analysis identified KRAS G12D mutations as an independent predictor of poorer prognosis both in patients that have received chemotherapy (N=49/162), and the entire series (N=73/219). HR of 1.84 (P=0.02) and 1.44 (P=0.01), respectively.",
+     "url": "https://civicdb.org/evidence/1300"
+    },
+    {
+     "eid": "EID305",
+     "evidence_level": "D",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidence_rating": 4,
+     "variant_origin": "SOMATIC",
+     "disease": "Lung Adenocarcinoma",
+     "doid": "3910",
+     "therapies": [
+      "Selumetinib",
+      "Dactolisib"
+     ],
+     "therapy_interaction_type": "COMBINATION",
+     "source_type": "PUBMED",
+     "citation_id": "19029981",
+     "pmid": "19029981",
+     "citation": "Engelman et al., 2008",
+     "publication_year": 2008,
+     "description": "The use of NVP-BEZ235 in conjunction with ARRY-142886, but not as monotherapy, in a lung cancer mouse model with an inducible KRAS G12D mutation (lox-stop-lox KRAS G12D floxed via inhaled adenoviral Cre) led to marked tumor regression.",
+     "url": "https://civicdb.org/evidence/305"
+    },
+    {
+     "eid": "EID228",
+     "evidence_level": "B",
+     "evidence_type": "DIAGNOSTIC",
+     "evidence_direction": "SUPPORTS",
+     "significance": "POSITIVE",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Lung Cancer",
+     "doid": "1324",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "23014527",
+     "pmid": "23014527",
+     "citation": "Dogan et al., 2012",
+     "publication_year": 2012,
+     "description": "KRAS G12D mutation occurs in never smokers significantly more often than in smokers.",
+     "url": "https://civicdb.org/evidence/228"
+    },
+    {
+     "eid": "EID1215",
+     "evidence_level": "B",
+     "evidence_type": "PROGNOSTIC",
+     "evidence_direction": "SUPPORTS",
+     "significance": "BETTER_OUTCOME",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Colorectal Cancer",
+     "doid": "9256",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "22948721",
+     "pmid": "22948721",
+     "citation": "Modest et al., 2012",
+     "publication_year": 2012,
+     "description": "In 119 metastatic colorectal cancer patients treated with cetuximab-based first-line chemotherapy, KRAS G12D mutations (N=44) were associated with longer overall patient survival when compared to other KRAS G12 mutations (23.3 vs 14-18 months; G12V, A, C, S, R).",
+     "url": "https://civicdb.org/evidence/1215"
+    },
+    {
+     "eid": "EID1311",
+     "evidence_level": "B",
+     "evidence_type": "PROGNOSTIC",
+     "evidence_direction": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Malignant Exocrine Pancreas Neoplasm",
+     "doid": "1795",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "23565280",
+     "pmid": "23565280",
+     "citation": "Rachakonda et al., 2013",
+     "publication_year": 2013,
+     "description": "In 171 patients with tumors of the exocrine pancreas, a KRAS G12D mutation (N=60) was associated with shorter overall survival than being wild-type for KRAS (N=21; Hazard Ratio: 95% CI between 1.14 and 2.67). Additionally, KRAS mutations combined with CDKN2A alterations (N=26) showed an even worse OS than those wild-type for both (N=17; HR: 95%CI 1.33-7.10).",
+     "url": "https://civicdb.org/evidence/1311"
+    },
+    {
+     "eid": "EID1732",
+     "evidence_level": "B",
+     "evidence_type": "PROGNOSTIC",
+     "evidence_direction": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Pancreatic Ductal Carcinoma",
+     "doid": "3587",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "27010960",
+     "pmid": "27010960",
+     "citation": "Bournet et al., 2016",
+     "publication_year": 2016,
+     "description": "Exon-2 KRAS mutation status was analyzed in 219 patients with pancreatic ductal carcinoma, excluding those who had previously undergone chemotherapy, first-line pancreatic resection, or neoadjuvant treatment with chemotherapy or radiotherapy. 72 patients had wild-type KRAS, 147 had a codon-12 KRAS mutation (G12D, G12V, or G12R) and 73 had a G12D KRAS mutation, specifically. There was no significant difference in overall survival between wild-type patients and patients with any type of exon-12 mutation. However, patients with the G12D mutation exhibited significantly lower overall survival com…",
+     "url": "https://civicdb.org/evidence/1732"
+    },
+    {
+     "eid": "EID2207",
+     "evidence_level": "B",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Colorectal Cancer",
+     "doid": "9256",
+     "therapies": [
+      "Cetuximab"
+     ],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "20619739",
+     "pmid": "20619739",
+     "citation": "De Roock et al., 2010",
+     "publication_year": 2010,
+     "description": "This was a retrospective study of 691 cetuximab treated patients with metastatic colorectal cancer. Of those, 76 patients harbored KRAS G12D, were BRAF, NRAS and PIK3CA wt, and had individual response data. Five patients had partial response, 34 had stable disease, and 37 progressed. Treatments included cetuximab + irinotecan (n=61), cetuximab + FOLFIRI (n=6), cetuximab monotherapy (n=5), cetuximab + oxaliplatin + 5FU (n=2), cetuximab + 5FU (n=1), cetuximab + oxaliplatin + bevacizumab (n=1). Median PFS was 12 weeks (3-169 weeks), median OS was 31 weeks (6-232 weeks), and median number of prev…",
+     "url": "https://civicdb.org/evidence/2207"
+    },
+    {
+     "eid": "EID1898",
+     "evidence_level": "C",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Colorectal Cancer",
+     "doid": "9256",
+     "therapies": [
+      "Therapeutic Tumor Infiltrating Lymphocytes"
+     ],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "27959684",
+     "pmid": "27959684",
+     "citation": "Tran et al., 2016",
+     "publication_year": 2016,
+     "description": "A patient with metastatic colorectal cancer was enrolled in a phase 2 clinical trial (NCT01174121). 24 cultures of tumor-infiltrating lymphocytes were expanded from 3 lung metastasis resections. After cultures were tested for reactivity, the patient was infused with 1.48 x 10^11 tumor-infiltrating lymphocytes (75% CD8+ T cells) that were specifically reactive to KRAS G12D. All 7 metastatic lung lesions regressed 40 days after therapy, and the patient had a 9-month partial response.",
+     "url": "https://civicdb.org/evidence/1898"
+    },
+    {
+     "eid": "EID2193",
+     "evidence_level": "C",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Colorectal Cancer",
+     "doid": "9256",
+     "therapies": [
+      "Panitumumab"
+     ],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "20619739",
+     "pmid": "20619739",
+     "citation": "De Roock et al., 2010",
+     "publication_year": 2010,
+     "description": "One patient participating in a large retrospective study of EGFR monoclonal antibodies in metastatic, treatment refractory colorectal cancer had a tumor which harbored KRAS G12D, was wildtype for NRAS, BRAF and PIK3CA, and had individual response data. This patient was was a 55 year old female treated with panitumumab monotherapy as 3rd line therapy who experienced progressive disease (PFS: 8 weeks; OS: 9 weeks).",
+     "url": "https://civicdb.org/evidence/2193"
+    },
+    {
+     "eid": "EID2218",
+     "evidence_level": "D",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidence_rating": 3,
+     "variant_origin": "SOMATIC",
+     "disease": "Colorectal Cancer",
+     "doid": "9256",
+     "therapies": [
+      "Dactolisib",
+      "Selumetinib"
+     ],
+     "therapy_interaction_type": "COMBINATION",
+     "source_type": "PUBMED",
+     "citation_id": "22392911",
+     "pmid": "22392911",
+     "citation": "Migliardi et al., 2012",
+     "publication_year": 2012,
+     "description": "In 28 out of 40 (70%) metastatic colorectal cancer tumors harboring KRAS, NRAS, BRAF or PIK3CA mutations and implanted into mice, the therapeutic combination of the MEK inhibitor AZD6244 and the PI3K/mTor inhibitor BEZ235 resulted in disease stabilization. Mean tumor growth was lower in the tumors treated with AZD6244+ BEZ235 (+77% vs. +267%, P=1E-6) compared to AZD6244 alone and (+77% vs. +222%, P=0.0014) BEZ235 alone. 32/40 tumors studied had KRAS mutations with 9 G12D (2 with PIK3CA H1047R) and 13 other G12 mutations.",
+     "url": "https://civicdb.org/evidence/2218"
+    }
+   ],
+   "assertions": [],
+   "url": "https://civicdb.org/molecular-profiles/79/summary"
+  },
+  "cbioportal": [
+   {
+    "study_id": "paad_tcga_pan_can_atlas_2018",
+    "study_name": "Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",
+    "cancer_type": "Pancreatic Adenocarcinoma",
+    "reference_genome": "hg19",
+    "mutated_samples": 49,
+    "mutated_patients": 49,
+    "gene_mutated_samples": 117,
+    "profiled_samples": 179,
+    "prevalence_percent": 27.4,
+    "denominator_basis": "all sequenced samples (whole-exome)",
+    "panels": {
+     "WES": 179
+    },
+    "url": "https://www.cbioportal.org/study/summary?id=paad_tcga_pan_can_atlas_2018"
+   },
+   {
+    "study_id": "pdac_msk_2024",
+    "study_name": "Pancreatic Adenocarcinoma (MSK, Nat Med 2024)",
+    "cancer_type": "Pancreas",
+    "reference_genome": "hg19",
+    "mutated_samples": 889,
+    "mutated_patients": 889,
+    "gene_mutated_samples": 2188,
+    "profiled_samples": 2336,
+    "prevalence_percent": 38.1,
+    "denominator_basis": "samples on gene panels containing KRAS",
+    "panels": {
+     "IMPACT341": 17,
+     "IMPACT468": 1536,
+     "IMPACT410": 438,
+     "IMPACT505": 345
+    },
+    "url": "https://www.cbioportal.org/study/summary?id=pdac_msk_2024"
+   },
+   {
+    "study_id": "pancreas_msk_2024",
+    "study_name": "Pancreatic Cancer (MSK, Cancer Cell 2024)",
+    "cancer_type": "Pancreas",
+    "reference_genome": "hg19",
+    "mutated_samples": 145,
+    "mutated_patients": 145,
+    "gene_mutated_samples": 361,
+    "profiled_samples": 395,
+    "prevalence_percent": 36.7,
+    "denominator_basis": "samples on gene panels containing KRAS",
+    "panels": {
+     "IMPACT341": 4,
+     "IMPACT410": 174,
+     "IMPACT468": 217
+    },
+    "url": "https://www.cbioportal.org/study/summary?id=pancreas_msk_2024"
+   },
+   {
+    "study_id": "paad_qcmg_uq_2016",
+    "study_name": "Pancreatic Adenocarcinoma (QCMG, Nature 2016)",
+    "cancer_type": "Pancreatic Adenocarcinoma",
+    "reference_genome": "hg19",
+    "mutated_samples": 136,
+    "mutated_patients": 136,
+    "gene_mutated_samples": 344,
+    "profiled_samples": 383,
+    "prevalence_percent": 35.5,
+    "denominator_basis": "all sequenced samples (whole-exome)",
+    "panels": {
+     "WES": 383
+    },
+    "url": "https://www.cbioportal.org/study/summary?id=paad_qcmg_uq_2016"
+   }
+  ],
+  "gnomad": {
+   "variant_id": "12-25245350-C-T",
+   "dataset": "gnomad_r4",
+   "rsids": [
+    "rs121913529"
+   ],
+   "caid": "CA122538",
+   "exome_ac": 4,
+   "exome_an": 1460562,
+   "exome_af": 2.7386718263243876e-06,
+   "exome_homozygotes": 0,
+   "genome_ac": 2,
+   "genome_an": 152182,
+   "genome_af": 1.3142158730993153e-05,
+   "faf95_popmax": 7.200000000000001e-07,
+   "faf95_popmax_population": "nfe",
+   "populations": [
+    {
+     "id": "remaining",
+     "ac": 1,
+     "an": 60330,
+     "af": 1.657550140891762e-05
+    },
+    {
+     "id": "amr",
+     "ac": 0,
+     "an": 44652,
+     "af": 0.0
+    },
+    {
+     "id": "fin",
+     "ac": 0,
+     "an": 53374,
+     "af": 0.0
+    },
+    {
+     "id": "mid",
+     "ac": 0,
+     "an": 5768,
+     "af": 0.0
+    },
+    {
+     "id": "nfe",
+     "ac": 3,
+     "an": 1111282,
+     "af": 2.699584803857167e-06
+    },
+    {
+     "id": "sas",
+     "ac": 0,
+     "an": 85970,
+     "af": 0.0
+    },
+    {
+     "id": "asj",
+     "ac": 0,
+     "an": 26054,
+     "af": 0.0
+    },
+    {
+     "id": "eas",
+     "ac": 0,
+     "an": 39666,
+     "af": 0.0
+    },
+    {
+     "id": "afr",
+     "ac": 0,
+     "an": 33466,
+     "af": 0.0
+    }
+   ],
+   "filters": [],
+   "hgvsp": "p.Gly12Asp",
+   "hgvsc": "c.35G>A",
+   "transcript_id": "ENST00000311936",
+   "url": "https://gnomad.broadinstitute.org/variant/12-25245350-C-T?dataset=gnomad_r4"
+  },
+  "sources": [
+   {
+    "name": "clinvar",
+    "status": "ok",
+    "detail": "1 ClinVar record",
+    "elapsed_seconds": 0.98
+   },
+   {
+    "name": "civic",
+    "status": "ok",
+    "detail": "21 accepted evidence items, 0 accepted assertions",
+    "elapsed_seconds": 1.79
+   },
+   {
+    "name": "cbioportal",
+    "status": "ok",
+    "detail": "4 studies",
+    "elapsed_seconds": 5.05
+   },
+   {
+    "name": "gnomad",
+    "status": "ok",
+    "detail": "gnomAD v4 12-25245350-C-T",
+    "elapsed_seconds": 1.58
+   }
+  ],
+  "citation_records": [
+   {
+    "type": "clinvar",
+    "id": "VCV000012582",
+    "title": "NM_004985.5(KRAS):c.35G>A (p.Gly12Asp)",
+    "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/12582/",
+    "passage": "Germline: Pathogenic/Likely pathogenic (criteria provided, multiple submitters, no conflicts); Oncogenicity: Oncogenic; Somatic clinical impact: Tier I - Strong",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "rsid",
+    "id": "rs121913529",
+    "title": "dbSNP rs121913529",
+    "url": "https://www.ncbi.nlm.nih.gov/snp/rs121913529",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID1300",
+    "title": "CIViC EID1300: PROGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/1300",
+    "passage": "In 219 patients with metastatic pancreatic ductal adenocarcinoma, a multivariate analysis identified KRAS G12D mutations as an independent predictor of poorer prognosis both in patients that have received chemotherapy (N=49/162), and the entire series (N=73/219). HR of 1.84 (P=0.02) and 1.44 (P=0.01), respectively.",
+    "evidence_level": "B",
+    "year": "2016",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID305",
+    "title": "CIViC EID305: PREDICTIVE evidence, level D",
+    "url": "https://civicdb.org/evidence/305",
+    "passage": "The use of NVP-BEZ235 in conjunction with ARRY-142886, but not as monotherapy, in a lung cancer mouse model with an inducible KRAS G12D mutation (lox-stop-lox KRAS G12D floxed via inhaled adenoviral Cre) led to marked tumor regression.",
+    "evidence_level": "D",
+    "year": "2008",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID228",
+    "title": "CIViC EID228: DIAGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/228",
+    "passage": "KRAS G12D mutation occurs in never smokers significantly more often than in smokers.",
+    "evidence_level": "B",
+    "year": "2012",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID1215",
+    "title": "CIViC EID1215: PROGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/1215",
+    "passage": "In 119 metastatic colorectal cancer patients treated with cetuximab-based first-line chemotherapy, KRAS G12D mutations (N=44) were associated with longer overall patient survival when compared to other KRAS G12 mutations (23.3 vs 14-18 months; G12V, A, C, S, R).",
+    "evidence_level": "B",
+    "year": "2012",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID1311",
+    "title": "CIViC EID1311: PROGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/1311",
+    "passage": "In 171 patients with tumors of the exocrine pancreas, a KRAS G12D mutation (N=60) was associated with shorter overall survival than being wild-type for KRAS (N=21; Hazard Ratio: 95% CI between 1.14 and 2.67). Additionally, KRAS mutations combined with CDKN2A alterations (N=26) showed an even worse OS than those wild-type for both (N=17; HR: 95%CI 1.33-7.10).",
+    "evidence_level": "B",
+    "year": "2013",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID1732",
+    "title": "CIViC EID1732: PROGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/1732",
+    "passage": "Exon-2 KRAS mutation status was analyzed in 219 patients with pancreatic ductal carcinoma, excluding those who had previously undergone chemotherapy, first-line pancreatic resection, or neoadjuvant treatment with chemotherapy or radiotherapy. 72 patients had wild-type KRAS, 147 had a codon-12 KRAS mutation (G12D, G12V, or G12R) and 73 had a G12D KRAS mutation, specifically. There was no significant difference in overall survival between wild-type patients and patients with any type of exon-12 mutation. However, patients with the G12D mutation exhibited significantly lower overall survival com…",
+    "evidence_level": "B",
+    "year": "2016",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID2207",
+    "title": "CIViC EID2207: PREDICTIVE evidence, level B",
+    "url": "https://civicdb.org/evidence/2207",
+    "passage": "This was a retrospective study of 691 cetuximab treated patients with metastatic colorectal cancer. Of those, 76 patients harbored KRAS G12D, were BRAF, NRAS and PIK3CA wt, and had individual response data. Five patients had partial response, 34 had stable disease, and 37 progressed. Treatments included cetuximab + irinotecan (n=61), cetuximab + FOLFIRI (n=6), cetuximab monotherapy (n=5), cetuximab + oxaliplatin + 5FU (n=2), cetuximab + 5FU (n=1), cetuximab + oxaliplatin + bevacizumab (n=1). Median PFS was 12 weeks (3-169 weeks), median OS was 31 weeks (6-232 weeks), and median number of prev…",
+    "evidence_level": "B",
+    "year": "2010",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID1898",
+    "title": "CIViC EID1898: PREDICTIVE evidence, level C",
+    "url": "https://civicdb.org/evidence/1898",
+    "passage": "A patient with metastatic colorectal cancer was enrolled in a phase 2 clinical trial (NCT01174121). 24 cultures of tumor-infiltrating lymphocytes were expanded from 3 lung metastasis resections. After cultures were tested for reactivity, the patient was infused with 1.48 x 10^11 tumor-infiltrating lymphocytes (75% CD8+ T cells) that were specifically reactive to KRAS G12D. All 7 metastatic lung lesions regressed 40 days after therapy, and the patient had a 9-month partial response.",
+    "evidence_level": "C",
+    "year": "2016",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID2193",
+    "title": "CIViC EID2193: PREDICTIVE evidence, level C",
+    "url": "https://civicdb.org/evidence/2193",
+    "passage": "One patient participating in a large retrospective study of EGFR monoclonal antibodies in metastatic, treatment refractory colorectal cancer had a tumor which harbored KRAS G12D, was wildtype for NRAS, BRAF and PIK3CA, and had individual response data. This patient was was a 55 year old female treated with panitumumab monotherapy as 3rd line therapy who experienced progressive disease (PFS: 8 weeks; OS: 9 weeks).",
+    "evidence_level": "C",
+    "year": "2010",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID2218",
+    "title": "CIViC EID2218: PREDICTIVE evidence, level D",
+    "url": "https://civicdb.org/evidence/2218",
+    "passage": "In 28 out of 40 (70%) metastatic colorectal cancer tumors harboring KRAS, NRAS, BRAF or PIK3CA mutations and implanted into mice, the therapeutic combination of the MEK inhibitor AZD6244 and the PI3K/mTor inhibitor BEZ235 resulted in disease stabilization. Mean tumor growth was lower in the tumors treated with AZD6244+ BEZ235 (+77% vs. +267%, P=1E-6) compared to AZD6244 alone and (+77% vs. +222%, P=0.0014) BEZ235 alone. 32/40 tumors studied had KRAS mutations with 9 G12D (2 with PIK3CA H1047R) and 13 other G12 mutations.",
+    "evidence_level": "D",
+    "year": "2012",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   }
+  ]
+ },
+ "canonical_ids": {
+  "clinvar_vcv": "VCV000012582",
+  "rsids": "rs121913529",
+  "civic_ids": "EID1300,EID305,EID228,EID1215,EID1311,EID1732,EID2207,EID1898,EID2193,EID2218",
+  "pmids": "19029981,20619739,22392911,22948721,23014527,23565280,27010960,27959684"
+ },
+ "error": null,
+ "error_type": null
+}

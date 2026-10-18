@@ -1,0 +1,52 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; filter.ids=NCT02296125,NCT04695925, fields=NCTId,InterventionOtherName (shows empty intervention objects)",
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT04695925"
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {},
+      {},
+      {}
+     ]
+    }
+   }
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02296125"
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {},
+      {
+       "otherNames": [
+        "Placebo Tarceva 150/100 mg"
+       ]
+      },
+      {
+       "otherNames": [
+        "Placebo Iressa 250 mg"
+       ]
+      },
+      {
+       "otherNames": [
+        "Tarceva 150/100 mg"
+       ]
+      },
+      {
+       "otherNames": [
+        "Iressa 250mg"
+       ]
+      },
+      {}
+     ]
+    }
+   }
+  }
+ ]
+}

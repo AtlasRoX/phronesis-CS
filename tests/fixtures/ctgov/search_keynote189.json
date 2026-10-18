@@ -1,0 +1,102 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; filter.ids=NCT02578680 (KEYNOTE-189), SEARCH_FIELDS; sponsor name contains '&'",
+ "totalCount": 1,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02578680",
+     "briefTitle": "Study of Pemetrexed+Platinum Chemotherapy With or Without Pembrolizumab (MK-3475) in Participants With First Line Metastatic Nonsquamous Non-small Cell Lung Cancer (MK-3475-189/KEYNOTE-189)"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2016-01-15"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2017-11-08"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2018-11-28"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2024-09-20"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Merck Sharp & Dohme LLC",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non-Small-Cell Lung Carcinoma"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 616,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "BIOLOGICAL",
+       "name": "Pembrolizumab 200 mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Cisplatin"
+      },
+      {
+       "type": "DRUG",
+       "name": "Carboplatin"
+      },
+      {
+       "type": "DRUG",
+       "name": "Pemetrexed"
+      },
+      {
+       "type": "DIETARY_SUPPLEMENT",
+       "name": "Folic acid 350-1000 μg"
+      },
+      {
+       "type": "DIETARY_SUPPLEMENT",
+       "name": "Vitamin B12 1000 μg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Dexamethasone 4 mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Saline solution"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Progression-Free Survival (PFS) Per Response Evaluation Criteria in Solid Tumors (RECIST) 1.1 as Assessed by Blinded Central Imaging",
+       "timeFrame": "Up to approximately 21 months"
+      },
+      {
+       "measure": "Overall Survival (OS)",
+       "timeFrame": "Up to approximately 21 months"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ]
+}

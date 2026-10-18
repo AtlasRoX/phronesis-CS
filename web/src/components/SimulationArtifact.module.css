@@ -1,0 +1,75 @@
+/* Vivarix kinetic-simulation card; the shell, sections and tables come from agentic/ui. */
+.icon {
+  color: var(--domain-t2b);
+}
+
+.plot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+.sectionMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.species {
+  display: block;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--text-heading);
+}
+
+.muted {
+  color: var(--text-muted) !important;
+}
+
+.failed {
+  color: var(--danger) !important;
+  overflow-wrap: anywhere;
+}
+
+.overrides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.override {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  font-size: 12.5px;
+  color: var(--text-body);
+}
+
+.override + .override {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.values {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.values strong {
+  font-weight: 600;
+  color: var(--text-heading);
+}

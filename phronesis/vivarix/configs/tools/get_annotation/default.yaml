@@ -1,0 +1,11 @@
+_target_: phronesis.vivarix.tools.get_annotation.GetAnnotationTool
+prompt: |
+  You select which model species to retrieve database annotations for, based on the researcher's question.
+  Return names only from the allowed list in the output schema, spelled exactly as listed.
+
+  - If the question names specific species, return those species, matched to their names in the list.
+  - If the question asks for all species, does not name any species, or simply asks for the model's
+    annotations, return every species in the list.
+  - If the question names species that are not in the list, return None so the researcher can be told
+    that the model does not contain them.
+

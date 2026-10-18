@@ -1,0 +1,325 @@
+/* ChEMBL + openFDA drug card. The shell, sections, pills, chips and tables come from agentic/ui; these are the
+   card's own layouts. Design tokens only, so light and dark themes both work. */
+
+/* Sections are separated by hairlines rather than boxes. */
+.body > * + * {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+}
+
+.body > :first-child {
+  margin-top: 0;
+}
+
+.scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.truncate {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.cellName {
+  max-width: 220px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.faint {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.lead {
+  margin: 0 0 8px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.idLink,
+.extLink {
+  color: var(--text-faint);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+.idLink {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.extLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  color: var(--domain-t2kg);
+  white-space: nowrap;
+}
+
+.idLink:hover,
+.extLink:hover {
+  text-decoration: underline;
+}
+
+.idLink:hover {
+  color: var(--text-heading);
+}
+
+.idLink:focus-visible,
+.extLink:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 4px;
+}
+
+/* Per-drug items within a section */
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  min-width: 0;
+}
+
+.item + .item {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  min-width: 0;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.mechList {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.mech {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  min-width: 0;
+  font-size: 12.5px;
+}
+
+.mechText {
+  color: var(--text-body);
+}
+
+/* Tables */
+.groupCell {
+  min-width: 110px;
+}
+
+.assayCell {
+  min-width: 200px;
+  max-width: 380px;
+}
+
+.clamp2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* Doubled class to outrank the shared table cell colour. */
+.best.best {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+/* FAERS: drugs side by side, thin bars, exact counts beside each bar. */
+.faersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px 28px;
+}
+
+.faersBlock {
+  min-width: 0;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  margin: 2px 0 6px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.stats strong {
+  font-weight: 600;
+  color: var(--text-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.bars {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.bars th,
+.bars td {
+  padding: 2px 0;
+}
+
+.bars .barTerm {
+  width: 45%;
+  padding-right: 10px;
+  text-align: left;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.bars tr:hover .barTerm,
+.bars tr:hover .barValue {
+  color: var(--text-heading);
+}
+
+.barCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.barTrack {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 40px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--avatar-bg);
+  overflow: hidden;
+}
+
+.bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 3px;
+  background: var(--domain-t2kg);
+  opacity: 0.8;
+}
+
+.barValue {
+  flex-shrink: 0;
+  min-width: 4.5ch;
+  text-align: right;
+  color: var(--text-body);
+  font-variant-numeric: tabular-nums;
+}
+
+/* FDA approval and label */
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: var(--text-body);
+  overflow-wrap: anywhere;
+}
+
+.boxed {
+  margin-top: 8px;
+  padding: 2px 0 2px 10px;
+  border-left: 2px solid var(--warning);
+}
+
+.boxedHead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--warning);
+}
+
+.boxedText {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-body);
+  overflow-wrap: anywhere;
+}
+
+.excerpt {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-body);
+  overflow-wrap: anywhere;
+}
+
+/* About these data */
+.about p {
+  margin: 0 0 4px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.aboutName {
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.about code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (forced-colors: active) {
+  .bar {
+    background: CanvasText;
+  }
+}

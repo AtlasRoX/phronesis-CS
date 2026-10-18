@@ -1,0 +1,33 @@
+_target_: phronesis.synapta.tools.multimodal_subgraph_extraction
+ollama_embeddings:
+  - "nomic-embed-text"
+temperature: 0.1
+streaming: False
+
+# PCST Algorithm Parameters
+topk: 15
+topk_e: 15
+cost_e: 0.5
+c_const: 0.01
+root: -1
+num_clusters: 1
+pruning: "gw"
+verbosity_level: 0
+
+# Hardware-Specific Vector Processing
+vector_processing:
+  # Enable dynamic metric type selection based on hardware
+  dynamic_metrics: true
+
+# Tool-specific configuration only
+# Database configuration moved to configs/utils/database/milvus/default.yaml
+
+## Important - node_colors_dict is added in order to pass the test for the
+## old multimodal_subgraph_extraction tool, later this tool along with the ollama configs will be removed
+node_colors_dict:
+  "gene/protein": "#6a79f7"
+  "molecular_function": "#82cafc"
+  "cellular_component": "#3f9b0b"
+  "biological_process": "#c5c9c7"
+  "drug": "#c4a661"
+  "disease": "#80013f"

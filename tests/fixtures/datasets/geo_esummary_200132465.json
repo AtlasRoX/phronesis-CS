@@ -1,0 +1,177 @@
+{
+ "header": {
+  "type": "esummary",
+  "version": "0.3"
+ },
+ "result": {
+  "uids": [
+   "200132465"
+  ],
+  "200132465": {
+   "uid": "200132465",
+   "accession": "GSE132465",
+   "gds": "",
+   "title": "Single cell 3' RNA sequencing of 23 Korean colorectal cancer patients",
+   "summary": "For the understanding intrinsic cancer cell signatures and the surrounding microenviroment, we provide single-cell 3' RNA sequencing dataon 63,689 cells from 23 CRC patients with 23 primary colorectal cancer and 10 matched normal mucosa samples. Analysis of primary colorectal cancer and normal mucosa samples depicts a comprehensive cellular landscape of colorectal cancer and potential cellular interaction, which would be a valuable resource for the development of therapeutic strategies.",
+   "gpl": "20301",
+   "gse": "132465",
+   "taxon": "Homo sapiens",
+   "entrytype": "GSE",
+   "gdstype": "Expression profiling by high throughput sequencing",
+   "ptechtype": "",
+   "valtype": "",
+   "ssinfo": "",
+   "subsetinfo": "",
+   "pdat": "2020/04/04",
+   "suppfile": "TXT",
+   "samples": [
+    {
+     "accession": "GSM3868448",
+     "title": "SMC01-N"
+    },
+    {
+     "accession": "GSM3868431",
+     "title": "SMC07-T"
+    },
+    {
+     "accession": "GSM3868451",
+     "title": "SMC04-N"
+    },
+    {
+     "accession": "GSM3868428",
+     "title": "SMC04-T"
+    },
+    {
+     "accession": "GSM3868457",
+     "title": "SMC10-N"
+    },
+    {
+     "accession": "GSM3868440",
+     "title": "SMC18-T"
+    },
+    {
+     "accession": "GSM3868454",
+     "title": "SMC07-N"
+    },
+    {
+     "accession": "GSM3868434",
+     "title": "SMC10-T"
+    },
+    {
+     "accession": "GSM3868437",
+     "title": "SMC15-T"
+    },
+    {
+     "accession": "GSM3868443",
+     "title": "SMC21-T"
+    },
+    {
+     "accession": "GSM3868426",
+     "title": "SMC02-T"
+    },
+    {
+     "accession": "GSM3868446",
+     "title": "SMC24-T"
+    },
+    {
+     "accession": "GSM3868449",
+     "title": "SMC02-N"
+    },
+    {
+     "accession": "GSM3868432",
+     "title": "SMC08-T"
+    },
+    {
+     "accession": "GSM3868452",
+     "title": "SMC05-N"
+    },
+    {
+     "accession": "GSM3868435",
+     "title": "SMC11-T"
+    },
+    {
+     "accession": "GSM3868429",
+     "title": "SMC05-T"
+    },
+    {
+     "accession": "GSM3868455",
+     "title": "SMC08-N"
+    },
+    {
+     "accession": "GSM3868441",
+     "title": "SMC19-T"
+    },
+    {
+     "accession": "GSM3868438",
+     "title": "SMC16-T"
+    },
+    {
+     "accession": "GSM3868430",
+     "title": "SMC06-T"
+    },
+    {
+     "accession": "GSM3868450",
+     "title": "SMC03-N"
+    },
+    {
+     "accession": "GSM3868444",
+     "title": "SMC22-T"
+    },
+    {
+     "accession": "GSM3868427",
+     "title": "SMC03-T"
+    },
+    {
+     "accession": "GSM3868447",
+     "title": "SMC25-T"
+    },
+    {
+     "accession": "GSM3868453",
+     "title": "SMC06-N"
+    },
+    {
+     "accession": "GSM3868456",
+     "title": "SMC09-N"
+    },
+    {
+     "accession": "GSM3868425",
+     "title": "SMC01-T"
+    },
+    {
+     "accession": "GSM3868445",
+     "title": "SMC23-T"
+    },
+    {
+     "accession": "GSM3868433",
+     "title": "SMC09-T"
+    },
+    {
+     "accession": "GSM3868436",
+     "title": "SMC14-T"
+    },
+    {
+     "accession": "GSM3868439",
+     "title": "SMC17-T"
+    },
+    {
+     "accession": "GSM3868442",
+     "title": "SMC20-T"
+    }
+   ],
+   "relations": [],
+   "extrelations": [],
+   "n_samples": 33,
+   "seriestitle": "",
+   "platformtitle": "",
+   "platformtaxa": "",
+   "samplestaxa": "",
+   "pubmedids": [
+    "32451460"
+   ],
+   "projects": [],
+   "ftplink": "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE132nnn/GSE132465/",
+   "geo2r": "no",
+   "bioproject": "PRJNA548146"
+  }
+ }
+}

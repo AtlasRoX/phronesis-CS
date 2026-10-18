@@ -1,0 +1,1439 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; filter.ids=NCT02296125,NCT03521154, fields=NCTId,HasResults,OutcomeMeasuresModule,ReferencePMID,ReferenceType; trimmed: FLAURA measures 0-6 + plasma PK (8 of 21 classes), LAURA measures 0 and 6, 2 references each, long descriptions cut to 240 chars",
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT03521154"
+    },
+    "referencesModule": {
+     "references": [
+      {
+       "pmid": "42296617",
+       "type": "DERIVED"
+      },
+      {
+       "pmid": "42037107",
+       "type": "DERIVED"
+      }
+     ]
+    }
+   },
+   "resultsSection": {
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "PRIMARY",
+       "title": "Progression-free Survival (PFS) by Blinded Independent Central Review (BICR)",
+       "description": "Time from randomisation until the date of objective disease progression or death (by any cause in the absence of progression) regardless of whether the patient withdraws from randomised therapy or receives another anti-cancer therapy prior ",
+       "populationDescription": "Full analysis set",
+       "reportingStatus": "POSTED",
+       "paramType": "MEDIAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "Months",
+       "timeFrame": "Every 8 weeks for first 48 weeks, then every 12 weeks until BICR-confirmed radiological disease progression. Assessed up to date of DCO (05Jan24) to a maximum of approximately 63 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib",
+         "description": "80mg once daily tablet"
+        },
+        {
+         "id": "OG001",
+         "title": "Placebo",
+         "description": "Matching Placebo"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "143"
+          },
+          {
+           "groupId": "OG001",
+           "value": "73"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "39.13",
+             "lowerLimit": "31.51",
+             "upperLimit": "NA",
+             "comment": "NA - Not calculated as insufficient number of events to enable the upper limit of 95% confidence interval to be calculated"
+            },
+            {
+             "groupId": "OG001",
+             "value": "5.55",
+             "lowerLimit": "3.71",
+             "upperLimit": "7.43"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.001",
+         "statisticalMethod": "Log Rank",
+         "paramType": "Hazard Ratio (HR)",
+         "paramValue": "0.16",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "0.10",
+         "ciUpperLimit": "0.24",
+         "estimateComment": "A hazard ratio \\< 1 favours osimertinib"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Objective Response Rate by Blinded Independent Central Review (BICR)",
+       "description": "Percentage of evaluable patients with at least one BICR assessed visit response of complete response (CR) or partial response (PR). CR defined as disappearance of all target lesions (TL) since baseline. Any pathological lymph nodes selected",
+       "populationDescription": "Full analysis set",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "% of participants",
+       "timeFrame": "Every 8 weeks for first 48 weeks, then every 12 weeks until radiological disease progression. Assessed up to date of DCO (05Jan24) to a maximum of approximately 63 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib",
+         "description": "80mg once daily tablet"
+        },
+        {
+         "id": "OG001",
+         "title": "Placebo",
+         "description": "Matching Placebo"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "143"
+          },
+          {
+           "groupId": "OG001",
+           "value": "73"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "57.3",
+             "lowerLimit": "48.8",
+             "upperLimit": "65.6"
+            },
+            {
+             "groupId": "OG001",
+             "value": "32.9",
+             "lowerLimit": "22.3",
+             "upperLimit": "44.9"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.001",
+         "statisticalMethod": "Regression, Logistic",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "2.77",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "1.54",
+         "ciUpperLimit": "5.08",
+         "estimateComment": "An odds ratio \\> 1 favours osimertinib"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02296125"
+    },
+    "referencesModule": {
+     "references": [
+      {
+       "pmid": "41166679",
+       "type": "DERIVED"
+      },
+      {
+       "pmid": "40311309",
+       "type": "DERIVED"
+      }
+     ]
+    }
+   },
+   "resultsSection": {
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "PRIMARY",
+       "title": "Median Progression Free Survival (PFS) (Months)",
+       "description": "Progression-free survival was defined as the time from randomization until the date of objective disease progression or death (by any cause in the absence of progression) regardless of whether the participant withdrew from randomized therap",
+       "populationDescription": "The full analysis set (FAS) and China-only FAS. FAS included all randomized participants prior to the end of global recruitment. The China-only FAS included all China participants randomized in mainland-China as part of the global study and",
+       "reportingStatus": "POSTED",
+       "paramType": "MEDIAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "Months",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks relative to randomisation until progression",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "SoC EGFR-TKI (Global Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI). Participants received gefitinib 25"
+        },
+        {
+         "id": "OG002",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG003",
+         "title": "SoC EGFR-TKI (China Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFRTKI). Participants received gefitinib 250"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "277"
+          },
+          {
+           "groupId": "OG002",
+           "value": "71"
+          },
+          {
+           "groupId": "OG003",
+           "value": "65"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "18.9",
+             "lowerLimit": "15.2",
+             "upperLimit": "21.4"
+            },
+            {
+             "groupId": "OG001",
+             "value": "10.2",
+             "lowerLimit": "9.6",
+             "upperLimit": "11.1"
+            },
+            {
+             "groupId": "OG002",
+             "value": "17.8",
+             "lowerLimit": "13.6",
+             "upperLimit": "20.7"
+            },
+            {
+             "groupId": "OG003",
+             "value": "9.8",
+             "lowerLimit": "8.3",
+             "upperLimit": "13.8"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "statisticalMethod": "Log Rank",
+         "paramType": "Hazard Ratio (HR)",
+         "paramValue": "0.46",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "0.37",
+         "ciUpperLimit": "0.57"
+        },
+        {
+         "groupIds": [
+          "OG002",
+          "OG003"
+         ],
+         "nonInferiorityType": "OTHER",
+         "nonInferiorityComment": "The china cohort was not powered for superiority",
+         "pValue": "0.0065",
+         "statisticalMethod": "Log Rank",
+         "paramType": "Hazard Ratio (HR)",
+         "paramValue": "0.56",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "0.37",
+         "ciUpperLimit": "0.85"
+        }
+       ]
+      },
+      {
+       "type": "PRIMARY",
+       "title": "Percentage of Participants in Progression Free Survival at 6, 12, and 18 Months",
+       "description": "Progression-free survival was defined as the time from randomization until the date of objective disease progression or death (by any cause in the absence of progression) regardless of whether the participant withdrew from randomized therap",
+       "populationDescription": "The full analysis set (FAS) and China-only FAS. FAS included all randomized participants prior to the end of global recruitment. The China-only FAS included all China participants randomized in mainland-China as part of the global study and",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "Percentage of Participants",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks relative to randomisation until progression",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "SoC EGFR-TKI (Global Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI). Participants received gefitinib 25"
+        },
+        {
+         "id": "OG002",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG003",
+         "title": "SoC EGFR-TKI (China Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFRTKI). Participants received gefitinib 250"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "277"
+          },
+          {
+           "groupId": "OG002",
+           "value": "71"
+          },
+          {
+           "groupId": "OG003",
+           "value": "65"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Progression free at 6 months (%)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "88.4"
+            },
+            {
+             "groupId": "OG001",
+             "value": "75.2"
+            },
+            {
+             "groupId": "OG002",
+             "value": "78.8"
+            },
+            {
+             "groupId": "OG003",
+             "value": "72.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Progression free at 12 months (%)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "68.2"
+            },
+            {
+             "groupId": "OG001",
+             "value": "42.3"
+            },
+            {
+             "groupId": "OG002",
+             "value": "67.3"
+            },
+            {
+             "groupId": "OG003",
+             "value": "44.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Progression free at 18 months (%)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "50.9"
+            },
+            {
+             "groupId": "OG001",
+             "value": "24.4"
+            },
+            {
+             "groupId": "OG002",
+             "value": "46.9"
+            },
+            {
+             "groupId": "OG003",
+             "value": "25.8"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Objective Response Rate (ORR)",
+       "description": "ORR was defined as the number (%) of participants with measurable disease with at least 1 visit response of Complete response (CR) or Partial response (PR) and it was used to further assess the efficacy of osimertinib compared with SoC EGFR",
+       "populationDescription": "The full analysis set (FAS) and China-only FAS. FAS included all randomized participants prior to the end of global recruitment. The China-only FAS included all China participants randomized in mainland-China as part of the global study and",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "Percentage of participants",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks relative to randomisation until progression",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "SoC EGFR-TKI (Global Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI). Participants received gefitinib 25"
+        },
+        {
+         "id": "OG002",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG003",
+         "title": "SoC EGFR-TKI (China Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFRTKI). Participants received gefitinib 250"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "277"
+          },
+          {
+           "groupId": "OG002",
+           "value": "71"
+          },
+          {
+           "groupId": "OG003",
+           "value": "65"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "76.7",
+             "lowerLimit": "71.29",
+             "upperLimit": "81.53"
+            },
+            {
+             "groupId": "OG001",
+             "value": "69.0",
+             "lowerLimit": "63.14",
+             "upperLimit": "74.35"
+            },
+            {
+             "groupId": "OG002",
+             "value": "76.1",
+             "lowerLimit": "64.5",
+             "upperLimit": "85.4"
+            },
+            {
+             "groupId": "OG003",
+             "value": "70.8",
+             "lowerLimit": "58.2",
+             "upperLimit": "81.4"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "0.036",
+         "statisticalMethod": "Regression, Logistic",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "1.51",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "1.03",
+         "ciUpperLimit": "2.22"
+        },
+        {
+         "groupIds": [
+          "OG002",
+          "OG003"
+         ],
+         "nonInferiorityType": "OTHER",
+         "nonInferiorityComment": "The china cohort was not powered for superiority",
+         "pValue": "0.485",
+         "statisticalMethod": "Regression, Logistic",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "1.31",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "0.61",
+         "ciUpperLimit": "2.84"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Duration of Response (DoR)",
+       "description": "Duration of response was defined as the time from the date of first documented response until the date of documented progression or death in the absence of disease progression and was used to further assess the efficacy of osimertinib compa",
+       "populationDescription": "The full analysis set (FAS) and China-only FAS. FAS included all randomized participants prior to the end of global recruitment. The China-only FAS included all China participants randomized in mainland-China as part of the global study and",
+       "reportingStatus": "POSTED",
+       "paramType": "MEDIAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "Months",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks until objective disease progression",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "SoC EGFR-TKI (Global Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI). Participants received gefitinib 25"
+        },
+        {
+         "id": "OG002",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG003",
+         "title": "SoC EGFR-TKI (China Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFRTKI). Participants received gefitinib 250"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "277"
+          },
+          {
+           "groupId": "OG002",
+           "value": "71"
+          },
+          {
+           "groupId": "OG003",
+           "value": "65"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "17.2",
+             "lowerLimit": "13.8",
+             "upperLimit": "22.0"
+            },
+            {
+             "groupId": "OG001",
+             "value": "8.5",
+             "lowerLimit": "7.3",
+             "upperLimit": "9.8"
+            },
+            {
+             "groupId": "OG002",
+             "value": "16.4",
+             "lowerLimit": "12.3",
+             "upperLimit": "NA",
+             "comment": "NA-Upper limit is not calculable at this data cut-off."
+            },
+            {
+             "groupId": "OG003",
+             "value": "10.9",
+             "lowerLimit": "8.3",
+             "upperLimit": "13.8"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG002",
+          "OG003"
+         ],
+         "nonInferiorityType": "OTHER",
+         "nonInferiorityComment": "The china cohort was not powered for superiority",
+         "pValue": "0.0133",
+         "statisticalMethod": "Regression, Linear",
+         "paramType": "Mean Difference (Final Values)",
+         "paramValue": "2.48",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "1.21",
+         "ciUpperLimit": "5.09"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "statisticalMethod": "Regression, Linear",
+         "paramType": "Mean Difference (Final Values)",
+         "paramValue": "2.27",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "1.68",
+         "ciUpperLimit": "3.08"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Disease Control Rate (DCR)",
+       "description": "The DCR was defined as the percentage of participants who had a best overall response (BOR) of Complete response (CR), Partial response (PR) or Stable disease (SD) ≥6 weeks prior to any Progressive disease (PD) event and was used to further",
+       "populationDescription": "The full analysis set (FAS) and China-only FAS. FAS included all randomized participants prior to the end of global recruitment. The China-only FAS included all China participants randomized in mainland-China as part of the global study and",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "Percentage of participants",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks until objective disease progression",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "SoC EGFR-TKI (Global Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI). Participants received gefitinib 25"
+        },
+        {
+         "id": "OG002",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG003",
+         "title": "SoC EGFR-TKI (China Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFRTKI). Participants received gefitinib 250"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "277"
+          },
+          {
+           "groupId": "OG002",
+           "value": "71"
+          },
+          {
+           "groupId": "OG003",
+           "value": "65"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "97.1",
+             "lowerLimit": "94.4",
+             "upperLimit": "98.8"
+            },
+            {
+             "groupId": "OG001",
+             "value": "92.4",
+             "lowerLimit": "88.6",
+             "upperLimit": "95.2"
+            },
+            {
+             "groupId": "OG002",
+             "value": "97.2",
+             "lowerLimit": "90.2",
+             "upperLimit": "99.7"
+            },
+            {
+             "groupId": "OG003",
+             "value": "95.4",
+             "lowerLimit": "87.1",
+             "upperLimit": "99.0"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "0.0110",
+         "statisticalMethod": "Regression, Logistic",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "2.78",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "1.25",
+         "ciUpperLimit": "6.78",
+         "estimateComment": "An odds ratio \\> 1 favours osimertinib"
+        },
+        {
+         "groupIds": [
+          "OG002",
+          "OG003"
+         ],
+         "nonInferiorityType": "OTHER",
+         "nonInferiorityComment": "The china cohort was not powered for superiority",
+         "pValue": "0.5772",
+         "statisticalMethod": "Regression, Logistic",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "1.67",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "0.27",
+         "ciUpperLimit": "12.98",
+         "estimateComment": "An odds ratio \\>1 favours osimertinib"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Depth of Response",
+       "description": "The Depth of response was defined as the relative change in the sum of the longest diameters of Response Evaluation Criteria in Solid Tumors (RECIST) Target lesions (TLs) at the nadir, in the absence of new lesions (NLs) or progression of N",
+       "populationDescription": "The full analysis set (FAS) and China-only FAS. FAS included all randomized participants prior to the end of global recruitment. The China-only FAS included all China participants randomized in mainland-China as part of the global study and",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percentage of change",
+       "timeFrame": "At baseline and every 6 weeks for the first 18 months and then every 12 weeks until objective disease progression",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "SoC EGFR-TKI (Global Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI). Participants received gefitinib 25"
+        },
+        {
+         "id": "OG002",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG003",
+         "title": "SoC EGFR-TKI (China Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFRTKI). Participants received gefitinib 250"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "277"
+          },
+          {
+           "groupId": "OG002",
+           "value": "71"
+          },
+          {
+           "groupId": "OG003",
+           "value": "65"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "-52.36",
+             "spread": "25.065"
+            },
+            {
+             "groupId": "OG001",
+             "value": "-45.66",
+             "spread": "28.270"
+            },
+            {
+             "groupId": "OG002",
+             "value": "-49.17",
+             "spread": "24.303"
+            },
+            {
+             "groupId": "OG003",
+             "value": "-42.92",
+             "spread": "26.814"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "0.0025",
+         "statisticalMethod": "Regression, Linear",
+         "paramType": "Mean Difference (Final Values)",
+         "paramValue": "-6.80",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "-11.205",
+         "ciUpperLimit": "-2.403"
+        },
+        {
+         "groupIds": [
+          "OG002",
+          "OG003"
+         ],
+         "nonInferiorityType": "OTHER",
+         "nonInferiorityComment": "The china cohort was not powered for superiority",
+         "pValue": "0.1348",
+         "statisticalMethod": "Regression, Linear",
+         "paramType": "Mean Difference (Final Values)",
+         "paramValue": "-6.59",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "-15.246",
+         "ciUpperLimit": "2.072"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Overall Survival (OS)- Number of Participants With an Event",
+       "description": "Overall survival was defined as the time from the date of randomisation until death from any cause and was used to further assess the efficacy of osimertinib compared with SoC EGFR-TKI therapy",
+       "populationDescription": "The full analysis set (FAS) and China-only FAS. FAS included all randomized participants prior to the end of global recruitment. The China-only FAS included all China participants randomized in mainland-China as part of the global study and",
+       "reportingStatus": "POSTED",
+       "paramType": "COUNT_OF_PARTICIPANTS",
+       "unitOfMeasure": "Participants",
+       "timeFrame": "From first dose to end of study or date of death from any cause, whichever comes first, assessed every 6 weeks (approximately 29 months)",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "SoC EGFR-TKI (Global Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI). Participants received gefitinib 25"
+        },
+        {
+         "id": "OG002",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG003",
+         "title": "SoC EGFR-TKI (China Cohort)",
+         "description": "Randomized participant received Standard of care (SoC) Epidermal growth factor receptor-tyrosine kinase inhibitor (EGFRTKI). Participants received gefitinib 250"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "277"
+          },
+          {
+           "groupId": "OG002",
+           "value": "71"
+          },
+          {
+           "groupId": "OG003",
+           "value": "65"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Death",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "155"
+            },
+            {
+             "groupId": "OG001",
+             "value": "166"
+            },
+            {
+             "groupId": "OG002",
+             "value": "45"
+            },
+            {
+             "groupId": "OG003",
+             "value": "44"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Still in survival follow-up",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "104"
+            },
+            {
+             "groupId": "OG001",
+             "value": "86"
+            },
+            {
+             "groupId": "OG002",
+             "value": "25"
+            },
+            {
+             "groupId": "OG003",
+             "value": "17"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Terminated prior to death",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "20"
+            },
+            {
+             "groupId": "OG001",
+             "value": "25"
+            },
+            {
+             "groupId": "OG002",
+             "value": "1"
+            },
+            {
+             "groupId": "OG003",
+             "value": "4"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "0.0462",
+         "statisticalMethod": "Log Rank",
+         "paramType": "Hazard Ratio (HR)",
+         "paramValue": "0.799",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "0.6409",
+         "ciUpperLimit": "0.9963"
+        },
+        {
+         "groupIds": [
+          "OG002",
+          "OG003"
+         ],
+         "nonInferiorityType": "OTHER",
+         "nonInferiorityComment": "The china cohort was not powered for superiority",
+         "pValue": "0.4416",
+         "statisticalMethod": "Log Rank",
+         "paramType": "Hazard Ratio (HR)",
+         "paramValue": "0.848",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "0.5568",
+         "ciUpperLimit": "1.2910"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Plasma Concentrations of AZD9291",
+       "description": "To characterise the pharmacokinetics (PK) of osimertinib",
+       "populationDescription": "The pharmacokinetic analysis set (osimertinib arm only) was defined as participants in the FAS who had at least 1 evaluable PK concentration and who had no detectable pre-dose osimertinib concentrations above the lower limit of quantitation",
+       "reportingStatus": "POSTED",
+       "paramType": "GEOMETRIC_MEAN",
+       "dispersionType": "Geometric Coefficient of Variation",
+       "unitOfMeasure": "Nano moles",
+       "timeFrame": "Blood samples collected from each participant at pre-dose, 0.5 to 2 hours, and 3 to 5 hours post-dose on Day 1 Cycle 1, and every other cycle thereafter up to and including Cycle 13 (approximately 9 months)",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Osimertinib 80 mg (Global Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        },
+        {
+         "id": "OG001",
+         "title": "Osimertinib 80 mg (China Cohort)",
+         "description": "Randomized participants received Osimertinib 80 mg orally once daily (QD)"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "279"
+          },
+          {
+           "groupId": "OG001",
+           "value": "71"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Cycle 1 Day 1-Predose",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "199"
+            },
+            {
+             "groupId": "OG001",
+             "value": "69"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "NA",
+             "spread": "NA",
+             "comment": "NA as values were not calculable and non-quantifiable"
+            },
+            {
+             "groupId": "OG001",
+             "value": "NA",
+             "spread": "NA",
+             "comment": "NA as values were not calculable and non-quantifiable"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Cycle 1 Day 1-0.5 - 2 hours",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "203"
+            },
+            {
+             "groupId": "OG001",
+             "value": "69"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "4.9487",
+             "spread": "1173.3679"
+            },
+            {
+             "groupId": "OG001",
+             "value": "5.0249",
+             "spread": "816.7305"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Cycle 1 Day 1-3 - 5 hours",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "211"
+            },
+            {
+             "groupId": "OG001",
+             "value": "69"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "129.3340",
+             "spread": "171.2983"
+            },
+            {
+             "groupId": "OG001",
+             "value": "131.5669",
+             "spread": "120.5979"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Cycle 3 Day 1- Predose",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "183"
+            },
+            {
+             "groupId": "OG001",
+             "value": "67"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "394.3489",
+             "spread": "43.9296"
+            },
+            {
+             "groupId": "OG001",
+             "value": "441.5606",
+             "spread": "55.0039"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Cycle 3 Day 1, 0.5 - 2 hours",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "183"
+            },
+            {
+             "groupId": "OG001",
+             "value": "68"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "397.7406",
+             "spread": "45.8548"
+            },
+            {
+             "groupId": "OG001",
+             "value": "441.7343",
+             "spread": "60.0626"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Cycle 3 Day 1, 3 - 5 hours",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "182"
+            },
+            {
+             "groupId": "OG001",
+             "value": "67"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "512.4012",
+             "spread": "44.0653"
+            },
+            {
+             "groupId": "OG001",
+             "value": "553.8090",
+             "spread": "60.9883"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Cycle 5 Day 1, Predose",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "180"
+            },
+            {
+             "groupId": "OG001",
+             "value": "67"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "358.5487",
+             "spread": "53.8212"
+            },
+            {
+             "groupId": "OG001",
+             "value": "419.5893",
+             "spread": "63.2507"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Cycle 5 Day 1, 0.5 - 2 hours",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "OG000",
+             "value": "177"
+            },
+            {
+             "groupId": "OG001",
+             "value": "67"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "369.0696",
+             "spread": "51.3284"
+            },
+            {
+             "groupId": "OG001",
+             "value": "426.8197",
+             "spread": "60.3841"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ]
+}

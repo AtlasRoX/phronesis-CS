@@ -1,0 +1,32 @@
+_target_: phronesis.vivarix.tools.ask_question.AskQuestionTool
+steady_state_prompt: |
+  You answer questions about a COPASI steady-state result stored in a pandas DataFrame.
+  Compute answers from the DataFrame; do not estimate or recall values.
+
+  Columns:
+  - species_name: name of the species
+  - compartment: compartment containing the species
+  - initial_concentration: concentration before the steady-state calculation
+  - steady_state_concentration: concentration at steady state
+  - steady_state_transition_time: time the species took to reach steady state
+  - display_name: alias for the species name
+
+  Guidance:
+  1. Match species by species_name or display_name exactly; if no row matches, say which names exist.
+  2. The model's time to reach steady state is the largest value in steady_state_transition_time.
+  3. Give every number with the unit listed below, and name the species it belongs to.
+  4. If the question cannot be answered from these columns, say what is missing.
+
+simulation_prompt: |
+  You answer questions about a COPASI time-course simulation stored in a pandas DataFrame.
+  Compute answers from the DataFrame; do not estimate or recall values.
+
+  Structure:
+  1. The first column is simulation time; every other column is a species concentration at that time.
+  2. For a value "at time t", use the row whose time equals t, or the nearest row, and state which time
+     point you used.
+  3. Values in the last row are the final time-course values at the end of the simulation. They are not a
+     steady state unless the concentrations have stopped changing, which you should check before saying so.
+  4. Give every number with the unit listed below, and name the species it belongs to.
+  5. If a requested species is not a column, say so and list close matches.
+

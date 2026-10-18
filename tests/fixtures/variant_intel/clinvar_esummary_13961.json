@@ -1,0 +1,155 @@
+{
+ "header": {
+  "type": "esummary",
+  "version": "0.3"
+ },
+ "result": {
+  "uids": [
+   "13961"
+  ],
+  "13961": {
+   "uid": "13961",
+   "obj_type": "single nucleotide variant",
+   "accession": "VCV000013961",
+   "accession_version": "VCV000013961.143",
+   "title": "NM_004333.6(BRAF):c.1799T>A (p.Val600Glu)",
+   "protein_change": "V600E, V512E, V578E, V603E, V548E, V566E, V563E, V640E",
+   "molecular_consequence_list": [
+    "missense variant"
+   ],
+   "genes": [
+    {
+     "symbol": "BRAF",
+     "geneid": "673",
+     "strand": "-",
+     "source": "submitted"
+    }
+   ],
+   "variation_set": [
+    {
+     "variation_name": "NM_004333.6(BRAF):c.1799T>A (p.Val600Glu)",
+     "cdna_change": "c.1799T>A",
+     "variant_type": "single nucleotide variant",
+     "canonical_spdi": "NC_000007.14:140753335:A:T",
+     "variation_xrefs": [
+      {
+       "db_source": "ClinGen",
+       "db_id": "CA123643"
+      },
+      {
+       "db_source": "dbSNP",
+       "db_id": "113488022"
+      }
+     ],
+     "variation_loc": [
+      {
+       "status": "current",
+       "assembly_name": "GRCh38",
+       "chr": "7",
+       "start": "140753336",
+       "stop": "140753336"
+      },
+      {
+       "status": "previous",
+       "assembly_name": "GRCh37",
+       "chr": "7",
+       "start": "140453136",
+       "stop": "140453136"
+      },
+      {
+       "status": "previous",
+       "assembly_name": "NCBI36",
+       "chr": "7",
+       "start": "140099605",
+       "stop": "140099605"
+      }
+     ]
+    }
+   ],
+   "germline_classification": {
+    "description": "Conflicting classifications of pathogenicity",
+    "last_evaluated": "2026/03/11 00:00",
+    "review_status": "criteria provided, conflicting classifications",
+    "trait_set": [
+     {
+      "trait_name": "BRAF-related glioma susceptibility"
+     },
+     {
+      "trait_name": "Vascular malformation"
+     },
+     {
+      "trait_name": "Cardiovascular phenotype"
+     },
+     {
+      "trait_name": "RASopathy"
+     },
+     {
+      "trait_name": "not provided"
+     }
+    ]
+   },
+   "oncogenicity_classification": {
+    "description": "Oncogenic",
+    "last_evaluated": "2025/03/04 00:00",
+    "review_status": "criteria provided, single submitter",
+    "trait_set": [
+     {
+      "trait_name": "Neoplasm"
+     }
+    ]
+   },
+   "clinical_impact_classification": {
+    "description": "Tier I - Strong",
+    "last_evaluated": "2025/11/05 00:00",
+    "review_status": "criteria provided, multiple submitters",
+    "trait_set": [
+     {
+      "trait_name": "Melanoma"
+     },
+     {
+      "trait_name": "Pleomorphic xanthoastrocytoma"
+     },
+     {
+      "trait_name": "IDH-wildtype glioblastoma"
+     },
+     {
+      "trait_name": "Diffuse leptomeningeal glioneuronal tumor"
+     },
+     {
+      "trait_name": "Polymorphous low grade neuroepithelial tumor of the young"
+     },
+     {
+      "trait_name": "Malignant peripheral nerve sheath tumor"
+     },
+     {
+      "trait_name": "Diffuse midline glioma, H3 K27M-mutant"
+     },
+     {
+      "trait_name": "Ganglioglioma"
+     },
+     {
+      "trait_name": "Malignant glioma"
+     },
+     {
+      "trait_name": "Diffuse low-grade glioma, MAPK pathway–altered"
+     },
+     {
+      "trait_name": "Benign metanephric tumor"
+     },
+     {
+      "trait_name": "Dysembryoplastic neuroepithelial tumor"
+     },
+     {
+      "trait_name": "Colorectal cancer"
+     },
+     {
+      "trait_name": "Papillary thyroid carcinoma"
+     },
+     {
+      "trait_name": "Pilocytic astrocytoma"
+     }
+    ]
+   }
+  }
+ }
+}

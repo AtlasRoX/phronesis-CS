@@ -1,0 +1,1556 @@
+[
+ {
+  "studyId": "crc_dd_2022",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Cancer (MSK, JCO Precis Oncol 2022)",
+  "allSampleCount": 47,
+  "sequencedSampleCount": 47,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "asclc_msk_2024",
+  "cancerTypeId": "lung",
+  "name": "Atypical Small Cell Lung Cancer (MSK, Cancer Discov 2024)",
+  "allSampleCount": 31,
+  "sequencedSampleCount": 31,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lung",
+   "name": "Lung",
+   "shortName": "LUNG",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "pancreas_msk_2024",
+  "cancerTypeId": "pancreas",
+  "name": "Pancreatic Cancer (MSK, Cancer Cell 2024)",
+  "allSampleCount": 395,
+  "sequencedSampleCount": 395,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "pancreas",
+   "name": "Pancreas",
+   "shortName": "PANCREAS",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "lusc_tcga_pub",
+  "cancerTypeId": "lusc",
+  "name": "Lung Squamous Cell Carcinoma (TCGA, Nature 2012)",
+  "allSampleCount": 178,
+  "sequencedSampleCount": 178,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lusc",
+   "name": "Lung Squamous Cell Carcinoma",
+   "shortName": "LUSC",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "ccle_broad_2025",
+  "cancerTypeId": "mixed",
+  "name": "Cancer Cell Line Encyclopedia (Broad, Nat Rev Cancer 2025)",
+  "allSampleCount": 1981,
+  "sequencedSampleCount": 1854,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "mixed",
+   "name": "Mixed Cancer Types",
+   "shortName": "MIXED",
+   "parent": "other"
+  }
+ },
+ {
+  "studyId": "nsclc_unito_2016",
+  "cancerTypeId": "nsclc",
+  "name": "Non-Small Cell Lung Cancer (University of Turin, Lung Cancer 2017)",
+  "allSampleCount": 41,
+  "sequencedSampleCount": 41,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "sclc_jhu",
+  "cancerTypeId": "sclc",
+  "name": "Small Cell Lung Cancer (Johns Hopkins, Nat Genet 2012)",
+  "allSampleCount": 80,
+  "sequencedSampleCount": 80,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "sclc",
+   "name": "Small Cell Lung Cancer",
+   "shortName": "SCLC",
+   "parent": "lnet"
+  }
+ },
+ {
+  "studyId": "alk_msk_2026",
+  "cancerTypeId": "nsclc",
+  "name": "Non-Small Cell Lung Cancer (MSK, 2026)",
+  "allSampleCount": 90,
+  "sequencedSampleCount": 90,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "coadread_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Adenocarcinoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 594,
+  "sequencedSampleCount": 534,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "lung_smc_2016",
+  "cancerTypeId": "lung",
+  "name": "Lung Cancer (SMC, Cancer Research 2016)",
+  "allSampleCount": 22,
+  "sequencedSampleCount": 22,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lung",
+   "name": "Lung",
+   "shortName": "LUNG",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "pancreas_cptac_gdc",
+  "cancerTypeId": "pancreas",
+  "name": "Pancreatic Cancer (CPTAC GDC, 2025)",
+  "allSampleCount": 183,
+  "sequencedSampleCount": 181,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "pancreas",
+   "name": "Pancreas",
+   "shortName": "PANCREAS",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "crc_eo_2020",
+  "cancerTypeId": "bowel",
+  "name": "Colorectal Cancer (MSK, JNCI 2021)",
+  "allSampleCount": 1516,
+  "sequencedSampleCount": 1516,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "bowel",
+   "name": "Bowel",
+   "shortName": "BOWEL",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "crc_hta11_htan_2021",
+  "cancerTypeId": "coadread",
+  "name": "Pre-cancer Colorectal Polyps (HTAN Vanderbilt, Cell 2021)",
+  "allSampleCount": 61,
+  "sequencedSampleCount": 30,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "coadread_genentech",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Adenocarcinoma (Genentech, Nature 2012)",
+  "allSampleCount": 74,
+  "sequencedSampleCount": 72,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "panet_msk_erc_2023",
+  "cancerTypeId": "pancreas",
+  "name": "Pancreatic Neuroendocrine Tumors (MSK, 2023)",
+  "allSampleCount": 65,
+  "sequencedSampleCount": 65,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "pancreas",
+   "name": "Pancreas",
+   "shortName": "PANCREAS",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "skcm_yale",
+  "cancerTypeId": "skcm",
+  "name": "Skin Cutaneous Melanoma (Yale, Nat Genet 2012)",
+  "allSampleCount": 147,
+  "sequencedSampleCount": 147,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "um_qimr_2016",
+  "cancerTypeId": "um",
+  "name": "Uveal Melanoma (QIMR, Oncotarget 2016)",
+  "allSampleCount": 28,
+  "sequencedSampleCount": 26,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "um",
+   "name": "Uveal Melanoma",
+   "shortName": "UM",
+   "parent": "om"
+  }
+ },
+ {
+  "studyId": "coadread_tcga",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Adenocarcinoma (TCGA, Firehose Legacy)",
+  "allSampleCount": 640,
+  "sequencedSampleCount": 223,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "paad_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Adenocarcinoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 184,
+  "sequencedSampleCount": 179,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "uvm_tcga",
+  "cancerTypeId": "um",
+  "name": "Uveal Melanoma (TCGA, Firehose Legacy)",
+  "allSampleCount": 80,
+  "sequencedSampleCount": 80,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "um",
+   "name": "Uveal Melanoma",
+   "shortName": "UM",
+   "parent": "om"
+  }
+ },
+ {
+  "studyId": "luad_cptac_2020",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (CPTAC, Cell 2020)",
+  "allSampleCount": 110,
+  "sequencedSampleCount": 110,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "nsclc_tracerx_2017",
+  "cancerTypeId": "nsclc",
+  "name": "Non-Small Cell Lung Cancer (TRACERx, NEJM & Nature 2017)",
+  "allSampleCount": 447,
+  "sequencedSampleCount": 447,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "pancreas_ctdna_msk_2025",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Cancer cfDNA (MSK, J Natl Cancer Inst 2025)",
+  "allSampleCount": 412,
+  "sequencedSampleCount": 412,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "paad_msk_2025",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Adenocarcinoma (MSK, 2025)",
+  "allSampleCount": 29,
+  "sequencedSampleCount": 29,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "crc_msk_2026",
+  "cancerTypeId": "read",
+  "name": "Colorectal Adenocarcinoma (MSK, 2026)",
+  "allSampleCount": 7237,
+  "sequencedSampleCount": 7237,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "read",
+   "name": "Rectal Adenocarcinoma",
+   "shortName": "READ",
+   "parent": "coadread"
+  }
+ },
+ {
+  "studyId": "lung_nci_2022",
+  "cancerTypeId": "luad",
+  "name": "Lung Cancer in Never Smokers (NCI, Nature Genetics 2021)",
+  "allSampleCount": 232,
+  "sequencedSampleCount": 232,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "lusc_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "lusc",
+  "name": "Lung Squamous Cell Carcinoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 487,
+  "sequencedSampleCount": 484,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lusc",
+   "name": "Lung Squamous Cell Carcinoma",
+   "shortName": "LUSC",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "rectal_radiation_msk_2024",
+  "cancerTypeId": "read",
+  "name": "Colorectal Cancer Radiation (MSK, 2024)",
+  "allSampleCount": 48,
+  "sequencedSampleCount": 48,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "read",
+   "name": "Rectal Adenocarcinoma",
+   "shortName": "READ",
+   "parent": "coadread"
+  }
+ },
+ {
+  "studyId": "cellline_nci60",
+  "cancerTypeId": "mixed",
+  "name": "NCI-60 Cell Lines (NCI, Cancer Res 2012)",
+  "allSampleCount": 67,
+  "sequencedSampleCount": 60,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "mixed",
+   "name": "Mixed Cancer Types",
+   "shortName": "MIXED",
+   "parent": "other"
+  }
+ },
+ {
+  "studyId": "skcm_mskcc_2014",
+  "cancerTypeId": "skcm",
+  "name": "Melanoma (MSK, NEJM 2014)",
+  "allSampleCount": 64,
+  "sequencedSampleCount": 64,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "sclc_clcgp",
+  "cancerTypeId": "sclc",
+  "name": "Small Cell Lung Cancer (CLCGP, Nat Genet 2012)",
+  "allSampleCount": 29,
+  "sequencedSampleCount": 29,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "sclc",
+   "name": "Small Cell Lung Cancer",
+   "shortName": "SCLC",
+   "parent": "lnet"
+  }
+ },
+ {
+  "studyId": "lusc_tcga_gdc",
+  "cancerTypeId": "lusc",
+  "name": "Lung Squamous Cell Carcinoma (TCGA GDC, 2025)",
+  "allSampleCount": 503,
+  "sequencedSampleCount": 484,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "lusc",
+   "name": "Lung Squamous Cell Carcinoma",
+   "shortName": "LUSC",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "panet_arcnet_2017",
+  "cancerTypeId": "panet",
+  "name": "Pancreatic Neuroendocrine Tumors (Multi-Institute, Nature 2017)",
+  "allSampleCount": 98,
+  "sequencedSampleCount": 98,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "panet",
+   "name": "Pancreatic Neuroendocrine Tumor",
+   "shortName": "PANET",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "coadread_dfci_2016",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Adenocarcinoma (DFCI, Cell Reports 2016)",
+  "allSampleCount": 619,
+  "sequencedSampleCount": 619,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "mel_tsam_liang_2017",
+  "cancerTypeId": "mel",
+  "name": "Acral Melanoma (TGEN, Genome Res 2017)",
+  "allSampleCount": 38,
+  "sequencedSampleCount": 38,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "mel",
+   "name": "Melanoma",
+   "shortName": "MEL",
+   "parent": "skin"
+  }
+ },
+ {
+  "studyId": "nsclc_ctdx_msk_2022",
+  "cancerTypeId": "nsclc",
+  "name": "Metastatic Non-Small Cell Lung Cancer (MSK, Nature Medicine 2022)",
+  "allSampleCount": 2621,
+  "sequencedSampleCount": 2621,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "pact_jhu_2011",
+  "cancerTypeId": "pact",
+  "name": "Cystic Tumor of the Pancreas (Johns Hopkins, PNAS 2011)",
+  "allSampleCount": 32,
+  "sequencedSampleCount": 32,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "pact",
+   "name": "Cystic Tumor of the Pancreas",
+   "shortName": "PACT",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "nsclc_tcga_broad_2016",
+  "cancerTypeId": "nsclc",
+  "name": "Pan-Lung Cancer (TCGA, Nat Genet 2016)",
+  "allSampleCount": 1144,
+  "sequencedSampleCount": 1144,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "paad_tcga",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Adenocarcinoma (TCGA, Firehose Legacy)",
+  "allSampleCount": 186,
+  "sequencedSampleCount": 150,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "mixed_cfdna_msk_2020",
+  "cancerTypeId": "mixed",
+  "name": "Mixed cfDNA (MSK, Genome Med 2021)",
+  "allSampleCount": 229,
+  "sequencedSampleCount": 229,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "mixed",
+   "name": "Mixed Cancer Types",
+   "shortName": "MIXED",
+   "parent": "other"
+  }
+ },
+ {
+  "studyId": "crc_msk_2017",
+  "cancerTypeId": "coadread",
+  "name": "Metastatic Colorectal Cancer (MSK, Cancer Cell 2018)",
+  "allSampleCount": 1134,
+  "sequencedSampleCount": 1134,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "coadread_cass_2020",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Cancer (CAS Shanghai, Cancer Cell 2020)",
+  "allSampleCount": 146,
+  "sequencedSampleCount": 146,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "luad_mskcc_2020",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (MSK, J Thorac Oncol 2020)",
+  "allSampleCount": 604,
+  "sequencedSampleCount": 604,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "um_tcga_gdc",
+  "cancerTypeId": "um",
+  "name": "Uveal Melanoma (TCGA GDC, 2025)",
+  "allSampleCount": 80,
+  "sequencedSampleCount": 80,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "um",
+   "name": "Uveal Melanoma",
+   "shortName": "UM",
+   "parent": "om"
+  }
+ },
+ {
+  "studyId": "mel_iatlas_liu_2019",
+  "cancerTypeId": "mel",
+  "name": "Metastatic Melanoma (DFCI, Nat Med. 2019) - iAtlas Harmonized",
+  "allSampleCount": 122,
+  "sequencedSampleCount": 122,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "mel",
+   "name": "Melanoma",
+   "shortName": "MEL",
+   "parent": "skin"
+  }
+ },
+ {
+  "studyId": "paad_tcga_gdc",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Adenocarcinoma (TCGA GDC, 2025)",
+  "allSampleCount": 186,
+  "sequencedSampleCount": 173,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "pdac_msk_2024",
+  "cancerTypeId": "pancreas",
+  "name": "Pancreatic Adenocarcinoma (MSK, Nat Med 2024)",
+  "allSampleCount": 2336,
+  "sequencedSampleCount": 2336,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "pancreas",
+   "name": "Pancreas",
+   "shortName": "PANCREAS",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "mel_iatlas_riaz_nivolumab_2017",
+  "cancerTypeId": "mel",
+  "name": "Melanoma (MSK, Cell 2017) - iAtlas Harmonized",
+  "allSampleCount": 107,
+  "sequencedSampleCount": 73,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "mel",
+   "name": "Melanoma",
+   "shortName": "MEL",
+   "parent": "skin"
+  }
+ },
+ {
+  "studyId": "luad_mskcc_2023_met_organotropism",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma Met Organotropism (MSK, Cancer Cell 2023)",
+  "allSampleCount": 2653,
+  "sequencedSampleCount": 2653,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "skcm_tcga_pub_2015",
+  "cancerTypeId": "skcm",
+  "name": "Melanomas (TCGA, Cell 2015)",
+  "allSampleCount": 359,
+  "sequencedSampleCount": 346,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "paad_icgc",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Adenocarcinoma (ICGC, Nature 2012)",
+  "allSampleCount": 99,
+  "sequencedSampleCount": 99,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "coadread_mskresistance_2022",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Cancer (MSK, Cancer Discovery 2022)",
+  "allSampleCount": 22,
+  "sequencedSampleCount": 22,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "paad_cptac_2021",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Ductal Adenocarcinoma (CPTAC, Cell 2021)",
+  "allSampleCount": 140,
+  "sequencedSampleCount": 140,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "lusc_cptac_gdc",
+  "cancerTypeId": "lusc",
+  "name": "Lung Squamous Cell Carcinoma (CPTAC GDC, 2025)",
+  "allSampleCount": 110,
+  "sequencedSampleCount": 110,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "lusc",
+   "name": "Lung Squamous Cell Carcinoma",
+   "shortName": "LUSC",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "luad_tcga_pub",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (TCGA, Nature 2014)",
+  "allSampleCount": 230,
+  "sequencedSampleCount": 230,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "luad_mskcc_2015",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (MSK, Science 2015)",
+  "allSampleCount": 35,
+  "sequencedSampleCount": 35,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "sclc_cancercell_gardner_2017",
+  "cancerTypeId": "sclc",
+  "name": "Small-Cell Lung Cancer (Multi-Institute, Cancer Cell 2017)",
+  "allSampleCount": 20,
+  "sequencedSampleCount": 20,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "sclc",
+   "name": "Small Cell Lung Cancer",
+   "shortName": "SCLC",
+   "parent": "lnet"
+  }
+ },
+ {
+  "studyId": "mel_dfci_2019",
+  "cancerTypeId": "mel",
+  "name": "Metastatic Melanoma (DFCI, Nature Medicine 2019)",
+  "allSampleCount": 144,
+  "sequencedSampleCount": 144,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "mel",
+   "name": "Melanoma",
+   "shortName": "MEL",
+   "parent": "skin"
+  }
+ },
+ {
+  "studyId": "panet_msk_2018",
+  "cancerTypeId": "panet",
+  "name": "Metastatic Pancreatic Neuroendocrine Tumor (MSK, JCO Precis Oncol 2018)",
+  "allSampleCount": 96,
+  "sequencedSampleCount": 96,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "panet",
+   "name": "Pancreatic Neuroendocrine Tumor",
+   "shortName": "PANET",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "rectal_msk_2019",
+  "cancerTypeId": "coadread",
+  "name": "Rectal Cancer (MSK,Nature Medicine 2019)",
+  "allSampleCount": 339,
+  "sequencedSampleCount": 339,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "desm_broad_2015",
+  "cancerTypeId": "desm",
+  "name": "Desmoplastic Melanoma (Broad Institute, Nat Genet 2015)",
+  "allSampleCount": 20,
+  "sequencedSampleCount": 20,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "desm",
+   "name": "Desmoplastic Melanoma",
+   "shortName": "DESM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "skcm_broad_brafresist_2012",
+  "cancerTypeId": "skcm",
+  "name": "Skin Cutaneous Melanoma(Broad, Cancer Discov 2014)",
+  "allSampleCount": 78,
+  "sequencedSampleCount": 78,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "uvm_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "um",
+  "name": "Uveal Melanoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 80,
+  "sequencedSampleCount": 80,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "um",
+   "name": "Uveal Melanoma",
+   "shortName": "UM",
+   "parent": "om"
+  }
+ },
+ {
+  "studyId": "paac_msk_jco_2023",
+  "cancerTypeId": "paac",
+  "name": "Pancreatic Acinar Cell Carcinoma (MSK, JCO 2023)",
+  "allSampleCount": 47,
+  "sequencedSampleCount": 47,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paac",
+   "name": "Acinar Cell Carcinoma of the Pancreas",
+   "shortName": "PAAC",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "luad_tcga_gdc",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (TCGA GDC, 2025)",
+  "allSampleCount": 571,
+  "sequencedSampleCount": 559,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "lung_msk_2017",
+  "cancerTypeId": "luad",
+  "name": "Non-Small Cell Cancer (MSK, Cancer Discov 2017)",
+  "allSampleCount": 915,
+  "sequencedSampleCount": 915,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "bowel_colitis_msk_2022",
+  "cancerTypeId": "bowel",
+  "name": "Colorectal Adenocarcinoma (MSK, Nat Commun 2022)",
+  "allSampleCount": 179,
+  "sequencedSampleCount": 165,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "bowel",
+   "name": "Bowel",
+   "shortName": "BOWEL",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "lusc_cptac_2021",
+  "cancerTypeId": "lusc",
+  "name": "Lung Squamous Cell Carcinoma (CPTAC, Cell 2021)",
+  "allSampleCount": 80,
+  "sequencedSampleCount": 108,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lusc",
+   "name": "Lung Squamous Cell Carcinoma",
+   "shortName": "LUSC",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "crc_hta8_htan_2024",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Cancer (HTAN MSK, Nature 2025)",
+  "allSampleCount": 83,
+  "sequencedSampleCount": 28,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "sclc_ucologne_2015",
+  "cancerTypeId": "sclc",
+  "name": "Small Cell Lung Cancer (U Cologne, Nature 2015)",
+  "allSampleCount": 120,
+  "sequencedSampleCount": 120,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "sclc",
+   "name": "Small Cell Lung Cancer",
+   "shortName": "SCLC",
+   "parent": "lnet"
+  }
+ },
+ {
+  "studyId": "panet_shanghai_2013",
+  "cancerTypeId": "panet",
+  "name": "Insulinoma (Shanghai, Nat Commun 2013)",
+  "allSampleCount": 10,
+  "sequencedSampleCount": 10,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "panet",
+   "name": "Pancreatic Neuroendocrine Tumor",
+   "shortName": "PANET",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "paac_jhu_2014",
+  "cancerTypeId": "paac",
+  "name": "Acinar Cell Carcinoma of the Pancreas (JHU, J Pathol 2014)",
+  "allSampleCount": 23,
+  "sequencedSampleCount": 23,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paac",
+   "name": "Acinar Cell Carcinoma of the Pancreas",
+   "shortName": "PAAC",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "luad_oncosg_2020",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (OncoSG, Nat Genet 2020)",
+  "allSampleCount": 305,
+  "sequencedSampleCount": 302,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "bm_nsclc_mskcc_2023",
+  "cancerTypeId": "nsclc",
+  "name": "Non-Small Cell Lung Cancer Brain Metastasis (MSK, Nat Commun 2023)",
+  "allSampleCount": 322,
+  "sequencedSampleCount": 322,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "crc_orion_2024",
+  "cancerTypeId": "bowel",
+  "name": "Colorectal Adenocarcinoma (DFCI/Orion, BioRxiv 2024)",
+  "allSampleCount": 74,
+  "sequencedSampleCount": 74,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "bowel",
+   "name": "Bowel",
+   "shortName": "BOWEL",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "luad_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 566,
+  "sequencedSampleCount": 566,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "skcm_tcga",
+  "cancerTypeId": "skcm",
+  "name": "Skin Cutaneous Melanoma (TCGA, Firehose Legacy)",
+  "allSampleCount": 480,
+  "sequencedSampleCount": 368,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "crc_sysucc_2022",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Cancer- ChangKang Project (SYSUCC, Nat Commun 2022)",
+  "allSampleCount": 1015,
+  "sequencedSampleCount": 1015,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "luad_cptac_gdc",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (CPTAC GDC, 2025)",
+  "allSampleCount": 241,
+  "sequencedSampleCount": 236,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "lusc_tcga",
+  "cancerTypeId": "lusc",
+  "name": "Lung Squamous Cell Carcinoma (TCGA, Firehose Legacy)",
+  "allSampleCount": 511,
+  "sequencedSampleCount": 178,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lusc",
+   "name": "Lung Squamous Cell Carcinoma",
+   "shortName": "LUSC",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "paad_iatlas_prince_2022",
+  "cancerTypeId": "paad",
+  "name": "Metastatic Pancreatic Adenocarcinoma (PRINCE Trial, Nat Med. 2022) - iAtlas Harmonized",
+  "allSampleCount": 93,
+  "sequencedSampleCount": 93,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "luad_tcga",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (TCGA, Firehose Legacy)",
+  "allSampleCount": 586,
+  "sequencedSampleCount": 230,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "crc_nigerian_2020",
+  "cancerTypeId": "coadread",
+  "name": "Disparities in metastatic colorectal cancer between Africans and Americans (MSK, 2020)",
+  "allSampleCount": 64,
+  "sequencedSampleCount": 64,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "skcm_tcga_pan_can_atlas_2018",
+  "cancerTypeId": "skcm",
+  "name": "Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",
+  "allSampleCount": 448,
+  "sequencedSampleCount": 440,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "mel_ucla_2016",
+  "cancerTypeId": "mel",
+  "name": "Metastatic Melanoma (UCLA, Cell 2016)",
+  "allSampleCount": 38,
+  "sequencedSampleCount": 38,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "mel",
+   "name": "Melanoma",
+   "shortName": "MEL",
+   "parent": "skin"
+  }
+ },
+ {
+  "studyId": "luad_tsp",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (TSP, Nature 2008)",
+  "allSampleCount": 163,
+  "sequencedSampleCount": 163,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "lung_msk_pdx",
+  "cancerTypeId": "lung",
+  "name": "Thoracic PDX (MSK, Provisional)",
+  "allSampleCount": 318,
+  "sequencedSampleCount": 318,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lung",
+   "name": "Lung",
+   "shortName": "LUNG",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "mel_iatlas_gide_2019",
+  "cancerTypeId": "mel",
+  "name": "Metastatic Melanoma (Immunotherapy Trial, Cancer Cell 2019) - iAtlas Harmonized",
+  "allSampleCount": 91,
+  "sequencedSampleCount": 0,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "mel",
+   "name": "Melanoma",
+   "shortName": "MEL",
+   "parent": "skin"
+  }
+ },
+ {
+  "studyId": "luad_cas_2020",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (CAS, Cell 2020)",
+  "allSampleCount": 103,
+  "sequencedSampleCount": 103,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "paad_utsw_2015",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Cancer (UTSW, Nat Commun 2015)",
+  "allSampleCount": 109,
+  "sequencedSampleCount": 109,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "crc_apc_impact_2020",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Cancer (MSK, Gastroenterology 2020)",
+  "allSampleCount": 471,
+  "sequencedSampleCount": 471,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "msk_impact_2017",
+  "cancerTypeId": "mixed",
+  "name": "MSK-IMPACT Clinical Sequencing Cohort (MSK, Nat Med 2017)",
+  "allSampleCount": 10945,
+  "sequencedSampleCount": 10945,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "mixed",
+   "name": "Mixed Cancer Types",
+   "shortName": "MIXED",
+   "parent": "other"
+  }
+ },
+ {
+  "studyId": "nsclc_pd1_msk_2018",
+  "cancerTypeId": "nsclc",
+  "name": "Non-Small Cell Lung Cancer (MSK, J Clin Oncol 2018)",
+  "allSampleCount": 240,
+  "sequencedSampleCount": 240,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "lung_pdx_msk_2021",
+  "cancerTypeId": "lung",
+  "name": "Thoracic Cancer (MSK, Nat Commun 2021)",
+  "allSampleCount": 69,
+  "sequencedSampleCount": 69,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lung",
+   "name": "Lung",
+   "shortName": "LUNG",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "nsclc_mskcc_2015",
+  "cancerTypeId": "nsclc",
+  "name": "Non-Small Cell Lung Cancer (MSK, Science 2015)",
+  "allSampleCount": 16,
+  "sequencedSampleCount": 16,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "paad_qcmg_uq_2016",
+  "cancerTypeId": "paad",
+  "name": "Pancreatic Adenocarcinoma (QCMG, Nature 2016)",
+  "allSampleCount": 456,
+  "sequencedSampleCount": 383,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "paad",
+   "name": "Pancreatic Adenocarcinoma",
+   "shortName": "PAAD",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "luad_mskimpact_2021",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (MSK, 2021)",
+  "allSampleCount": 186,
+  "sequencedSampleCount": 186,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "skcm_broad_dfarber",
+  "cancerTypeId": "skcm",
+  "name": "Melanoma (Broad/Dana Farber, Nature 2012)",
+  "allSampleCount": 26,
+  "sequencedSampleCount": 26,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "panet_jhu_2011",
+  "cancerTypeId": "panet",
+  "name": "Pancreatic Neuroendocrine Tumors (Johns Hopkins University, Science 2011)",
+  "allSampleCount": 10,
+  "sequencedSampleCount": 10,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "panet",
+   "name": "Pancreatic Neuroendocrine Tumor",
+   "shortName": "PANET",
+   "parent": "pancreas"
+  }
+ },
+ {
+  "studyId": "skcm_dfci_2015",
+  "cancerTypeId": "skcm",
+  "name": "Metastatic Melanoma (DFCI, Science 2015)",
+  "allSampleCount": 110,
+  "sequencedSampleCount": 110,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "skcm_vanderbilt_mskcc_2015",
+  "cancerTypeId": "skcm",
+  "name": "Metastatic Melanoma (MSK, JCO Precis Oncol 2017)",
+  "allSampleCount": 66,
+  "sequencedSampleCount": 66,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "coadread_tcga_pub",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Adenocarcinoma (TCGA, Nature 2012)",
+  "allSampleCount": 276,
+  "sequencedSampleCount": 224,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "coadread_mskcc",
+  "cancerTypeId": "coadread",
+  "name": "Colorectal Adenocarcinoma Triplets (MSK, Genome Biol 2014)",
+  "allSampleCount": 138,
+  "sequencedSampleCount": 138,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "coadread",
+   "name": "Colorectal Adenocarcinoma",
+   "shortName": "COADREAD",
+   "parent": "bowel"
+  }
+ },
+ {
+  "studyId": "mel_mskimpact_2020",
+  "cancerTypeId": "skcm",
+  "name": "Melanoma (MSK, Clin Cancer Res 2021)",
+  "allSampleCount": 696,
+  "sequencedSampleCount": 696,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "skcm_tcga_gdc",
+  "cancerTypeId": "skcm",
+  "name": "Cutaneous Melanoma (TCGA GDC, 2025)",
+  "allSampleCount": 473,
+  "sequencedSampleCount": 469,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "nsclc_mskcc_2018",
+  "cancerTypeId": "nsclc",
+  "name": "Non-Small Cell Lung Cancer (MSK, Cancer Cell 2018)",
+  "allSampleCount": 75,
+  "sequencedSampleCount": 75,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "nsclc",
+   "name": "Non-Small Cell Lung Cancer",
+   "shortName": "NSCLC",
+   "parent": "lung"
+  }
+ },
+ {
+  "studyId": "lung_msk_mind_2020",
+  "cancerTypeId": "lung",
+  "name": "Lung Adenocarcinoma (MSK Mind,Nature Cancer 2022)",
+  "allSampleCount": 247,
+  "sequencedSampleCount": 247,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "lung",
+   "name": "Lung",
+   "shortName": "LUNG",
+   "parent": "tissue"
+  }
+ },
+ {
+  "studyId": "skcm_broad",
+  "cancerTypeId": "skcm",
+  "name": "Skin Cutaneous Melanoma (Broad, Cell 2012)",
+  "allSampleCount": 121,
+  "sequencedSampleCount": 121,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "skcm",
+   "name": "Cutaneous Melanoma",
+   "shortName": "SKCM",
+   "parent": "mel"
+  }
+ },
+ {
+  "studyId": "mel_iatlas_hugo_ucla_2016",
+  "cancerTypeId": "mel",
+  "name": "Metastatic Melanoma (UCLA, Cell 2016) - iAtlas Harmonized",
+  "allSampleCount": 27,
+  "sequencedSampleCount": 27,
+  "referenceGenome": "hg38",
+  "cancerType": {
+   "id": "mel",
+   "name": "Melanoma",
+   "shortName": "MEL",
+   "parent": "skin"
+  }
+ },
+ {
+  "studyId": "luad_msk_npjpo_2021",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (MSK, NPJ Precision Oncology 2021)",
+  "allSampleCount": 426,
+  "sequencedSampleCount": 426,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ },
+ {
+  "studyId": "luad_broad",
+  "cancerTypeId": "luad",
+  "name": "Lung Adenocarcinoma (Broad, Cell 2012)",
+  "allSampleCount": 183,
+  "sequencedSampleCount": 183,
+  "referenceGenome": "hg19",
+  "cancerType": {
+   "id": "luad",
+   "name": "Lung Adenocarcinoma",
+   "shortName": "LUAD",
+   "parent": "nsclc"
+  }
+ }
+]

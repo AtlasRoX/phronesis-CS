@@ -1,0 +1,1326 @@
+{
+ "_meta": {
+  "source": "EuropePMC REST search, resultType=core (https://www.ebi.ac.uk/europepmc/webservices/rest/search)",
+  "captured": "2026-10-13",
+  "trimmed": "authorString to 3 authors, abstractText to ~900 chars (1400 for 42771901) at a sentence end, MeSH qualifiers dropped, 'Comment in/on' entries beyond the first dropped; all other values verbatim"
+ },
+ "records": {
+  "wakefield_9500320": {
+   "id": "9500320",
+   "source": "MED",
+   "pmid": "9500320",
+   "doi": "10.1016/s0140-6736(97)11096-0",
+   "title": "Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children.",
+   "pubYear": "1998",
+   "firstPublicationDate": "1998-02-01",
+   "isOpenAccess": "N",
+   "authorString": "Wakefield AJ, Murch SH, Anthony A, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Lancet (London, England)"
+    },
+    "yearOfPublication": 1998
+   },
+   "abstractText": "<h4>Background</h4>We investigated a consecutive series of children with chronic enterocolitis and regressive developmental disorder.<h4>Methods</h4>12 children (mean age 6 years [range 3-10], 11 boys) were referred to a paediatric gastroenterology unit with a history of normal development followed by loss of acquired skills, including language, together with diarrhoea and abdominal pain. Children underwent gastroenterological, neurological, and developmental assessment and review of developmental records. Ileocolonoscopy and biopsy sampling, magnetic-resonance imaging (MRI), electroencephalography (EEG), and lumbar puncture were done under sedation. Barium follow-through radiography was done where possible. Biochemical, haematological, and immunological profiles were examined.",
+   "pubTypeList": {
+    "pubType": [
+     "Retracted Publication",
+     "Research Support, Non-U.S. Gov't",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Ileum"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Lymphoid Tissue"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Measles"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Enterocolitis"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Otitis Media"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Hyperplasia"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Vaccines, Combined"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Measles-Mumps-Rubella Vaccine"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Measles Vaccine"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Mumps Vaccine"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Rubella Vaccine"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Developmental Disabilities"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Child"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Child, Preschool"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Female"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Male"
+     }
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "9500313",
+      "source": "MED",
+      "reference": "Lancet. 1998 Feb 28;351(9103):611-2. doi: 10.1016/S0140-6736(05)78423-3",
+      "type": "Comment in",
+      "orderIn": 1
+     },
+     {
+      "id": "15016483",
+      "source": "MED",
+      "reference": "Lancet. 2004 Mar 6;363(9411):750. doi: 10.1016/S0140-6736(04)15715-2",
+      "type": "Retraction in",
+      "orderIn": 23
+     },
+     {
+      "id": "20137807",
+      "source": "MED",
+      "reference": "Lancet. 2010 Feb 6;375(9713):445. doi: 10.1016/S0140-6736(10)60175-4",
+      "type": "Retraction in",
+      "orderIn": 28
+     },
+     {
+      "id": "21971344",
+      "source": "MED",
+      "reference": "Eur J Gastroenterol Hepatol. 2011 Nov;23(11):1082. doi: 10.1097/MEG.0b013e328349d184",
+      "type": "Expression of concern in",
+      "orderIn": 29
+     }
+    ]
+   }
+  },
+  "surgisphere_32450107": {
+   "id": "32450107",
+   "source": "MED",
+   "pmid": "32450107",
+   "pmcid": "PMC7255293",
+   "doi": "10.1016/s0140-6736(20)31180-6",
+   "title": "RETRACTED: Hydroxychloroquine or chloroquine with or without a macrolide for treatment of COVID-19: a multinational registry analysis.",
+   "pubYear": "2020",
+   "firstPublicationDate": "2020-05-22",
+   "isOpenAccess": "Y",
+   "authorString": "Mehra MR, Desai SS, Ruschitzka F, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Lancet (London, England)"
+    },
+    "yearOfPublication": 2020
+   },
+   "abstractText": "<h4>Background</h4>Hydroxychloroquine or chloroquine, often in combination with a second-generation macrolide, are being widely used for treatment of COVID-19, despite no conclusive evidence of their benefit. Although generally safe when used for approved indications such as autoimmune disease or malaria, the safety and benefit of these treatment regimens are poorly evaluated in COVID-19.<h4>Methods</h4>We did a multinational registry analysis of the use of hydroxychloroquine or chloroquine with or without a macrolide for treatment of COVID-19. The registry comprised data from 671 hospitals in six continents. We included patients hospitalised between Dec 20, 2019, and April 14, 2020, with a positive laboratory finding for SARS-CoV-2.",
+   "pubTypeList": {
+    "pubType": [
+     "Retracted Publication",
+     "research-article",
+     "Journal Article"
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "32485145",
+      "source": "MED",
+      "reference": "Lancet. 2020 May 30:S0140-6736(20)31249-6. doi: 10.1016/S0140-6736(20)31249-6.",
+      "type": "Erratum in",
+      "orderIn": 1
+     },
+     {
+      "id": "32504543",
+      "source": "MED",
+      "reference": "Lancet. 2020 Jun 13;395(10240):e102. doi: 10.1016/S0140-6736(20)31290-3.",
+      "type": "Expression of concern in",
+      "orderIn": 2
+     },
+     {
+      "id": "32511943",
+      "source": "MED",
+      "reference": "Lancet. 2020 Jun 13;395(10240):1820. doi: 10.1016/S0140-6736(20)31324-6.",
+      "type": "Retraction in",
+      "orderIn": 3
+     },
+     {
+      "id": "32607690",
+      "source": "MED",
+      "reference": "J Neuroimmune Pharmacol. 2020 Sep;15(3):349. doi: 10.1007/s11481-020-09940-9.",
+      "type": "Comment in",
+      "orderIn": 4
+     },
+     {
+      "id": "32653079",
+      "source": "MED",
+      "reference": "Lancet. 2020 Jul 18;396(10245):e2-e3. doi: 10.1016/S0140-6736(20)31528-2.",
+      "type": "Retraction in",
+      "orderIn": 5
+     }
+    ]
+   }
+  },
+  "rct_21639808": {
+   "id": "21639808",
+   "source": "MED",
+   "pmid": "21639808",
+   "pmcid": "PMC3549296",
+   "doi": "10.1056/nejmoa1103782",
+   "title": "Improved survival with vemurafenib in melanoma with BRAF V600E mutation.",
+   "pubYear": "2011",
+   "firstPublicationDate": "2011-06-05",
+   "isOpenAccess": "N",
+   "authorString": "Chapman PB, Hauschild A, Robert C, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "The New England journal of medicine"
+    },
+    "yearOfPublication": 2011
+   },
+   "abstractText": "<h4>Background</h4>Phase 1 and 2 clinical trials of the BRAF kinase inhibitor vemurafenib (PLX4032) have shown response rates of more than 50% in patients with metastatic melanoma with the BRAF V600E mutation.<h4>Methods</h4>We conducted a phase 3 randomized clinical trial comparing vemurafenib with dacarbazine in 675 patients with previously untreated, metastatic melanoma with the BRAF V600E mutation. Patients were randomly assigned to receive either vemurafenib (960 mg orally twice daily) or dacarbazine (1000 mg per square meter of body-surface area intravenously every 3 weeks). Coprimary end points were rates of overall and progression-free survival. Secondary end points included the response rate, response duration, and safety. A final analysis was planned after 196 deaths and an interim analysis after 98 deaths.",
+   "pubTypeList": {
+    "pubType": [
+     "Clinical Trial, Phase III",
+     "Comparative Study",
+     "Research Support, Non-U.S. Gov't",
+     "research-article",
+     "Multicenter Study",
+     "Randomized Controlled Trial",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Melanoma"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Sulfonamides"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Dacarbazine"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Indoles"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Proto-Oncogene Proteins B-raf"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Antineoplastic Agents"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Disease-Free Survival"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Survival Analysis"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Mutation"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Adult"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Aged"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Aged, 80 and over"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Middle Aged"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Female"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Male"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Young Adult"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Intention to Treat Analysis"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Vemurafenib"
+     }
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "21639809",
+      "source": "MED",
+      "reference": "N Engl J Med. 2011 Jun 30;364(26):2547-8. doi: 10.1056/NEJMe1105792.",
+      "type": "Comment in",
+      "orderIn": 1
+     }
+    ]
+   }
+  },
+  "retraction_notice_20137807": {
+   "id": "20137807",
+   "source": "MED",
+   "pmid": "20137807",
+   "doi": "10.1016/s0140-6736(10)60175-4",
+   "title": "Retraction--Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children.",
+   "pubYear": "2010",
+   "firstPublicationDate": "2010-02-01",
+   "isOpenAccess": "N",
+   "authorString": "",
+   "journalInfo": {
+    "journal": {
+     "title": "Lancet (London, England)"
+    },
+    "yearOfPublication": 2010
+   },
+   "abstractText": "",
+   "pubTypeList": {
+    "pubType": [
+     "Retraction Notice"
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "9500320",
+      "source": "MED",
+      "reference": "Lancet. 1998 Feb 28;351(9103):637-41. doi: 10.1016/s0140-6736(97)11096-0",
+      "type": "Retraction of",
+      "orderIn": 1
+     }
+    ]
+   }
+  },
+  "case_report_42756523": {
+   "id": "42756523",
+   "source": "MED",
+   "pmid": "42756523",
+   "pmcid": "PMC13583679",
+   "doi": "10.1016/j.gore.2026.102203",
+   "title": "Response to Sotorasib in a patient with recurrent KRAS G12C-mutated low-grade serous ovarian cancer: a case report and literature review.",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-09-02",
+   "isOpenAccess": "Y",
+   "authorString": "Zacholski EH, Liu WJ, Clayton R, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Gynecologic oncology reports"
+    },
+    "yearOfPublication": 2026
+   },
+   "abstractText": "<b>Objectives:</b> Low-grade serous ovarian carcinoma (LGSOC) is a rare subtype of ovarian cancer characterized by slow disease progression and relative resistance to conventional chemotherapy. Disease recurrence is common, and guideline-directed treatment options may become exhausted, underscoring the need for novel therapeutic approaches. This case report describes the clinical course and treatment response of a patient with recurrent, KRAS G12C-mutated LGSOC after 5 lines of previous therapy who was treated with the KRAS G12C small-molecule inhibitor sotorasib. <b>Methods:</b> In this case study, a patient with recurrent Stage IC3 LGSOC, whose tumor tested positive for a KRAS G12C mutation, received sotorasib 960 mg as an off-label therapy after disease progression on available guideline-directed therapies.",
+   "pubTypeList": {
+    "pubType": [
+     "Journal Article",
+     "Case Reports",
+     "case-report"
+    ]
+   }
+  },
+  "in_vivo_42082482": {
+   "id": "42082482",
+   "source": "MED",
+   "pmid": "42082482",
+   "pmcid": "PMC13346474",
+   "doi": "10.1038/s41467-026-72650-y",
+   "title": "Characterization of KRAS&lt;sup&gt;G12C&lt;/sup&gt; inhibitor olomorasib single-agent and combination with activity in KRAS&lt;sup&gt;G12C&lt;/sup&gt;-mutant models.",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-05-04",
+   "isOpenAccess": "Y",
+   "authorString": "Peng S, Zhang Y, Lin X, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Nature communications"
+    },
+    "yearOfPublication": 2026
+   },
+   "abstractText": "The impact of first-generation covalent KRAS<sup>G12C</sup> inhibitors has been reduced due to the development of drug resistance, tolerability and challenges combining with immunotherapy. We designed olomorasib, a next-generation GDP-binding KRAS<sup>G12C</sup> inhibitor, for nanomolar potency as well as selectivity over wild-type inhibition. In both in vitro and in vivo models of KRAS<sup>G12C</sup> -mutant cancers, olomorasib reduces RAS activity and pERK levels, leading to substantial and significant tumor growth inhibition. Additionally, olomorasib combined with immune checkpoint inhibitors demonstrates greater anti-tumor activity compared to monotherapy.",
+   "pubTypeList": {
+    "pubType": [
+     "research-article",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Line, Tumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Animals"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Mice"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Antineoplastic Agents"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Xenograft Model Antitumor Assays"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Mutation"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Proto-Oncogene Proteins p21(ras)"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Immune Checkpoint Inhibitors"
+     }
+    ]
+   }
+  },
+  "in_vitro_40737322": {
+   "id": "40737322",
+   "source": "MED",
+   "pmid": "40737322",
+   "pmcid": "PMC12337345",
+   "doi": "10.1073/pnas.2509012122",
+   "title": "Generation of actionable, cancer-specific neoantigens from KRAS(G12C) with adagrasib.",
+   "pubYear": "2025",
+   "firstPublicationDate": "2025-07-30",
+   "isOpenAccess": "Y",
+   "authorString": "Maso L, Rajak E, Hattori T, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Proceedings of the National Academy of Sciences of the United States of America"
+    },
+    "yearOfPublication": 2025
+   },
+   "abstractText": "Effective immune therapy against cancer ideally should target a cancer-specific antigen, an antigen that is present exclusively in cancer cells. However, there is a paucity of cancer-specific antigens that are endogenously produced. HapImmune™ technology utilizes covalent inhibitors directed to an intracellular cancer driver to create cancer-specific neoantigens in the form of drug-peptide conjugates presented by class I MHC molecules. Our previous study with sotorasib, an FDA-approved covalent inhibitor of KRAS(G12C), demonstrated that drug-treated cells produce such neoantigens and can be killed by T cell engagers directed against the drug-peptide/MHC complex. Thus, this technology can unite targeted and immune therapies.",
+   "pubTypeList": {
+    "pubType": [
+     "research-article",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "T-Lymphocytes"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Line, Tumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Lung Neoplasms"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Piperazines"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Pyridines"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Pyrimidines"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Peptides"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Antigens, Neoplasm"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Proto-Oncogene Proteins p21(ras)"
+     }
+    ]
+   }
+  },
+  "in_vitro_40959979": {
+   "id": "40959979",
+   "source": "MED",
+   "pmid": "40959979",
+   "pmcid": "PMC12456861",
+   "doi": "10.1080/17568919.2025.2557177",
+   "title": "Identification of KRAS mutants (G12C, G12D, and G12V) inhibitors.",
+   "pubYear": "2025",
+   "firstPublicationDate": "2025-09-17",
+   "isOpenAccess": "N",
+   "authorString": "Yadav V, Kashif M, Kamalia Z, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Future medicinal chemistry"
+    },
+    "yearOfPublication": 2025
+   },
+   "abstractText": "<h4>Aim</h4>To identify and validate novel small-molecule inhibitors targeting KRAS G12C, G12D, and G12V mutants through a structure-based drug design and experimental approach.<h4>Methods</h4>We employed molecular docking, molecular dynamics (MD) simulations, MM-PBSA binding free energy calculations, and principal component analysis (PCA) to screen and evaluate potential inhibitors targeting the Switch-II pocket of KRAS mutants. Top-ranking compounds were experimentally validated using Bio-Layer Interferometry (BLI) for binding affinity and MTT assays to assess anticancer activity in breast and lung cancer cell lines.<h4>Results</h4>Compound C797-1505 showed strong binding to KRAS G12V (Dissociation constant (KD) = 141 µM), outperforming the reference Sotorasib (KD = 345 µM). C190-0346 displayed weak affinity toward KRAS G12C.",
+   "pubTypeList": {
+    "pubType": [
+     "research-article",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Line, Tumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Antineoplastic Agents"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Drug Screening Assays, Antitumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Proliferation"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Survival"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Molecular Structure"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Structure-Activity Relationship"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Drug Design"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Mutation"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Proto-Oncogene Proteins p21(ras)"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Small Molecule Libraries"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Molecular Dynamics Simulation"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Molecular Docking Simulation"
+     }
+    ]
+   }
+  },
+  "in_vitro_39344518": {
+   "id": "39344518",
+   "source": "MED",
+   "pmid": "39344518",
+   "pmcid": "PMC11391227",
+   "doi": "10.5152/tjg.2024.23353",
+   "title": "IL6ST: A Novel Therapeutic Target for Managing and Treating Colorectal Cancer Via Ferroptosis.",
+   "pubYear": "2024",
+   "firstPublicationDate": "2024-06-01",
+   "isOpenAccess": "Y",
+   "authorString": "Zhao K, He B, Xue K, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "The Turkish journal of gastroenterology : the official journal of Turkish Society of Gastroenterology"
+    },
+    "yearOfPublication": 2024
+   },
+   "abstractText": "Inflammation is an essential driver of colorectal cancer (CRC). Identifying phenotypes and targets associated with inflammation and cancer may be an effective way to treat CRC. R was used to analyze interleukin 6 cytokine family signal transducer (IL6ST) expression in The Cancer Genome Atlas Colon Adenocarcinoma database. Immunohistochemistry, western blotting, and quantitative PCR were used to detect IL6ST and ferroptosis-related genes expression in our cohort. Receiver operating characteristic curves evaluated the specificity and sensitivity of IL6ST to predict CRC. Cell counting kit-8 investigated cell viability. Mitochondrial morphology, total iron, and reactive oxygen species (ROS) levels were evaluated to assess cell ferroptosis. The correlation of IL6ST and immune cells filtration were also analyzed based on R. IL6ST was significantly upregulated in CRC tissues (P < .05).",
+   "pubTypeList": {
+    "pubType": [
+     "research-article",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Line, Tumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Colorectal Neoplasms"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Iron"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Reactive Oxygen Species"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Interleukin-6"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Sensitivity and Specificity"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Survival"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Gene Expression Regulation, Neoplastic"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Up-Regulation"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Female"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Male"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Ferroptosis"
+     }
+    ]
+   }
+  },
+  "in_vitro_39424923": {
+   "id": "39424923",
+   "source": "MED",
+   "pmid": "39424923",
+   "pmcid": "PMC11549056",
+   "doi": "10.1038/s41588-024-01948-8",
+   "title": "Base editing screens define the genetic landscape of cancer drug resistance mechanisms.",
+   "pubYear": "2024",
+   "firstPublicationDate": "2024-10-18",
+   "isOpenAccess": "Y",
+   "authorString": "Coelho MA, Strauss ME, Watterson A, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Nature genetics"
+    },
+    "yearOfPublication": 2024
+   },
+   "abstractText": "Drug resistance is a principal limitation to the long-term efficacy of cancer therapies. Cancer genome sequencing can retrospectively delineate the genetic basis of drug resistance, but this requires large numbers of post-treatment samples to nominate causal variants. Here we prospectively identify genetic mechanisms of resistance to ten oncology drugs from CRISPR base editing mutagenesis screens in four cancer cell lines using a guide RNA library predicted to install 32,476 variants in 11 cancer genes. We identify four functional classes of protein variants modulating drug sensitivity and use single-cell transcriptomics to reveal how these variants operate through distinct mechanisms, including eliciting a drug-addicted cell state.",
+   "pubTypeList": {
+    "pubType": [
+     "research-article",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Line, Tumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Neoplasms"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Antineoplastic Agents"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Drug Resistance, Neoplasm"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Single-Cell Analysis"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "CRISPR-Cas Systems"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "ErbB Receptors"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Gene Editing"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "RNA, Guide, CRISPR-Cas Systems"
+     }
+    ]
+   }
+  },
+  "erratum_38887984": {
+   "id": "38887984",
+   "source": "MED",
+   "pmid": "38887984",
+   "pmcid": "PMC11184284",
+   "doi": "10.1002/jev2.12465",
+   "title": "Stress-induced Rab11a-exosomes induce amphiregulin-mediated cetuximab resistance in colorectal cancer.",
+   "pubYear": "2024",
+   "firstPublicationDate": "2024-06-01",
+   "isOpenAccess": "Y",
+   "authorString": "Mason JD, Marks E, Fan SJ, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Journal of extracellular vesicles"
+    },
+    "yearOfPublication": 2024
+   },
+   "abstractText": "Exosomes are secreted vesicles made intracellularly in the endosomal system. We have previously shown that exosomes are not only made in late endosomes, but also in recycling endosomes marked by the monomeric G-protein Rab11a. These vesicles, termed Rab11a-exosomes, are preferentially secreted under nutrient stress from several cancer cell types, including HCT116 colorectal cancer (CRC) cells. HCT116 Rab11a-exosomes have particularly potent signalling activities, some mediated by the epidermal growth factor receptor (EGFR) ligand, amphiregulin (AREG). Mutant activating forms of KRAS, a downstream target of EGFR, are often found in advanced CRC. When absent, monoclonal antibodies, such as cetuximab, which target the EGFR and block the effects of EGFR ligands, such as AREG, can be administered.",
+   "pubTypeList": {
+    "pubType": [
+     "brief-report",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Line, Tumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "HCT116 Cells"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Colorectal Neoplasms"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "rab GTP-Binding Proteins"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Signal Transduction"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Drug Resistance, Neoplasm"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Proto-Oncogene Proteins p21(ras)"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Stress, Physiological"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Exosomes"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Amphiregulin"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "ErbB Receptors"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Cetuximab"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Antineoplastic Agents, Immunological"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "rab11 GTP-Binding Proteins"
+     }
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "40314086",
+      "source": "MED",
+      "reference": "J Extracell Vesicles. 2025 May;14(5):e70081. doi: 10.1002/jev2.70081.",
+      "type": "Erratum in",
+      "orderIn": 1
+     }
+    ]
+   }
+  },
+  "eoc_in_vitro_25299775": {
+   "id": "25299775",
+   "source": "MED",
+   "pmid": "25299775",
+   "pmcid": "PMC4237236",
+   "doi": "10.1038/cddis.2014.396",
+   "title": "The bromodomain and extra-terminal inhibitor CPI203 enhances the antiproliferative effects of rapamycin on human neuroendocrine tumors.",
+   "pubYear": "2014",
+   "firstPublicationDate": "2014-10-09",
+   "isOpenAccess": "Y",
+   "authorString": "Wong C, Laddha SV, Tang L, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Cell death & disease"
+    },
+    "yearOfPublication": 2014
+   },
+   "abstractText": "Endogenous c-MYC (MYC) has been reported to be a potential pharmacological target to trigger ubiquitous tumor regression of pancreatic neuroendocrine tumors (PanNETs) and lung tumors. Recently inhibitors of bromodomain and extra-terminal (BET) family proteins have shown antitumor effects through the suppression of MYC in leukemia and lymphoma. In this paper, we investigated the antitumor activity of a BET protein bromodomain inhibitor (BETi) CPI203 as a single agent and in combination with rapamycin in human PanNETs. We found that exposure of human PanNET cell lines to CPI203 led to downregulation of MYC expression, G1 cell cycle arrest and nearly complete inhibition of cell proliferation. In addition, overexpression of MYC suppressed the growth inhibition caused by CPI203 and knockdown of MYC phenocopied the effects of CPI203 treatment.",
+   "pubTypeList": {
+    "pubType": [
+     "Research Support, Non-U.S. Gov't",
+     "research-article",
+     "Journal Article",
+     "Research Support, N.I.H., Extramural"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Line, Tumor"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Neuroendocrine Tumors"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Acetamides"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Sirolimus"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Azepines"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "RNA-Binding Proteins"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Cycle Proteins"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Proto-Oncogene Proteins c-myc"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Nuclear Proteins"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Transcription Factors"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Antineoplastic Agents"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Apoptosis"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Cell Proliferation"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "G1 Phase Cell Cycle Checkpoints"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Protein Serine-Threonine Kinases"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Bromodomain Containing Proteins"
+     }
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "42791264",
+      "source": "MED",
+      "reference": "Cell Death Dis. 2026 Sep 25;17(1):832. doi: 10.1038/s41419-026-09313-9.",
+      "type": "Expression of concern in",
+      "orderIn": 1
+     }
+    ]
+   }
+  },
+  "eoc_notice_42791264": {
+   "id": "42791264",
+   "source": "MED",
+   "pmid": "42791264",
+   "pmcid": "PMC13614922",
+   "doi": "10.1038/s41419-026-09313-9",
+   "title": "Editorial Expression of Concern: The bromodomain and extra-terminal inhibitor CPI203 enhances the antiproliferative effects of rapamycin on human neuroendocrine tumors.",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-09-25",
+   "isOpenAccess": "Y",
+   "authorString": "Wong C, Laddha SV, Tang L, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Cell death & disease"
+    },
+    "yearOfPublication": 2026
+   },
+   "abstractText": "",
+   "pubTypeList": {
+    "pubType": [
+     "expression-of-concern",
+     "Expression of Concern"
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "25299775",
+      "source": "MED",
+      "reference": "Cell Death Dis. 2014 Oct 09;5:e1450. doi: 10.1038/cddis.2014.396.",
+      "type": "Expression of concern for",
+      "orderIn": 1
+     }
+    ]
+   }
+  },
+  "preprint_PPR1250239": {
+   "id": "PPR1250239",
+   "source": "PPR",
+   "doi": "10.21203/rs.3.rs-9888304/v1",
+   "title": "Dynamic Geometric Constraints Govern Covalent Feasibility in KRAS G12C Ligands",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-06-11",
+   "isOpenAccess": "N",
+   "authorString": "Khanal S.",
+   "abstractText": "<title>Abstract</title>  <p>Covalent inhibition has emerged as an effective strategy for targeting oncogenic proteins, yet successful covalent engagement depends not only on binding affinity but also on the dynamic preservation of productive electrophile–thiol geometry [1,2]. Motivated by the clinical success of acrylamide-based KRAS G12C inhibitors such as sotorasib, we performed a structure-based and molecular dynamics investigation of acrylamide-containing KRAS G12C ligands. Although several ligands initially achieved near-reactive proximity to Cys12, production molecular dynamics simulations revealed rapid relaxation of the pre-reactive geometry and loss of productive electrophile–thiol alignment.",
+   "pubTypeList": {
+    "pubType": [
+     "Preprint"
+    ]
+   }
+  },
+  "review_42511798": {
+   "id": "42511798",
+   "source": "MED",
+   "pmid": "42511798",
+   "pmcid": "PMC13411004",
+   "doi": "10.3390/ijms27146455",
+   "title": "KRAS G12C-Targeted Therapy in Non-Small Cell Lung Cancer: From Resistant Salvage to Potential First-Line Backbone.",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-07-20",
+   "isOpenAccess": "Y",
+   "authorString": "Rosas D, Barad P, Wright J, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "International journal of molecular sciences"
+    },
+    "yearOfPublication": 2026
+   },
+   "abstractText": "KRAS G12C, long considered an undruggable oncogenic driver, has become one of the most consequential therapeutic targets in non-small cell lung cancer (NSCLC). The discovery of a cryptic binding pocket accessible in the GDP-bound state enabled covalent inhibitors-sotorasib and adagrasib-that have received regulatory approval for previously treated KRAS G12C-mutant NSCLC, with sotorasib demonstrating PFS and OS superiority over docetaxel in CodeBreaK 200 and adagrasib showing meaningful intracranial activity and a progression-free survival benefit over docetaxel in KRYSTAL-12. Yet response durability is limited by on-target switch-II pocket mutations, upstream RTK and SHP2-mediated bypass signaling, downstream MAPK and PI3K-AKT reactivation, phenotypic plasticity, and adverse modulation by co-occurring STK11, KEAP1, and TP53 alterations.",
+   "pubTypeList": {
+    "pubType": [
+     "review-article",
+     "Review",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Animals"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Carcinoma, Non-Small-Cell Lung"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Lung Neoplasms"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Oncogene Protein p21(ras)"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Antineoplastic Agents"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Salvage Therapy"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Drug Resistance, Neoplasm"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Mutation"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Proto-Oncogene Proteins p21(ras)"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Molecular Targeted Therapy"
+     }
+    ]
+   }
+  },
+  "meta_analysis_42500683": {
+   "id": "42500683",
+   "source": "MED",
+   "pmid": "42500683",
+   "pmcid": "PMC13396023",
+   "doi": "10.3389/fimmu.2026.1848431",
+   "title": "KRAS G12C inhibitors in KRAS&lt;sup&gt;G12C&lt;/sup&gt;-mutated solid tumors: an immunologically informed systematic review and reconstructed individual patient data meta-analysis.",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-07-10",
+   "isOpenAccess": "Y",
+   "authorString": "Yan Y, Zheng L, Wang H, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Frontiers in immunology"
+    },
+    "yearOfPublication": 2026
+   },
+   "abstractText": "<h4>Background</h4>Despite the proven efficacy of KRAS G12C inhibitors (KRAS G12Ci) in solid tumors, evidence from direct comparisons with standard of care is scarce, and no analysis has investigated the potential immunological basis for differential responses.<h4>Methods</h4>PubMed, Embase, Cochrane Library, and ClinicalTrials.gov for randomized controlled trials (RCTs) involving solid tumors patients who had received KRAS G12Ci were retrieved from inception to March 28, 2026. Individual participant data on progression-free survival (PFS) and overall survival (OS) were extracted from the published Kaplan-Meier survival curves. When available, subgroup data by programmed death ligand 1 (PD-L1) expression were extracted to explore immune-related correlates of treatment response.<h4>Results</h4>A total of 4 articles with 3 RCTs and 949 participants were selected.",
+   "pubTypeList": {
+    "pubType": [
+     "Meta-Analysis",
+     "Systematic Review",
+     "systematic-review",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Neoplasms"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Oncogene Protein p21(ras)"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Mutation"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Proto-Oncogene Proteins p21(ras)"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "B7-H1 Antigen"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Progression-Free Survival"
+     }
+    ]
+   }
+  },
+  "no_mesh_real_world_42771901": {
+   "id": "42771901",
+   "source": "MED",
+   "pmid": "42771901",
+   "doi": "10.1016/j.clon.2026.104323",
+   "title": "Real-world Experience with Sotorasib in KRAS G12C-Mutated Advanced Non-small Cell Lung Cancer: Clinical Outcomes and Tolerability in the UK.",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-08-13",
+   "isOpenAccess": "N",
+   "authorString": "Batool R, Julve M, Sadiq M, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Clinical oncology (Royal College of Radiologists (Great Britain))"
+    },
+    "yearOfPublication": 2026
+   },
+   "abstractText": "<h4>Aim</h4>Sotorasib is an oral, potent, selective inhibitor. It is approved for the treatment of patients with KRAS G12C mutation-positive, locally advanced or metastatic non-small cell lung cancer (NSCLC). Real-world safety and efficacy data are essential to understand the clinical potential of sotorasib.<h4>Materials and methods</h4>Retrospective real-world evidence (RWE) was collected for UK patients with KRAS G12C mutation positive, locally advanced or metastatic NSCLC who had received sotorasib (n = 150) at 20 hospitals. Demographics, histopathology stage, PD-L1 status, metastatic disease including central nervous system (CNS) disease, Eastern Cooperative Oncology Group scale (ECOG) performance status (PS), and toxicity markers were reviewed. Progression free survival (PFS), overall survival (OS), and response rates were calculated.<h4>Results</h4>Patients were aged 41-93 years (median age: 68 years; 15/150 were >80 years); 21% had an ECOG PS of 2. Most (79%) were former smokers. Ninety-eight percent had adenocarcinoma, and 83% had metastatic disease. UK RWE was compared with data from the open-label, phase 3 sotorasib trial (CodeBreaK 200). In the UK RWE, the median rwPFS was 7.0 months (95% confidence interval [CI]: 5.76-8.30); in CodeBreaK 200, median PFS was 5.6 months (95% CI: 4.3-7.8).",
+   "pubTypeList": {
+    "pubType": [
+     "Journal Article"
+    ]
+   }
+  },
+  "topic_mesh_only_32546273": {
+   "id": "32546273",
+   "source": "MED",
+   "pmid": "32546273",
+   "pmcid": "PMC7298968",
+   "doi": "10.1186/s13063-020-04334-x",
+   "title": "The adaptive designs CONSORT extension (ACE) statement: a checklist with explanation and elaboration guideline for reporting randomised trials that use an adaptive design.",
+   "pubYear": "2020",
+   "firstPublicationDate": "2020-06-17",
+   "isOpenAccess": "Y",
+   "authorString": "Dimairo M, Pallmann P, Wason J, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "Trials"
+    },
+    "yearOfPublication": 2020
+   },
+   "abstractText": "Adaptive designs (ADs) allow pre-planned changes to an ongoing trial without compromising the validity of conclusions and it is essential to distinguish pre-planned from unplanned changes that may also occur. The reporting of ADs in randomised trials is inconsistent and needs improving. Incompletely reported AD randomised trials are difficult to reproduce and are hard to interpret and synthesise. This consequently hampers their ability to inform practice as well as future research and contributes to research waste. Better transparency and adequate reporting will enable the potential benefits of ADs to be realised.This extension to the Consolidated Standards Of Reporting Trials (CONSORT) 2010 statement was developed to enhance the reporting of randomised AD clinical trials.",
+   "pubTypeList": {
+    "pubType": [
+     "research-article",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Reproducibility of Results"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Consensus"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Research Design"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Quality Control"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Delphi Technique"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Publishing"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Periodicals as Topic"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Randomized Controlled Trials as Topic"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Guidelines as Topic"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Checklist"
+     }
+    ]
+   },
+   "commentCorrectionList": {
+    "commentCorrection": [
+     {
+      "id": "PPR124742",
+      "source": "PPR",
+      "type": "Preprint in",
+      "orderIn": 10002
+     }
+    ]
+   }
+  },
+  "protocol_42814483": {
+   "id": "42814483",
+   "source": "MED",
+   "pmid": "42814483",
+   "doi": "10.2196/95459",
+   "title": "Oral vs Intravenous Fluid Therapy in Emergency Department Patients: Protocol for a Randomized Controlled Feasibility and Noninferiority Trial.",
+   "pubYear": "2026",
+   "firstPublicationDate": "2026-09-30",
+   "isOpenAccess": "N",
+   "authorString": "Biesenbach P, Kristensen MR, Brabrand M, et al.",
+   "journalInfo": {
+    "journal": {
+     "title": "JMIR research protocols"
+    },
+    "yearOfPublication": 2026
+   },
+   "abstractText": "<h4>Background</h4>Intravenous fluid therapy is widely used in emergency departments (EDs) to treat hypovolemia and hypotension. However, its hemodynamic effects are often modest and short-lived. Intravenous fluid therapy requires a peripheral venous catheter, which increases the risk of complications such as catheter failure and phlebitis. Oral fluid therapy represents a simple, noninvasive alternative that has been shown in physiological studies to expand plasma volume and increase blood pressure. No randomized trial has compared oral with intravenous fluid therapy in a general adult ED population. Evidence regarding the feasibility of randomized comparisons of fluid administration modes and whether oral fluid administration can reliably deliver the prescribed volume remains limited.",
+   "pubTypeList": {
+    "pubType": [
+     "Clinical Trial Protocol",
+     "Journal Article"
+    ]
+   },
+   "meshHeadingList": {
+    "meshHeading": [
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Humans"
+     },
+     {
+      "majorTopic_YN": "Y",
+      "descriptorName": "Fluid Therapy"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Administration, Oral"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Feasibility Studies"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Adult"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Emergency Service, Hospital"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Female"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Multicenter Studies as Topic"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Randomized Controlled Trials as Topic"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Equivalence Trials as Topic"
+     },
+     {
+      "majorTopic_YN": "N",
+      "descriptorName": "Crystalloid Solutions"
+     }
+    ]
+   }
+  }
+ }
+}

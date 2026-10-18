@@ -1,0 +1,41 @@
+# Install with: uv sync --extra dev && uv run pre-commit install
+# Local hooks run the tool versions pinned in uv.lock, so pre-commit and CI cannot drift apart.
+# pre-commit only passes staged files to each hook, so the hygiene hooks below never rewrite untouched files.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      # Keeps datasets, model weights and archives (phronesis_codebase.zip, *.h5ad) out of git history.
+      - id: check-added-large-files
+        args: ["--maxkb=5000"]
+      - id: detect-private-key
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+        exclude: ^(web/package-lock\.json|uv\.lock|.*\.(h5ad|xlsx|png|jpg|pdf|svg))$
+
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff check
+        entry: uv run --frozen ruff check --fix
+        language: system
+        types: [python]
+      - id: ruff-format-check
+        name: ruff format (check only)
+        entry: uv run --frozen ruff format --check
+        language: system
+        types: [python]
+        stages: [manual]
+      - id: bandit
+        name: bandit
+        entry: uv run --frozen bandit -c pyproject.toml -q
+        language: system
+        types: [python]
+        exclude: (^|/)tests/
+      # npm --prefix runs the script inside web/ without a shell, so the hook also works on Windows.
+      - id: web-typecheck
+        name: web typecheck
+        entry: npm --prefix web run --silent typecheck
+        language: system
+        files: ^web/.*\.(ts|tsx|mts)$
+        pass_filenames: false

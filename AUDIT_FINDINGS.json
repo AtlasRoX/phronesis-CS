@@ -1,0 +1,283 @@
+{
+  "audit_metadata": {
+    "audit_timestamp": "2026-10-13T13:20:00Z",
+    "auditor": "Independent Software Auditor & Scientific Quality Evaluator",
+    "target_system": "Phronesis Biomedical Research Assistant",
+    "environment": {
+      "os": "Windows 11 (AMD64)",
+      "python_runtime": "3.13.3 / .venv Python 3.12.13",
+      "uv_version": "0.12.7",
+      "node_version": "v24.19.0",
+      "npm_version": "11.17.0",
+      "active_backend_endpoint": "http://127.0.0.1:8000",
+      "active_frontend_endpoint": "http://localhost:3000"
+    },
+    "source_file_hashes_sha256": {
+      "app/backend/main.py": "CCE09AA07DB3BBCAC67161C15815E59BD1F8B8C29D7BE75E5E983BD45D50CC96",
+      "phronesis/agents/authoritative_orchestrator.py": "C6982B87F78488502F2995D81634D9B1E09B5A7688C63E3EBCD9B339B8952571",
+      "phronesis/vivarix/engine.py": "888295DF4897E30A62B82AAB7BF0E6E454922551E275E4CB829E479AF7E00687",
+      "phronesis/lumicell/engine.py": "C5D00103157909CD96AA5F8CDF13DC26801D1D03429F607E360FB3C8505092EA",
+      "phronesis/lithoscribe/synthesis_engine.py": "64ABB07E7F72E493F58EA128EFD42A412C23AEF9BF4E592C2135F2F263961FF7",
+      "phronesis/phronesis/agents/verifier.py": "71682846A95B5208AC4DFD368E4719DB1B9A9B8F41831ABB7BE7AB0C8C128773",
+      "phronesis/agents/discovery.py": "01450B6915BDAE53E533E9AA9D29B33534330E6A4310753E448ACB2A887C1600",
+      "phronesis/utils/memory/clinical_memory.py": "0E091DAB9D3CB7597C9C88764A4EC2BC0E5B4261FCED80C603256241191786B0",
+      "phronesis/tools/registry.py": "2F6E2D6FF78A1478B1679D38A603C308F6948844820CFC1F345795D9DD81D63E",
+      "web/src/app/page.tsx": "832C23619EBDD8860E4B7136AF2585D8885D6C2AAC395044D8C2C24EAEF39D4D",
+      "pyproject.toml": "E291CCAB43E1DF41C56D9817304366292B570CEAD61145EE0865B6175589FCC6"
+    }
+  },
+  "findings": [
+    {
+      "id": "FINDING-01",
+      "title": "Routing Gating Defect: Single-cell analysis is structurally skipped if no primary target gene is in the query",
+      "status": "Broken",
+      "severity": "CRITICAL",
+      "source_location": {
+        "file": "phronesis/agents/authoritative_orchestrator.py",
+        "lines": "388-433",
+        "function": "AuthoritativeOrchestrator.execute_inquiry"
+      },
+      "reproduction_steps": [
+        "Upload or reference an AnnData single-cell file: 'Analyze this uploaded test_atlas.h5ad dataset.'",
+        "Do not include any target gene symbol (e.g. KRAS, EGFR) in the query.",
+        "Observe orchestrator execution path in backend logs and result payload."
+      ],
+      "evidence": "In line 388, Stage 2 computational execution is gated strictly under 'if is_simulation_intent or primary_target:'. Because no primary target is present and no simulation keywords exist, Stage 2 is skipped entirely. In CASE-20 of the evaluation suite, Lumicell did not run and selected_agents only included ['Lithoscribe'].",
+      "acceptance_criteria": "Single-cell dataset analysis must be gated on dataset reference detection (e.g., presence of .h5ad / .zarr or single-cell transcriptomic intent), completely independent of whether a target gene symbol is present."
+    },
+    {
+      "id": "FINDING-02",
+      "title": "Routing Defect: Literature-only requests trigger COPASI ODE simulations when a target gene is named",
+      "status": "Broken",
+      "severity": "MAJOR",
+      "source_location": {
+        "file": "phronesis/agents/authoritative_orchestrator.py",
+        "lines": "388-412",
+        "function": "AuthoritativeOrchestrator.execute_inquiry"
+      },
+      "reproduction_steps": [
+        "Send query: 'Find KRAS papers only.' or 'Review recent Phase 2 clinical trials for HER2 antibody-drug conjugates in breast cancer without running simulations.'",
+        "Observe backend execution logs and selected_agents in response payload."
+      ],
+      "evidence": "In line 388, Vivarix simulation is dispatched if 'is_simulation_intent or primary_target'. When a target is extracted ('KRAS' or 'HER2'), Vivarix automatically queries BioModels and runs COPASI ODE simulation. In CASE-11 and CASE-12, Vivarix was invoked despite explicit user directives 'papers only' and 'without running simulations'.",
+      "acceptance_criteria": "Simulation dispatch must require simulation intent (explicit model accession or kinetic/ODE keywords) and must respect negative constraints ('papers only', 'without simulation')."
+    },
+    {
+      "id": "FINDING-03",
+      "title": "Argument Contract Mismatch: KEGG pathway retrieval tool fails input validation on 100% of orchestrator calls",
+      "status": "Broken",
+      "severity": "CRITICAL",
+      "source_location": {
+        "file": "phronesis/agents/authoritative_orchestrator.py (line 296) and phronesis/tools/registry.py (lines 250-252, 340-350)",
+        "function": "registry.execute('synapta_kegg_pathways')"
+      },
+      "reproduction_steps": [
+        "Execute any inquiry with a primary target (e.g. 'Analyze KRAS G12D signaling').",
+        "Inspect tool_results['synapta'].data['pathways']."
+      ],
+      "evidence": "In registry.py line 250, SynaptaKeggInput requires 'target_symbol: str'. In authoritative_orchestrator.py line 296, the call is 'await registry.execute(\"synapta_kegg_pathways\", query=f\"pathway/{target_symbol}\")'. The registry input validation catches a missing target_symbol and returns a VALIDATION_ERROR. In all executions, pathways defaults to empty list [].",
+      "acceptance_criteria": "Align caller argument to 'target_symbol=target_symbol' in authoritative_orchestrator.py, or update SynaptaKeggInput to accept 'query: str'."
+    },
+    {
+      "id": "FINDING-04",
+      "title": "Discovery Scorer: Hardcoded Constant Discovery Components (0.75)",
+      "status": "Broken",
+      "severity": "MAJOR",
+      "source_location": {
+        "file": "phronesis/agents/discovery.py",
+        "lines": "142, 174-175",
+        "function": "BioDiscoveryEngine.prioritize_hypotheses"
+      },
+      "reproduction_steps": [
+        "Run two materially different COPASI simulations (e.g. one with high flux change and one with near-zero drift).",
+        "Inspect composite_priority_score and components in DiscoveryHypothesisReport."
+      ],
+      "evidence": "Line 142 sets 'sim_flux_change = 0.75' whenever final_concentrations exist, regardless of actual concentration deltas. Line 175 sets 'single_cell_marker_evidence = 0.75 if sc_executed else None'. Both modalities yield an invariant 0.75 constant component.",
+      "acceptance_criteria": "Compute dynamic kinetic flux variation: calculate actual normalized relative concentration delta across species; compute single-cell score from actual log fold-change and FDR p-values."
+    },
+    {
+      "id": "FINDING-05",
+      "title": "Scientific Quality Defect: Final time-course values labeled as steady states in UI and agent thoughts",
+      "status": "Broken",
+      "severity": "MAJOR",
+      "source_location": {
+        "file": "web/src/app/page.tsx (lines 890, 894) and phronesis/agents/authoritative_orchestrator.py (line 485)",
+        "function": "Frontend Vivarix Card & Orchestrator Emit"
+      },
+      "reproduction_steps": [
+        "Run inquiry: 'Simulate MAPK activation in BIOMD0000000010 over 60 seconds.'",
+        "Observe the table title and column header in the rendered Vivarix artifact card."
+      ],
+      "evidence": "The React UI header reads 'STEADY-STATE CONCENTRATION READOUTS' and the column reads 'Steady/Final Conc', and the orchestrator thought emits 'Computed dynamic trajectory and final steady-state concentrations'. However, the simulation is a 60-second time course (LSODA ODE) where convergence_status is transient dynamics, and compute_steady_state (Newton-Raphson Jacobian root-finding) was never executed.",
+      "acceptance_criteria": "Distinguish between transient time-course endpoints ('Final Time-Course Concentrations (at t=60s)') and validated steady states computed via basico.run_steadystate()."
+    },
+    {
+      "id": "FINDING-06",
+      "title": "Verifier Defect: Clinical trial assertions permitted without semantic entailment checking",
+      "status": "Broken",
+      "severity": "CRITICAL",
+      "source_location": {
+        "file": "phronesis/phronesis/agents/verifier.py",
+        "lines": "203-214",
+        "function": "ClinicalVerifier.verify_response"
+      },
+      "reproduction_steps": [
+        "Generate a response asserting 'Phase 3 trial readouts confirmed 85% objective response rate and curative efficacy' for a target.",
+        "Provide 2 literature passages on completely unrelated general biochemistry.",
+        "Observe verification report."
+      ],
+      "evidence": "In verifier.py line 204, 'has_substantive_lit = len(observed_passages) >= 2'. If 2 passages exist, the verifier does not flag CLINICAL_CLAIM defects, regardless of whether the passages actually support the specific clinical claim.",
+      "acceptance_criteria": "Implement semantic passage grounding or strict regex entity-metric cross-validation to ensure cited trials and percentages exist within the retrieved passage texts."
+    },
+    {
+      "id": "FINDING-07",
+      "title": "Verifier Defect: Ensembl and UniProt identifiers extracted but never audited",
+      "status": "Broken",
+      "severity": "MAJOR",
+      "source_location": {
+        "file": "phronesis/phronesis/agents/verifier.py",
+        "lines": "145-188",
+        "function": "ClinicalVerifier.verify_response"
+      },
+      "reproduction_steps": [
+        "Include a fictitious Ensembl ID ('ENSG99999999999') or UniProt ID ('P99999') in the response text.",
+        "Run verifier.verify_response.",
+        "Check defects list."
+      ],
+      "evidence": "While _extract_identifiers extracts Ensembl and UniProt and collects observed sets, there are only validation loops for biomodels (lines 148-159), dois (lines 162-173), and pmids (lines 176-187). Ensembl and UniProt have no check loop, allowing unobserved or fabricated accessions to pass without defect flags.",
+      "acceptance_criteria": "Add audit loops for extracted_ids['ensembl'] and extracted_ids['uniprot'] enforcing that every cited identifier must exist in observed_ensembl or observed_uniprot."
+    },
+    {
+      "id": "FINDING-08",
+      "title": "Verifier False Positives: Flawed numerical regex triggers false mismatch defects on phosphorylated species prefixes",
+      "status": "Broken",
+      "severity": "MAJOR",
+      "source_location": {
+        "file": "phronesis/phronesis/agents/verifier.py",
+        "lines": "238-259",
+        "function": "ClinicalVerifier.verify_response"
+      },
+      "reproduction_steps": [
+        "Generate a response stating: 'Mos-P reached 65.87 nM while Mos was 34.13 nM'.",
+        "Execute verifier on simulation outputs containing both species."
+      ],
+      "evidence": "In line 239, pattern is rf\"{re.escape(sp_name)}[^\\d\\n\\r]{{1,40}}?(\\d+(?:\\.\\d+)?)\". Because it lacks word boundaries (\\b), auditing 'Mos' matches 'Mos-P reached 65.87' and flags a 93% relative error against actual Mos (34.13). In the audit evaluation suite, this defect generated 396 false NUMERICAL defects across 14 cases. Furthermore, it ignores negative numbers (\\d+ only) and ignores concentration units.",
+      "acceptance_criteria": "Use strict word boundary matching (\\b{sp_name}\\b), parse concentration units (nM, uM, mM), and capture signed floats."
+    },
+    {
+      "id": "FINDING-09",
+      "title": "Authentication & Tenant Isolation Missing: All API endpoints operate unauthenticated with 'default_user'",
+      "status": "Broken",
+      "severity": "CRITICAL",
+      "source_location": {
+        "file": "app/backend/main.py and phronesis/utils/memory/clinical_memory.py",
+        "lines": "main.py lines 59-76, 231-255; clinical_memory.py line 61",
+        "function": "FastAPI routes & ClinicalMemoryEngine"
+      },
+      "reproduction_steps": [
+        "Call GET /api/memory/thread/{thread_id} or DELETE /api/memory/clear from any unauthenticated HTTP client.",
+        "Observe that all endpoints succeed without credentials."
+      ],
+      "evidence": "ChatRequest schema lacks user_id; all turns are recorded under user_id='default_user'. There is no auth middleware or token validation on memory search, session reset, or deletion endpoints.",
+      "acceptance_criteria": "Implement API key or JWT bearer authentication on all FastAPI routes, scope memory nodes by authenticated user_id, and prevent cross-user memory leakage."
+    },
+    {
+      "id": "FINDING-10",
+      "title": "Cosmetic UI Controls: Orchestration framework selector has no backend functionality",
+      "status": "Broken",
+      "severity": "MINOR",
+      "source_location": {
+        "file": "web/src/app/page.tsx (lines 549, 1070) and app/backend/main.py (line 276)",
+        "function": "Frontend Framework Selector & Chat Endpoint"
+      },
+      "reproduction_steps": [
+        "Select 'Hierarchical Supervisor' vs 'Multi-Agent Swarm' vs 'Decentralized Peer-to-Peer' in the UI dropdown.",
+        "Inspect backend execution path and returned framework_used."
+      ],
+      "evidence": "In app/backend/main.py, orch.execute_inquiry does not accept a framework parameter. The backend always executes AuthoritativeOrchestrator, and result.framework_used is hardcoded to 'authoritative-react-compiler'.",
+      "acceptance_criteria": "Either implement framework-specific orchestration branches (e.g. Swarm vs Supervisor) or remove cosmetic options from the UI to reflect the actual architecture."
+    },
+    {
+      "id": "FINDING-11",
+      "title": "CI & Test Suite Defect: Lithoscribe test suite crashes during collection due to unchecked top-level OpenAI client instantiation",
+      "status": "Broken",
+      "severity": "MAJOR",
+      "source_location": {
+        "file": "phronesis/lithoscribe/tests/test_agents_s2_agent.py and test_agents_zotero_agent.py",
+        "lines": "line 14 in both files",
+        "function": "Module-level global initialization"
+      },
+      "reproduction_steps": [
+        "Run 'uv run pytest phronesis/lithoscribe/tests/' without OPENAI_API_KEY exported in the environment."
+      ],
+      "evidence": "Pytest aborts during collection with: 'openai.OpenAIError: The api_key client option must be set'. 363 tests cannot be collected or executed.",
+      "acceptance_criteria": "Wrap LLM instantiation inside fixtures or test functions with monkeypatch/mock, or guard with pytest.mark.skipif."
+    },
+    {
+      "id": "FINDING-12",
+      "title": "Research Claims vs Implementation: Benchmark claims (BFCL, STaRK, BixBench) in test docstrings are local smoke tests",
+      "status": "Partial",
+      "severity": "MAJOR",
+      "source_location": {
+        "file": "tests/test_scientific_validation.py",
+        "lines": "38-120",
+        "function": "test_bfcl_..., test_stark_..., test_bixbench_..."
+      },
+      "reproduction_steps": [
+        "Inspect test_bfcl_tool_registry_validation_and_rejection and test_stark_target_disease_association_retrieval."
+      ],
+      "evidence": "Tests define local mock Pydantic models or execute single OpenTargets queries. The official Berkeley Function Calling Leaderboard dataset, STaRK benchmark questions, and BixBench benchmark datasets were never downloaded or evaluated.",
+      "acceptance_criteria": "Accurately document test suites as integration and regression suites inspired by benchmark principles, rather than claiming official benchmark scores."
+    },
+    {
+      "id": "FINDING-13",
+      "title": "Dynamic BioModels Search & SBML Stream Loading Working",
+      "status": "Working",
+      "severity": "INFO",
+      "source_location": {
+        "file": "phronesis/vivarix/engine.py",
+        "lines": "125-144, 210-240",
+        "function": "VivarixSimulationEngine.search_models & _load_copasi_model"
+      },
+      "reproduction_steps": [
+        "Query: 'Simulate KRAS using BIOMD0000000048 for 100 seconds.'",
+        "Observe live query to https://www.biomodels.org/search and stream download of BIOMD0000000048_url.xml."
+      ],
+      "evidence": "FastAPI log shows HTTP 200 from https://www.biomodels.org/search and https://www.biomodels.org/model/download/BIOMD0000000048. Real COPASI ODE integration ran for 100s, returning dynamic trajectory and species readouts.",
+      "acceptance_criteria": "Preserve live BioModels search and streaming SBML loading."
+    },
+    {
+      "id": "FINDING-14",
+      "title": "Single-Cell Synthetic Data Removed on Product Path",
+      "status": "Working",
+      "severity": "INFO",
+      "source_location": {
+        "file": "phronesis/lumicell/engine.py",
+        "lines": "136-156",
+        "function": "LumicellAnalysisEngine.execute_single_cell_pipeline"
+      },
+      "reproduction_steps": [
+        "Query: 'Perform single-cell transcriptomic clustering and cell type annotation for KRAS tumor microenvironment.'",
+        "Observe returned error state."
+      ],
+      "evidence": "Tool returned success=False with ErrorType.DATASET_REQUIRED: 'Single-cell transcriptomics analysis requires a real dataset or uploaded AnnData file (.h5ad / .zarr) with provenance. No dataset was provided.' No synthetic cells or clusters were fabricated.",
+      "acceptance_criteria": "Maintain strict real-dataset provenance requirements for single-cell analytics."
+    },
+    {
+      "id": "FINDING-15",
+      "title": "Persistent Memory BM25 Probabilistic Ranking and Contradiction Tracking Working",
+      "status": "Working",
+      "severity": "INFO",
+      "source_location": {
+        "file": "phronesis/utils/memory/clinical_memory.py",
+        "lines": "270-360, 370-392",
+        "function": "ClinicalMemoryEngine.search_memory & _detect_and_handle_contradictions"
+      },
+      "reproduction_steps": [
+        "Run test_mem0_thread_isolation_and_bm25_retrieval and test_mem0_contradiction_detection in test_scientific_validation.py."
+      ],
+      "evidence": "All thread isolation, BM25 term weighting (k1=1.5, b=0.75), and contradiction status updates passed with 100% assertions in test_scientific_validation.py.",
+      "acceptance_criteria": "Maintain Mem0 persistence architecture."
+    }
+  ]
+}

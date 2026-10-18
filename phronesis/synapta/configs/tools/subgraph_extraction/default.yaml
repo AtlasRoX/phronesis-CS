@@ -1,0 +1,41 @@
+_target_: phronesis.synapta.tools.subgraph_extraction
+ollama_embeddings:
+  - "nomic-embed-text"
+temperature: 0.1
+streaming: False
+topk: 5
+topk_e: 5
+cost_e: 0.5
+c_const: 0.01
+root: -1
+num_clusters: 1
+pruning: "gw"
+verbosity_level: 0
+node_id_column: "node_id"
+node_attr_column: "node_attr"
+edge_src_column: "edge_src"
+edge_attr_column: "edge_attr"
+edge_dst_column: "edge_dst"
+prompt_endotype_filtering: |
+  You select genes from endotype documents (differentially expressed gene lists) to guide knowledge-graph
+  subgraph extraction.
+
+  <endotype_documents>
+  {context}
+  </endotype_documents>
+
+  Return the genes from the documents above that are relevant to the input query. Include every relevant
+  gene that appears in the documents, and only genes that appear in them, spelled as written.
+
+  Output only the list, in exactly this format and with nothing else:
+  [gene_1, gene_2, ..., gene_n]
+
+  Input: {input}
+prompt_endotype_addition: >
+   Include the following endotype for the subgraph extraction process:
+splitter_chunk_size: 64
+splitter_chunk_overlap: 16
+retriever_search_type: "mmr"
+retriever_k: 3
+retriever_fetch_k: 10
+retriever_lambda_mult: 0.3

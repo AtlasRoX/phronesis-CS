@@ -1,0 +1,221 @@
+{
+ "molecules": [
+  {
+   "black_box_warning": 0,
+   "first_approval": 2004,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL553",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL553",
+    "molecule_chembl_id": "CHEMBL553",
+    "parent_chembl_id": "CHEMBL553"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "ERLOTINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 1,
+   "first_approval": 2007,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL554",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL554",
+    "molecule_chembl_id": "CHEMBL554",
+    "parent_chembl_id": "CHEMBL554"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "LAPATINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2003,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL939",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL939",
+    "molecule_chembl_id": "CHEMBL939",
+    "parent_chembl_id": "CHEMBL939"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "GEFITINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2017,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL180022",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL180022",
+    "molecule_chembl_id": "CHEMBL180022",
+    "parent_chembl_id": "CHEMBL180022"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "NERATINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2013,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL1173655",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL1173655",
+    "molecule_chembl_id": "CHEMBL1173655",
+    "parent_chembl_id": "CHEMBL1173655"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "AFATINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 1,
+   "first_approval": 2004,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL1201577",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL1201577",
+    "molecule_chembl_id": "CHEMBL1201577",
+    "parent_chembl_id": "CHEMBL1201577"
+   },
+   "molecule_type": "Antibody",
+   "pref_name": "CETUXIMAB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 1,
+   "first_approval": 2006,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL1201827",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL1201827",
+    "molecule_chembl_id": "CHEMBL1201827",
+    "parent_chembl_id": "CHEMBL1201827"
+   },
+   "molecule_type": "Antibody",
+   "pref_name": "PANITUMUMAB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 1,
+   "first_approval": 2015,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL1743047",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL1743047",
+    "molecule_chembl_id": "CHEMBL1743047",
+    "parent_chembl_id": "CHEMBL1743047"
+   },
+   "molecule_type": "Antibody",
+   "pref_name": "NECITUMUMAB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2018,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL2110732",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL2110732",
+    "molecule_chembl_id": "CHEMBL2110732",
+    "parent_chembl_id": "CHEMBL2110732"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "DACOMITINIB ANHYDROUS",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2015,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL3353410",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL3353410",
+    "molecule_chembl_id": "CHEMBL3353410",
+    "parent_chembl_id": "CHEMBL3353410"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "OSIMERTINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2017,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL3545311",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL3545311",
+    "molecule_chembl_id": "CHEMBL3545311",
+    "parent_chembl_id": "CHEMBL3545311"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "BRIGATINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2016,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL3786343",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL3786343",
+    "molecule_chembl_id": "CHEMBL3786343",
+    "parent_chembl_id": "CHEMBL3786343"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "OLMUTINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2021,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL4297774",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL4297774",
+    "molecule_chembl_id": "CHEMBL4297774",
+    "parent_chembl_id": "CHEMBL4297774"
+   },
+   "molecule_type": "Antibody",
+   "pref_name": "AMIVANTAMAB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 0,
+   "first_approval": 2024,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL4558324",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL4558324",
+    "molecule_chembl_id": "CHEMBL4558324",
+    "parent_chembl_id": "CHEMBL4558324"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "LAZERTINIB",
+   "withdrawn_flag": false
+  },
+  {
+   "black_box_warning": 1,
+   "first_approval": 2021,
+   "max_phase": "4.0",
+   "molecule_chembl_id": "CHEMBL4650319",
+   "molecule_hierarchy": {
+    "active_chembl_id": "CHEMBL4650319",
+    "molecule_chembl_id": "CHEMBL4650319",
+    "parent_chembl_id": "CHEMBL4650319"
+   },
+   "molecule_type": "Small molecule",
+   "pref_name": "MOBOCERTINIB",
+   "withdrawn_flag": false
+  }
+ ],
+ "page_meta": {
+  "limit": 20,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total_count": 15
+ }
+}

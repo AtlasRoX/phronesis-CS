@@ -1,0 +1,307 @@
+/* Registered clinical trials card (ClinicalTrials.gov). The shell, pills, tables and links come from
+   agentic/ui; this file only lays out the expandable trial rows and the posted-results detail. */
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+/* Filter toggle in the same tinted language as the Results badge it filters on. */
+.toggle {
+  font: inherit;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  color: var(--text-heading);
+  background: var(--bg-surface-hover);
+}
+
+.toggle[aria-pressed="true"] {
+  color: var(--domain-s2);
+  background: color-mix(in srgb, var(--domain-s2) 12%, transparent);
+}
+
+.toggle:focus-visible,
+.row:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.list {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(118px, 1.1fr) minmax(70px, 0.7fr) minmax(120px, 1fr) minmax(86px, 0.8fr) minmax(0, 1.4fr) 84px;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 6px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--text-body);
+}
+
+.row::-webkit-details-marker {
+  display: none;
+}
+
+.headerRow {
+  cursor: default;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-heading);
+  background: var(--table-head-bg);
+  border-radius: 6px;
+}
+
+.trial {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.list > div:last-child > .trial {
+  border-bottom: none;
+}
+
+.trial > .row:hover {
+  background: var(--bg-table-hover);
+}
+
+.trial[open] > .row {
+  background: var(--bg-surface-hover);
+}
+
+.cell,
+.cellId {
+  min-width: 0;
+}
+
+.cellId {
+  display: flex;
+  flex-direction: column;
+}
+
+.nct {
+  font-weight: 500;
+  color: var(--text-heading);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nct:hover {
+  text-decoration: underline;
+}
+
+.acronym {
+  font-size: 11.5px;
+  color: var(--text-faint);
+}
+
+.sponsor {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cellBadge {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.rowChev {
+  flex-shrink: 0;
+  color: var(--text-faint);
+  transition: transform 0.15s ease;
+}
+
+.trial[open] > .row .rowChev {
+  transform: rotate(90deg);
+}
+
+/* The model chip for the whole app: no border, 6px radius, coloured text on a 12% tint. */
+.resultsBadge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: var(--domain-s2);
+  background: color-mix(in srgb, var(--domain-s2) 12%, transparent);
+}
+
+.detail {
+  padding: 4px 6px 14px;
+  min-width: 0;
+}
+
+.briefTitle {
+  margin: 4px 0 10px;
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 6px 12px;
+  margin: 0 0 12px;
+}
+
+.facts dt {
+  color: var(--text-faint);
+  font-size: 12px;
+  font-weight: 600;
+  padding-top: 1px;
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--text-body);
+  overflow-wrap: anywhere;
+}
+
+.outcomes {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.timeFrameInline {
+  color: var(--text-faint);
+}
+
+.resultsWrap {
+  min-width: 0;
+}
+
+.endpoint {
+  min-width: 180px;
+  max-width: 320px;
+}
+
+.endpointTitle {
+  margin-top: 3px;
+}
+
+.timeFrame {
+  margin-top: 2px;
+  font-size: 11.5px;
+  color: var(--text-faint);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ci,
+.unit {
+  color: var(--text-muted);
+}
+
+.na {
+  color: var(--text-faint);
+  cursor: help;
+}
+
+.analyses {
+  margin: 8px 0 0;
+  padding-left: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.analysisTitle {
+  color: var(--text-body);
+}
+
+.notes {
+  margin: 6px 0 0;
+  padding-left: 16px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-faint);
+}
+
+/* Narrow screens: each trial becomes a stacked block with labelled fields; the page never scrolls sideways. */
+@media (max-width: 640px) {
+  .headerRow {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+    padding: 12px 6px;
+  }
+
+  .cell::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--text-faint);
+  }
+
+  .cellId {
+    grid-column: 1 / 2;
+  }
+
+  .cellBadge {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  .num {
+    text-align: left;
+  }
+
+  .sponsor {
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .facts dd {
+    margin-bottom: 6px;
+  }
+
+  table.results {
+    font-size: 12px;
+  }
+
+  table.results th,
+  table.results td {
+    padding: 6px 7px;
+  }
+
+  table.results td {
+    white-space: normal;
+  }
+
+  .endpoint {
+    min-width: 0;
+    max-width: none;
+  }
+
+  .timeFrame {
+    display: none;
+  }
+}

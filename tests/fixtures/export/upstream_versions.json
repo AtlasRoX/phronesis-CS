@@ -1,0 +1,130 @@
+{
+ "_note": "Trimmed live responses captured 2026-10-13 for tests/test_export_and_manifest.py; field values are verbatim.",
+ "capture": {
+  "bm_files.json": {
+   "url": "https://www.biomodels.org/model/files/BIOMD0000000010?format=json",
+   "status": 200,
+   "content_type": "application/json;charset=UTF-8"
+  },
+  "bm_meta.json": {
+   "url": "https://www.biomodels.org/BIOMD0000000010?format=json",
+   "status": 200,
+   "content_type": "application/json;charset=utf-8"
+  },
+  "bm_files_404.json": {
+   "url": "https://www.biomodels.org/model/files/BIOMD0000000010.3?format=json",
+   "status": 404,
+   "content_type": "application/json;charset=UTF-8"
+  },
+  "bm_download_403.html": {
+   "url": "https://www.biomodels.org/model/download/BIOMD0000000010.3?filename=BIOMD0000000010_url.xml",
+   "status": 403,
+   "content_type": "text/html;charset=ISO-8859-1"
+  },
+  "ot_meta.json": {
+   "url": "https://api.platform.opentargets.org/api/v4/graphql",
+   "status": 200,
+   "content_type": "application/json"
+  },
+  "kegg_info.txt": {
+   "url": "https://rest.kegg.jp/info/pathway",
+   "status": 200,
+   "content_type": "text/plain; charset=utf-8"
+  },
+  "epmc.json": {
+   "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A10712587+AND+SRC%3AMED&format=json&resultType=lite&pageSize=1",
+   "status": 200,
+   "content_type": "application/json;charset=UTF-8"
+  }
+ },
+ "biomodels_files_BIOMD0000000010": {
+  "main": [
+   {
+    "name": "BIOMD0000000010_url.xml",
+    "fileSize": "29295",
+    "mimeType": "application/xml",
+    "md5sum": "dc474ee30194c97bc9b8cce003200a77",
+    "sha256sum": "906964e07ffd570ad94a03c1222e230b54b913cd536b008392bfb6155930a966"
+   }
+  ]
+ },
+ "biomodels_meta_BIOMD0000000010": {
+  "name": "Kholodenko2000 - Ultrasensitivity and negative feedback bring oscillations in MAPK cascade",
+  "publicationId": "BIOMD0000000010",
+  "submissionId": "MODEL6615119181",
+  "format": {
+   "name": "SBML",
+   "identifier": "SBML",
+   "version": "L2V4"
+  },
+  "curationStatus": "CURATED",
+  "history": {
+   "revisions": [
+    {
+     "version": 1,
+     "submitted": 1126618742,
+     "comment": "Original import of BIOMD0000000010.xml.origin"
+    },
+    {
+     "version": 2,
+     "submitted": 1433250273,
+     "comment": "Current version of Kholodenko2000 - Ultrasensitivity and negative feedback bring oscillations in MAPK cascade"
+    },
+    {
+     "version": 4,
+     "submitted": 1725207006,
+     "comment": "CRBM-sponsored manual and automated updates."
+    }
+   ]
+  },
+  "publication": {
+   "type": "PubMed ID",
+   "accession": "10712587",
+   "journal": "European journal of biochemistry",
+   "title": "Negative feedback and ultrasensitivity can bring about oscillations in the mitogen-activated protein kinase cascades.",
+   "year": 2000
+  }
+ },
+ "biomodels_files_BIOMD0000000010.3_404": {
+  "resource": "/model/files/BIOMD0000000010.3",
+  "code": 404,
+  "message": "Not Found"
+ },
+ "biomodels_download_BIOMD0000000010.3_403_html_head": "\n\n\n\n<!doctype html>\n\n\n\n\n\n\n\n\n\n\n\n\n<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en\"> <![endif]-->\n<!--[if IE 7]> ",
+ "opentargets_meta": {
+  "data": {
+   "meta": {
+    "name": "Open Targets GraphQL & REST API Beta",
+    "apiVersion": {
+     "x": "26",
+     "y": "9",
+     "z": "0"
+    },
+    "dataVersion": {
+     "year": "26",
+     "month": "09",
+     "iteration": null
+    }
+   }
+  }
+ },
+ "kegg_info_pathway": "pathway\tKEGG pathway maps\npath\t587 entries\n\tLast update 2026/10/09\n\tKanehisa Laboratories\n\nlinked db\tmodule\n\tko\n\t<org>\n\tgenome\n\tcompound\n\tglycan\n\treaction\n\trclass\n\trmodule\n\tenzyme\n\tnetwork\n\tntmap\n\tdisease\n\tdrug\n\tpubmed\n",
+ "europepmc_search_10712587": {
+  "version": "6.9",
+  "hitCount": 1,
+  "resultList": {
+   "result": [
+    {
+     "id": "10712587",
+     "source": "MED",
+     "pmid": "10712587",
+     "doi": "10.1046/j.1432-1327.2000.01197.x",
+     "title": "Negative feedback and ultrasensitivity can bring about oscillations in the mitogen-activated protein kinase cascades.",
+     "authorString": "Kholodenko BN.",
+     "journalTitle": "Eur J Biochem",
+     "pubYear": "2000"
+    }
+   ]
+  }
+ }
+}

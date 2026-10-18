@@ -1,0 +1,16 @@
+{
+ "note": "Identifier-syntax cases shared by tests/test_citations.py (scan_keys) and web/tests/citations.test.mts (CITE_PATTERN), so both grammars stay identical. Only the syntax is under test here; no record content is implied.",
+ "cases": [
+  {"text": "Covalent inhibitors bind a cryptic GDP-bound pocket (PMID: 42511798).", "keys": ["PMID:42511798"]},
+  {"text": "See pmid 9500320 and PMID:39846981; also PMID 42768907.", "keys": ["PMID:9500320", "PMID:39846981", "PMID:42768907"]},
+  {"text": "Review (doi: 10.3390/IJMS27146455).", "keys": ["DOI:10.3390/ijms27146455"]},
+  {"text": "Wakefield 1998, 10.1016/s0140-6736(97)11096-0.", "keys": ["DOI:10.1016/s0140-6736(97)11096-0"]},
+  {"text": "Preprint 10.64898/2026.10.05.26364739, not PPR1337147.", "keys": ["DOI:10.64898/2026.10.05.26364739"]},
+  {"text": "CodeBreaK 100 (NCT03600883) and CodeBreaK 200 (nct04303780).", "keys": ["NCT:NCT03600883", "NCT:NCT04303780"]},
+  {"text": "Sotorasib is CHEMBL4535757; model BIOMD0000000010; KRAS ENSG00000133703 in hsa04010.", "keys": ["CHEMBL:CHEMBL4535757", "BIOMD:BIOMD0000000010", "ENSG:ENSG00000133703", "KEGG:hsa04010"]},
+  {"text": "Variant VCV000012582.12 (rs121913529), CIViC EID1409 and AID7, dataset GSE131907.", "keys": ["VCV:VCV000012582", "RS:rs121913529", "EID:EID1409", "AID:AID7", "GEO:GSE131907"]},
+  {"text": "No-break spaces: PMID: 42511798 and PMID 9500320.", "keys": ["PMID:42511798", "PMID:9500320"]},
+  {"text": "PrimeKG lists metformin (DB00331) for type 2 diabetes; aspirin is DB00945.", "keys": ["DRUGBANK:DB00331", "DRUGBANK:DB00945"]},
+  {"text": "No ids: NCT123, PMIDs pending, BIOMD12, ENSG0001, rs12, DB123, db00331, DB003310.", "keys": []}
+ ]
+}

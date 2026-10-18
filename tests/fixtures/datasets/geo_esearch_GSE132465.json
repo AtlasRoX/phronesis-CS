@@ -1,0 +1,31 @@
+{
+ "header": {
+  "type": "esearch",
+  "version": "0.3"
+ },
+ "esearchresult": {
+  "count": "1",
+  "retmax": "1",
+  "retstart": "0",
+  "idlist": [
+   "200132465"
+  ],
+  "translationset": [],
+  "translationstack": [
+   {
+    "term": "GSE132465[ACCN]",
+    "field": "ACCN",
+    "count": "35",
+    "explode": "N"
+   },
+   {
+    "term": "gse[ETYP]",
+    "field": "ETYP",
+    "count": "298260",
+    "explode": "N"
+   },
+   "AND"
+  ],
+  "querytranslation": "GSE132465[ACCN] AND gse[ETYP]"
+ }
+}

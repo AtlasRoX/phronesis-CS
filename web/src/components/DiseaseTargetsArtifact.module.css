@@ -1,0 +1,89 @@
+/* Open Targets disease-target card; the shell, sections and table come from agentic/ui. */
+.icon {
+  color: var(--domain-t2kg);
+}
+
+.target {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.symbol {
+  font-weight: 600;
+  color: var(--text-heading);
+  white-space: nowrap;
+}
+
+.score {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scoreTrack {
+  position: relative;
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--avatar-bg);
+  overflow: hidden;
+}
+
+.scoreFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 2px;
+  background: var(--domain-t2kg);
+}
+
+.evidence {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.drugs {
+  min-width: 160px;
+}
+
+.stage {
+  color: var(--text-faint);
+}
+
+.tierList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tierItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  padding: 5px 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text-body);
+  min-width: 0;
+}
+
+.tierItem + .tierItem {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.drug {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--text-heading);
+}
+
+.detail {
+  min-width: 0;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}

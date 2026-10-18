@@ -1,0 +1,515 @@
+{
+ "success": true,
+ "tool_name": "synapta_variant_intelligence",
+ "data": {
+  "gene": "BRAF",
+  "protein_change": "V600E",
+  "hgvs_p": "p.Val600Glu",
+  "hgvs_c": "c.1919T>A",
+  "rsid": "rs113488022",
+  "cancer_filter": "melanoma",
+  "clinvar": [
+   {
+    "variation_id": "13961",
+    "accession": "VCV000013961",
+    "title": "NM_004333.6(BRAF):c.1799T>A (p.Val600Glu)",
+    "protein_change": [
+     "V600E",
+     "V512E",
+     "V578E",
+     "V603E",
+     "V548E",
+     "V566E",
+     "V563E",
+     "V640E"
+    ],
+    "rsids": [
+     "rs113488022"
+    ],
+    "genes": [
+     "BRAF"
+    ],
+    "molecular_consequences": [
+     "missense variant"
+    ],
+    "canonical_spdi": "NC_000007.14:140753335:A:T",
+    "grch38_chr": "7",
+    "grch38_start": 140753336,
+    "germline_classification": "Conflicting classifications of pathogenicity",
+    "germline_review_status": "criteria provided, conflicting classifications",
+    "germline_last_evaluated": "2026/03/11",
+    "germline_traits": [
+     "BRAF-related glioma susceptibility",
+     "Vascular malformation",
+     "Cardiovascular phenotype",
+     "RASopathy",
+     "not provided"
+    ],
+    "oncogenicity_classification": "Oncogenic",
+    "oncogenicity_review_status": "criteria provided, single submitter",
+    "somatic_clinical_impact": "Tier I - Strong",
+    "somatic_clinical_impact_review_status": "criteria provided, multiple submitters",
+    "somatic_clinical_impact_traits": [
+     "Melanoma",
+     "Pleomorphic xanthoastrocytoma",
+     "IDH-wildtype glioblastoma",
+     "Diffuse leptomeningeal glioneuronal tumor",
+     "Polymorphous low grade neuroepithelial tumor of the young",
+     "Malignant peripheral nerve sheath tumor"
+    ],
+    "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/13961/"
+   }
+  ],
+  "civic": {
+   "variant_id": 12,
+   "molecular_profile_id": 12,
+   "molecular_profile_name": "BRAF V600E",
+   "allele_registry_id": "CA123643",
+   "clinvar_ids": [
+    "13961",
+    "376069"
+   ],
+   "accepted_evidence_total": 93,
+   "accepted_assertion_total": 3,
+   "evidence": [
+    {
+     "eid": "EID1409",
+     "evidence_level": "A",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidence_rating": 5,
+     "variant_origin": "SOMATIC",
+     "disease": "Skin Melanoma",
+     "doid": "8923",
+     "therapies": [
+      "Vemurafenib"
+     ],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "21639808",
+     "pmid": "21639808",
+     "citation": "Chapman et al., 2011",
+     "publication_year": 2011,
+     "description": "Phase 3 randomized clinical trial comparing vemurafenib with dacarbazine in 675 patients with previously untreated, metastatic melanoma with the BRAF V600E mutation. At 6 months, overall survival was 84% (95% confidence interval [CI], 78 to 89) in the vemurafenib group and 64% (95% CI, 56 to 73) in the dacarbazine group. A relative reduction of 63% in the risk of death and of 74% in the risk of either death or disease progression was observed with vemurafenib as compared with dacarbazine (P<0.001 for both comparisons).",
+     "url": "https://civicdb.org/evidence/1409"
+    },
+    {
+     "eid": "EID9851",
+     "evidence_level": "A",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidence_rating": 5,
+     "variant_origin": "SOMATIC",
+     "disease": "Colorectal Cancer",
+     "doid": "9256",
+     "therapies": [
+      "Encorafenib",
+      "Cetuximab"
+     ],
+     "therapy_interaction_type": "COMBINATION",
+     "source_type": "PUBMED",
+     "citation_id": "31566309",
+     "pmid": "31566309",
+     "citation": "Kopetz et al., 2019",
+     "publication_year": 2019,
+     "description": "The open-label phase 3 BEACON CRC trial included 665 patients with BRAF V600E-mutated metastatic CRC. Patients were randomly assigned in a 1:1:1 ratio to receive encorafenib, binimetinib, and cetuximab (triplet-therapy group); encorafenib and cetuximab (doublet-therapy group); or the investigators’ choice of either cetuximab and irinotecan or cetuximab and FOLFIRI. The median overall survival was 8.4 months (95% CI, 7.5 to 11.0) in the doublet-therapy group and 5.4 months (95% CI, 4.8 to 6.6) in the control group, with a significantly lower risk of death compared to the control group (hazard…",
+     "url": "https://civicdb.org/evidence/9851"
+    },
+    {
+     "eid": "EID80",
+     "evidence_level": "B",
+     "evidence_type": "DIAGNOSTIC",
+     "evidence_direction": "SUPPORTS",
+     "significance": "POSITIVE",
+     "evidence_rating": 5,
+     "variant_origin": "SOMATIC",
+     "disease": "Papillary Thyroid Carcinoma",
+     "doid": "3969",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "24570209",
+     "pmid": "24570209",
+     "citation": "Crescenzi et al., 2014",
+     "publication_year": 2014,
+     "description": "Thyroid nodule with BRAF V600E mutation is highly correlated with papillary thyroid cancer.",
+     "url": "https://civicdb.org/evidence/80"
+    },
+    {
+     "eid": "EID95",
+     "evidence_level": "B",
+     "evidence_type": "PREDICTIVE",
+     "evidence_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidence_rating": 5,
+     "variant_origin": "SOMATIC",
+     "disease": "Melanoma",
+     "doid": "1909",
+     "therapies": [
+      "Dabrafenib",
+      "Trametinib"
+     ],
+     "therapy_interaction_type": "COMBINATION",
+     "source_type": "PUBMED",
+     "citation_id": "24583796",
+     "pmid": "24583796",
+     "citation": "Menzies et al., 2014",
+     "publication_year": 2014,
+     "description": "Dabrafenib with trametinib provides higher response rate and lower toxicity (as compared to chemotherapy) in patients with melanoma.",
+     "url": "https://civicdb.org/evidence/95"
+    },
+    {
+     "eid": "EID102",
+     "evidence_level": "B",
+     "evidence_type": "PROGNOSTIC",
+     "evidence_direction": "DOES_NOT_SUPPORT",
+     "significance": "POOR_OUTCOME",
+     "evidence_rating": 5,
+     "variant_origin": "SOMATIC",
+     "disease": "Papillary Thyroid Carcinoma",
+     "doid": "3969",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "24354346",
+     "pmid": "24354346",
+     "citation": "Walczyk et al., 2014",
+     "publication_year": 2014,
+     "description": "Unlike other studies that suggest a poorer outcome, BRAF mutation in this study was not correlated with poorer prognosis in papillary thyroid cancer.",
+     "url": "https://civicdb.org/evidence/102"
+    },
+    {
+     "eid": "EID103",
+     "evidence_level": "B",
+     "evidence_type": "PROGNOSTIC",
+     "evidence_direction": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "evidence_rating": 5,
+     "variant_origin": "SOMATIC",
+     "disease": "Colorectal Cancer",
+     "doid": "9256",
+     "therapies": [],
+     "therapy_interaction_type": null,
+     "source_type": "PUBMED",
+     "citation_id": "24594804",
+     "pmid": "24594804",
+     "citation": "Chen et al., 2014",
+     "publication_year": 2014,
+     "description": "V600E is associated with adverse pathological features of colorectal cancer. This can be concluded as a marker of poor prognosis.",
+     "url": "https://civicdb.org/evidence/103"
+    }
+   ],
+   "assertions": [
+    {
+     "aid": "AID20",
+     "amp_level": "TIER_I_LEVEL_A",
+     "assertion_type": "PROGNOSTIC",
+     "assertion_direction": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "disease": "Colorectal Cancer",
+     "therapies": [],
+     "fda_companion_test": null,
+     "regulatory_approval": null,
+     "nccn_guideline": "Colon Cancer",
+     "status": "ACCEPTED",
+     "url": "https://civicdb.org/assertions/20"
+    },
+    {
+     "aid": "AID7",
+     "amp_level": "TIER_I_LEVEL_A",
+     "assertion_type": "PREDICTIVE",
+     "assertion_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "disease": "Melanoma",
+     "therapies": [
+      "Trametinib",
+      "Dabrafenib"
+     ],
+     "fda_companion_test": true,
+     "regulatory_approval": true,
+     "nccn_guideline": "Melanoma",
+     "status": "ACCEPTED",
+     "url": "https://civicdb.org/assertions/7"
+    },
+    {
+     "aid": "AID10",
+     "amp_level": "TIER_I_LEVEL_A",
+     "assertion_type": "PREDICTIVE",
+     "assertion_direction": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "disease": "Melanoma",
+     "therapies": [
+      "Vemurafenib",
+      "Cobimetinib"
+     ],
+     "fda_companion_test": true,
+     "regulatory_approval": true,
+     "nccn_guideline": "Melanoma",
+     "status": "ACCEPTED",
+     "url": "https://civicdb.org/assertions/10"
+    }
+   ],
+   "url": "https://civicdb.org/molecular-profiles/12/summary"
+  },
+  "cbioportal": [
+   {
+    "study_id": "skcm_tcga_pan_can_atlas_2018",
+    "study_name": "Skin Cutaneous Melanoma (TCGA, PanCancer Atlas)",
+    "cancer_type": "Cutaneous Melanoma",
+    "reference_genome": "hg19",
+    "mutated_samples": 158,
+    "mutated_patients": 158,
+    "gene_mutated_samples": 233,
+    "profiled_samples": 440,
+    "prevalence_percent": 35.9,
+    "denominator_basis": "all sequenced samples (whole-exome)",
+    "panels": {
+     "WES": 440
+    },
+    "url": "https://www.cbioportal.org/study/summary?id=skcm_tcga_pan_can_atlas_2018"
+   },
+   {
+    "study_id": "uvm_tcga_pan_can_atlas_2018",
+    "study_name": "Uveal Melanoma (TCGA, PanCancer Atlas)",
+    "cancer_type": "Uveal Melanoma",
+    "reference_genome": "hg19",
+    "mutated_samples": 0,
+    "mutated_patients": 0,
+    "gene_mutated_samples": 0,
+    "profiled_samples": 80,
+    "prevalence_percent": 0.0,
+    "denominator_basis": "all sequenced samples (whole-exome)",
+    "panels": {
+     "WES": 80
+    },
+    "url": "https://www.cbioportal.org/study/summary?id=uvm_tcga_pan_can_atlas_2018"
+   }
+  ],
+  "gnomad": {
+   "variant_id": "7-140753336-A-T",
+   "dataset": "gnomad_r4",
+   "rsids": [
+    "rs113488022"
+   ],
+   "caid": null,
+   "exome_ac": 2,
+   "exome_an": 1460618,
+   "exome_af": 1.369283412911521e-06,
+   "exome_homozygotes": 0,
+   "genome_ac": null,
+   "genome_an": null,
+   "genome_af": null,
+   "faf95_popmax": null,
+   "faf95_popmax_population": null,
+   "populations": [
+    {
+     "id": "remaining",
+     "ac": 0,
+     "an": 60330,
+     "af": 0.0
+    },
+    {
+     "id": "amr",
+     "ac": 0,
+     "an": 44684,
+     "af": 0.0
+    },
+    {
+     "id": "fin",
+     "ac": 0,
+     "an": 53382,
+     "af": 0.0
+    },
+    {
+     "id": "mid",
+     "ac": 0,
+     "an": 5746,
+     "af": 0.0
+    },
+    {
+     "id": "nfe",
+     "ac": 1,
+     "an": 1111098,
+     "af": 9.000106201253175e-07
+    },
+    {
+     "id": "sas",
+     "ac": 1,
+     "an": 86244,
+     "af": 1.1595009507907797e-05
+    },
+    {
+     "id": "asj",
+     "ac": 0,
+     "an": 26098,
+     "af": 0.0
+    },
+    {
+     "id": "eas",
+     "ac": 0,
+     "an": 39610,
+     "af": 0.0
+    },
+    {
+     "id": "afr",
+     "ac": 0,
+     "an": 33426,
+     "af": 0.0
+    }
+   ],
+   "filters": [],
+   "hgvsp": "p.Val640Glu",
+   "hgvsc": "c.1919T>A",
+   "transcript_id": "ENST00000644969",
+   "url": "https://gnomad.broadinstitute.org/variant/7-140753336-A-T?dataset=gnomad_r4"
+  },
+  "sources": [
+   {
+    "name": "clinvar",
+    "status": "ok",
+    "detail": "1 ClinVar record",
+    "elapsed_seconds": 1.05
+   },
+   {
+    "name": "civic",
+    "status": "ok",
+    "detail": "93 accepted evidence items, 3 accepted assertions",
+    "elapsed_seconds": 1.93
+   },
+   {
+    "name": "cbioportal",
+    "status": "ok",
+    "detail": "2 studies",
+    "elapsed_seconds": 1.26
+   },
+   {
+    "name": "gnomad",
+    "status": "ok",
+    "detail": "gnomAD v4 7-140753336-A-T",
+    "elapsed_seconds": 1.48
+   }
+  ],
+  "citation_records": [
+   {
+    "type": "clinvar",
+    "id": "VCV000013961",
+    "title": "NM_004333.6(BRAF):c.1799T>A (p.Val600Glu)",
+    "url": "https://www.ncbi.nlm.nih.gov/clinvar/variation/13961/",
+    "passage": "Germline: Conflicting classifications of pathogenicity (criteria provided, conflicting classifications); Oncogenicity: Oncogenic; Somatic clinical impact: Tier I - Strong",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "rsid",
+    "id": "rs113488022",
+    "title": "dbSNP rs113488022",
+    "url": "https://www.ncbi.nlm.nih.gov/snp/rs113488022",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID1409",
+    "title": "CIViC EID1409: PREDICTIVE evidence, level A",
+    "url": "https://civicdb.org/evidence/1409",
+    "passage": "Phase 3 randomized clinical trial comparing vemurafenib with dacarbazine in 675 patients with previously untreated, metastatic melanoma with the BRAF V600E mutation. At 6 months, overall survival was 84% (95% confidence interval [CI], 78 to 89) in the vemurafenib group and 64% (95% CI, 56 to 73) in the dacarbazine group. A relative reduction of 63% in the risk of death and of 74% in the risk of either death or disease progression was observed with vemurafenib as compared with dacarbazine (P<0.001 for both comparisons).",
+    "evidence_level": "A",
+    "year": "2011",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID9851",
+    "title": "CIViC EID9851: PREDICTIVE evidence, level A",
+    "url": "https://civicdb.org/evidence/9851",
+    "passage": "The open-label phase 3 BEACON CRC trial included 665 patients with BRAF V600E-mutated metastatic CRC. Patients were randomly assigned in a 1:1:1 ratio to receive encorafenib, binimetinib, and cetuximab (triplet-therapy group); encorafenib and cetuximab (doublet-therapy group); or the investigators’ choice of either cetuximab and irinotecan or cetuximab and FOLFIRI. The median overall survival was 8.4 months (95% CI, 7.5 to 11.0) in the doublet-therapy group and 5.4 months (95% CI, 4.8 to 6.6) in the control group, with a significantly lower risk of death compared to the control group (hazard…",
+    "evidence_level": "A",
+    "year": "2019",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID80",
+    "title": "CIViC EID80: DIAGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/80",
+    "passage": "Thyroid nodule with BRAF V600E mutation is highly correlated with papillary thyroid cancer.",
+    "evidence_level": "B",
+    "year": "2014",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID95",
+    "title": "CIViC EID95: PREDICTIVE evidence, level B",
+    "url": "https://civicdb.org/evidence/95",
+    "passage": "Dabrafenib with trametinib provides higher response rate and lower toxicity (as compared to chemotherapy) in patients with melanoma.",
+    "evidence_level": "B",
+    "year": "2014",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID102",
+    "title": "CIViC EID102: PROGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/102",
+    "passage": "Unlike other studies that suggest a poorer outcome, BRAF mutation in this study was not correlated with poorer prognosis in papillary thyroid cancer.",
+    "evidence_level": "B",
+    "year": "2014",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "EID103",
+    "title": "CIViC EID103: PROGNOSTIC evidence, level B",
+    "url": "https://civicdb.org/evidence/103",
+    "passage": "V600E is associated with adverse pathological features of colorectal cancer. This can be concluded as a marker of poor prognosis.",
+    "evidence_level": "B",
+    "year": "2014",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "AID20",
+    "title": "CIViC AID20: PROGNOSTIC assertion",
+    "url": "https://civicdb.org/assertions/20",
+    "evidence_level": "TIER_I_LEVEL_A",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "AID7",
+    "title": "CIViC AID7: PREDICTIVE assertion",
+    "url": "https://civicdb.org/assertions/7",
+    "evidence_level": "TIER_I_LEVEL_A",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   },
+   {
+    "type": "civic",
+    "id": "AID10",
+    "title": "CIViC AID10: PREDICTIVE assertion",
+    "url": "https://civicdb.org/assertions/10",
+    "evidence_level": "TIER_I_LEVEL_A",
+    "source_agent": "Synapta",
+    "source_tool": "synapta_variant_intelligence"
+   }
+  ]
+ },
+ "canonical_ids": {
+  "clinvar_vcv": "VCV000013961",
+  "rsids": "rs113488022",
+  "civic_ids": "EID1409,EID9851,EID80,EID95,EID102,EID103,AID20,AID7,AID10",
+  "pmids": "21639808,24354346,24570209,24583796,24594804,31566309"
+ },
+ "error": null,
+ "error_type": null
+}

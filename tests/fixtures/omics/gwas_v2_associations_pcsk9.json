@@ -1,0 +1,174 @@
+{
+ "_embedded": {
+  "associations": [
+   {
+    "association_id": 101326235,
+    "risk_frequency": "NR",
+    "pvalue_description": "",
+    "pvalue_mantissa": 3,
+    "pvalue_exponent": -1364,
+    "multi_snp_haplotype": false,
+    "snp_interaction": false,
+    "range": "-",
+    "beta": "-",
+    "p_value": 0.0,
+    "efo_traits": [
+     {
+      "efo_id": "EFO_0004611",
+      "efo_trait": "low density lipoprotein cholesterol measurement"
+     }
+    ],
+    "reported_trait": [
+     "Low density lipoprotein cholesterol levels"
+    ],
+    "accession_id": "GCST90239655",
+    "locations": [
+     "1:55039974"
+    ],
+    "mapped_genes": [
+     "PCSK9"
+    ],
+    "bg_efo_traits": [],
+    "pubmed_id": "34887591",
+    "first_author": "Graham SE",
+    "snp_effect_allele": [
+     "rs11591147-?"
+    ],
+    "snp_allele": [
+     {
+      "rs_id": "rs11591147",
+      "effect_allele": "?"
+     }
+    ]
+   },
+   {
+    "association_id": 101341230,
+    "risk_frequency": "NR",
+    "pvalue_description": "",
+    "pvalue_mantissa": 1,
+    "pvalue_exponent": -1070,
+    "multi_snp_haplotype": false,
+    "snp_interaction": false,
+    "range": "-",
+    "beta": "-",
+    "p_value": 0.0,
+    "efo_traits": [
+     {
+      "efo_id": "EFO_0004574",
+      "efo_trait": "total cholesterol measurement"
+     }
+    ],
+    "reported_trait": [
+     "Total cholesterol levels"
+    ],
+    "accession_id": "GCST90239673",
+    "locations": [
+     "1:55039974"
+    ],
+    "mapped_genes": [
+     "PCSK9"
+    ],
+    "bg_efo_traits": [],
+    "pubmed_id": "34887591",
+    "first_author": "Graham SE",
+    "snp_effect_allele": [
+     "rs11591147-?"
+    ],
+    "snp_allele": [
+     {
+      "rs_id": "rs11591147",
+      "effect_allele": "?"
+     }
+    ]
+   },
+   {
+    "association_id": 101329191,
+    "risk_frequency": "0.0163157",
+    "pvalue_description": "",
+    "pvalue_mantissa": 7,
+    "pvalue_exponent": -1039,
+    "multi_snp_haplotype": false,
+    "snp_interaction": false,
+    "range": "[0.42-0.44]",
+    "beta": "0.433696 unit decrease",
+    "p_value": 0.0,
+    "efo_traits": [
+     {
+      "efo_id": "EFO_0004611",
+      "efo_trait": "low density lipoprotein cholesterol measurement"
+     }
+    ],
+    "reported_trait": [
+     "Low density lipoprotein cholesterol levels"
+    ],
+    "accession_id": "GCST90239658",
+    "locations": [
+     "1:55039974"
+    ],
+    "mapped_genes": [
+     "PCSK9"
+    ],
+    "bg_efo_traits": [],
+    "pubmed_id": "34887591",
+    "first_author": "Graham SE",
+    "ci_lower": 0.42,
+    "ci_upper": 0.44,
+    "snp_effect_allele": [
+     "rs11591147-T"
+    ],
+    "snp_allele": [
+     {
+      "rs_id": "rs11591147",
+      "effect_allele": "T"
+     }
+    ]
+   },
+   {
+    "association_id": 101336671,
+    "risk_frequency": "NR",
+    "pvalue_description": "",
+    "pvalue_mantissa": 8,
+    "pvalue_exponent": -875,
+    "multi_snp_haplotype": false,
+    "snp_interaction": false,
+    "range": "-",
+    "beta": "-",
+    "p_value": 0.0,
+    "efo_traits": [
+     {
+      "efo_id": "EFO_0005689",
+      "efo_trait": "non-high density lipoprotein cholesterol measurement"
+     }
+    ],
+    "reported_trait": [
+     "Non-HDL cholesterol levels"
+    ],
+    "accession_id": "GCST90239667",
+    "locations": [
+     "1:55039974"
+    ],
+    "mapped_genes": [
+     "PCSK9"
+    ],
+    "bg_efo_traits": [],
+    "pubmed_id": "34887591",
+    "first_author": "Graham SE",
+    "snp_effect_allele": [
+     "rs11591147-?"
+    ],
+    "snp_allele": [
+     {
+      "rs_id": "rs11591147",
+      "effect_allele": "?"
+     }
+    ]
+   }
+  ]
+ },
+ "page": {
+  "size": 5,
+  "totalElements": 1546,
+  "totalPages": 310,
+  "number": 0
+ }
+}

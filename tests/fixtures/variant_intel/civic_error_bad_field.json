@@ -1,0 +1,24 @@
+{
+ "errors": [
+  {
+   "message": "Field 'genes' doesn't accept argument 'name'",
+   "locations": [
+    {
+     "line": 1,
+     "column": 13
+    }
+   ],
+   "path": [
+    "query",
+    "genes",
+    "name"
+   ],
+   "extensions": {
+    "code": "argumentNotAccepted",
+    "name": "genes",
+    "typeName": "Field",
+    "argumentName": "name"
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "messages": [
+  {
+   "status": "ok",
+   "category": "all",
+   "interval": "2026-09-16:2026-10-16",
+   "cursor": 0,
+   "count": 30,
+   "count_new_papers": "1530",
+   "total": "1877"
+  }
+ ],
+ "collection": [
+  {
+   "title": "A self-guided digital health application for LDL-cholesterol reduction in adults with hypercholesterolaemia (the DIGICHOL randomised controlled trial)",
+   "authors": "Riepenhausen, A.; Ekerdt, C.; Meyer, B.; Jauch-Chara, K.",
+   "author_corresponding": "Antje Riepenhausen",
+   "author_corresponding_institution": "GAIA AG",
+   "doi": "10.64898/2026.09.15.26363103",
+   "date": "2026-09-16",
+   "version": "1",
+   "type": "PUBLISHAHEADOFPRINT",
+   "license": "cc_by",
+   "category": "cardiovascular medicine",
+   "jatsxml": "https://www.medrxiv.org/content/early/2026/09/16/2026.09.15.26363103.source.xml",
+   "abstract": "Structured lifestyle modification is the guideline-mandated foundation of lipid management but is rarely delivered in routine care. We evaluated lipodia, a fully self-guided digital health application providing structured lifestyle support, in a pragmatic randomised controlled trial conducted online. Adults with LDL-cholesterol above their risk-adapted target (n = 278) were randomised 1:1 to usual care plus lipodia or usual care alone. After six months, lipodia significantly reduced LDL-cholesterol relative to usual care (adjusted between-group difference in relative change -3.9%; p = 0.029), with nearly twice as many users achieving a clinically meaningful reduction of at least 10% (41.7% v",
+   "published": "NA",
+   "server": "medRxiv"
+  },
+  {
+   "title": "Development and External Validation of a Plasma p-tau217-Based Model for MCI-to-Dementia Progression",
+   "authors": "Du, M.; Roy, I.; Chu, B.; Tian, S.",
+   "author_corresponding": "Meixi Du",
+   "author_corresponding_institution": "University of California, San Diego",
+   "doi": "10.64898/2026.09.15.26363045",
+   "date": "2026-09-16",
+   "version": "1",
+   "type": "PUBLISHAHEADOFPRINT",
+   "license": "cc_by_nc_nd",
+   "category": "neurology",
+   "jatsxml": "https://www.medrxiv.org/content/early/2026/09/16/2026.09.15.26363045.source.xml",
+   "abstract": "--Clinical trajectories after a diagnosis of mild cognitive impairment (MCI) vary widely, so prognostic models must account for both the timing of subsequent diagnoses and unequal follow-up. Using the Alzheimers Disease Neuroimaging Initiative (ADNI), we developed a Cox proportional-hazards model for time from an MCI-aligned plasma index visit to a subsequent dementia diagnosis, using age at study entry and log-transformed plasma p-tau217. Coefficients and baseline survival were estimated in 401 participants with 85 events and then frozen and applied without refitting to an independent cohort from the National Alzheimers Coordinating Center (NACC). NACC p-tau217 measurements were reported on",
+   "published": "NA",
+   "server": "medRxiv"
+  }
+ ]
+}

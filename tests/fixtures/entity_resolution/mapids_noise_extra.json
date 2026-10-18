@@ -1,0 +1,143 @@
+{
+ "data": {
+  "mapIds": {
+   "total": 14,
+   "mappings": [
+    {
+     "term": "of",
+     "hits": [
+      {
+       "id": "ENSG00000066336",
+       "name": "SPI1",
+       "entity": "target",
+       "score": 1
+      },
+      {
+       "id": "ENSG00000147133",
+       "name": "TAF1",
+       "entity": "target",
+       "score": 1
+      },
+      {
+       "id": "ENSG00000136492",
+       "name": "BRIP1",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "to",
+     "hits": [
+      {
+       "id": "ENSG00000151790",
+       "name": "TDO2",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "2",
+     "hits": [
+      {
+       "id": "CHEMBL4225537",
+       "name": "2",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL4526635",
+       "name": "2",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "PI3K",
+     "hits": [
+      {
+       "id": "ENSG00000171608",
+       "name": "PIK3CD",
+       "entity": "target",
+       "score": 1
+      },
+      {
+       "id": "ENSG00000105851",
+       "name": "PIK3CG",
+       "entity": "target",
+       "score": 1
+      },
+      {
+       "id": "ENSG00000121879",
+       "name": "PIK3CA",
+       "entity": "target",
+       "score": 1
+      },
+      {
+       "id": "ENSG00000051382",
+       "name": "PIK3CB",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "Keytruda",
+     "hits": [
+      {
+       "id": "CHEMBL3137343",
+       "name": "PEMBROLIZUMAB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "T-DXd",
+     "hits": [
+      {
+       "id": "CHEMBL4297844",
+       "name": "TRASTUZUMAB DERUXTECAN",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "trastuzumab deruxtecan",
+     "hits": [
+      {
+       "id": "CHEMBL4297844",
+       "name": "TRASTUZUMAB DERUXTECAN",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "trastuzumab",
+     "hits": [
+      {
+       "id": "CHEMBL1201585",
+       "name": "TRASTUZUMAB",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL2007641",
+       "name": "PERTUZUMAB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "Compare",
+     "hits": []
+    }
+   ]
+  }
+ }
+}

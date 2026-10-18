@@ -1,0 +1,95 @@
+# SonarCloud code quality analysis workflow
+name: SonarCloud Analysis
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "phronesis/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - "sonar-project.properties"
+      - ".github/workflows/sonarcloud.yml"
+  push:
+    branches: [main, master]
+    paths:
+      - "phronesis/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - "sonar-project.properties"
+      - ".github/workflows/sonarcloud.yml"
+  workflow_dispatch:
+
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+  ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+  ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
+
+jobs:
+  sonarcloud:
+    name: SonarCloud Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      - name: Generate SonarCloud reports
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          modules=(
+            phronesis
+            vivarix
+            lumicell
+            synapta
+            lithoscribe
+          )
+
+          for module in "${modules[@]}"; do
+            src="phronesis/${module}"
+            tests="${src}/tests"
+
+            uv run bandit -c pyproject.toml -r "${src}" -f json -o "bandit-${module}.json" || true
+            uv run pylint "${src}" --output-format=json --reports=no > "pylint-${module}.json" || true
+
+            if [ -d "${tests}" ]; then
+              uv run coverage run \
+                --data-file=".coverage.${module}" \
+                --include="${src}/*" \
+                -m pytest --cache-clear "${tests}"
+              uv run coverage xml \
+                --data-file=".coverage.${module}" \
+                -o "coverage-${module}.xml"
+            fi
+          done
+
+          # Top-level regression suite (tests/) covers the shared pipeline and the clinical modules.
+          uv run coverage run --data-file=.coverage.core --source=phronesis -m pytest --cache-clear tests/
+          uv run coverage xml --data-file=.coverage.core -o coverage-core.xml
+
+      - name: Read project version
+        id: version
+        shell: bash
+        run: echo "version=$(uv run python -c 'import tomllib;print(tomllib.load(open("pyproject.toml","rb"))["project"]["version"])')" >> "$GITHUB_OUTPUT"
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v7.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: -Dsonar.projectVersion=${{ steps.version.outputs.version }}

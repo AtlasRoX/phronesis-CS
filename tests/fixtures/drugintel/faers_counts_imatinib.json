@@ -1,0 +1,50 @@
+{
+ "meta": {
+  "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+  "terms": "https://open.fda.gov/terms/",
+  "license": "https://open.fda.gov/license/",
+  "last_updated": "2026-07-30"
+ },
+ "results": [
+  {
+   "term": "DEATH",
+   "count": 10162
+  },
+  {
+   "term": "DRUG INEFFECTIVE",
+   "count": 2873
+  },
+  {
+   "term": "NAUSEA",
+   "count": 2570
+  },
+  {
+   "term": "DIARRHOEA",
+   "count": 2406
+  },
+  {
+   "term": "FATIGUE",
+   "count": 2006
+  },
+  {
+   "term": "MALIGNANT NEOPLASM PROGRESSION",
+   "count": 1832
+  },
+  {
+   "term": "VOMITING",
+   "count": 1716
+  },
+  {
+   "term": "MALAISE",
+   "count": 1449
+  },
+  {
+   "term": "DRUG INTOLERANCE",
+   "count": 1438
+  },
+  {
+   "term": "RASH",
+   "count": 1356
+  }
+ ]
+}

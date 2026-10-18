@@ -1,0 +1,173 @@
+{
+ "captured": "2026-10-13",
+ "europepmc_core": {
+  "pmid_42511798": [
+   {
+    "id": "42511798",
+    "source": "MED",
+    "pmid": "42511798",
+    "pmcid": "PMC13411004",
+    "doi": "10.3390/ijms27146455",
+    "title": "KRAS G12C-Targeted Therapy in Non-Small Cell Lung Cancer: From Resistant Salvage to Potential First-Line Backbone.",
+    "authorString": "Rosas D, Barad P, Wright J, Raez L.",
+    "pubYear": "2026",
+    "abstractText": "KRAS G12C, long considered an undruggable oncogenic driver, has become one of the most consequential therapeutic targets in non-small cell lung cancer (NSCLC). The discovery of a cryptic binding pocket accessible in the GDP-bound state enabled covalent inhibitors-sotorasib and adagrasib-that have received regulatory approval for previously treated KRAS G12C-mutant NSCLC, with sotorasib demonstrating PFS and OS superiority over docetaxel in CodeBreaK 200 and adagrasib showing meaningful intracranial activity and a progression-free survival benefit over docetaxel in KRYSTAL-12. Yet response durability is limited by on-target switch-II pocket mutations, upstream RTK and SHP2-mediated bypass signaling, downstream MAPK and PI3K-AKT reactivation, phenotypic plasticity, and adverse modulation by co-occurring STK11, KEAP1, and TP53 alterations. Next-generation covalent inhibitors (divarasib, glecirasib, olomorasib), tri-complex RAS(ON) inhibitors (RMC-6291), pan-KRAS agents, and rationally designed combinations with EGFR, SHP2, SOS1, and PD-1 inhibitors are repositioning KRAS-directed therapy toward earlier lines of treatment. This review integrates the structural, signaling, and clinical biology of KRAS G12C with contemporary trial and real-world evidence to examine the emerging case for first-line KRAS G12C inhibition in genomically defined subsets of NSCLC. First-line use nonetheless remains investigational; platinum-based chemoimmunotherapy remains the standard of care outside of clinical trials, and a frontline indication will require confirmation from randomized phase III trials.",
+    "isOpenAccess": "Y",
+    "journalInfo": {
+     "journal": {
+      "title": "International journal of molecular sciences"
+     }
+    },
+    "pubTypeList": {
+     "pubType": [
+      "review-article",
+      "Review",
+      "Journal Article"
+     ]
+    }
+   }
+  ],
+  "pmid_9500320": [
+   {
+    "id": "9500320",
+    "source": "MED",
+    "pmid": "9500320",
+    "doi": "10.1016/s0140-6736(97)11096-0",
+    "title": "Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children.",
+    "authorString": "Wakefield AJ, Murch SH, Anthony A, Linnell J, Casson DM, Malik M, Berelowitz M, Dhillon AP, Thomson MA, Harvey P, Valentine A, Davies SE, Walker-Smith JA.",
+    "pubYear": "1998",
+    "abstractText": "<h4>Background</h4>We investigated a consecutive series of children with chronic enterocolitis and regressive developmental disorder.<h4>Methods</h4>12 children (mean age 6 years [range 3-10], 11 boys) were referred to a paediatric gastroenterology unit with a history of normal development followed by loss of acquired skills, including language, together with diarrhoea and abdominal pain. Children underwent gastroenterological, neurological, and developmental assessment and review of developmental records. Ileocolonoscopy and biopsy sampling, magnetic-resonance imaging (MRI), electroencephalography (EEG), and lumbar puncture were done under sedation. Barium follow-through radiography was done where possible. Biochemical, haematological, and immunological profiles were examined.<h4>Findings</h4>Onset of behavioural symptoms was associated, by the parents, with measles, mumps, and rubella vaccination in eight of the 12 children, with measles infection in one child, and otitis media in another. All 12 children had intestinal abnormalities, ranging from lymphoid nodular hyperplasia to aphthoid ulceration. Histology showed patchy chronic inflammation in the colon in 11 children and reactive ileal lymphoid hyperplasia in seven, but no granulomas. Behavioural disorders included autism (nine), disintegrative psychosis (one), and possible postviral or vaccinal encephalitis (two). There were no focal neurological abnormalities and MRI and EEG tests were normal. Abnormal laboratory results were significantly raised urinary methylmalonic acid compared with age-matched controls (p=0.003), low haemoglobin in four children, and a low serum IgA in four children.<h4>Interpretation</h4>We identified associated gastrointestinal disease and developmental regression in a group of previously normal children, which was generally associated in time with possible environmental triggers.",
+    "isOpenAccess": "N",
+    "journalInfo": {
+     "journal": {
+      "title": "Lancet (London, England)"
+     }
+    },
+    "pubTypeList": {
+     "pubType": [
+      "Retracted Publication",
+      "Research Support, Non-U.S. Gov't",
+      "Journal Article"
+     ]
+    },
+    "commentCorrectionList": {
+     "commentCorrection": [
+      {
+       "source": "MED",
+       "id": "15016483",
+       "reference": "Lancet. 2004 Mar 6;363(9411):750. doi: 10.1016/S0140-6736(04)15715-2",
+       "type": "Retraction in"
+      },
+      {
+       "source": "MED",
+       "id": "20137807",
+       "reference": "Lancet. 2010 Feb 6;375(9713):445. doi: 10.1016/S0140-6736(10)60175-4",
+       "type": "Retraction in"
+      },
+      {
+       "source": "MED",
+       "id": "21971344",
+       "reference": "Eur J Gastroenterol Hepatol. 2011 Nov;23(11):1082. doi: 10.1097/MEG.0b013e328349d184",
+       "type": "Expression of concern in"
+      }
+     ]
+    }
+   }
+  ],
+  "preprint_PPR1337147": [
+   {
+    "id": "PPR1337147",
+    "source": "PPR",
+    "doi": "10.64898/2026.10.05.26364739",
+    "title": "Prior immune checkpoint inhibitor exposure, treatment interval, and severe hepatotoxicity with sotorasib in KRAS G12C-mutant non-small-cell lung cancer: a systematic review and meta-analysis",
+    "authorString": "Cook S, Kim HS.",
+    "pubYear": "2026",
+    "abstractText": "<h4>ABSTRACT</h4>  <h4>Background</h4>  Severe hepatotoxicity has been reported when sotorasib follows immune checkpoint inhibitor (ICI) therapy, and fixed washout intervals have been proposed. We assessed prior ICI exposure and the ICI-to-sotorasib interval as separate risk factors. <h4>Materials and methods</h4>  We searched PubMed, Europe PMC, Embase, Web of Science, Scopus, CENTRAL, and meeting proceedings for comparative studies of grade 3 or higher hepatotoxicity after KRAS G12C inhibitors. Matched risk ratios (RRs) and unadjusted cohort data were synthesized separately, the latter with an exact conditional odds ratio (OR). Certainty was rated with GRADE. <h4>Results</h4>  Of 530 unique records screened, seven sources were included, all involving sotorasib. In the only matched analysis (meeting abstract, 386 patients per arm), prior ICI exposure was associated with higher risk (13.2% vs 4.4%, RR 3.00, 95% CI 1.76–5.10), whereas matched comparisons at 6 weeks (RR 1.11, 0.61–2.03) and 12 weeks (RR 1.08, 0.52–2.27) detected no difference but could not exclude important effects. All five unadjusted cohorts showed higher risk with shorter intervals, including 21/74 versus 8/75 patients in the earlier versus later interval quartiles of the CodeBreaK 200 trial, although effect sizes were heterogeneous (exact homogeneity P=0.006). Certainty was very low throughout. <h4>Conclusions</h4>  Prior ICI exposure was associated with higher risk of severe sotorasib-associated hepatotoxicity, with very low certainty. A shorter interval was associated with higher risk in unadjusted data only, and current evidence does not establish a mandatory washout period. Liver-test monitoring per the prescribing information applies to all patients, whereas additional surveillance after ICI exposure remains an untested precaution. <h4>HIGHLIGHTS</h4>  Prior ICI exposure was linked to a threefold higher risk of severe sotorasib hepatotoxicity in a matched analysis. Shorter ICI-to-sotorasib intervals carried higher risk in all five unadjusted cohorts, including a phase 3 trial. Matched comparisons at 6 and 12 weeks showed no interval effect, so a fixed washout is not established. Exact conditional methods handled zero-event comparator arms without continuity correction. All comparative evidence was of very low certainty, and adjusted prospective data are needed.",
+    "isOpenAccess": "N",
+    "pubTypeList": {
+     "pubType": [
+      "Preprint"
+     ]
+    }
+   }
+  ],
+  "nct03600883_mention": [
+   {
+    "id": "39846981",
+    "source": "MED",
+    "pmid": "39846981",
+    "pmcid": "PMC11756274",
+    "doi": "10.1093/oncolo/oyae356",
+    "title": "Pooled safety analysis and management of sotorasib-related adverse events in KRAS G12C-mutated advanced non-small cell lung cancer.",
+    "authorString": "Skoulidis F, Li BT, Hochmair M, Govindan R, Vincent M, van der Wekken AJ, Reguart Aransay N, O'Byrne KJ, Girard N, Griesinger F, Nishio M, Häfliger S, Lindsay C, Reinmuth N, Paulus A, Papakotoulas P, Kim SW, Ferreira CG, Pasello G, Duruisseaux M, Gennatas S, Dimou A, Mehta B, Kormany W, Nduka C, Sylvester BE, Ardito-Abraham C, Wang Y, de Langen AJ.",
+    "pubYear": "2025",
+    "abstractText": "<h4>Introduction</h4>We describe the safety of sotorasib monotherapy in patients with KRAS G12C-mutated advanced non-small cell lung cancer (NSCLC) and discuss practical recommendations for managing key risks.<h4>Methods</h4>Incidence rates of treatment-related adverse events (TRAEs) were pooled from 4 clinical trials: CodeBreaK 100 (NCT03600883), CodeBreaK 101 (NCT04185883), CodeBreaK 105 (NCT04380753), and CodeBreaK 200 (NCT04303780) and graded according to CTCAE v5.0. Adverse events were deemed sotorasib-related per investigator causality assessment.<h4>Results</h4>In the pooled population (n = 549), TRAEs were reported in 388 (70.7%) patients (grade 1: 124 [22.6%]; grade 2: 117 [21.3%]; grade ≥ 3: 147 [26.8%]). Gastrointestinal and hepatic TRAEs, including diarrhea (171 [31.1%]), nausea (80 [14.6%]), elevated alanine aminotransferase (ALT; 68 [12.4%]), and elevated aspartate aminotransferase (AST; 67 [12.2%]) were the most common (≥10%). Dose interruption and dose reduction of sotorasib resulted in the resolution of >90% of diarrhea events; median time to resolution were 18.0 days and 22.0 days, respectively. Similar trends were observed for elevated ALT and AST events. Patients who stopped immunotherapy <3 months before initiating sotorasib had a higher incidence of treatment-related hepatotoxicity (80/240 [33.3%]) than those who stopped immunotherapy ≥3 months before initiating sotorasib (26/188 [13.8%]). Treatment-related pneumonitis/interstitial lung disease (ILD) and corrected QT (QTc) prolongation were observed in 9 (1.6%) and 4 (0.7%) patients, respectively. Two (0.4%) patients died with TRAEs, 1 with ILD whose ultimate cause of death was disease progression, and the other with an unknown cause.<h4>Conclusions</h4>Sotorasib has a well-characterized safety profile in patients with KRAS G12C-mutated advanced NSCLC, and key risks are manageable with dose modification.",
+    "isOpenAccess": "Y",
+    "journalInfo": {
+     "journal": {
+      "title": "The oncologist"
+     }
+    },
+    "pubTypeList": {
+     "pubType": [
+      "research-article",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+     ]
+    }
+   }
+  ],
+  "pmid_42768907_html_title": [
+   {
+    "id": "42768907",
+    "source": "MED",
+    "pmid": "42768907",
+    "pmcid": "PMC13594984",
+    "doi": "10.1002/ardp.70342",
+    "title": "Fragment-Based Screening of Heterocyclic Electrophiles Identified Acrylamide Bioisoteres for Covalent KRas&lt;sup&gt;G12C&lt;/sup&gt; Inhibitors.",
+    "authorString": "Péczka N, Keeley A, Ábrányi-Balogh P, Orgován Z, Petri L, Grant EK, Quinn C, Csanády S, Randelovic I, Tóvári J, Bush J, Keserű GM.",
+    "pubYear": "2026",
+    "abstractText": "Covalent fragment approaches gained increasing attention in medicinal chemistry. Our covalent heterocyclic fragment library (Covalent MiniFrags) consisting of five and six membered heterocycles was screened against the oncogenic target KRas<sup>G12C</sup>. First, we detected the labeling of cysteine residues by Ellman's free thiol assay. Primary hits were characterized in a GSH reactivity assay and next we confirmed covalent labeling by RapidFire MS. Fragment hits with the best potential and selectivity were combined in silico with the quinazoline core of ARS-1620, and the best candidate was chosen for synthesis. Binding of the heterocyclic ARS derivative was confirmed via intact MS and HSQC NMR measurements. Its functional activity was characterized by nucleotide exchange assay and cell viability assay on cell lines expressing KRas<sup>G12C</sup>. Our results support that screening of the heterocyclic electrophilic fragment library could provide viable chemical starting points for the development of targeted covalent inhibitors.",
+    "isOpenAccess": "Y",
+    "journalInfo": {
+     "journal": {
+      "title": "Archiv der Pharmazie"
+     }
+    },
+    "pubTypeList": {
+     "pubType": [
+      "brief-report",
+      "Journal Article"
+     ]
+    }
+   }
+  ]
+ },
+ "biomodels_BIOMD0000000010": {
+  "publicationId": "BIOMD0000000010",
+  "name": "Kholodenko2000 - Ultrasensitivity and negative feedback bring oscillations in MAPK cascade"
+ },
+ "opentargets_search_KRAS": [
+  {
+   "id": "ENSG00000133703",
+   "name": "KRAS",
+   "entity": "target"
+  },
+  {
+   "id": "ENSG00000220635",
+   "name": "KRASP1",
+   "entity": "target"
+  },
+  {
+   "id": "ENSG00000270170",
+   "name": "NCBP2AS2",
+   "entity": "target"
+  }
+ ],
+ "notes": "Trimmed live responses: EuropePMC REST search (format=json, resultType=core; only fields citations reads), BioModels /{id}?format=json (name), Open Targets GraphQL search hits for KRAS. commentCorrectionList keeps only retraction / expression-of-concern entries.",
+ "source_urls": {
+  "europepmc": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "biomodels": "https://www.biomodels.org/BIOMD0000000010?format=json",
+  "opentargets": "https://api.platform.opentargets.org/api/v4/graphql"
+ }
+}

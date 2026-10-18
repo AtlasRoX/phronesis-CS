@@ -1,0 +1,128 @@
+# Top-level regression suite: everything under tests/ (auth and tenant isolation, datasets, exports,
+# streaming, clinical modules, scientific validation and the audit regression cases), with a coverage gate,
+# plus ruff on the core packages.
+name: TESTS Core
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "phronesis/**"
+      - "app/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/tests_scientific_validation.yml"
+  push:
+    branches: [main, master]
+    paths:
+      - "phronesis/**"
+      - "app/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/tests_scientific_validation.yml"
+  workflow_dispatch:
+
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+
+jobs:
+  core-tests:
+    name: Core tests (tests/)
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15, windows-latest]
+        python-version: ["3.12"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      # Network cases (@pytest.mark.network) stay skipped: PHRONESIS_LIVE_TESTS is not set here.
+      # Coverage scope comes from [tool.coverage.run] in pyproject.toml (source = phronesis).
+      - name: Run tests/ with coverage
+        run: uv run coverage run -m pytest tests/ -q --durations=10
+
+      # Measured 78% (41,167 statements) on 2026-10-17; the gate sits 2 points below so platform-specific
+      # branches do not flake it. Raise it as coverage grows; never lower it to make a PR pass.
+      - name: Coverage report and gate
+        run: uv run coverage report --skip-covered --sort=cover --fail-under=76
+
+      - name: Coverage XML
+        if: always() && matrix.os == 'ubuntu-latest'
+        run: uv run coverage xml -o coverage-core.xml
+
+      - name: Upload coverage report
+        if: always() && matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage-core
+          path: coverage-core.xml
+          if-no-files-found: ignore
+
+  lint:
+    name: Ruff (core packages)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      # Blocking: syntax errors, undefined names and other pyflakes errors that break at runtime (clean today).
+      - name: Ruff (runtime errors, blocking)
+        run: >-
+          uv run ruff check --select E9,F63,F7,F82 --output-format=github
+          phronesis/agents phronesis/agentic phronesis/tools app tests
+
+      # Report only: the full [tool.ruff.lint] rule set had ~2,900 pre-existing findings on 2026-10-17 (mostly
+      # UP006/UP045 annotation style, autofixable). Drop --exit-zero once `ruff check --fix` has been applied.
+      - name: Ruff (full rule set, report only)
+        run: >-
+          uv run ruff check --exit-zero --statistics
+          phronesis/agents phronesis/agentic phronesis/tools app tests
+
+  type-check:
+    name: Mypy (new modules)
+    runs-on: ubuntu-latest
+    # Strict mypy has never been enforced on this codebase; this job reports without blocking until the
+    # listed modules are clean. Remove continue-on-error then, and widen the module list.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      - name: Run mypy
+        run: >-
+          uv run mypy --ignore-missing-imports
+          phronesis/agents phronesis/trials phronesis/drugintel phronesis/variants
+          phronesis/provenance phronesis/export phronesis/datasets

@@ -1,0 +1,175 @@
+{
+ "summary": {
+  "token": "MjAyNjEwMDkwNDM4MzlfNzQwNw%3D%3D",
+  "projection": true,
+  "interactors": false,
+  "type": "OVERREPRESENTATION",
+  "sampleName": "",
+  "text": true,
+  "includeDisease": true
+ },
+ "expression": {
+  "columnNames": []
+ },
+ "identifiersNotFound": 0,
+ "pathwaysFound": 9,
+ "pathways": [
+  {
+   "stId": "R-HSA-8866427",
+   "dbId": 8866427,
+   "name": "VLDLR internalisation and degradation",
+   "species": {
+    "dbId": 48887,
+    "taxId": "9606",
+    "name": "Homo sapiens"
+   },
+   "llp": true,
+   "entities": {
+    "resource": "TOTAL",
+    "total": 16,
+    "found": 1,
+    "ratio": 0.0009845547966278998,
+    "pValue": 0.0009845547966278456,
+    "fdr": 0.006707279552027545,
+    "exp": []
+   },
+   "reactions": {
+    "resource": "TOTAL",
+    "total": 4,
+    "found": 3,
+    "ratio": 0.0002486170675616881
+   },
+   "inDisease": false
+  },
+  {
+   "stId": "R-HSA-8964038",
+   "dbId": 8964038,
+   "name": "LDL clearance",
+   "species": {
+    "dbId": 48887,
+    "taxId": "9606",
+    "name": "Homo sapiens"
+   },
+   "llp": true,
+   "entities": {
+    "resource": "TOTAL",
+    "total": 28,
+    "found": 1,
+    "ratio": 0.0017229708940988246,
+    "pValue": 0.0017229708940987853,
+    "fdr": 0.006707279552027545,
+    "exp": []
+   },
+   "reactions": {
+    "resource": "TOTAL",
+    "total": 20,
+    "found": 5,
+    "ratio": 0.0012430853378084406
+   },
+   "inDisease": false
+  },
+  {
+   "stId": "R-HSA-8964043",
+   "dbId": 8964043,
+   "name": "Plasma lipoprotein clearance",
+   "species": {
+    "dbId": 48887,
+    "taxId": "9606",
+    "name": "Homo sapiens"
+   },
+   "llp": false,
+   "entities": {
+    "resource": "TOTAL",
+    "total": 46,
+    "found": 1,
+    "ratio": 0.002830595040305212,
+    "pValue": 0.0028305950403052504,
+    "fdr": 0.006707279552027545,
+    "exp": []
+   },
+   "reactions": {
+    "resource": "TOTAL",
+    "total": 36,
+    "found": 8,
+    "ratio": 0.002237553608055193
+   },
+   "inDisease": false
+  },
+  {
+   "stId": "R-HSA-174824",
+   "dbId": 174824,
+   "name": "Plasma lipoprotein assembly, remodeling, and clearance",
+   "species": {
+    "dbId": 48887,
+    "taxId": "9606",
+    "name": "Homo sapiens"
+   },
+   "llp": false,
+   "entities": {
+    "resource": "TOTAL",
+    "total": 102,
+    "found": 1,
+    "ratio": 0.006276536828502861,
+    "pValue": 0.006276536828502821,
+    "fdr": 0.006707279552027545,
+    "exp": []
+   },
+   "reactions": {
+    "resource": "TOTAL",
+    "total": 86,
+    "found": 8,
+    "ratio": 0.005345266952576294
+   },
+   "inDisease": false
+  },
+  {
+   "stId": "R-HSA-8957275",
+   "dbId": 8957275,
+   "name": "Post-translational protein phosphorylation",
+   "species": {
+    "dbId": 48887,
+    "taxId": "9606",
+    "name": "Homo sapiens"
+   },
+   "llp": true,
+   "entities": {
+    "resource": "TOTAL",
+    "total": 109,
+    "found": 1,
+    "ratio": 0.006707279552027568,
+    "pValue": 0.006707279552027545,
+    "fdr": 0.006707279552027545,
+    "exp": []
+   },
+   "reactions": {
+    "resource": "TOTAL",
+    "total": 1,
+    "found": 1,
+    "ratio": 6.215426689042202e-05
+   },
+   "inDisease": false
+  }
+ ],
+ "resourceSummary": [
+  {
+   "resource": "TOTAL",
+   "pathways": 9,
+   "filtered": 9
+  },
+  {
+   "resource": "UNIPROT",
+   "pathways": 9,
+   "filtered": 9
+  }
+ ],
+ "speciesSummary": [
+  {
+   "dbId": 48887,
+   "taxId": "9606",
+   "name": "Homo sapiens",
+   "pathways": 9,
+   "filtered": 9
+  }
+ ],
+ "warnings": []
+}

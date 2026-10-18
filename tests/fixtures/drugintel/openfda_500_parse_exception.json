@@ -1,0 +1,7 @@
+{
+ "error": {
+  "code": "SERVER_ERROR",
+  "message": "Check your request and try again",
+  "details": "[parse_exception] parse_exception: Encountered \" \":\" \": \"\" at line 1, column 49.\nWas expecting one of:\n    <BAREOPER> ...\n    \"(\" ...\n    \"*\" ...\n    <QUOTED> ...\n    <TERM> ...\n    <PREFIXTERM> ...\n    <WILDTERM> ...\n    <REGEXPTERM> ...\n    \"[\" ...\n    \"{\" ...\n    <NUMBER> ...\n    "
+ }
+}

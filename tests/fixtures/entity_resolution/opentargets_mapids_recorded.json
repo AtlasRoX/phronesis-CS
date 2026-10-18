@@ -1,0 +1,222 @@
+{
+ "requests": [
+  [
+   "SHP2",
+   "inhibition",
+   "TNO155",
+   "synergistic",
+   "sotorasib",
+   "KRAS",
+   "G12C",
+   "NSCLC",
+   "SHP2 inhibition",
+   "TNO155 synergistic",
+   "KRAS G12C",
+   "G12C NSCLC",
+   "inhibition with TNO155",
+   "synergistic with sotorasib",
+   "sotorasib in KRAS",
+   "KRAS G12C NSCLC",
+   "SHP2 inhibition with TNO155",
+   "inhibition with TNO155 synergistic",
+   "TNO155 synergistic with sotorasib",
+   "sotorasib in KRAS G12C"
+  ],
+  [
+   "clinical",
+   "relevance",
+   "melanoma",
+   "treated",
+   "dabrafenib",
+   "clinical relevance",
+   "melanoma treated",
+   "treated with dabrafenib",
+   "melanoma treated with dabrafenib"
+  ],
+  [
+   "pathogenic",
+   "pathogenic in KRAS"
+  ],
+  [
+   "BI-3406",
+   "combined",
+   "AMG510",
+   "work",
+   "AML",
+   "BI-3406 combined",
+   "AMG510 work",
+   "combined with AMG510",
+   "work in AML",
+   "BI-3406 combined with AMG510",
+   "combined with AMG510 work",
+   "AMG510 work in AML"
+  ],
+  [
+   "Role",
+   "MLL",
+   "CAP",
+   "leukemia",
+   "Role of MLL",
+   "MLL and CAP",
+   "CAP in leukemia"
+  ]
+ ],
+ "mappings": {
+  "AMG510": [
+   {
+    "id": "CHEMBL4535757",
+    "name": "SOTORASIB",
+    "entity": "drug",
+    "score": 1
+   }
+  ],
+  "AML": [
+   {
+    "id": "MONDO_0018874",
+    "name": "acute myeloid leukemia",
+    "entity": "disease",
+    "score": 1
+   },
+   {
+    "id": "CHEMBL1200402",
+    "name": "AMLODIPINE BESYLATE",
+    "entity": "drug",
+    "score": 1
+   },
+   {
+    "id": "CHEMBL1491",
+    "name": "AMLODIPINE",
+    "entity": "drug",
+    "score": 1
+   }
+  ],
+  "CAP": [
+   {
+    "id": "CHEMBL5095437",
+    "name": "CENTELLA ASIATICA EXTRACT",
+    "entity": "drug",
+    "score": 1
+   },
+   {
+    "id": "CHEMBL1773",
+    "name": "CAPECITABINE",
+    "entity": "drug",
+    "score": 1
+   },
+   {
+    "id": "ENSG00000095637",
+    "name": "SORBS1",
+    "entity": "target",
+    "score": 1
+   },
+   {
+    "id": "ENSG00000131236",
+    "name": "CAP1",
+    "entity": "target",
+    "score": 1
+   },
+   {
+    "id": "ENSG00000113441",
+    "name": "LNPEP",
+    "entity": "target",
+    "score": 1
+   },
+   {
+    "id": "ENSG00000165996",
+    "name": "HACD1",
+    "entity": "target",
+    "score": 1
+   },
+   {
+    "id": "ENSG00000124570",
+    "name": "SERPINB6",
+    "entity": "target",
+    "score": 1
+   },
+   {
+    "id": "ENSG00000141867",
+    "name": "BRD4",
+    "entity": "target",
+    "score": 1
+   }
+  ],
+  "KRAS": [
+   {
+    "id": "ENSG00000133703",
+    "name": "KRAS",
+    "entity": "target",
+    "score": 1
+   }
+  ],
+  "MLL": [
+   {
+    "id": "ENSG00000118058",
+    "name": "KMT2A",
+    "entity": "target",
+    "score": 1
+   }
+  ],
+  "NSCLC": [
+   {
+    "id": "MONDO_0005233",
+    "name": "non-small cell lung carcinoma",
+    "entity": "disease",
+    "score": 1
+   }
+  ],
+  "SHP2": [
+   {
+    "id": "ENSG00000179295",
+    "name": "PTPN11",
+    "entity": "target",
+    "score": 1
+   }
+  ],
+  "TNO155": [
+   {
+    "id": "CHEMBL4650521",
+    "name": "BATOPROTAFIB",
+    "entity": "drug",
+    "score": 1
+   }
+  ],
+  "dabrafenib": [
+   {
+    "id": "CHEMBL2028663",
+    "name": "DABRAFENIB",
+    "entity": "drug",
+    "score": 1
+   }
+  ],
+  "leukemia": [
+   {
+    "id": "MONDO_0005059",
+    "name": "leukemia",
+    "entity": "disease",
+    "score": 1
+   },
+   {
+    "id": "MONDO_0004355",
+    "name": "childhood leukemia",
+    "entity": "disease",
+    "score": 1
+   }
+  ],
+  "melanoma": [
+   {
+    "id": "MONDO_0005105",
+    "name": "melanoma",
+    "entity": "disease",
+    "score": 1
+   }
+  ],
+  "sotorasib": [
+   {
+    "id": "CHEMBL4535757",
+    "name": "SOTORASIB",
+    "entity": "drug",
+    "score": 1
+   }
+  ]
+ }
+}

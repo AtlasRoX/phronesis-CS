@@ -1,0 +1,458 @@
+{
+ "data": {
+  "mapIds": {
+   "total": 28,
+   "mappings": [
+    {
+     "term": "Review",
+     "hits": []
+    },
+    {
+     "term": "recent",
+     "hits": []
+    },
+    {
+     "term": "Phase",
+     "hits": []
+    },
+    {
+     "term": "clinical",
+     "hits": []
+    },
+    {
+     "term": "trials",
+     "hits": []
+    },
+    {
+     "term": "HER2",
+     "hits": [
+      {
+       "id": "ENSG00000141736",
+       "name": "ERBB2",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "antibody-drug",
+     "hits": []
+    },
+    {
+     "term": "conjugates",
+     "hits": []
+    },
+    {
+     "term": "breast",
+     "hits": []
+    },
+    {
+     "term": "cancer",
+     "hits": [
+      {
+       "id": "MONDO_0004992",
+       "name": "cancer",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "without",
+     "hits": []
+    },
+    {
+     "term": "running",
+     "hits": []
+    },
+    {
+     "term": "simulations",
+     "hits": []
+    },
+    {
+     "term": "Phase 2",
+     "hits": []
+    },
+    {
+     "term": "clinical trials",
+     "hits": []
+    },
+    {
+     "term": "breast cancer",
+     "hits": [
+      {
+       "id": "MONDO_0004989",
+       "name": "breast carcinoma",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "MONDO_0007254",
+       "name": "breast cancer",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "in breast cancer",
+     "hits": []
+    },
+    {
+     "term": "SHP2",
+     "hits": [
+      {
+       "id": "ENSG00000179295",
+       "name": "PTPN11",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "inhibitor",
+     "hits": []
+    },
+    {
+     "term": "combination",
+     "hits": []
+    },
+    {
+     "term": "sotorasib",
+     "hits": [
+      {
+       "id": "CHEMBL4535757",
+       "name": "SOTORASIB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "KRAS",
+     "hits": [
+      {
+       "id": "ENSG00000133703",
+       "name": "KRAS",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "G12C",
+     "hits": []
+    },
+    {
+     "term": "NSCLC",
+     "hits": [
+      {
+       "id": "MONDO_0005233",
+       "name": "non-small cell lung carcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "KRAS G12C",
+     "hits": []
+    },
+    {
+     "term": "the",
+     "hits": []
+    },
+    {
+     "term": "signaling",
+     "hits": []
+    },
+    {
+     "term": "pathway",
+     "hits": []
+    },
+    {
+     "term": "resistance",
+     "hits": []
+    },
+    {
+     "term": "acquired resistance",
+     "hits": []
+    },
+    {
+     "term": "EGFR",
+     "hits": [
+      {
+       "id": "ENSG00000146648",
+       "name": "EGFR",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "T790M",
+     "hits": []
+    },
+    {
+     "term": "osimertinib",
+     "hits": [
+      {
+       "id": "CHEMBL3353410",
+       "name": "OSIMERTINIB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "lung",
+     "hits": [
+      {
+       "id": "MONDO_0021117",
+       "name": "lung neoplasm",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "adenocarcinoma",
+     "hits": [
+      {
+       "id": "MONDO_0004970",
+       "name": "adenocarcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "lung adenocarcinoma",
+     "hits": [
+      {
+       "id": "EFO_0005288",
+       "name": "non-small cell lung adenocarcinoma",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "MONDO_0005061",
+       "name": "lung adenocarcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "melanoma",
+     "hits": [
+      {
+       "id": "MONDO_0005105",
+       "name": "melanoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "BRAF",
+     "hits": [
+      {
+       "id": "ENSG00000157764",
+       "name": "BRAF",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "V600E",
+     "hits": []
+    },
+    {
+     "term": "dabrafenib",
+     "hits": [
+      {
+       "id": "CHEMBL2028663",
+       "name": "DABRAFENIB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "trametinib",
+     "hits": [
+      {
+       "id": "CHEMBL2103875",
+       "name": "TRAMETINIB",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "lung cancer",
+     "hits": [
+      {
+       "id": "MONDO_0005138",
+       "name": "lung carcinoma",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "MONDO_0021117",
+       "name": "lung neoplasm",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "MONDO_0008903",
+       "name": "lung cancer",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "pancreatic",
+     "hits": []
+    },
+    {
+     "term": "PDAC",
+     "hits": [
+      {
+       "id": "MONDO_0005184",
+       "name": "pancreatic ductal adenocarcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "AML",
+     "hits": [
+      {
+       "id": "MONDO_0018874",
+       "name": "acute myeloid leukemia",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL1200402",
+       "name": "AMLODIPINE BESYLATE",
+       "entity": "drug",
+       "score": 1
+      },
+      {
+       "id": "CHEMBL1491",
+       "name": "AMLODIPINE",
+       "entity": "drug",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "CRC",
+     "hits": [
+      {
+       "id": "MONDO_0005575",
+       "name": "colorectal cancer",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "MONDO_0024331",
+       "name": "colorectal carcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "colorectal cancer",
+     "hits": [
+      {
+       "id": "MONDO_0005575",
+       "name": "colorectal cancer",
+       "entity": "disease",
+       "score": 1
+      },
+      {
+       "id": "MONDO_0024331",
+       "name": "colorectal carcinoma",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "Analyze",
+     "hits": []
+    },
+    {
+     "term": "downstream",
+     "hits": []
+    },
+    {
+     "term": "targets",
+     "hits": []
+    },
+    {
+     "term": "tumor",
+     "hits": [
+      {
+       "id": "MONDO_0005070",
+       "name": "neoplasm",
+       "entity": "disease",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "microenvironment",
+     "hits": []
+    },
+    {
+     "term": "single-cell",
+     "hits": []
+    },
+    {
+     "term": "Find",
+     "hits": [
+      {
+       "id": "ENSG00000164935",
+       "name": "DCSTAMP",
+       "entity": "target",
+       "score": 1
+      }
+     ]
+    },
+    {
+     "term": "papers",
+     "hits": []
+    },
+    {
+     "term": "only",
+     "hits": []
+    },
+    {
+     "term": "literature",
+     "hits": []
+    },
+    {
+     "term": "Summarize",
+     "hits": []
+    },
+    {
+     "term": "simulate",
+     "hits": []
+    },
+    {
+     "term": "anything",
+     "hits": []
+    }
+   ]
+  }
+ }
+}

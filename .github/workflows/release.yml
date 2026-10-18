@@ -1,0 +1,250 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release:
+    name: Release & Publish
+    runs-on: ubuntu-latest
+    outputs:
+      released: ${{ steps.release.outputs.released }}
+      tag: ${{ steps.release.outputs.tag }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Force release branch to workflow SHA
+        run: git reset --hard ${{ github.sha }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      - name: Run quality checks
+        run: |
+          uv run ruff check phronesis/
+          uv run bandit -c pyproject.toml -r phronesis/
+
+      - name: Semantic release
+        id: release
+        uses: python-semantic-release/python-semantic-release@v10.5.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git_committer_name: github-actions[bot]
+          git_committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+          build: "false"
+
+      - name: Build package
+        if: steps.release.outputs.released == 'true'
+        run: |
+          rm -rf dist build release *.egg-info
+          rm -f phronesis-compose-*.tar.gz phronesis-compose-*.zip
+          uv build
+
+      - name: Verify package integrity
+        if: steps.release.outputs.released == 'true'
+        run: uv run twine check dist/*
+
+      - name: Test package installation
+        if: steps.release.outputs.released == 'true'
+        run: |
+          uv venv test-env
+          uv pip install --python test-env dist/*.whl --dry-run
+
+      - name: Prepare compose release bundle
+        if: steps.release.outputs.released == 'true'
+        run: |
+          VERSION="${{ steps.release.outputs.tag }}"
+
+          rm -rf release
+          mkdir -p release
+
+          for app in phronesis lithoscribe synapta; do
+            app_path="phronesis/$app/docker-compose"
+
+            if [ -d "$app_path" ]; then
+              mkdir -p "release/$app/cpu"
+              mkdir -p "release/$app/gpu"
+
+              if [ -f "$app_path/cpu/docker-compose.yml" ]; then
+                cp "$app_path/cpu/docker-compose.yml" "release/$app/cpu/docker-compose.yml"
+              fi
+
+              if [ -f "$app_path/gpu/docker-compose.yml" ]; then
+                cp "$app_path/gpu/docker-compose.yml" "release/$app/gpu/docker-compose.yml"
+              fi
+            fi
+          done
+
+          cat > release/README.md <<EOF
+          # Phronesis Compose Bundle ${VERSION}
+
+          This archive contains Docker Compose configurations for the published release tag.
+
+          Included applications:
+          - phronesis
+          - lithoscribe
+          - synapta
+
+          Use the CPU or GPU subdirectory for the target app, provide the required environment variables, and then run:
+
+          \`\`\`bash
+          docker compose up -d
+          \`\`\`
+          EOF
+
+          cat > "release/phronesis/cpu/.env.example" <<'EOF'
+          OPENAI_API_KEY=your_openai_api_key_here
+          LANGCHAIN_TRACING_V2=true
+          LANGCHAIN_API_KEY=your_langchain_api_key_here
+          NVIDIA_API_KEY=your_nvidia_api_key_here
+          MILVUS_HOST=milvus-standalone
+          MILVUS_PORT=19530
+          MILVUS_USER=root
+          MILVUS_PASSWORD=Milvus
+          MILVUS_DATABASE=synapta_primekg
+          BATCH_SIZE=500
+          EOF
+          cp "release/phronesis/cpu/.env.example" "release/phronesis/gpu/.env.example"
+
+          cat > "release/synapta/cpu/.env.example" <<'EOF'
+          OPENAI_API_KEY=your_openai_api_key_here
+          LANGCHAIN_TRACING_V2=true
+          LANGCHAIN_API_KEY=your_langchain_api_key_here
+          NVIDIA_API_KEY=your_nvidia_api_key_here
+          MILVUS_HOST=milvus-standalone
+          MILVUS_PORT=19530
+          MILVUS_USER=root
+          MILVUS_PASSWORD=Milvus
+          MILVUS_DATABASE=synapta_primekg
+          BATCH_SIZE=500
+          EOF
+          cp "release/synapta/cpu/.env.example" "release/synapta/gpu/.env.example"
+
+          cat > "release/lithoscribe/cpu/.env.example" <<'EOF'
+          OPENAI_API_KEY=your_openai_api_key_here
+          LANGCHAIN_TRACING_V2=true
+          LANGCHAIN_API_KEY=your_langchain_api_key_here
+          NVIDIA_API_KEY=your_nvidia_api_key_here
+          ZOTERO_API_KEY=your_zotero_api_key_here
+          ZOTERO_USER_ID=your_zotero_user_id_here
+          MILVUS_HOST=milvus-standalone
+          MILVUS_PORT=19530
+          MILVUS_DB_NAME=pdf_rag_db
+          MILVUS_COLLECTION_NAME=pdf_rag_documents
+          EOF
+          cp "release/lithoscribe/cpu/.env.example" "release/lithoscribe/gpu/.env.example"
+
+          tar -czf "phronesis-compose-${VERSION}.tar.gz" -C release .
+          zip -rq "phronesis-compose-${VERSION}.zip" release
+
+      - name: Publish to PyPI
+        if: steps.release.outputs.released == 'true'
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          verify-metadata: true
+          verbose: true
+          skip-existing: true
+
+      - name: Upload release assets
+        if: steps.release.outputs.released == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ steps.release.outputs.tag }}" \
+            dist/* \
+            "phronesis-compose-${{ steps.release.outputs.tag }}.tar.gz" \
+            "phronesis-compose-${{ steps.release.outputs.tag }}.zip" \
+            --clobber
+
+  docker:
+    name: Docker Release
+    needs: release
+    if: needs.release.outputs.released == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - image: phronesis
+            dockerfile: phronesis/phronesis/Dockerfile
+            suffix: ""
+            latest_tag: latest
+            install_cuda: "true"
+          - image: phronesis
+            dockerfile: phronesis/phronesis/Dockerfile
+            suffix: "-cpu"
+            latest_tag: latest-cpu
+            install_cuda: "false"
+          - image: vivarix
+            dockerfile: phronesis/vivarix/Dockerfile
+            suffix: ""
+            latest_tag: latest
+            install_cuda: "false"
+          - image: lithoscribe
+            dockerfile: phronesis/lithoscribe/Dockerfile
+            suffix: ""
+            latest_tag: latest
+            install_cuda: "false"
+          - image: synapta
+            dockerfile: phronesis/synapta/Dockerfile
+            suffix: ""
+            latest_tag: latest
+            install_cuda: "true"
+          - image: synapta
+            dockerfile: phronesis/synapta/Dockerfile
+            suffix: "-cpu"
+            latest_tag: latest-cpu
+            install_cuda: "false"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache || true
+          sudo apt-get clean || true
+          sudo apt-get autoremove -y || true
+          sudo docker system prune -af || true
+          sudo docker builder prune -af || true
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          file: ${{ matrix.dockerfile }}
+          push: true
+          platforms: linux/amd64
+          tags: |
+            vpatientengine/${{ matrix.image }}:${{ needs.release.outputs.tag }}${{ matrix.suffix }}
+            vpatientengine/${{ matrix.image }}:${{ matrix.latest_tag }}
+          build-args: |
+            INSTALL_CUDA=${{ matrix.install_cuda }}

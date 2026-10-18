@@ -1,0 +1,565 @@
+{
+ "data": {
+  "evidenceItems": {
+   "totalCount": 21,
+   "nodes": [
+    {
+     "id": 1300,
+     "name": "EID1300",
+     "evidenceLevel": "B",
+     "evidenceType": "PROGNOSTIC",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "evidenceRating": 4,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In 219 patients with metastatic pancreatic ductal adenocarcinoma, a multivariate analysis identified KRAS G12D mutations as an independent predictor of poorer prognosis both in patients that have received chemotherapy (N=49/162), and the entire series (N=73/219). HR of 1.84 (P=0.02) and 1.44 (P=0.01), respectively.",
+     "disease": {
+      "name": "Pancreatic Cancer",
+      "doid": "1793"
+     },
+     "therapies": [],
+     "source": {
+      "citationId": "27010960",
+      "sourceType": "PUBMED",
+      "citation": "Bournet et al., 2016",
+      "publicationYear": 2016
+     }
+    },
+    {
+     "id": 305,
+     "name": "EID305",
+     "evidenceLevel": "D",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidenceRating": 4,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": "COMBINATION",
+     "description": "The use of NVP-BEZ235 in conjunction with ARRY-142886, but not as monotherapy, in a lung cancer mouse model with an inducible KRAS G12D mutation (lox-stop-lox KRAS G12D floxed via inhaled adenoviral Cre) led to marked tumor regression.",
+     "disease": {
+      "name": "Lung Adenocarcinoma",
+      "doid": "3910"
+     },
+     "therapies": [
+      {
+       "name": "Selumetinib"
+      },
+      {
+       "name": "Dactolisib"
+      }
+     ],
+     "source": {
+      "citationId": "19029981",
+      "sourceType": "PUBMED",
+      "citation": "Engelman et al., 2008",
+      "publicationYear": 2008
+     }
+    },
+    {
+     "id": 228,
+     "name": "EID228",
+     "evidenceLevel": "B",
+     "evidenceType": "DIAGNOSTIC",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "POSITIVE",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "KRAS G12D mutation occurs in never smokers significantly more often than in smokers.",
+     "disease": {
+      "name": "Lung Cancer",
+      "doid": "1324"
+     },
+     "therapies": [],
+     "source": {
+      "citationId": "23014527",
+      "sourceType": "PUBMED",
+      "citation": "Dogan et al., 2012",
+      "publicationYear": 2012
+     }
+    },
+    {
+     "id": 1215,
+     "name": "EID1215",
+     "evidenceLevel": "B",
+     "evidenceType": "PROGNOSTIC",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "BETTER_OUTCOME",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In 119 metastatic colorectal cancer patients treated with cetuximab-based first-line chemotherapy, KRAS G12D mutations (N=44) were associated with longer overall patient survival when compared to other KRAS G12 mutations (23.3 vs 14-18 months; G12V, A, C, S, R).",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [],
+     "source": {
+      "citationId": "22948721",
+      "sourceType": "PUBMED",
+      "citation": "Modest et al., 2012",
+      "publicationYear": 2012
+     }
+    },
+    {
+     "id": 1311,
+     "name": "EID1311",
+     "evidenceLevel": "B",
+     "evidenceType": "PROGNOSTIC",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In 171 patients with tumors of the exocrine pancreas, a KRAS G12D mutation (N=60) was associated with shorter overall survival than being wild-type for KRAS (N=21; Hazard Ratio: 95% CI between 1.14 and 2.67). Additionally, KRAS mutations combined with CDKN2A alterations (N=26) showed an even worse OS than those wild-type for both (N=17; HR: 95%CI 1.33-7.10).",
+     "disease": {
+      "name": "Malignant Exocrine Pancreas Neoplasm",
+      "doid": "1795"
+     },
+     "therapies": [],
+     "source": {
+      "citationId": "23565280",
+      "sourceType": "PUBMED",
+      "citation": "Rachakonda et al., 2013",
+      "publicationYear": 2013
+     }
+    },
+    {
+     "id": 1732,
+     "name": "EID1732",
+     "evidenceLevel": "B",
+     "evidenceType": "PROGNOSTIC",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "Exon-2 KRAS mutation status was analyzed in 219 patients with pancreatic ductal carcinoma, excluding those who had previously undergone chemotherapy, first-line pancreatic resection, or neoadjuvant treatment with chemotherapy or radiotherapy. 72 patients had wild-type KRAS, 147 had a codon-12 KRAS mutation (G12D, G12V, or G12R) and 73 had a G12D KRAS mutation, specifically. There was no significant difference in overall survival between wild-type patients and patients with any type of exon-12 mutation. However, patients with the G12D mutation exhibited significantly lower overall survival compared to wild-type patients in univariate and multivariate analyses. This difference in overall survival between wild-type and G12D patients persisted in the subset of patients who underwent chemotherapy at any point after enrollment.",
+     "disease": {
+      "name": "Pancreatic Ductal Carcinoma",
+      "doid": "3587"
+     },
+     "therapies": [],
+     "source": {
+      "citationId": "27010960",
+      "sourceType": "PUBMED",
+      "citation": "Bournet et al., 2016",
+      "publicationYear": 2016
+     }
+    },
+    {
+     "id": 2207,
+     "name": "EID2207",
+     "evidenceLevel": "B",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "This was a retrospective study of 691 cetuximab treated patients with metastatic colorectal cancer. Of those, 76 patients harbored KRAS G12D, were BRAF, NRAS and PIK3CA wt, and had individual response data. Five patients had partial response, 34 had stable disease, and 37 progressed. Treatments included cetuximab + irinotecan (n=61), cetuximab + FOLFIRI (n=6), cetuximab monotherapy (n=5), cetuximab + oxaliplatin + 5FU (n=2), cetuximab + 5FU (n=1), cetuximab + oxaliplatin + bevacizumab (n=1). Median PFS was 12 weeks (3-169 weeks), median OS was 31 weeks (6-232 weeks), and median number of previous chemotherapy lines was 2 (0-5). Median age was 62 years old (32-86), and there were 43 males and 33 females. Using these data and data from the larger cohort, authors concluded that KRAS mutation was strongly associated with poor response to cetuximab and suggested that mutation status of KRAS is the most informative compared to BRAF, NRAS, and PIK3CA exon 20 for predicting cetuximab response.",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [
+      {
+       "name": "Cetuximab"
+      }
+     ],
+     "source": {
+      "citationId": "20619739",
+      "sourceType": "PUBMED",
+      "citation": "De Roock et al., 2010",
+      "publicationYear": 2010
+     }
+    },
+    {
+     "id": 1898,
+     "name": "EID1898",
+     "evidenceLevel": "C",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "A patient with metastatic colorectal cancer was enrolled in a phase 2 clinical trial (NCT01174121). 24 cultures of tumor-infiltrating lymphocytes were expanded from 3 lung metastasis resections. After cultures were tested for reactivity, the patient was infused with 1.48 x 10^11 tumor-infiltrating lymphocytes (75% CD8+ T cells) that were specifically reactive to KRAS G12D. All 7 metastatic lung lesions regressed 40 days after therapy, and the patient had a 9-month partial response.",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [
+      {
+       "name": "Therapeutic Tumor Infiltrating Lymphocytes"
+      }
+     ],
+     "source": {
+      "citationId": "27959684",
+      "sourceType": "PUBMED",
+      "citation": "Tran et al., 2016",
+      "publicationYear": 2016
+     }
+    },
+    {
+     "id": 2193,
+     "name": "EID2193",
+     "evidenceLevel": "C",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "One patient participating in a large retrospective study of EGFR monoclonal antibodies in metastatic, treatment refractory colorectal cancer had a tumor which harbored KRAS G12D, was wildtype for NRAS, BRAF and PIK3CA, and had individual response data. This patient was was a 55 year old female treated with panitumumab monotherapy as 3rd line therapy who experienced progressive disease (PFS: 8 weeks; OS: 9 weeks).",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [
+      {
+       "name": "Panitumumab"
+      }
+     ],
+     "source": {
+      "citationId": "20619739",
+      "sourceType": "PUBMED",
+      "citation": "De Roock et al., 2010",
+      "publicationYear": 2010
+     }
+    },
+    {
+     "id": 2218,
+     "name": "EID2218",
+     "evidenceLevel": "D",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": "COMBINATION",
+     "description": "In 28 out of 40 (70%) metastatic colorectal cancer tumors harboring KRAS, NRAS, BRAF or PIK3CA mutations and implanted into mice, the therapeutic combination of the MEK inhibitor AZD6244 and the PI3K/mTor inhibitor BEZ235 resulted in disease stabilization. Mean tumor growth was lower in the tumors treated with AZD6244+ BEZ235 (+77% vs. +267%, P=1E-6) compared to AZD6244 alone and (+77% vs. +222%, P=0.0014) BEZ235 alone. 32/40 tumors studied had KRAS mutations with 9 G12D (2 with PIK3CA H1047R) and 13 other G12 mutations.",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [
+      {
+       "name": "Dactolisib"
+      },
+      {
+       "name": "Selumetinib"
+      }
+     ],
+     "source": {
+      "citationId": "22392911",
+      "sourceType": "PUBMED",
+      "citation": "Migliardi et al., 2012",
+      "publicationYear": 2012
+     }
+    },
+    {
+     "id": 3958,
+     "name": "EID3958",
+     "evidenceLevel": "D",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 3,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In an in vitro study, a MCAS cell line expressing KRAS G12D mutation was associated with reduced sensitivity to cetuximab treatment as compared to RMUG-L and OMC-1 cells expressing wild-type KRAS. Resistance was determined by assessing cell growth. Further, in an in vivo experiment, KRAS G12D expressing MCAS xenografts in nude mice had reduced response to cetuximab, as compared to KRAS wild-type expressing RMUG-L xenografts. Resistance was determined by assessing tumor growth.",
+     "disease": {
+      "name": "Ovarian Cancer",
+      "doid": "2394"
+     },
+     "therapies": [
+      {
+       "name": "Cetuximab"
+      }
+     ],
+     "source": {
+      "citationId": "22246397",
+      "sourceType": "PUBMED",
+      "citation": "Sato et al., 2012",
+      "publicationYear": 2012
+     }
+    },
+    {
+     "id": 2240,
+     "name": "EID2240",
+     "evidenceLevel": "B",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 2,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In recurrent lung cancer patients treated with the epidermal growth factor receptor tyrosine kinase inhibitor gefitinib, patients with KRAS mutations had a lower frequency of partial response (PR) and stable disease (SD) and a higher rate of progressive disease (PD) (PR:0, SD:1, PD:15 vs. PR:24, SD:8, PD:14; P=0.0274) compared to wildtype KRAS patients. Patients with KRAS mutations also had a shorter overall survival compared to wildtype KRAS patients (HR:2.542, 95% CI:1.048-6.168, P=0.0390).",
+     "disease": {
+      "name": "Lung Cancer",
+      "doid": "1324"
+     },
+     "therapies": [
+      {
+       "name": "Gefitinib"
+      }
+     ],
+     "source": {
+      "citationId": "17409929",
+      "sourceType": "PUBMED",
+      "citation": "Endoh et al., 2006",
+      "publicationYear": 2006
+     }
+    },
+    {
+     "id": 91,
+     "name": "EID91",
+     "evidenceLevel": "C",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 2,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "A 63 year old patient was diagnosed with lung adenocarcinoma and received several treatment regimens over approximately three years, including carboplatin/paclitaxel, erlotinib, pemetrexed/bevacizumab, gemcitabine, vinorelbine, and radiation. An omental metastasis was biopsied and mutation profiling performed, identifying a BRAF V600E mutation as the likely driver. The patient received the BRAF inhibitor dabrafenib on a phase 2 trial and achieved a partial response. Upon progression after eight months the mass was re-biopsied and mutation profiling identified the original driver mutation in addition to a KRAS G12D, which the authors hypothesize was primarily responsible for the acquired resistance to dabrafenib.",
+     "disease": {
+      "name": "Lung Adenocarcinoma",
+      "doid": "3910"
+     },
+     "therapies": [
+      {
+       "name": "Dabrafenib"
+      }
+     ],
+     "source": {
+      "citationId": "23524406",
+      "sourceType": "PUBMED",
+      "citation": "Rudin et al., 2013",
+      "publicationYear": 2013
+     }
+    },
+    {
+     "id": 937,
+     "name": "EID937",
+     "evidenceLevel": "C",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "evidenceRating": 2,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "Among 33 patients treated with pan-AKT inhibitor MK-2206 in this phase 1 study, one patient with pancreatic adenocarcinoma and PTEN loss and a KRAS G12D mutation experienced a decrease of approximately 60% in cancer antigen 19-9 levels and 23% shrinkage in tumor measurements.",
+     "disease": {
+      "name": "Pancreatic Carcinoma",
+      "doid": "4905"
+     },
+     "therapies": [
+      {
+       "name": "Akt Inhibitor MK2206"
+      }
+     ],
+     "source": {
+      "citationId": "22025163",
+      "sourceType": "PUBMED",
+      "citation": "Yap et al., 2011",
+      "publicationYear": 2011
+     }
+    },
+    {
+     "id": 1580,
+     "name": "EID1580",
+     "evidenceLevel": "C",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 2,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "One patient enrolled in a clinical study to evaluate vemurafenib treatment of BRAF V600E mutant hairy-cell leukemia developed resistance to vemurafenib retreatment. 300-gene targeted sequencing of the patient’s genome revealed activating subclonal KRAS mutations (KRAS G12D, 15.2% allele frequency; KRAS K117N, 1.2%), as well as a RUNX1 A55E mutation (5.9%) that had not been seen prior to vemurafenib treatment or at remission. BRAF V600E allele frequency was detectable (2.4%) at the time of remission but dramatically increased at relapse (64.9%).",
+     "disease": {
+      "name": "Hairy Cell Leukemia",
+      "doid": "285"
+     },
+     "therapies": [
+      {
+       "name": "Vemurafenib"
+      }
+     ],
+     "source": {
+      "citationId": "26352686",
+      "sourceType": "PUBMED",
+      "citation": "Tiacci et al., 2015",
+      "publicationYear": 2015
+     }
+    },
+    {
+     "id": 6316,
+     "name": "EID6316",
+     "evidenceLevel": "C",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 2,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": "SUBSTITUTES",
+     "description": "In this study, a large cohort of metastatic colorectal cancer patients were treated with anti-epidermal growth factor receptor monoclonal antibodies (cetuximab or panitumumab). KRAS, PIK3CA, and PTEN were tested for mutation; KRAS G12D was the only variant noted in the primary tumor of two patients who experienced stable disease  following treatment (Patients 22 and 36; colon and rectum tumors; Supplemental Table 1). In the larger cohort, patients with tumors harboring any KRAS mutation had significantly decreased incidence of objective response than patients with wtKRAS tumors. Authors noted that patients with tumors harboring KRAS mutations tended to have decreased PFS and OS compared to those with wild-type tumors though the differences were not statistically significant.",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [
+      {
+       "name": "Panitumumab"
+      },
+      {
+       "name": "Cetuximab"
+      }
+     ],
+     "source": {
+      "citationId": "19223544",
+      "sourceType": "PUBMED",
+      "citation": "Sartore-Bianchi et al., 2009",
+      "publicationYear": 2009
+     }
+    },
+    {
+     "id": 2250,
+     "name": "EID2250",
+     "evidenceLevel": "D",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 2,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In in vitro experiments, myeloma cell lines expressing activating NRAS and KRAS mutations are less sensitive to the apoptosis-inducing effects of dexamethasone, doxorubicin, and melphalan in comparison to cells with wildtype RAS.",
+     "disease": {
+      "name": "Multiple Myeloma",
+      "doid": "9538"
+     },
+     "therapies": [
+      {
+       "name": "Melphalan"
+      }
+     ],
+     "source": {
+      "citationId": "11050000",
+      "sourceType": "PUBMED",
+      "citation": "Rowley et al., 2000",
+      "publicationYear": 2000
+     }
+    },
+    {
+     "id": 2252,
+     "name": "EID2252",
+     "evidenceLevel": "D",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 2,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In in vitro experiments, myeloma cell lines expressing activating NRAS and KRAS mutations are less sensitive to the apoptosis-inducing effects of dexamethasone, doxorubicin, and melphalan in comparison to cells with wildtype RAS.",
+     "disease": {
+      "name": "Multiple Myeloma",
+      "doid": "9538"
+     },
+     "therapies": [
+      {
+       "name": "Melphalan"
+      }
+     ],
+     "source": {
+      "citationId": "16497971",
+      "sourceType": "PUBMED",
+      "citation": "Hoang et al., 2006",
+      "publicationYear": 2006
+     }
+    },
+    {
+     "id": 3946,
+     "name": "EID3946",
+     "evidenceLevel": "D",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": 1,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In an in vitro study, a human colon adenocarcinoma SW48 cell line expressing KRAS G12D mutation demonstrated resistance to regorafenib treatment (IC50: 195.01nM vs. 114.28 nM P<0.01) compared to SW48 cells expressing KRAS wild-type. Resistance was determined by assessing cell viability. Authors concluded that KRAS G12D was more resistant to regorafenib than KRAS wt, and intermediately resistant compared to other common KRAS G12/G13 mutations.",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [
+      {
+       "name": "Regorafenib Anhydrous"
+      }
+     ],
+     "source": {
+      "citationId": "26161928",
+      "sourceType": "PUBMED",
+      "citation": "Camaj et al., 2015",
+      "publicationYear": 2015
+     }
+    },
+    {
+     "id": 2236,
+     "name": "EID2236",
+     "evidenceLevel": "C",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": null,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In a retrospective study of 427 metastatic colorectal patients, KRAS mutations were observed in 43% of the tumor samples. Patients with mutations in codon 12 or 13 of KRAS were associated with reduced response to panitumumab compared to wildtype KRAS (HR:0.99, 95% CI:0.73-1.36 vs. HR:0.45, 95% CI:0.34-0.59; P<0.0001). Additionally, patients with KRAS mutations showed no significant improvement between treatment with panitumumab and best supportive care alone (PFS: 7.4 wk vs 7.3 wk).",
+     "disease": {
+      "name": "Colorectal Cancer",
+      "doid": "9256"
+     },
+     "therapies": [
+      {
+       "name": "Panitumumab"
+      }
+     ],
+     "source": {
+      "citationId": "18316791",
+      "sourceType": "PUBMED",
+      "citation": "Amado et al., 2008",
+      "publicationYear": 2008
+     }
+    },
+    {
+     "id": 2251,
+     "name": "EID2251",
+     "evidenceLevel": "D",
+     "evidenceType": "PREDICTIVE",
+     "evidenceDirection": "SUPPORTS",
+     "significance": "RESISTANCE",
+     "evidenceRating": null,
+     "variantOrigin": "SOMATIC",
+     "therapyInteractionType": null,
+     "description": "In in vitro experiments, myeloma cell lines expressing activating NRAS and KRAS mutations are less sensitive to the apoptosis-inducing effects of dexamethasone, doxorubicin, and melphalan in comparison to cells with wildtype RAS.",
+     "disease": {
+      "name": "Multiple Myeloma",
+      "doid": "9538"
+     },
+     "therapies": [
+      {
+       "name": "Melphalan"
+      }
+     ],
+     "source": {
+      "citationId": "12483530",
+      "sourceType": "PUBMED",
+      "citation": "Rowley et al., 2002",
+      "publicationYear": 2002
+     }
+    }
+   ]
+  }
+ }
+}

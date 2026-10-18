@@ -1,0 +1,43 @@
+{
+ "mechanisms": [
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Tyrosine-protein kinase ABL inhibitor",
+   "molecule_chembl_id": "CHEMBL1642",
+   "parent_molecule_chembl_id": "CHEMBL941",
+   "target_chembl_id": "CHEMBL1862"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Platelet-derived growth factor receptor beta inhibitor",
+   "molecule_chembl_id": "CHEMBL1642",
+   "parent_molecule_chembl_id": "CHEMBL941",
+   "target_chembl_id": "CHEMBL1913"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Stem cell growth factor receptor inhibitor",
+   "molecule_chembl_id": "CHEMBL1642",
+   "parent_molecule_chembl_id": "CHEMBL941",
+   "target_chembl_id": "CHEMBL1936"
+  },
+  {
+   "action_type": "INHIBITOR",
+   "max_phase": 4,
+   "mechanism_of_action": "Bcr/Abl fusion protein inhibitor",
+   "molecule_chembl_id": "CHEMBL1642",
+   "parent_molecule_chembl_id": "CHEMBL941",
+   "target_chembl_id": "CHEMBL2096618"
+  }
+ ],
+ "page_meta": {
+  "limit": 50,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total_count": 4
+ }
+}

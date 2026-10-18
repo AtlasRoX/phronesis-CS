@@ -1,0 +1,78 @@
+[
+ {
+  "dbId": 381426,
+  "displayName": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)",
+  "stId": "R-HSA-381426",
+  "stIdVersion": "R-HSA-381426.4",
+  "isInDisease": false,
+  "isInferred": false,
+  "maxDepth": 2,
+  "name": [
+   "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)",
+   "Regulation of IGF Activity by IGFBP"
+  ],
+  "releaseDate": "2008-12-17",
+  "speciesName": "Homo sapiens",
+  "hasDiagram": true,
+  "hasEHLD": false,
+  "lastUpdatedDate": "2018-03-26",
+  "schemaClass": "Pathway",
+  "className": "Pathway"
+ },
+ {
+  "dbId": 8866427,
+  "displayName": "VLDLR internalisation and degradation",
+  "stId": "R-HSA-8866427",
+  "stIdVersion": "R-HSA-8866427.5",
+  "isInDisease": false,
+  "isInferred": false,
+  "maxDepth": 2,
+  "name": [
+   "VLDLR internalisation and degradation"
+  ],
+  "releaseDate": "2016-06-15",
+  "speciesName": "Homo sapiens",
+  "hasDiagram": false,
+  "hasEHLD": false,
+  "lastUpdatedDate": "2022-04-07",
+  "schemaClass": "Pathway",
+  "className": "Pathway"
+ },
+ {
+  "dbId": 8957275,
+  "displayName": "Post-translational protein phosphorylation",
+  "stId": "R-HSA-8957275",
+  "stIdVersion": "R-HSA-8957275.2",
+  "isInDisease": false,
+  "isInferred": false,
+  "maxDepth": 2,
+  "name": [
+   "Post-translational protein phosphorylation"
+  ],
+  "releaseDate": "2017-03-27",
+  "speciesName": "Homo sapiens",
+  "hasDiagram": true,
+  "hasEHLD": false,
+  "schemaClass": "Pathway",
+  "className": "Pathway"
+ },
+ {
+  "dbId": 8964038,
+  "displayName": "LDL clearance",
+  "stId": "R-HSA-8964038",
+  "stIdVersion": "R-HSA-8964038.5",
+  "isInDisease": false,
+  "isInferred": false,
+  "maxDepth": 2,
+  "name": [
+   "LDL clearance"
+  ],
+  "releaseDate": "2005-06-13",
+  "speciesName": "Homo sapiens",
+  "hasDiagram": false,
+  "hasEHLD": false,
+  "lastUpdatedDate": "2022-06-09",
+  "schemaClass": "Pathway",
+  "className": "Pathway"
+ }
+]

@@ -1,0 +1,274 @@
+{
+ "header": {
+  "type": "esummary",
+  "version": "0.3"
+ },
+ "result": {
+  "uids": [
+   "12582",
+   "12583"
+  ],
+  "12582": {
+   "uid": "12582",
+   "obj_type": "single nucleotide variant",
+   "accession": "VCV000012582",
+   "accession_version": "VCV000012582.69",
+   "title": "NM_004985.5(KRAS):c.35G>A (p.Gly12Asp)",
+   "protein_change": "G12D",
+   "molecular_consequence_list": [
+    "missense variant"
+   ],
+   "genes": [
+    {
+     "symbol": "KRAS",
+     "geneid": "3845",
+     "strand": "-",
+     "source": "submitted"
+    }
+   ],
+   "variation_set": [
+    {
+     "variation_name": "NM_004985.5(KRAS):c.35G>A (p.Gly12Asp)",
+     "cdna_change": "c.35G>A",
+     "variant_type": "single nucleotide variant",
+     "canonical_spdi": "NC_000012.12:25245349:C:T",
+     "variation_xrefs": [
+      {
+       "db_source": "dbSNP",
+       "db_id": "121913529"
+      },
+      {
+       "db_source": "ClinGen",
+       "db_id": "CA122538"
+      }
+     ],
+     "variation_loc": [
+      {
+       "status": "current",
+       "assembly_name": "GRCh38",
+       "chr": "12",
+       "start": "25245350",
+       "stop": "25245350"
+      },
+      {
+       "status": "previous",
+       "assembly_name": "GRCh37",
+       "chr": "12",
+       "start": "25398284",
+       "stop": "25398284"
+      }
+     ]
+    }
+   ],
+   "germline_classification": {
+    "description": "Pathogenic/Likely pathogenic",
+    "last_evaluated": "2026/01/23 00:00",
+    "review_status": "criteria provided, multiple submitters, no conflicts",
+    "trait_set": [
+     {
+      "trait_name": "KRAS-related disorder"
+     },
+     {
+      "trait_name": "Congenital Pulmonary Airway Malformations"
+     },
+     {
+      "trait_name": "Linear nevus sebaceous syndrome"
+     },
+     {
+      "trait_name": "Cardiovascular phenotype"
+     },
+     {
+      "trait_name": "Cerebral arteriovenous malformation"
+     },
+     {
+      "trait_name": "not provided"
+     },
+     {
+      "trait_name": "RASopathy"
+     },
+     {
+      "trait_name": "Malignant tumor of urinary bladder"
+     },
+     {
+      "trait_name": "Cerebral arteriovenous malformation"
+     },
+     {
+      "trait_name": "Toriello-Lacassie-Droste syndrome"
+     },
+     {
+      "trait_name": "Lung cancer"
+     },
+     {
+      "trait_name": "Acute myeloid leukemia"
+     },
+     {
+      "trait_name": "Linear nevus sebaceous syndrome"
+     },
+     {
+      "trait_name": "Autoimmune lymphoproliferative syndrome type 4"
+     },
+     {
+      "trait_name": "Familial cancer of breast"
+     },
+     {
+      "trait_name": "Gastric cancer"
+     },
+     {
+      "trait_name": "Familial pancreatic carcinoma"
+     },
+     {
+      "trait_name": "Cardiofaciocutaneous syndrome 2"
+     },
+     {
+      "trait_name": "Noonan syndrome 3"
+     }
+    ]
+   },
+   "oncogenicity_classification": {
+    "description": "Oncogenic",
+    "last_evaluated": "2025/03/04 00:00",
+    "review_status": "criteria provided, single submitter",
+    "trait_set": [
+     {
+      "trait_name": "Neoplasm"
+     }
+    ]
+   },
+   "clinical_impact_classification": {
+    "description": "Tier I - Strong",
+    "last_evaluated": "2025/04/08 00:00",
+    "review_status": "criteria provided, single submitter",
+    "trait_set": [
+     {
+      "trait_name": "Ovarian mucinous adenocarcinoma"
+     },
+     {
+      "trait_name": "Adenocarcinoma of the large intestine"
+     },
+     {
+      "trait_name": "Embryonal rhabdomyosarcoma"
+     },
+     {
+      "trait_name": "Glioma"
+     },
+     {
+      "trait_name": "Papillary thyroid carcinoma"
+     },
+     {
+      "trait_name": "Diffuse pediatric-type high-grade glioma, H3-wildtype and IDH-wildtype"
+     },
+     {
+      "trait_name": "Precursor B-cell acute lymphoblastic leukemia"
+     }
+    ]
+   }
+  },
+  "12583": {
+   "uid": "12583",
+   "obj_type": "single nucleotide variant",
+   "accession": "VCV000012583",
+   "accession_version": "VCV000012583.79",
+   "title": "NM_004985.5(KRAS):c.35G>T (p.Gly12Val)",
+   "protein_change": "G12V",
+   "molecular_consequence_list": [
+    "missense variant"
+   ],
+   "genes": [
+    {
+     "symbol": "KRAS",
+     "geneid": "3845",
+     "strand": "-",
+     "source": "submitted"
+    }
+   ],
+   "variation_set": [
+    {
+     "variation_name": "NM_004985.5(KRAS):c.35G>T (p.Gly12Val)",
+     "cdna_change": "c.35G>T",
+     "variant_type": "single nucleotide variant",
+     "canonical_spdi": "NC_000012.12:25245349:C:A",
+     "variation_xrefs": [
+      {
+       "db_source": "ClinGen",
+       "db_id": "CA122540"
+      },
+      {
+       "db_source": "dbSNP",
+       "db_id": "121913529"
+      }
+     ],
+     "variation_loc": [
+      {
+       "status": "current",
+       "assembly_name": "GRCh38",
+       "chr": "12",
+       "start": "25245350",
+       "stop": "25245350"
+      },
+      {
+       "status": "previous",
+       "assembly_name": "GRCh37",
+       "chr": "12",
+       "start": "25398284",
+       "stop": "25398284"
+      }
+     ]
+    }
+   ],
+   "germline_classification": {
+    "description": "Pathogenic",
+    "last_evaluated": "2025/06/24 00:00",
+    "review_status": "criteria provided, multiple submitters, no conflicts",
+    "trait_set": [
+     {
+      "trait_name": "KRAS-related disorder"
+     },
+     {
+      "trait_name": "not provided"
+     },
+     {
+      "trait_name": "Linear nevus sebaceous syndrome"
+     },
+     {
+      "trait_name": "Cerebral arteriovenous malformation"
+     },
+     {
+      "trait_name": "RASopathy"
+     },
+     {
+      "trait_name": "Non-small cell lung carcinoma"
+     },
+     {
+      "trait_name": "Juvenile myelomonocytic leukemia"
+     }
+    ]
+   },
+   "oncogenicity_classification": {
+    "description": "Oncogenic",
+    "last_evaluated": "2025/03/04 00:00",
+    "review_status": "criteria provided, single submitter",
+    "trait_set": [
+     {
+      "trait_name": "Neoplasm"
+     }
+    ]
+   },
+   "clinical_impact_classification": {
+    "description": "Tier I - Strong",
+    "last_evaluated": "2025/07/14 00:00",
+    "review_status": "criteria provided, single submitter",
+    "trait_set": [
+     {
+      "trait_name": "Ovarian mucinous adenocarcinoma"
+     },
+     {
+      "trait_name": "Adenocarcinoma of the large intestine"
+     },
+     {
+      "trait_name": "Germinoma"
+     }
+    ]
+   }
+  }
+ }
+}

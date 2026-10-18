@@ -1,0 +1,11 @@
+{
+ "captured": "2026-10-13",
+ "source": "https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL4535757.json",
+ "molecule": {
+  "molecule_chembl_id": "CHEMBL4535757",
+  "pref_name": "SOTORASIB",
+  "max_phase": "4.0",
+  "molecule_type": "Small molecule",
+  "first_approval": 2021
+ }
+}

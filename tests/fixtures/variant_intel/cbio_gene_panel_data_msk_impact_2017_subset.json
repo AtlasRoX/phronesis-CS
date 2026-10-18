@@ -1,0 +1,322 @@
+[
+ {
+  "sampleId": "P-0000004-T01-IM3",
+  "patientId": "P-0000004",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000015-T01-IM3",
+  "patientId": "P-0000015",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000023-T01-IM3",
+  "patientId": "P-0000023",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000024-T01-IM3",
+  "patientId": "P-0000024",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000025-T01-IM3",
+  "patientId": "P-0000025",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000026-T01-IM3",
+  "patientId": "P-0000026",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000027-T01-IM3",
+  "patientId": "P-0000027",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000030-T01-IM3",
+  "patientId": "P-0000030",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000034-T01-IM3",
+  "patientId": "P-0000034",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000036-T01-IM3",
+  "patientId": "P-0000036",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000037-T01-IM3",
+  "patientId": "P-0000037",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000037-T02-IM3",
+  "patientId": "P-0000037",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000039-T01-IM3",
+  "patientId": "P-0000039",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000041-T01-IM3",
+  "patientId": "P-0000041",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000042-T01-IM3",
+  "patientId": "P-0000042",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000043-T02-IM3",
+  "patientId": "P-0000043",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000047-T01-IM3",
+  "patientId": "P-0000047",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000053-T01-IM3",
+  "patientId": "P-0000053",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000055-T01-IM3",
+  "patientId": "P-0000055",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000056-T01-IM3",
+  "patientId": "P-0000056",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT341",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000532-T02-IM5",
+  "patientId": "P-0000532",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0001420-T02-IM5",
+  "patientId": "P-0001420",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0001882-T02-IM5",
+  "patientId": "P-0001882",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0002265-T02-IM5",
+  "patientId": "P-0002265",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0002910-T02-IM5",
+  "patientId": "P-0002910",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0003104-T01-IM5",
+  "patientId": "P-0003104",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0003120-T01-IM5",
+  "patientId": "P-0003120",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0003146-T01-IM5",
+  "patientId": "P-0003146",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0003433-T01-IM5",
+  "patientId": "P-0003433",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0003529-T01-IM5",
+  "patientId": "P-0003529",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000025-T02-IM5",
+  "patientId": "P-0000025",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000066-T02-IM5",
+  "patientId": "P-0000066",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000067-T02-IM5",
+  "patientId": "P-0000067",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000152-T02-IM5",
+  "patientId": "P-0000152",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000208-T02-IM5",
+  "patientId": "P-0000208",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000228-T03-IM5",
+  "patientId": "P-0000228",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000234-T02-IM5",
+  "patientId": "P-0000234",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000247-T02-IM5",
+  "patientId": "P-0000247",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000247-T03-IM5",
+  "patientId": "P-0000247",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ },
+ {
+  "sampleId": "P-0000253-T02-IM5",
+  "patientId": "P-0000253",
+  "studyId": "msk_impact_2017",
+  "molecularProfileId": "msk_impact_2017_mutations",
+  "genePanelId": "IMPACT410",
+  "profiled": true
+ }
+]

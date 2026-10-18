@@ -1,0 +1,30 @@
+{
+  "description": "Held-out routing questions: written after the router weights were set on benchmark.json and never used to tune them. Same label policy as benchmark.json.",
+  "labels": {"plan_execute": "agentic-plan-execute", "debate": "multi-agent-debate", "supervisor": "multi-agent-supervisor", "swarm": "multi-agent-swarm"},
+  "cases": [
+    {"q": "What does the HER2 gene encode?", "gold": "plan_execute", "kind": "mechanism"},
+    {"q": "Which statin has the fewest muscle-related side effects?", "gold": "plan_execute", "also": ["debate"], "kind": "safety"},
+    {"q": "How long should anticoagulation continue after a first unprovoked pulmonary embolism?", "gold": "plan_execute", "also": ["debate"], "kind": "treatment"},
+    {"q": "Summarize the CheckMate-067 overall survival data and the toxicity of combined ipilimumab plus nivolumab.", "gold": "plan_execute", "kind": "trial_landscape"},
+    {"q": "Is the ALK fusion in my patient's tumour actionable, and with which drugs?", "gold": "plan_execute", "also": ["debate"], "kind": "variant_interpretation"},
+    {"q": "Compute the steady state of the insulin signalling model BIOMD0000000356.", "gold": "plan_execute", "kind": "simulation"},
+    {"q": "What dose adjustment of vancomycin is needed in dialysis patients?", "gold": "plan_execute", "also": ["debate"], "kind": "dosing"},
+    {"q": "What are the diagnostic criteria for systemic lupus erythematosus?", "gold": "plan_execute", "kind": "diagnosis"},
+    {"q": "Which mutations in the androgen receptor cause resistance to enzalutamide?", "gold": "plan_execute", "kind": "mechanism"},
+    {"q": "How many patients were enrolled in DESTINY-Breast03 and what was the hazard ratio for progression?", "gold": "plan_execute", "kind": "trial_landscape"},
+    {"q": "Do SGLT2 inhibitors truly reduce mortality in heart failure with preserved ejection fraction, given mixed trial results?", "gold": "debate", "also": ["plan_execute"], "kind": "treatment"},
+    {"q": "Is immunotherapy preferable to chemotherapy for elderly patients with MSI-high colorectal cancer?", "gold": "debate", "kind": "therapy_comparison"},
+    {"q": "Hypothesize why some KRAS G12C tumours develop adaptive resistance within weeks.", "gold": "debate", "kind": "hypothesis_generation"},
+    {"q": "Identify candidate drugs that could be repositioned for idiopathic pulmonary fibrosis.", "gold": "debate", "also": ["supervisor"], "kind": "drug_repurposing"},
+    {"q": "Are e-cigarettes safer than combustible cigarettes, or is that claim overstated?", "gold": "debate", "also": ["plan_execute"], "kind": "safety"},
+    {"q": "Should patients with stage I melanoma receive adjuvant immunotherapy?", "gold": "debate", "also": ["plan_execute"], "kind": "treatment"},
+    {"q": "Assess TREM2 as a therapeutic target in Alzheimer's disease.", "gold": "supervisor", "also": ["plan_execute"], "kind": "target_assessment"},
+    {"q": "Give an overview of everything known about long COVID mechanisms, trials and treatments.", "gold": "supervisor", "also": ["plan_execute"], "kind": "literature_review"},
+    {"q": "Evaluate the tractability of targeting the NLRP3 inflammasome.", "gold": "supervisor", "also": ["plan_execute"], "kind": "target_assessment"},
+    {"q": "Investigate the landscape of bispecific antibodies in multiple myeloma.", "gold": "supervisor", "also": ["plan_execute"], "kind": "literature_review"},
+    {"q": "Explore links between sleep deprivation, the glymphatic system and amyloid accumulation.", "gold": "swarm", "also": ["supervisor"], "kind": "exploration"},
+    {"q": "Brainstorm connections between ferroptosis, lipid metabolism and chemotherapy resistance.", "gold": "swarm", "also": ["supervisor", "debate"], "kind": "exploration"},
+    {"q": "Map out how obesity, NAFLD and hepatocellular carcinoma are linked.", "gold": "swarm", "also": ["supervisor"], "kind": "exploration"},
+    {"q": "Explore connections between valproate exposure and neural tube defects in pregnancy.", "gold": "plan_execute", "also": ["debate", "supervisor"], "kind": "exploration"}
+  ]
+}

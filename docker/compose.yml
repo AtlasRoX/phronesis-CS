@@ -1,0 +1,49 @@
+# Phronesis: API + web app.
+#
+#   docker compose -f docker/compose.yml up --build
+#
+# Secrets and settings come from ../.env (gitignored; see the README for the variables: OPENAI_API_KEY,
+# NVIDIA_API_KEY, PHRONESIS_API_TOKENS or PHRONESIS_AUTH_MODE=disabled, ...). Paths below are relative to
+# this file. All backend state (runs, jobs, memory, projects, caches, PrimeKG) lives on the `phronesis-data`
+# volume mounted at /data.
+
+name: phronesis
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    image: phronesis-backend:local
+    env_file:
+      - path: ../.env
+        required: false
+    environment:
+      PHRONESIS_DATA_DIR: /data
+      # The browser origin of the web service below; extend it if you publish the web app elsewhere.
+      PHRONESIS_CORS_ORIGINS: ${PHRONESIS_CORS_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
+    volumes:
+      - phronesis-data:/data
+    ports:
+      - "${PHRONESIS_API_PORT:-8000}:8000"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ../web
+      dockerfile: ../docker/web.Dockerfile
+      args:
+        # Inlined into the client bundle: it must be the API URL as seen from the user's browser.
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+        NEXT_PUBLIC_DEFAULT_MODEL: ${NEXT_PUBLIC_DEFAULT_MODEL:-}
+    image: phronesis-web:local
+    # No env_file here: the web server needs no secrets, and NEXT_PUBLIC_* values are fixed at build time.
+    ports:
+      - "${PHRONESIS_WEB_PORT:-3000}:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  phronesis-data:

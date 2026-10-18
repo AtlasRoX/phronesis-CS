@@ -1,0 +1,295 @@
+{
+ "alias_symbol/CAP": {
+  "response": {
+   "numFound": 6,
+   "docs": [
+    {
+     "symbol": "HACD1",
+     "hgnc_id": "HGNC:9639",
+     "name": "3-hydroxyacyl-CoA dehydratase 1",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000165996",
+     "uniprot_ids": [
+      "B0YJ81"
+     ],
+     "alias_symbol": [
+      "CAP"
+     ],
+     "prev_symbol": [
+      "PTPLA"
+     ],
+     "mane_select": [
+      "ENST00000361271.8",
+      "NM_014241.4"
+     ]
+    },
+    {
+     "symbol": "CAP1",
+     "hgnc_id": "HGNC:20040",
+     "name": "cyclase associated actin cytoskeleton regulatory protein 1",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000131236",
+     "uniprot_ids": [
+      "Q01518"
+     ],
+     "alias_symbol": [
+      "CAP"
+     ],
+     "mane_select": [
+      "ENST00000372805.8",
+      "NM_006367.4"
+     ]
+    },
+    {
+     "symbol": "SERPINB6",
+     "hgnc_id": "HGNC:8950",
+     "name": "serpin family B member 6",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000124570",
+     "uniprot_ids": [
+      "P35237"
+     ],
+     "alias_symbol": [
+      "PTI",
+      "CAP"
+     ],
+     "prev_symbol": [
+      "PI6",
+      "DFNB91"
+     ],
+     "mane_select": [
+      "ENST00000380539.7",
+      "NM_004568.6"
+     ]
+    },
+    {
+     "symbol": "LNPEP",
+     "hgnc_id": "HGNC:6656",
+     "name": "leucyl and cystinyl aminopeptidase",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000113441",
+     "uniprot_ids": [
+      "Q9UIQ6"
+     ],
+     "alias_symbol": [
+      "CAP",
+      "PLAP",
+      "P-LAP",
+      "IRAP"
+     ],
+     "mane_select": [
+      "ENST00000231368.10",
+      "NM_005575.3"
+     ]
+    },
+    {
+     "symbol": "BRD4",
+     "hgnc_id": "HGNC:13575",
+     "name": "bromodomain containing 4",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000141867",
+     "uniprot_ids": [
+      "O60885"
+     ],
+     "alias_symbol": [
+      "HUNKI",
+      "MCAP",
+      "CAP",
+      "HUNK1",
+      "FSHRG4"
+     ],
+     "mane_select": [
+      "ENST00000679869.1",
+      "NM_001379291.1"
+     ]
+    },
+    {
+     "symbol": "SORBS1",
+     "hgnc_id": "HGNC:14565",
+     "name": "sorbin and SH3 domain containing 1",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000095637",
+     "uniprot_ids": [
+      "Q9BX66"
+     ],
+     "alias_symbol": [
+      "FLJ12406",
+      "CAP",
+      "sh3p12",
+      "ponsin",
+      "KIAA1296"
+     ],
+     "prev_symbol": [
+      "SH3D5"
+     ],
+     "mane_select": [
+      "ENST00000371247.7",
+      "NM_001034954.3"
+     ]
+    }
+   ]
+  }
+ },
+ "alias_symbol/KRAS": {
+  "response": {
+   "numFound": 0,
+   "docs": []
+  }
+ },
+ "alias_symbol/MLL": {
+  "response": {
+   "numFound": 0,
+   "docs": []
+  }
+ },
+ "alias_symbol/SHP2": {
+  "response": {
+   "numFound": 1,
+   "docs": [
+    {
+     "symbol": "PTPN11",
+     "hgnc_id": "HGNC:9644",
+     "name": "protein tyrosine phosphatase non-receptor type 11",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000179295",
+     "uniprot_ids": [
+      "Q06124"
+     ],
+     "alias_symbol": [
+      "BPTP3",
+      "SH-PTP2",
+      "SHP-2",
+      "PTP2C",
+      "SHP2"
+     ],
+     "prev_symbol": [
+      "NS1"
+     ],
+     "mane_select": [
+      "ENST00000351677.7",
+      "NM_002834.5"
+     ]
+    }
+   ]
+  }
+ },
+ "mane_select/NM_004985.5": {
+  "response": {
+   "numFound": 1,
+   "docs": [
+    {
+     "symbol": "KRAS",
+     "hgnc_id": "HGNC:6407",
+     "name": "KRas proto-oncogene, GTPase",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000133703",
+     "uniprot_ids": [
+      "P01116"
+     ],
+     "alias_symbol": [
+      "KRAS1",
+      "K-Ras4B"
+     ],
+     "prev_symbol": [
+      "KRAS2"
+     ],
+     "mane_select": [
+      "ENST00000311936.8",
+      "NM_004985.5"
+     ]
+    }
+   ]
+  }
+ },
+ "prev_symbol/MLL": {
+  "response": {
+   "numFound": 1,
+   "docs": [
+    {
+     "symbol": "KMT2A",
+     "hgnc_id": "HGNC:7132",
+     "name": "lysine methyltransferase 2A",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000118058",
+     "uniprot_ids": [
+      "Q03164"
+     ],
+     "alias_symbol": [
+      "TRX1",
+      "HRX",
+      "ALL-1",
+      "HTRX1",
+      "CXXC7",
+      "MLL1A",
+      "MLL1",
+      "ALL1",
+      "HTRX"
+     ],
+     "prev_symbol": [
+      "MLL"
+     ],
+     "mane_select": [
+      "ENST00000534358.8",
+      "NM_001197104.2"
+     ]
+    }
+   ]
+  }
+ },
+ "symbol/CAP": {
+  "response": {
+   "numFound": 0,
+   "docs": []
+  }
+ },
+ "symbol/KRAS": {
+  "response": {
+   "numFound": 1,
+   "docs": [
+    {
+     "symbol": "KRAS",
+     "hgnc_id": "HGNC:6407",
+     "name": "KRas proto-oncogene, GTPase",
+     "status": "Approved",
+     "locus_type": "gene with protein product",
+     "ensembl_gene_id": "ENSG00000133703",
+     "uniprot_ids": [
+      "P01116"
+     ],
+     "alias_symbol": [
+      "KRAS1",
+      "K-Ras4B"
+     ],
+     "prev_symbol": [
+      "KRAS2"
+     ],
+     "mane_select": [
+      "ENST00000311936.8",
+      "NM_004985.5"
+     ]
+    }
+   ]
+  }
+ },
+ "symbol/MLL": {
+  "response": {
+   "numFound": 0,
+   "docs": []
+  }
+ },
+ "symbol/SHP2": {
+  "response": {
+   "numFound": 0,
+   "docs": []
+  }
+ }
+}

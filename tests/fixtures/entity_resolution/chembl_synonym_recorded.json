@@ -1,0 +1,18 @@
+{
+ "BI-3406": {
+  "molecules": [
+   {
+    "max_phase": null,
+    "molecule_chembl_id": "CHEMBL4519023",
+    "pref_name": null
+   }
+  ],
+  "page_meta": {
+   "limit": 3,
+   "next": null,
+   "offset": 0,
+   "previous": null,
+   "total_count": 1
+  }
+ }
+}

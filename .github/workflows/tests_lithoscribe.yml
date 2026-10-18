@@ -1,0 +1,111 @@
+# Modern CI workflow using uv for fast, reliable dependency management
+name: TESTS Lithoscribe
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "phronesis/lithoscribe/**"
+      - "pyproject.toml"
+      - "uv.lock"
+  push:
+    branches: [main, master]
+    paths:
+      - "phronesis/lithoscribe/**"
+      - "pyproject.toml"
+      - "uv.lock"
+  workflow_dispatch:
+
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+  ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
+
+jobs:
+  # Code quality checks. pylint and ruff report without blocking: this legacy module had pre-existing
+  # findings (ruff: dozens to hundreds per module on 2026-10-17). Bandit blocks.
+  quality-checks:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      - name: Run pylint (report only)
+        continue-on-error: true
+        run: uv run pylint phronesis/lithoscribe
+
+      - name: Run ruff linting (report only)
+        continue-on-error: true
+        run: uv run ruff check phronesis/lithoscribe
+
+      - name: Run bandit security scan
+        run: uv run bandit -c pyproject.toml -r phronesis/lithoscribe
+
+  # Cross-platform testing matrix
+  test-matrix:
+    name: Tests
+    needs: quality-checks
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15, windows-latest]
+        python-version: ["3.12"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      - name: Run tests with coverage
+        run: |
+          uv run coverage run --include=phronesis/lithoscribe/* -m pytest --cache-clear phronesis/lithoscribe/tests/
+
+      - name: Generate coverage report
+        run: |
+          uv run coverage report -m --include="phronesis/lithoscribe/*"
+          uv run coverage xml --include="phronesis/lithoscribe/*" -o coverage-lithoscribe.xml
+
+      - name: Check coverage threshold
+        shell: bash
+        run: |
+          # --include: [tool.coverage.run] source=phronesis overrides `coverage run --include`, so an unfiltered
+          # TOTAL is the whole package. Measured 72% for phronesis/lithoscribe on 2026-10-17 (3 Zotero tests fail on Windows (/tmp paths), so Linux may read higher);
+          # the gate sits 2 points below. The old COVERAGE_MIN=99 (noted as measured 2026-10-14) read that whole-package TOTAL. Raise it as tests land.
+          TOTAL_COVERAGE=$(uv run coverage report --include="phronesis/lithoscribe/*" | awk 'END {print int($NF)}')
+          COVERAGE_MIN=70
+          if [[ $TOTAL_COVERAGE -lt $COVERAGE_MIN ]]; then
+            echo "Code coverage $TOTAL_COVERAGE% is below $COVERAGE_MIN%. Please check the coverage report."
+            exit 1
+          fi
+
+      - name: Upload coverage to Codecov
+        if: matrix.os == 'ubuntu-latest'
+        uses: codecov/codecov-action@v5
+        with:
+          file: ./coverage-lithoscribe.xml
+          flags: lithoscribe
+          name: lithoscribe-coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false

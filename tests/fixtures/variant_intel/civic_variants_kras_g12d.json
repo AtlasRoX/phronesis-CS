@@ -1,0 +1,18 @@
+{
+ "data": {
+  "variants": {
+   "totalCount": 1,
+   "nodes": [
+    {
+     "id": 79,
+     "name": "G12D",
+     "alleleRegistryId": "CA122538",
+     "clinvarIds": [
+      "12582"
+     ],
+     "singleVariantMolecularProfileId": 79
+    }
+   ]
+  }
+ }
+}

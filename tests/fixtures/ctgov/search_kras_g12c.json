@@ -1,0 +1,148 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; query.term=KRAS G12C, pageSize=3",
+ "totalCount": 224,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT06237400",
+     "briefTitle": "A Study of ZG19018 in Patients With KRAS G12C Mutant Advanced Solid Tumors."
+    },
+    "statusModule": {
+     "overallStatus": "UNKNOWN",
+     "startDateStruct": {
+      "date": "2022-05-26"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2025-05"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2024-02-01"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Suzhou Zelgen Biopharmaceuticals Co.,Ltd",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "KRAS G12C Mutant Advanced Solid Tumors"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE1",
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 110,
+      "type": "ESTIMATED"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "ZG19018"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Dose Limiting Toxicity (DLT)",
+       "timeFrame": "Up to 21Days"
+      },
+      {
+       "measure": "Objective Response Rate (ORR)",
+       "timeFrame": "Up to 24 Months"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT05162443",
+     "briefTitle": "Expanded Access of Adagrasib (MRTX849) in Patients With Advanced Solid Tumors Who Have a KRAS G12C Mutation"
+    },
+    "statusModule": {
+     "overallStatus": "APPROVED_FOR_MARKETING",
+     "lastUpdatePostDateStruct": {
+      "date": "2025-08-26"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Bristol-Myers Squibb",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Advanced Cancer",
+      "Metastatic Cancer",
+      "Malignant Neoplasm"
+     ]
+    },
+    "designModule": {
+     "studyType": "EXPANDED_ACCESS"
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "adagrasib (MRTX849)"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07783009",
+     "briefTitle": "An Expanded Access Program to Provide Divarasib to Participants With Previously Treated KRAS G12c-Positive Advanced or Metastatic Non-Small Cell Lung Cancer"
+    },
+    "statusModule": {
+     "overallStatus": "AVAILABLE",
+     "lastUpdatePostDateStruct": {
+      "date": "2026-10-09"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Genentech, Inc.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non-Small Cell Lung Cancer"
+     ]
+    },
+    "designModule": {
+     "studyType": "EXPANDED_ACCESS"
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Divarasib"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  }
+ ]
+}

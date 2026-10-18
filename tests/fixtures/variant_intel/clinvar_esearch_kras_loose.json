@@ -1,0 +1,17 @@
+{
+ "header": {
+  "type": "esearch",
+  "version": "0.3"
+ },
+ "esearchresult": {
+  "count": "3",
+  "retmax": "3",
+  "retstart": "0",
+  "idlist": [
+   "12583",
+   "12582",
+   "12578"
+  ],
+  "querytranslation": "KRAS[gene] AND G12D[All Fields]"
+ }
+}

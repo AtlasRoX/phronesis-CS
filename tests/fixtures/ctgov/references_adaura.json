@@ -1,0 +1,33 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; query.intr=osimertinib, filter.advanced=AREA[ReferenceType]RESULT, aggFilters=results:with, fields=NCTId,HasResults,ReferencePMID,ReferenceType; ADAURA study only, first 4 references",
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02511106"
+    },
+    "referencesModule": {
+     "references": [
+      {
+       "pmid": "33596365",
+       "type": "RESULT"
+      },
+      {
+       "pmid": "42732874",
+       "type": "DERIVED"
+      },
+      {
+       "pmid": "40311309",
+       "type": "DERIVED"
+      },
+      {
+       "pmid": "40097663",
+       "type": "DERIVED"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ]
+}

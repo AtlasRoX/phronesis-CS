@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "status": "heuristic",
+  "label": "Heuristic evidence-support score",
+  "temperature": 1.0,
+  "conformal_threshold": null,
+  "weights": {
+    "bias": -0.5,
+    "nli_entailment": 3.0,
+    "nli_contradiction": -3.0,
+    "sources": 0.8,
+    "grade": 1.0,
+    "conflict": -1.5,
+    "defect": -2.0,
+    "verifier_supported": 0.4,
+    "exact_match": 1.0,
+    "hedge": -0.5
+  },
+  "provenance": {
+    "labelled_set": null,
+    "synthetic": false,
+    "n_claims": 0,
+    "n_answers": 0,
+    "note": "Hand-set prior weights (confidence.DEFAULT_WEIGHTS); nothing is fitted and no back-off threshold is set, because no real labelled set of pipeline claims exists yet. The score is a heuristic evidence-support score, not a calibrated probability. An earlier asset (T=0.85, tau=0.1968) was fitted in-sample on 25 hand-written synthetic claims and was withdrawn (audit AGT-001/AGT-002). Run scripts/calibrate_confidence.py --labelled <claims.jsonl> to fit on real labelled claims."
+  }
+}

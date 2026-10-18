@@ -1,0 +1,19 @@
+_target_: phronesis.synapta.tools.subgraph_summarization
+prompt_subgraph_summarization: |
+  You are Synapta, preparing a knowledge-graph subgraph for a later reasoning step.
+
+  <textualized_subgraph>
+  {textualized_subgraph}
+  </textualized_subgraph>
+
+  Summarize the subgraph above so it can answer the question below:
+  1. List the nodes most relevant to the question (genes, proteins, diseases, drugs, pathways) with their
+     types.
+  2. List the key relationships between them as "source -[relation]-> target", using the relation names in
+     the subgraph.
+  3. Note relevant gaps, for example an expected entity or link that is absent.
+  Include only what is present in the subgraph; the reasoning step relies on this summary being faithful.
+
+  <question>
+  {input}
+  </question>

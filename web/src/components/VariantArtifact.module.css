@@ -1,0 +1,287 @@
+/* Synapta variant card (ClinVar / CIViC / cBioPortal / gnomAD). Shell, sections, pills and tables come from
+   agentic/ui; these are the layouts specific to this card. */
+.ids {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-faint);
+  overflow-wrap: anywhere;
+}
+
+.ids a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.ids a:hover {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+/* ClinVar: one compact definition grid per allele, alleles separated by a divider */
+.record + .record {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.recordTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  font-size: 12.5px;
+}
+
+.recordTitle > a {
+  flex-shrink: 0;
+}
+
+.recordName {
+  min-width: 0;
+  color: var(--text-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.classGrid {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: baseline;
+  gap: 5px 14px;
+  margin: 6px 0 0;
+  font-size: 12.5px;
+}
+
+.classGrid dt {
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+.classGrid dd {
+  margin: 0;
+  min-width: 0;
+}
+
+.classValue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+}
+
+/* Long classifications ("Conflicting classifications of pathogenicity") wrap instead of overflowing on phones. */
+.classValue > :first-child {
+  white-space: normal;
+}
+
+.review {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* CIViC */
+.assertions {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.assertion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 12.5px;
+  color: var(--text-body);
+}
+
+/* cBioPortal per-study prevalence: name, thin bar, count and percent on one line */
+.studies {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.study {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(64px, 30%) auto 46px;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 0;
+  font-size: 12.5px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.study:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+.studyName {
+  min-width: 0;
+  color: var(--text-body);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studyName:hover {
+  color: var(--text-main);
+  text-decoration: underline;
+}
+
+.track {
+  position: relative;
+  height: 5px;
+  border-radius: var(--radius-full);
+  background: var(--avatar-bg);
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  min-width: 3px;
+  border-radius: var(--radius-full);
+  background: var(--domain-t2kg);
+}
+
+.count {
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pct {
+  text-align: right;
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  top: calc(100% + 4px);
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  max-width: min(360px, 100%);
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface-solid);
+  box-shadow: var(--card-shadow);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.tooltip strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.study:hover .tooltip,
+.study:focus-visible .tooltip {
+  display: flex;
+}
+
+/* gnomAD */
+.gnomadRow {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-body);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.about p {
+  margin: 0;
+}
+
+.about p + p {
+  margin-top: 6px;
+}
+
+@media (max-width: 520px) {
+  .classGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1px;
+  }
+
+  .classGrid dd + dt {
+    margin-top: 6px;
+  }
+
+  .study {
+    grid-template-columns: minmax(0, 1fr) auto 46px;
+    gap: 2px 10px;
+  }
+
+  .studyName {
+    grid-column: 1 / -1;
+  }
+
+  /* CIViC evidence rows stack as label/value pairs separated by dividers. */
+  .civicTable > div {
+    border: 0;
+    overflow: visible;
+  }
+
+  .civicTable table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .civicTable table,
+  .civicTable table tbody,
+  .civicTable table tr,
+  .civicTable table td {
+    display: block;
+    width: 100%;
+  }
+
+  .civicTable table tr {
+    padding: 6px 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .civicTable table td {
+    display: flex;
+    gap: 10px;
+    border-bottom: 0;
+    padding: 2px 0;
+  }
+
+  .civicTable table tbody tr:hover td {
+    background: none;
+  }
+
+  .civicTable table td::before {
+    content: attr(data-label);
+    flex: 0 0 88px;
+    color: var(--text-faint);
+  }
+}
+
+@media (forced-colors: active) {
+  .fill {
+    background: CanvasText;
+  }
+
+  .track {
+    border: 1px solid CanvasText;
+  }
+}

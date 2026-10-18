@@ -1,0 +1,15 @@
+{
+ "page_meta": {
+  "limit": 20,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total_count": 1
+ },
+ "targets": [
+  {
+   "pref_name": "Tyrosine-protein kinase ABL1",
+   "target_chembl_id": "CHEMBL1862"
+  }
+ ]
+}

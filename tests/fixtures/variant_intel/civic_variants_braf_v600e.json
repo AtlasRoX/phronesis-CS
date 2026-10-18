@@ -1,0 +1,33 @@
+{
+ "data": {
+  "variants": {
+   "totalCount": 3,
+   "nodes": [
+    {
+     "id": 12,
+     "name": "V600E",
+     "alleleRegistryId": "CA123643",
+     "clinvarIds": [
+      "13961",
+      "376069"
+     ],
+     "singleVariantMolecularProfileId": 12
+    },
+    {
+     "id": 704,
+     "name": "V600E+V600K",
+     "alleleRegistryId": null,
+     "clinvarIds": [],
+     "singleVariantMolecularProfileId": 685
+    },
+    {
+     "id": 3512,
+     "name": "p61BRAF(V600E)",
+     "alleleRegistryId": null,
+     "clinvarIds": [],
+     "singleVariantMolecularProfileId": 3380
+    }
+   ]
+  }
+ }
+}

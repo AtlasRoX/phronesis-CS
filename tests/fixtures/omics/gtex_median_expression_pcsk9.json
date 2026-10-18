@@ -1,0 +1,82 @@
+{
+ "data": [
+  {
+   "median": 25.5472,
+   "tissueSiteDetailId": "Liver",
+   "ontologyId": "UBERON:0001114",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  },
+  {
+   "median": 23.4952,
+   "tissueSiteDetailId": "Brain_Cerebellar_Hemisphere",
+   "ontologyId": "UBERON:0002037",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  },
+  {
+   "median": 22.1456,
+   "tissueSiteDetailId": "Brain_Cerebellum",
+   "ontologyId": "UBERON:0002037",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  },
+  {
+   "median": 6.73579,
+   "tissueSiteDetailId": "Lung",
+   "ontologyId": "UBERON:0008952",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  },
+  {
+   "median": 4.9358,
+   "tissueSiteDetailId": "Esophagus_Mucosa",
+   "ontologyId": "UBERON:0006920",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  },
+  {
+   "median": 2.89367,
+   "tissueSiteDetailId": "Small_Intestine_Terminal_Ileum",
+   "ontologyId": "UBERON:0001211",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  },
+  {
+   "median": 0.0113906,
+   "tissueSiteDetailId": "Muscle_Skeletal",
+   "ontologyId": "UBERON:0011907",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  },
+  {
+   "median": 0.011451600000000001,
+   "tissueSiteDetailId": "Heart_Left_Ventricle",
+   "ontologyId": "UBERON:0006566",
+   "datasetId": "gtex_v8",
+   "gencodeId": "ENSG00000169174.10",
+   "geneSymbol": "PCSK9",
+   "unit": "TPM"
+  }
+ ],
+ "paging_info": {
+  "numberOfPages": 1,
+  "page": 0,
+  "maxItemsPerPage": 250,
+  "totalNumberOfItems": 54
+ }
+}

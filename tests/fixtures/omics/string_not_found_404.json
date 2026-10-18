@@ -1,0 +1,6 @@
+[
+ {
+  "Error": "not found",
+  "ErrorMessage": "<p>Sorry, STRING did not find a protein called 'NOTAGENEXYZ' in the taxon '9606'.</p>"
+ }
+]

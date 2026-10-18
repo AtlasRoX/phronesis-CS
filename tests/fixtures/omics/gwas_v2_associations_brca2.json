@@ -1,0 +1,144 @@
+{
+ "_embedded": {
+  "associations": [
+   {
+    "association_id": 87307373,
+    "risk_frequency": "NR",
+    "pvalue_description": "",
+    "pvalue_mantissa": 1,
+    "pvalue_exponent": -39,
+    "multi_snp_haplotype": false,
+    "snp_interaction": false,
+    "range": "[0.027-0.036]",
+    "beta": "0.0313 unit decrease",
+    "p_value": 1e-39,
+    "efo_traits": [
+     {
+      "efo_id": "EFO_0004615",
+      "efo_trait": "apolipoprotein B measurement"
+     }
+    ],
+    "reported_trait": [
+     "Apolipoprotein B levels"
+    ],
+    "accession_id": "GCST90019496",
+    "locations": [
+     "13:32379251"
+    ],
+    "mapped_genes": [
+     "BRCA2"
+    ],
+    "bg_efo_traits": [],
+    "pubmed_id": "33462484",
+    "first_author": "Sinnott-Armstrong N",
+    "ci_lower": 0.027,
+    "ci_upper": 0.036,
+    "snp_effect_allele": [
+     "rs4942486-C"
+    ],
+    "snp_allele": [
+     {
+      "rs_id": "rs4942486",
+      "effect_allele": "C"
+     }
+    ]
+   },
+   {
+    "association_id": 214209407,
+    "risk_frequency": "0.01",
+    "pvalue_description": "",
+    "pvalue_mantissa": 7,
+    "pvalue_exponent": -32,
+    "multi_snp_haplotype": false,
+    "snp_interaction": false,
+    "range": "[1.607-1.783]",
+    "or_per_copy_num": 1.695,
+    "or_value": "1.695",
+    "beta": "-",
+    "p_value": 7.000000000000001e-32,
+    "efo_traits": [
+     {
+      "efo_id": "MONDO_0008903",
+      "efo_trait": "lung cancer"
+     },
+     {
+      "efo_id": "EFO_0006953",
+      "efo_trait": "family history of lung cancer"
+     }
+    ],
+    "reported_trait": [
+     "Lung cancer or family history of lung cancer"
+    ],
+    "accession_id": "GCST90243964",
+    "locations": [
+     "13:32394413"
+    ],
+    "mapped_genes": [
+     "BRCA2"
+    ],
+    "bg_efo_traits": [],
+    "pubmed_id": "35511172",
+    "first_author": "Gabriel AAG",
+    "ci_lower": 1.607,
+    "ci_upper": 1.783,
+    "snp_effect_allele": [
+     "rs11571815-A"
+    ],
+    "snp_allele": [
+     {
+      "rs_id": "rs11571815",
+      "effect_allele": "A"
+     }
+    ]
+   },
+   {
+    "association_id": 87307493,
+    "risk_frequency": "NR",
+    "pvalue_description": "",
+    "pvalue_mantissa": 5,
+    "pvalue_exponent": -30,
+    "multi_snp_haplotype": false,
+    "snp_interaction": false,
+    "range": "[0.027-0.039]",
+    "beta": "0.033 unit decrease",
+    "p_value": 5.0000000000000004e-30,
+    "efo_traits": [
+     {
+      "efo_id": "EFO_0004615",
+      "efo_trait": "apolipoprotein B measurement"
+     }
+    ],
+    "reported_trait": [
+     "Apolipoprotein B levels"
+    ],
+    "accession_id": "GCST90019496",
+    "locations": [
+     "13:32360774"
+    ],
+    "mapped_genes": [
+     "BRCA2"
+    ],
+    "bg_efo_traits": [],
+    "pubmed_id": "33462484",
+    "first_author": "Sinnott-Armstrong N",
+    "ci_lower": 0.027,
+    "ci_upper": 0.039,
+    "snp_effect_allele": [
+     "rs11571717-A"
+    ],
+    "snp_allele": [
+     {
+      "rs_id": "rs11571717",
+      "effect_allele": "A"
+     }
+    ]
+   }
+  ]
+ },
+ "page": {
+  "size": 3,
+  "totalElements": 140,
+  "totalPages": 47,
+  "number": 0
+ }
+}

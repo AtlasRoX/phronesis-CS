@@ -1,0 +1,6 @@
+{
+ "_source": "NCBI E-utilities efetch db=pubmed id=31751012 retmode=xml, captured 2026-10-13; RESULTS section of the abstract only",
+ "pmid": "31751012",
+ "title": "Overall Survival with Osimertinib in Untreated, EGFR-Mutated Advanced NSCLC.",
+ "passage_text": "The median overall survival was 38.6 months (95% confidence interval [CI], 34.5 to 41.8) in the osimertinib group and 31.8 months (95% CI, 26.6 to 36.0) in the comparator group (hazard ratio for death, 0.80; 95.05% CI, 0.64 to 1.00; P = 0.046). At 3 years, 79 of 279 patients (28%) in the osimertinib group and 26 of 277 (9%) in the comparator group were continuing to receive a trial regimen; the median exposure was 20.7 months and 11.5 months, respectively. Adverse events of grade 3 or higher were reported in 42% of the patients in the osimertinib group and in 47% of those in the comparator group."
+}

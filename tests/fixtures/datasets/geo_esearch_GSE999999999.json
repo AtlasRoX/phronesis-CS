@@ -1,0 +1,27 @@
+{
+ "header": {
+  "type": "esearch",
+  "version": "0.3"
+ },
+ "esearchresult": {
+  "count": "0",
+  "retmax": "0",
+  "retstart": "0",
+  "idlist": [],
+  "translationset": [],
+  "querytranslation": "GSE999999999[ACCN] AND gse[ETYP]",
+  "errorlist": {
+   "phrasesnotfound": [
+    "GSE999999999[ACCN]"
+   ],
+   "fieldsnotfound": []
+  },
+  "warninglist": {
+   "phrasesignored": [],
+   "quotedphrasesnotfound": [],
+   "outputmessages": [
+    "No items found."
+   ]
+  }
+ }
+}

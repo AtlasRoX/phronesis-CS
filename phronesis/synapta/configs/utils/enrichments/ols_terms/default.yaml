@@ -1,0 +1,3 @@
+_target_: phronesis.synapta.utils.enrichments.ols_terms
+base_url: https://www.ebi.ac.uk/ols/api/terms
+timeout: 10

@@ -1,0 +1,93 @@
+{
+ "_source": "GET https://clinicaltrials.gov/api/v2/studies?query.intr=osimertinib&aggFilters=results:with&fields=NCTId,HasResults,OutcomeMeasuresModule&pageSize=10, captured 2026-10-13; NCT02954523 trimmed to its Full Range progression-free survival measure",
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02954523"
+    }
+   },
+   "resultsSection": {
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "SECONDARY",
+       "title": "Progression-free Survival",
+       "description": "Determination of the time between the start of the experimental treatment and progression of the tumor",
+       "reportingStatus": "POSTED",
+       "paramType": "MEDIAN",
+       "dispersionType": "Full Range",
+       "unitOfMeasure": "months",
+       "timeFrame": "3 years",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Phase I- Dose Level 1",
+         "description": "Osimertinib (AZD9291) will be given at a 80mg/day dose taken orally across all levels of the dose escalation schedule.\n\nDasatinib is taken orally and will be given at Level 1 (the starting dose - 50 mg twice daily) There is no limit to the number of cycles a patient can receive. The phase II portion of the study will use the maximum tolerated dose of dasatinib determined in the phase I portion. Osimertinib (AZD9291) will be given at the same 80mg dose as the phase I portion.\n\nDasatinib: oral every day Osimertinib: oral every day"
+        },
+        {
+         "id": "OG001",
+         "title": "Phase I- Dose Level 2",
+         "description": "Osimertinib (AZD9291) will be given at a 80mg/day dose taken orally across all levels of the dose escalation schedule.\n\nDasatinib is taken orally and will be given at Level 2 (70 mg twice daily). There is no limit to the number of cycles a patient can receive. Dasatinib: oral every day Osimertinib: oral every day"
+        },
+        {
+         "id": "OG002",
+         "title": "Phase I- Dose Level -1",
+         "description": "Osimertinib (AZD9291) will begiven at a 80mg/day dose taken orally across all levels of the dose escalation schedule.\n\nDasatinib is taken orally Level -1 (70 mg once daily),"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "6"
+          },
+          {
+           "groupId": "OG001",
+           "value": "3"
+          },
+          {
+           "groupId": "OG002",
+           "value": "1"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "24.7",
+             "lowerLimit": "3.7",
+             "upperLimit": "31.3"
+            },
+            {
+             "groupId": "OG001",
+             "value": "10.1",
+             "lowerLimit": "4.5",
+             "upperLimit": "16.7"
+            },
+            {
+             "groupId": "OG002",
+             "value": "10.5",
+             "lowerLimit": "10.5",
+             "upperLimit": "10.5"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ]
+}

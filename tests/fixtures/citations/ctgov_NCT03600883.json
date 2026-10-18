@@ -1,0 +1,13 @@
+{
+ "captured": "2026-10-13",
+ "source": "https://clinicaltrials.gov/api/v2/studies/NCT03600883",
+ "study": {
+  "nctId": "NCT03600883",
+  "briefTitle": "A Phase 1/2, Study Evaluating the Safety, Tolerability, PK, and Efficacy of Sotorasib (AMG 510) in Subjects With Solid Tumors With a Specific KRAS Mutation (CodeBreaK 100)",
+  "overallStatus": "COMPLETED",
+  "phases": [
+   "PHASE1",
+   "PHASE2"
+  ]
+ }
+}

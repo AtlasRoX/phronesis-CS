@@ -1,0 +1,181 @@
+# Dependency security monitoring workflow - focuses on vulnerability scanning
+name: Dependency Security Audit
+
+on:
+  schedule:
+    # Run weekly on Sundays at 2 AM UTC
+    - cron: "0 2 * * 0"
+  push:
+    branches: [main, master]
+    paths:
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/security_audit.yml"
+  pull_request:
+    branches: [main, master]
+    paths:
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/security_audit.yml"
+  workflow_dispatch:
+
+jobs:
+  # Dependency vulnerability scanning
+  dependency-scan:
+    name: Dependency Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --extra dev
+
+      # Audits exactly what uv.lock pins (runtime + dev extras), not whatever the runner happens to have installed.
+      - name: Export locked requirements
+        run: uv export --frozen --extra dev --no-emit-project --no-hashes --format requirements-txt -o requirements-audit.txt
+
+      # The reports never fail here; the gate below does, after both reports are uploaded.
+      - name: Run pip-audit
+        id: pip-audit
+        run: |
+          uv run pip-audit -r requirements-audit.txt --no-deps --disable-pip --progress-spinner=off --desc --format=json --output=audit-report.json || true
+          uv run pip-audit -r requirements-audit.txt --no-deps --disable-pip --progress-spinner=off --desc --format=markdown --output=audit-report.md || true
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: security-audit-report
+          path: |
+            audit-report.json
+            audit-report.md
+
+      - name: Run safety check
+        run: |
+          uv run safety check --output json > safety-report.json
+        continue-on-error: true
+
+      - name: Upload safety report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: safety-report
+          path: safety-report.json
+
+      # Fails on any known vulnerability in the lock. A finding that is reviewed and accepted (no fix exists, or the
+      # code path is unused) goes into PIP_AUDIT_IGNORE with a comment, e.g. "GHSA-xxxx-xxxx-xxxx PYSEC-2024-1".
+      - name: Fail on vulnerabilities
+        shell: bash
+        env:
+          PIP_AUDIT_IGNORE: ""
+        run: |
+          uv run python - <<'PY'
+          import json, os, sys
+          try:
+              report = json.load(open("audit-report.json", encoding="utf-8"))
+          except (OSError, ValueError) as exc:
+              sys.exit(f"pip-audit report missing or unreadable: {exc}")
+          ignored = set(os.environ.get("PIP_AUDIT_IGNORE", "").split())
+          deps = report.get("dependencies", report) if isinstance(report, dict) else report
+          findings = [
+              (d["name"], d["version"], v["id"], v.get("fix_versions") or [])
+              for d in deps for v in d.get("vulns", [])
+              if v["id"] not in ignored and not ignored.intersection(v.get("aliases") or [])
+          ]
+          for name, version, vid, fixes in findings:
+              print(f"{name} {version}: {vid} -> {', '.join(fixes) or 'no fix released'}")
+          fixable = sum(1 for *_, fixes in findings if fixes)
+          print(f"{len(findings)} vulnerabilities ({fixable} with a released fix), {len(ignored)} ids ignored.")
+          sys.exit(1 if findings else 0)
+          PY
+
+  # SARIF upload for GitHub Security tab
+  upload-sarif:
+    name: Upload Security Results
+    needs: [dependency-scan]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download reports
+        uses: actions/download-artifact@v8
+        with:
+          pattern: "*-report*"
+          merge-multiple: true
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Process security reports
+        run: |
+          # Convert pip-audit JSON to SARIF if exists
+          if [ -f audit-report.json ]; then
+            echo "Processing dependency vulnerability report..."
+            # For now, just log the findings (sarif-om may not support pip-audit format)
+            echo "Dependency vulnerabilities found: $(jq '[.dependencies[].vulns[]] | length' audit-report.json)"
+          fi
+
+      - name: Upload vulnerability report as artifact
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: consolidated-security-report
+          path: |
+            audit-report.*
+            safety-report.json
+
+  # Generate security summary
+  security-summary:
+    name: Security Summary
+    needs: [dependency-scan]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download all reports
+        uses: actions/download-artifact@v8
+        with:
+          pattern: "*-report*"
+          merge-multiple: true
+
+      - name: Generate security summary
+        run: |
+          echo "# 🔒 Dependency Security Audit Summary" > security-summary.md
+          echo "" >> security-summary.md
+          echo "**Scan Date:** $(date)" >> security-summary.md
+          echo "**Purpose:** Weekly dependency vulnerability monitoring" >> security-summary.md
+          echo "" >> security-summary.md
+
+          if [ -f audit-report.json ]; then
+            VULN_COUNT=$(jq '[.dependencies[].vulns[]] | length' audit-report.json)
+            echo "**pip-audit:** $VULN_COUNT vulnerabilities found" >> security-summary.md
+          else
+            echo "**pip-audit:** report missing (the scan did not run)" >> security-summary.md
+          fi
+
+          if [ -f safety-report.json ]; then
+            echo "**safety:** Additional dependency scan completed" >> security-summary.md
+          fi
+
+          echo "" >> security-summary.md
+          echo "**Note:** Code security is monitored in test workflows via bandit" >> security-summary.md
+
+      - name: Upload security summary
+        uses: actions/upload-artifact@v7
+        with:
+          name: security-summary
+          path: security-summary.md

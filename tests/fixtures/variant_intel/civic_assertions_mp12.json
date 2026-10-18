@@ -1,0 +1,77 @@
+{
+ "data": {
+  "assertions": {
+   "totalCount": 3,
+   "nodes": [
+    {
+     "id": 20,
+     "name": "AID20",
+     "ampLevel": "TIER_I_LEVEL_A",
+     "assertionType": "PROGNOSTIC",
+     "assertionDirection": "SUPPORTS",
+     "significance": "POOR_OUTCOME",
+     "status": "ACCEPTED",
+     "fdaCompanionTest": null,
+     "regulatoryApproval": null,
+     "nccnGuideline": {
+      "name": "Colon Cancer"
+     },
+     "disease": {
+      "name": "Colorectal Cancer"
+     },
+     "therapies": []
+    },
+    {
+     "id": 7,
+     "name": "AID7",
+     "ampLevel": "TIER_I_LEVEL_A",
+     "assertionType": "PREDICTIVE",
+     "assertionDirection": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "status": "ACCEPTED",
+     "fdaCompanionTest": true,
+     "regulatoryApproval": true,
+     "nccnGuideline": {
+      "name": "Melanoma"
+     },
+     "disease": {
+      "name": "Melanoma"
+     },
+     "therapies": [
+      {
+       "name": "Trametinib"
+      },
+      {
+       "name": "Dabrafenib"
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "name": "AID10",
+     "ampLevel": "TIER_I_LEVEL_A",
+     "assertionType": "PREDICTIVE",
+     "assertionDirection": "SUPPORTS",
+     "significance": "SENSITIVITYRESPONSE",
+     "status": "ACCEPTED",
+     "fdaCompanionTest": true,
+     "regulatoryApproval": true,
+     "nccnGuideline": {
+      "name": "Melanoma"
+     },
+     "disease": {
+      "name": "Melanoma"
+     },
+     "therapies": [
+      {
+       "name": "Vemurafenib"
+      },
+      {
+       "name": "Cobimetinib"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

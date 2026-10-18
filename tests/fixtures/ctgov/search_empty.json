@@ -1,0 +1,5 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; query.term=what clinical trials exist for KRAS G12C inhibitors (the raw sentence; query.term ANDs every word)",
+ "totalCount": 0,
+ "studies": []
+}

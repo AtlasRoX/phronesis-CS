@@ -1,0 +1,293 @@
+{
+ "_meta": {
+  "source": "GET https://api.crossref.org/works?filter=doi:...&select=DOI,updated-by,type,title,update-to&rows=50",
+  "captured": "2026-10-13",
+  "requested": [
+   "10.1016/S0140-6736(97)11096-0",
+   "10.1016/S0140-6736(20)31180-6",
+   "10.1056/NEJMoa1103782",
+   "10.3892/ol.2017.6783",
+   "10.1038/cddis.2014.396"
+  ],
+  "trimmed": "updated.timestamp dropped; all other values verbatim"
+ },
+ "status": "ok",
+ "message-type": "work-list",
+ "message": {
+  "total-results": 5,
+  "items": [
+   {
+    "DOI": "10.3892/ol.2017.6783",
+    "type": "journal-article",
+    "title": [
+     "Simvastatin potentiates doxorubicin activity against MCF‑7 breast cancer cells"
+    ]
+   },
+   {
+    "DOI": "10.1038/cddis.2014.396",
+    "type": "journal-article",
+    "title": [
+     "The bromodomain and extra-terminal inhibitor CPI203 enhances the antiproliferative effects of rapamycin on human neuroendocrine tumors"
+    ],
+    "updated-by": [
+     {
+      "DOI": "10.1038/s41419-026-09313-9",
+      "type": "expression_of_concern",
+      "label": "Expression of concern",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2026,
+         9,
+         25
+        ]
+       ],
+       "date-time": "2026-09-25T00:00:00Z"
+      }
+     }
+    ]
+   },
+   {
+    "DOI": "10.1056/nejmoa1103782",
+    "type": "journal-article",
+    "title": [
+     "Improved Survival with Vemurafenib in Melanoma with BRAF V600E Mutation"
+    ]
+   },
+   {
+    "DOI": "10.1016/s0140-6736(20)31180-6",
+    "type": "journal-article",
+    "title": [
+     "RETRACTED: Hydroxychloroquine or chloroquine with or without a macrolide for treatment of COVID-19: a multinational registry analysis"
+    ],
+    "updated-by": [
+     {
+      "DOI": "10.1016/s0140-6736(20)31290-3",
+      "type": "expression_of_concern",
+      "label": "Expression of concern",
+      "source": "retraction-watch",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         6,
+         3
+        ]
+       ],
+       "date-time": "2020-06-03T00:00:00Z"
+      },
+      "record-id": "23527"
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31249-6",
+      "type": "correction",
+      "label": "Correction",
+      "source": "retraction-watch",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         5,
+         30
+        ]
+       ],
+       "date-time": "2020-05-30T00:00:00Z"
+      },
+      "record-id": "23528"
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31324-6",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "retraction-watch",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         6,
+         5
+        ]
+       ],
+       "date-time": "2020-06-05T00:00:00Z"
+      },
+      "record-id": "23529"
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31174-0",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         5,
+         22
+        ]
+       ],
+       "date-time": "2020-05-22T00:00:00Z"
+      }
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31324-6",
+      "type": "erratum",
+      "label": "Erratum",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         6,
+         13
+        ]
+       ],
+       "date-time": "2020-06-13T00:00:00Z"
+      }
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31528-2",
+      "type": "erratum",
+      "label": "Erratum",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         7,
+         18
+        ]
+       ],
+       "date-time": "2020-07-18T00:00:00Z"
+      }
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31249-6",
+      "type": "erratum",
+      "label": "Erratum",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         5,
+         30
+        ]
+       ],
+       "date-time": "2020-05-30T00:00:00Z"
+      }
+     }
+    ],
+    "update-to": [
+     {
+      "DOI": "10.1016/s0140-6736(20)31174-0",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         5,
+         22
+        ]
+       ],
+       "date-time": "2020-05-22T00:00:00Z"
+      }
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31290-3",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         5,
+         22
+        ]
+       ],
+       "date-time": "2020-05-22T00:00:00Z"
+      }
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31324-6",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         5,
+         22
+        ]
+       ],
+       "date-time": "2020-05-22T00:00:00Z"
+      }
+     },
+     {
+      "DOI": "10.1016/s0140-6736(20)31528-2",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "publisher",
+      "updated": {
+       "date-parts": [
+        [
+         2020,
+         5,
+         22
+        ]
+       ],
+       "date-time": "2020-05-22T00:00:00Z"
+      }
+     }
+    ]
+   },
+   {
+    "DOI": "10.1016/s0140-6736(97)11096-0",
+    "type": "journal-article",
+    "title": [
+     "RETRACTED: Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children"
+    ],
+    "updated-by": [
+     {
+      "DOI": "10.1016/s0140-6736(04)15715-2",
+      "type": "correction",
+      "label": "Correction",
+      "source": "retraction-watch",
+      "updated": {
+       "date-parts": [
+        [
+         2004,
+         3,
+         6
+        ]
+       ],
+       "date-time": "2004-03-06T00:00:00Z"
+      },
+      "record-id": "17269"
+     },
+     {
+      "DOI": "10.1016/s0140-6736(10)60175-4",
+      "type": "retraction",
+      "label": "Retraction",
+      "source": "retraction-watch",
+      "updated": {
+       "date-parts": [
+        [
+         2010,
+         2,
+         6
+        ]
+       ],
+       "date-time": "2010-02-06T00:00:00Z"
+      },
+      "record-id": "4036"
+     }
+    ]
+   }
+  ]
+ }
+}

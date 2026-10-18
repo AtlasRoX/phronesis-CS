@@ -1,0 +1,55 @@
+# Default configuration for Zotero search tool
+library_type: "user" # Type of library ('user' or 'group')
+default_limit: 2
+request_timeout: 10
+user_id: ${oc.env:ZOTERO_USER_ID} # Load from environment variable
+api_key: ${oc.env:ZOTERO_API_KEY} # Load from environment variable
+
+# Default search parameters
+search_params:
+  limit: ${.default_limit}
+
+# Item Types and Limit
+zotero:
+  max_limit: 100
+  filter_item_types:
+    [
+      "Artwork",
+      "Audio Recording",
+      "Bill",
+      "Blog Post",
+      "Book",
+      "Book Section",
+      "Case",
+      "Conference Paper",
+      "Dataset",
+      "Dictionary Entry",
+      "Document",
+      "E-mail",
+      "Encyclopedia Article",
+      "Film",
+      "Forum Post",
+      "Hearing",
+      "Instant Message",
+      "Interview",
+      "Journal Article",
+      "Letter",
+      "Magazine Article",
+      "Manuscript",
+      "Map",
+      "Newspaper Article",
+      "Patent",
+      "Podcast",
+      "Preprint",
+      "Presentation",
+      "Radio Broadcast",
+      "Report",
+      "Software",
+      "Standard",
+      "Statute",
+      "Thesis",
+      "TV Broadcast",
+      "Video Recording",
+      "Web Page",
+    ]
+  # filter_excluded_types: ["attachment", "note", "annotation"]

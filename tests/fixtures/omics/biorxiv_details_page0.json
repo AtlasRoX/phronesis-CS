@@ -1,0 +1,63 @@
+{
+ "messages": [
+  {
+   "status": "ok",
+   "category": "all",
+   "interval": "2026-09-16:2026-10-16",
+   "cursor": 0,
+   "count": 30,
+   "count_new_papers": "5455",
+   "total": "7215"
+  }
+ ],
+ "collection": [
+  {
+   "title": "Structural heterogeneity of CTE Type I tau filaments with an interface-shifted polymorph",
+   "authors": "Watanabe, R.; Lee, E. B.",
+   "author_corresponding": "Ryohei Watanabe",
+   "author_corresponding_institution": "Department of Psychiatry, University of Tsukuba Hospital",
+   "doi": "10.64898/2026.09.10.750773",
+   "date": "2026-09-16",
+   "version": "2",
+   "type": "new results",
+   "license": "cc_by_nc",
+   "category": "molecular biology",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/09/16/2026.09.10.750773.source.xml",
+   "abstract": "Tau filament types can differ in inter-protofilament packing while sharing the same protofilament fold. Motivated by our recent findings in vacuolar tauopathy, we analyzed cryo-electron microscopy (cryo-EM) data from brain-derived chronic traumatic encephalopathy (CTE) tau filaments deposited in EMPIAR-10313. We resolved the canonical CTE Type I structure and a previously unreported CTE Type I-like structure with a shifted protofilament interface at 2.78 and 2.96 A, respectively. Mapping particle-state assignments back onto the original micrographs showed that the CTE Type I and CTE Type I-like packing states can occupy locally contiguous regions within the same fibrils. These findings ident",
+   "published": "NA",
+   "server": "bioRxiv"
+  },
+  {
+   "title": "Oncohistone inhibition reshapes tumor-microenvironment communication in Diffuse Midline Glioma (DMG)",
+   "authors": "Khairkhah, N.; Ibrahim, M. M. H.; Galban, S. L.; Faunce, M.; Rober, L.; Baker, C.; Doherty, R.; Cartaxo, R.; Koschmann, C.; Zhao, Y.; Galban, S.",
+   "author_corresponding": "Stefanie Galban",
+   "author_corresponding_institution": "University of Michigan",
+   "doi": "10.64898/2026.06.17.731637",
+   "date": "2026-09-16",
+   "version": "2",
+   "type": "new results",
+   "license": "cc_by",
+   "category": "cancer biology",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/09/16/2026.06.17.731637.source.xml",
+   "abstract": "Background: Diffuse midline glioma (DMG) is a lethal pediatric brain tumor driven by the H3K27M oncohistone, which disrupts epigenetic regulation and promotes tumor proliferation. While prior studies show that H3K27M is essential for tumor initiation, its role in established tumors, tumor microenvironment (TME) regulation, and therapeutic response remain unclear. Methods: Here, we developed inducible and reversible H3.3K27M and H3.1K27M cell and mouse models to study oncohistone-dependent effects on tumor growth, recurrence, and the immune/stromal microenvironment. We generated a tetracycline-inducible PiggyBac-based oncohistone expression cassette in patient- and murine-derived models and v",
+   "published": "NA",
+   "server": "bioRxiv"
+  },
+  {
+   "title": "mTOR disrupts cerebrovascular RNA regulatory networks in Alzheimers disease",
+   "authors": "makhlouf, H.; Banh, A.; pomilio, c.; Ferran, B.; Hussong, S.; saravia, F.; Richardson, A.; Galvan, v.",
+   "author_corresponding": "veronica Galvan",
+   "author_corresponding_institution": "University of Oklahoma Health Campus",
+   "doi": "10.64898/2026.09.15.750223",
+   "date": "2026-09-16",
+   "version": "1",
+   "type": "new results",
+   "license": "cc_no",
+   "category": "neuroscience",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/09/16/2026.09.15.750223.source.xml",
+   "abstract": "Cerebrovascular dysfunction is increasingly recognized as a central contributor to the initiation and progression of Alzheimer's disease (AD). The mammalian/mechanistic target of rapamycin (mTOR) pathway has emerged as a key driver of AD-related vascular dysfunction. Consistent with this role, attenuation of mTOR signaling restores multiple aspects of cerebrovascular function in AD models, including vascular density, cerebral blood flow, vascular reactivity, and neurovascular coupling. However, the molecular mechanisms linking mTOR dysregulation to cerebrovascular dysfunction in AD remain poorly understood we assessed cerebrovascular levels of RNA-regulatory proteins in hAPP(J20) mice treate",
+   "published": "NA",
+   "server": "bioRxiv"
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "messages": [
+  {
+   "status": "ok",
+   "category": "all",
+   "interval": "2026-09-16:2026-10-16",
+   "cursor": "7185",
+   "count": 30,
+   "count_new_papers": "5455",
+   "total": "7215"
+  }
+ ],
+ "collection": [
+  {
+   "title": "Cholesterol constrains pore formation by mammalian gasdermins",
+   "authors": "Liang, Y.; Evavold, I. R.; Parvanian, S.; Hayashi, M.; Glassey, E.; Gonzalez-Rubio, G.; Spannaus, I. M.; De Andrade, V.; Allsup, B. L.; Fei, F.; Bryson, B. D.; Schmidt, A. G.; Jacks, T. E.; Garris, C. S.; Evavold, C. L.",
+   "author_corresponding": "Charles L Evavold",
+   "author_corresponding_institution": "Ragon Institute of Mass General, MIT, and Harvard, 600 Main Street, Cambridge, MA 02139, USA",
+   "doi": "10.64898/2026.10.08.757701",
+   "date": "2026-10-15",
+   "version": "1",
+   "type": "new results",
+   "license": "cc_no",
+   "category": "immunology",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/10/15/2026.10.08.757701.source.xml",
+   "abstract": "Pyroptosis is a lytic form of cell death executed by gasdermin pores. Through a CRISPR screen to uncover macrophage genes required for gasdermin D (GSDMD) pore activity, we identify the endosome adaptor Rabgef1 as a positive regulator of pore formation. Rabgef1 deficiency preserves NT-GSDMD membrane binding but prevents NT-GSDMD oligomerization and lytic death. Mechanistic analyses revealed that Rabgef1 deficiency is associated with an overabundance of cholesterol in the plasma membrane. Cholesterol depletion or redistribution through multiple approaches restores GSDMD oligomerization and pyroptosis. The Rabgef1-mediated control of membrane cholesterol and pore formation was found to be a ge",
+   "published": "NA",
+   "server": "bioRxiv"
+  },
+  {
+   "title": "Allosteric covalent inhibition of cereblon through cryptic cysteine targeting",
+   "authors": "Rizvi, Z.; Nordin, B. E.; Symons, K. T.; Baltgalvis, K. A.; Weinstein, D. S.; Patricelli, M. P.; Simon, G.; Lander, G. C.",
+   "author_corresponding": "Gabriel C Lander",
+   "author_corresponding_institution": "The Scripps Research Institute",
+   "doi": "10.64898/2026.10.10.758245",
+   "date": "2026-10-15",
+   "version": "1",
+   "type": "new results",
+   "license": "cc_no",
+   "category": "biochemistry",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/10/15/2026.10.10.758245.source.xml",
+   "abstract": "Thalidomide-derived cereblon (CRBN) modulators are among the most clinically impactful targeted protein degradation therapeutics, redirecting the CRL4-CRBN E3 ubiquitin ligase to degrade disease-driving neosubstrates. All current CRBN-targeting IMiDs and CELMoDs engage a single orthosteric pocket, leaving CRBN's conformational landscape largely unexploited pharmacologically. Using cysteine-directed chemoproteomic screening, we identified covalent ligands that engage Cys287, a cryptic allosteric pocket distal to the orthosteric site. Our lead compound, VVD-105917, acts as a pan-inhibitor of IMiD/CELMoD-driven neosubstrate degradation. Cryo-EM structures reveal that covalent Cys287 engagement ",
+   "published": "NA",
+   "server": "bioRxiv"
+  },
+  {
+   "title": "Temperature-responsive contacts in TRPV1 concentrate in the cytoplasmic coupling domains",
+   "authors": "Sottoriva, Z.; Potoyan, D. A.",
+   "author_corresponding": "Davit  A Potoyan",
+   "author_corresponding_institution": "Iowa State University",
+   "doi": "10.64898/2026.10.09.757870",
+   "date": "2026-10-15",
+   "version": "1",
+   "type": "new results",
+   "license": "cc_by",
+   "category": "biophysics",
+   "jatsxml": "https://www.biorxiv.org/content/early/2026/10/15/2026.10.09.757870.source.xml",
+   "abstract": "TRPV1, the heat-activated cation channel of pain-sensing neurons, is a major target for new analgesics, yet where it senses heat remains unresolved. Candidate sensors have been proposed in nearly every part of its structure, from the ankyrin repeats to the pore. Here we ask where the contact network of the closed channel responds to temperature. We simulated human TRPV1 in a multicomponent membrane at six temperatures spanning its activation threshold and three salt concentrations, at atomistic and coarse-grained resolution. We decomposed the contacts that recur across its four identical subunits into collective thermal modes and tested each mode against temperature and, as a control, salini",
+   "published": "NA",
+   "server": "bioRxiv"
+  }
+ ]
+}

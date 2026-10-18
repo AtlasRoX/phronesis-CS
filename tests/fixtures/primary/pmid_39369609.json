@@ -1,0 +1,89 @@
+{
+  "_note": "Primary-record regression fixture: values transcribed by program from the Europe PMC core record of PMID 39369609 (abstract, as published) and checked against the excerpt text. Not a mocked result. The linked corrigendum's content was not available from Europe PMC (no abstract, not open access), so it was NOT retrieved or applied; the values below are the original abstract's.",
+  "pmid": "39369609",
+  "doi": "10.1016/j.lungcan.2024.107960",
+  "title": "Real-world comparative effectiveness of sotorasib versus docetaxel in second line and beyond among patients with advanced non-small cell lung cancer (NSCLC).",
+  "authors": "Johnson M, Younan D, Kent ST, Mesa-Frias M, Alan Brookhart M, Balasubramanian A, Spira A.",
+  "journal": "Lung Cancer",
+  "year": "2024",
+  "pub_types": [
+    "Comparative Study",
+    "Research Support, Non-U.S. Gov't",
+    "Journal Article"
+  ],
+  "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:39369609%20AND%20SRC:MED&resultType=core&format=json",
+  "record_url": "https://pubmed.ncbi.nlm.nih.gov/39369609/",
+  "retrieved_utc": "2026-10-18T16:42:12Z",
+  "response_sha256": "8bff4acea0105c398166548a24a4978f218bf2781307391ac653e8d5f1388c96",
+  "abstract_sha256": "82129ede7453e4e5d0b14abd42ef7aa4b63d58c80fd4771cb3baea377568aed0",
+  "correction": {
+    "exists": true,
+    "type": "Erratum in",
+    "pmid": "39984314",
+    "doi": "10.1016/j.lungcan.2025.108440",
+    "title": "Corrigendum to \"Real-world comparative effectiveness of sotorasib versus docetaxel in second line and beyond among patients with advanced non-small cell lung cancer (NSCLC)\" [Lung Cancer 197 (2024) 107960].",
+    "content_retrieved": false,
+    "applied": false,
+    "reason": "Europe PMC returns no abstract or full text for the corrigendum (isOpenAccess=N, inEPMC=N)."
+  },
+  "excerpts": {
+    "2L": {
+      "text": "In the 2L setting, the median OS (95 % CI) for sotorasib (N=102) and docetaxel (N=58) patients was 10.2 (7.6-16.3) and 6.0 (4.2-11.0) months, respectively, with a corresponding mortality HR (95 % CI) of 0.62 (0.41-0.93).",
+      "sha256": "dcf800dbc8b7aa39c6df323336d7c1039f8a46f128713cc864ebeb13f4ce79cd",
+      "location": "abstract, Results, 2L sentence"
+    },
+    "2L+": {
+      "text": "In the 2L+ setting, the median OS (95 % CI) for sotorasib (N=164) and docetaxel (N=116) was 10.2 (8.0-14.6) and 7.2 (5.1-10.6) months, respectively, with a corresponding mortality HR (95 % CI) of 0.65 (0.49-0.87).",
+      "sha256": "1e7710b7e686ab787e1f00402a1e9e5334ab4037b4a124bd615ebc38c912042c",
+      "location": "abstract, Results, 2L+ sentence"
+    }
+  },
+  "results": {
+    "2L": {
+      "sotorasib": {
+        "n": 102,
+        "median_os_months": 10.2,
+        "ci": [
+          7.6,
+          16.3
+        ]
+      },
+      "docetaxel": {
+        "n": 58,
+        "median_os_months": 6.0,
+        "ci": [
+          4.2,
+          11.0
+        ]
+      },
+      "mortality_hr": 0.62,
+      "hr_ci": [
+        0.41,
+        0.93
+      ]
+    },
+    "2L+": {
+      "sotorasib": {
+        "n": 164,
+        "median_os_months": 10.2,
+        "ci": [
+          8.0,
+          14.6
+        ]
+      },
+      "docetaxel": {
+        "n": 116,
+        "median_os_months": 7.2,
+        "ci": [
+          5.1,
+          10.6
+        ]
+      },
+      "mortality_hr": 0.65,
+      "hr_ci": [
+        0.49,
+        0.87
+      ]
+    }
+  }
+}

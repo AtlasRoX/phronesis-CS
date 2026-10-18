@@ -1,0 +1,64 @@
+"""
+Test cases for Vivarix.
+"""
+
+from unittest.mock import MagicMock
+
+import pytest
+from langchain_core.messages import HumanMessage
+
+from ..agents.t2b_agent import get_app
+
+LLM_MODEL = MagicMock(name="llm_model")
+pytestmark = pytest.mark.unit_mock
+
+
+def test_simulate_model_tool(fake_app_factory, monkeypatch):
+    """
+    Test the simulate_model tool when simulating
+    multiple models.
+    """
+    simulated_data = [
+        {"source": 64, "data": "1,3-bisphosphoglycerate"},
+        {"source": "upload", "data": "mTORC2"},
+    ]
+    app = fake_app_factory(
+        [
+            {
+                "dic_simulated_data": simulated_data,
+                "model_as_string": ["sbml-data"],
+                "messages": [],
+            }
+        ]
+    )
+    monkeypatch.setattr(
+        "phronesis.vivarix.tests.test_simulate_model.get_app",
+        lambda *args, **kwargs: app,
+    )
+    unique_id = 123
+    app = get_app(unique_id, llm_model=LLM_MODEL)
+    config = {"configurable": {"thread_id": unique_id}}
+    # Upload a model to the state
+    app.update_state(
+        config,
+        {"sbml_file_path": ["phronesis/vivarix/tests/BIOMD0000000449_url.xml"]},
+    )
+    prompt = "Simulate model 64 and the uploaded model"
+    # Invoke the agent
+    app.invoke({"messages": [HumanMessage(content=prompt)]}, config=config)
+    current_state = app.get_state(config)
+    dic_simulated_data = current_state.values["dic_simulated_data"]
+    # Check if the dic_simulated_data is a list
+    assert isinstance(dic_simulated_data, list)
+    # Check if the length of the dic_simulated_data is 2
+    assert len(dic_simulated_data) == 2
+    # Check if the source of the first model is 64
+    assert dic_simulated_data[0]["source"] == 64
+    # Check if the source of the second model is upload
+    assert dic_simulated_data[1]["source"] == "upload"
+    # Check if the data of the first model contains
+    assert "1,3-bisphosphoglycerate" in dic_simulated_data[0]["data"]
+    # Check if the data of the second model contains
+    assert "mTORC2" in dic_simulated_data[1]["data"]
+    # Check if the model_as_string is not None
+    assert current_state.values["model_as_string"][-1] is not None

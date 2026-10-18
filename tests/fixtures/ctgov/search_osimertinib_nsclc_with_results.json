@@ -1,0 +1,307 @@
+{
+ "_source": "ClinicalTrials.gov API v2 GET /api/v2/studies, captured 2026-10-13; same query plus aggFilters=results:with; trimmed to 4 of 10 studies",
+ "totalCount": 56,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02954523",
+     "briefTitle": "Dasatinib and Osimertinib (AZD9291) in Advanced Non-Small Cell Lung Cancer With EGFR Mutations"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "whyStopped": "Lack of accrual",
+     "startDateStruct": {
+      "date": "2016-10"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2018-08"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2024-07-05"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2024-07-05"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Chul Kim",
+      "class": "OTHER"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "EGFR Gene Mutation",
+      "Nonsmall Cell Lung Cancer"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE1",
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "NON_RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 10,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Dasatinib"
+      },
+      {
+       "type": "DRUG",
+       "name": "Osimertinib"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Phase I : Number of Patients With Drug-related Adverse Events as Assessed by CTCAEv4.0",
+       "timeFrame": "Cycle 1 (28 day cycle)"
+      },
+      {
+       "measure": "Phase II : Number of Patients That do Not Progress According to RECIST v1.1",
+       "timeFrame": "9 months"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT03521154",
+     "briefTitle": "A Global Study to Assess the Effects of Osimertinib Following Chemoradiation in Patients With Stage III Unresectable Non-small Cell Lung Cancer (LAURA)",
+     "acronym": "LAURA"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "startDateStruct": {
+      "date": "2018-07-19"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2024-01-05"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2025-04-03"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-08-04"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "AstraZeneca",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non Small Cell Lung Cancer (Stage III)"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 216,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Osimertinib 80mg/40mg"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo Osimertinib 80mg/40mg"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Progression-free Survival (PFS) by Blinded Independent Central Review (BICR)",
+       "timeFrame": "Every 8 weeks for first 48 weeks, then every 12 weeks until BICR-confirmed radiological disease progression. Assessed up to date of DCO (05Jan24) to a maximum of approximately 63 months"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT04035486",
+     "briefTitle": "A Study of Osimertinib With or Without Chemotherapy as 1st Line Treatment in Patients With Mutated Epidermal Growth Factor Receptor Non-Small Cell Lung Cancer (FLAURA2)",
+     "acronym": "FLAURA2"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "startDateStruct": {
+      "date": "2019-07-02"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2023-04-03"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2024-08-06"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-09-03"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "AstraZeneca",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Non-Small Cell Lung Cancer"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 587,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Osimertinib"
+      },
+      {
+       "type": "DRUG",
+       "name": "Pemetrexed/Carboplatin"
+      },
+      {
+       "type": "DRUG",
+       "name": "Pemetrexed/Cisplatin"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Adverse Events Graded by Common Terminology Criteria for Adverse Event v5 (Safety Run-In Treatment Arms Only)",
+       "timeFrame": "From first dose date to 28 days following last dose, up to 45 months"
+      },
+      {
+       "measure": "Progression-free Survival (PFS) (Randomized Component)",
+       "timeFrame": "Up to approximately 33 months after the first patient is randomized (maximum follow up of 33.3 months)"
+      },
+      {
+       "measure": "Sensitivity Analysis for Progression-free Survival (PFS) by Blinded Independent Central Review (BICR) Assessment (Randomized Component)",
+       "timeFrame": "Up to approximately 33 months after the first patient is randomized (maximum follow up of 33.2 months)."
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT01802632",
+     "briefTitle": "AZD9291 First Time In Patients Ascending Dose Study",
+     "acronym": "AURA"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2013-03-04"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2015-05-01"
+     },
+     "resultsFirstPostDateStruct": {
+      "date": "2016-10-06"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-04-20"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "AstraZeneca",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Advanced Non Small Cell Lung Cancer",
+      "Advanced (Inoperable) Non Small Cell Lung Cancer"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE1",
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 603,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "AZD9291"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Objective Response Rate (ORR) for Dose Expansion Population",
+       "timeFrame": "RECIST tumour assessments every 6 weeks from randomisation until objective disease progression, up to approximately 21 months (at time of analysis)"
+      },
+      {
+       "measure": "Best Objective Response (BOR) for Dose Escalation Population",
+       "timeFrame": "RECIST tumour assessments every 6 weeks from randomisation until objective disease progression, up to approximately 25 months (at time of analysis)"
+      },
+      {
+       "measure": "Objective Response Rate (ORR) for Extension Population",
+       "timeFrame": "RECIST tumour assessments every 6 weeks from randomisation until objective disease progression, up to approximately 12 months (at the time of analysis)"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ],
+ "nextPageToken": "ZVNj7o2Elu8o3lpzCt6q57L2mpOQJJxrYPOl3PUW"
+}
